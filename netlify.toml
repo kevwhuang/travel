@@ -2,6 +2,7 @@
 command = 'bun run build'
 
 [dev]
+command = 'bun run dev'
 port = 8888
 
 [[headers]]
