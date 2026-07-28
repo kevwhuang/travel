@@ -1,0 +1,4 @@
+project_id = "travel"
+
+[analytics]
+enabled = false
