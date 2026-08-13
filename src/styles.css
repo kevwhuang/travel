@@ -1,0 +1,259 @@
+.atlas-card {
+    background: var(--color-snow);
+    border: 1px solid var(--color-haze);
+    border-radius: 10px;
+    transition:
+        border-color var(--duration-fast) ease,
+        box-shadow var(--duration-fast) ease,
+        transform var(--duration-fast) ease;
+}
+
+.atlas-card:hover {
+    border-color: var(--color-pearl);
+    box-shadow: 0 12px 26px var(--color-ink-10);
+    transform: translateY(-3px);
+}
+
+.atlas-chip {
+    align-items: center;
+    background: var(--color-snow);
+    border: 1px solid var(--color-flint);
+    border-radius: 999px;
+    color: var(--color-slate);
+    display: inline-flex;
+    transition:
+        background var(--duration-fast) ease,
+        border-color var(--duration-fast) ease,
+        color var(--duration-fast) ease,
+        filter var(--duration-fast) ease,
+        transform var(--duration-fast) ease;
+}
+
+.atlas-chip:active {
+    transform: scale(0.96);
+}
+
+.atlas-chip:focus-visible {
+    border-radius: 999px;
+}
+
+.atlas-chip:hover {
+    border-color: var(--color-storm);
+    color: var(--color-ink);
+}
+
+.atlas-chip--dashed {
+    border-style: dashed;
+}
+
+.atlas-chip--selected {
+    background: var(--color-ink);
+    border-color: var(--color-ink);
+    color: var(--color-paper);
+}
+
+.atlas-chip--selected:hover {
+    border-color: var(--color-ink);
+    color: var(--color-paper);
+}
+
+.atlas-control {
+    align-items: center;
+    backdrop-filter: blur(8px);
+    background: var(--color-snow-90);
+    border-radius: 999px;
+    display: flex;
+    height: 48px;
+    max-width: 48px;
+    overflow: hidden;
+    transition:
+        background var(--duration-base) ease,
+        border-color var(--duration-base) ease,
+        box-shadow var(--duration-base) ease,
+        color var(--duration-base) ease,
+        max-width var(--duration-slow) ease,
+        transform var(--duration-fast) ease;
+}
+
+.atlas-control:active {
+    transform: scale(0.97);
+}
+
+.atlas-control:focus-visible {
+    border-radius: 999px;
+}
+
+.atlas-control:focus-within,
+.atlas-control:hover {
+    box-shadow: 0 8px 20px var(--color-ink-10);
+    max-width: 280px;
+}
+
+.atlas-control--active {
+    background: var(--color-ink);
+    border-color: var(--color-ink);
+    color: var(--color-paper);
+}
+
+.atlas-control.atlas-control--open {
+    max-width: min(340px, calc(100dvw - 90px));
+}
+
+search.atlas-control :focus-visible {
+    outline: none;
+}
+
+search.atlas-control:focus-within {
+    border-color: var(--color-ink);
+    box-shadow:
+        0 8px 20px var(--color-ink-10),
+        0 0 0 1px var(--color-ink);
+}
+
+.atlas-fade {
+    animation: atlas__fade-in var(--duration-base) ease both;
+}
+
+.atlas-fade--slow {
+    animation-duration: var(--duration-slow);
+}
+
+.atlas-grain {
+    background-image: url('data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%22140%22%20height=%22140%22%3E%3Cfilter%20id=%22n%22%3E%3CfeTurbulence%20type=%22fractalNoise%22%20baseFrequency=%220.85%22%20numOctaves=%222%22/%3E%3C/filter%3E%3Crect%20width=%22140%22%20height=%22140%22%20filter=%22url(%23n)%22%20opacity=%220.6%22/%3E%3C/svg%3E');
+    inset: 0;
+    opacity: 0.05;
+    pointer-events: none;
+    position: fixed;
+}
+
+.atlas-label {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+}
+
+.atlas-marker {
+    border-radius: 999px;
+}
+
+.atlas-marker:focus-visible {
+    border-radius: 999px;
+}
+
+.atlas-panel {
+    animation: atlas__panel-in var(--duration-base) cubic-bezier(0.2, 0.9, 0.3, 1.05) both;
+    background-color: var(--color-paper);
+    border: 1px solid var(--color-haze);
+    border-radius: 14px;
+    box-shadow: 0 30px 80px var(--color-ink-30);
+}
+
+.atlas-pill {
+    align-items: center;
+    border: 1px solid var(--color-flint);
+    border-radius: 999px;
+    display: inline-flex;
+    justify-content: center;
+    transition:
+        background var(--duration-fast) ease,
+        border-color var(--duration-fast) ease,
+        color var(--duration-fast) ease,
+        transform var(--duration-fast) ease;
+}
+
+.atlas-pill:active {
+    transform: scale(0.96);
+}
+
+.atlas-pill:disabled {
+    background: none;
+    border-color: var(--color-haze);
+    color: var(--color-storm);
+}
+
+.atlas-pill:disabled:hover {
+    background: none;
+    border-color: var(--color-haze);
+    color: var(--color-storm);
+}
+
+.atlas-pill:focus-visible {
+    border-radius: 999px;
+}
+
+.atlas-pill:hover {
+    background: var(--color-ink);
+    border-color: var(--color-ink);
+    color: var(--color-paper);
+}
+
+.atlas-pill--solid {
+    background: var(--color-ink);
+    border-color: var(--color-ink);
+    color: var(--color-paper);
+}
+
+.atlas-pill--solid:hover {
+    background: var(--color-slate);
+    border-color: var(--color-slate);
+    color: var(--color-paper);
+}
+
+.atlas-plot {
+    background-image:
+        repeating-linear-gradient(to right, var(--color-ink-5) 0 1px, transparent 1px 148px),
+        repeating-linear-gradient(to bottom, var(--color-ink-5) 0 1px, transparent 1px 148px);
+}
+
+.atlas-pulse {
+    animation: atlas__fade-in var(--duration-slow) ease-in-out infinite alternate both;
+}
+
+.atlas-rise {
+    animation: atlas__rise-in var(--duration-slow) ease both;
+}
+
+.atlas-rise--quick {
+    animation-duration: var(--duration-base);
+}
+
+.atlas-veil {
+    animation: atlas__fade-in var(--duration-base) ease both;
+    backdrop-filter: blur(3px);
+    background: var(--color-ink-40);
+    inset: 0;
+    position: fixed;
+}
+
+@keyframes atlas__fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes atlas__panel-in {
+    from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes atlas__rise-in {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

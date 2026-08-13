@@ -1,0 +1,78 @@
+{
+    "name": "Panhandle",
+    "ordered": true,
+    "places": [
+        {
+            "category": "urban",
+            "description": "Rockwood Apartment Homes is an apartment community in north Austin, Texas, serving as a private home-base stay for the trip.",
+            "lat": 30.3684651,
+            "lng": -97.7296492,
+            "name": "Rockwood Apartment Homes"
+        },
+        {
+            "category": "dining",
+            "description": "Cork and Pig Tavern is a San Angelo-born Texas tavern with a branch in Abilene, known for wood-fired pizzas, craft cocktails, and casual American fare.",
+            "lat": 32.4766181,
+            "lng": -99.7066774,
+            "name": "Cork and Pig Tavern"
+        },
+        {
+            "category": "urban",
+            "description": "This address served as a private home-base stay in Amarillo, Texas, used as lodging during the Panhandle portion of the trip.",
+            "lat": 35.1582566,
+            "lng": -101.8520152,
+            "name": "4803 Mc Kinley Ln"
+        },
+        {
+            "category": "dining",
+            "description": "OVR-EZE is a breakfast and brunch restaurant in Amarillo, Texas, known for inventive dishes like the Croi-ffle, a waffle pressed from croissant dough.",
+            "lat": 35.1507601,
+            "lng": -101.8666905,
+            "name": "OVR-EZE"
+        },
+        {
+            "category": "nature",
+            "description": "Palo Duro Canyon State Park near Amarillo protects the second-largest canyon in the United States, famed for red-rock cliffs and the Lighthouse formation.",
+            "lat": 34.9372503,
+            "lng": -101.6589305,
+            "name": "Palo Duro Canyon State Park",
+            "starred": true
+        },
+        {
+            "category": "dining",
+            "description": "The Big Texan Steak Ranch & Brewery is a Route 66-era steakhouse in Amarillo, Texas, home of the 72-ounce steak challenge.",
+            "lat": 35.1936085,
+            "lng": -101.7548896,
+            "name": "The Big Texan Steak Ranch & Brewery"
+        },
+        {
+            "category": "landmarks",
+            "description": "Cadillac Ranch is a public art installation west of Amarillo where ten graffiti-covered Cadillacs stand buried nose-first in a field.",
+            "lat": 35.1872366,
+            "lng": -101.9870486,
+            "name": "Cadillac Ranch"
+        },
+        {
+            "category": "dining",
+            "description": "Jimmy's Egg is a regional breakfast and lunch chain restaurant in Amarillo, Texas, serving omelets, pancakes, and classic diner fare.",
+            "lat": 35.1731981,
+            "lng": -101.9388684,
+            "name": "Jimmy's Egg"
+        },
+        {
+            "category": "nature",
+            "description": "Caprock Canyons State Park & Trailway near Quitaque, Texas, features rugged red canyons and is home to the official Texas State Bison Herd.",
+            "lat": 34.4369909,
+            "lng": -101.0598617,
+            "name": "Caprock Canyons State Park & Trailway"
+        },
+        {
+            "category": "miscellaneous",
+            "description": "Allsup's is a convenience store chain widespread across New Mexico and West Texas, its Spur location a practical stop for fuel and snacks.",
+            "lat": 33.4832249,
+            "lng": -100.8557384,
+            "name": "Allsup's Convenience Store"
+        }
+    ],
+    "year": 2026
+}

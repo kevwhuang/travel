@@ -3,6 +3,7 @@
 TODO.md
 
 .astro/
+.local/
 .netlify/
 .playwright/
 dist/

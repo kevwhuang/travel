@@ -5,12 +5,15 @@ import sitemap from '@astrojs/sitemap';
 import tailwind from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
 
+import atlasAssets from './scripts/build';
+
 export default defineConfig({
     adapter: netlify(),
     devToolbar: {
         enabled: false,
     },
     integrations: [
+        atlasAssets(),
         react(),
         robots(),
         sitemap({ lastmod: new Date() }),

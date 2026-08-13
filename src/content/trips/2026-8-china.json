@@ -1,0 +1,42 @@
+{
+    "name": "China",
+    "ordered": false,
+    "places": [
+        {
+            "category": "urban",
+            "description": "Hangzhou is the capital of China's Zhejiang province, known for the UNESCO-listed West Lake, the southern terminus of the Grand Canal, and its Longjing tea hills.",
+            "lat": 30.2669444,
+            "lng": 120.1530556,
+            "name": "Hangzhou"
+        },
+        {
+            "category": "urban",
+            "description": "Nanjing is the county-seat city of Nanjing County in Zhangzhou, Fujian, and the gateway to the UNESCO-listed Fujian tulou, known for the Tianluokeng and Hekeng clusters of rammed-earth Hakka roundhouses and the riverside village of Yunshuiyao.",
+            "lat": 24.5147,
+            "lng": 117.3573,
+            "name": "Nanjing"
+        },
+        {
+            "category": "urban",
+            "description": "Shanghai is China's largest city and a global financial center on the Huangpu River, known for the historic Bund waterfront, the Pudong skyline, and the world's busiest container port.",
+            "lat": 31.2325,
+            "lng": 121.4691667,
+            "name": "Shanghai"
+        },
+        {
+            "category": "urban",
+            "description": "Wuhan is the capital of China's Hubei province at the confluence of the Yangtze and Han rivers, known for the Yellow Crane Tower, East Lake, and its major universities.",
+            "lat": 30.595,
+            "lng": 114.2975,
+            "name": "Wuhan"
+        },
+        {
+            "category": "urban",
+            "description": "Wuxi is a city on the shore of Lake Tai in China's Jiangsu province, known for its Grand Canal waterways, the Lingshan Grand Buddha, and its early industrial heritage.",
+            "lat": 31.5491667,
+            "lng": 120.0572222,
+            "name": "Wuxi"
+        }
+    ],
+    "year": 2026
+}

@@ -1,0 +1,13 @@
+---
+import Atlas from '@components/Atlas';
+import { atlasData } from '@lib/atlas';
+
+const data = await atlasData();
+---
+
+<section
+    class="flex flex-1 flex-col"
+    aria-labelledby="atlas-title"
+>
+    <Atlas client:load data={data} />
+</section>

@@ -1,0 +1,133 @@
+{
+    "name": "Arlington",
+    "ordered": true,
+    "places": [
+        {
+            "category": "dining",
+            "description": "Czech-American Restaurant is a family-run eatery on Main Street in West, Texas, serving authentic Czech and American comfort food since 1980.",
+            "lat": 31.8032456,
+            "lng": -97.0917614,
+            "name": "Czech-American Restaurant"
+        },
+        {
+            "category": "dining",
+            "description": "Slovacek's is a famous I-35 roadside bakery and sausage shop in West, Texas, known for kolaches, klobasneks, and homemade smoked meats.",
+            "lat": 31.8017505,
+            "lng": -97.1026055,
+            "name": "Slovacek's West"
+        },
+        {
+            "category": "urban",
+            "description": "Loews Arlington is a large resort-style hotel and convention center in Arlington's entertainment district, steps from Globe Life Field and AT&T Stadium.",
+            "lat": 32.7504067,
+            "lng": -97.084981,
+            "name": "Loews Arlington Hotel & Convention Center"
+        },
+        {
+            "category": "urban",
+            "description": "Texas Live! is a dining and entertainment complex in Arlington, Texas, packed with restaurants, bars, and live-event venues beside Globe Life Field.",
+            "lat": 32.749359,
+            "lng": -97.0849553,
+            "name": "Texas Live!"
+        },
+        {
+            "category": "nature",
+            "description": "Richard Greene Linear Park is a landscaped promenade with fountains and walking paths threading Arlington's stadium district along Johnson Creek.",
+            "lat": 32.7527542,
+            "lng": -97.0854788,
+            "name": "Richard Greene Linear Park"
+        },
+        {
+            "category": "dining",
+            "description": "The Social House is a lively Arlington, Texas, restaurant and bar with a scratch kitchen, roughly 100 beers on tap, and popular brunch.",
+            "lat": 32.760786,
+            "lng": -97.0959943,
+            "name": "The Social House"
+        },
+        {
+            "category": "nature",
+            "description": "River Legacy Parks is a 1,300-acre nature preserve along the Trinity River in north Arlington, known for forested trails and wildlife.",
+            "lat": 32.7901938,
+            "lng": -97.1148197,
+            "name": "River Legacy Parks"
+        },
+        {
+            "category": "urban",
+            "description": "Founders' Plaza is an observation park at Dallas Fort Worth International Airport where visitors watch aircraft land while listening to air-traffic radio.",
+            "lat": 32.9187853,
+            "lng": -97.0591068,
+            "name": "DFW Founders' Plaza"
+        },
+        {
+            "category": "urban",
+            "description": "Grapevine Mills is one of North Texas's largest outlet malls, located in Grapevine near DFW Airport with over 180 stores and attractions.",
+            "lat": 32.965993,
+            "lng": -97.0427604,
+            "name": "Grapevine Mills"
+        },
+        {
+            "category": "urban",
+            "description": "Vineyard Vines Outlet is a discount store for the preppy American clothing brand at Tanger Outlets in far north Fort Worth, Texas.",
+            "lat": 33.022207,
+            "lng": -97.2819725,
+            "name": "Vineyard Vines Outlet"
+        },
+        {
+            "category": "urban",
+            "description": "This address served as a private home-base stay on Millstream Ct in Trophy Club, Texas, a quiet residential suburb northwest of DFW Airport.",
+            "lat": 32.98,
+            "lng": -97.18,
+            "name": "Millstream Ct"
+        },
+        {
+            "category": "dining",
+            "description": "The Original Roy Hutchins Barbeque is a family-run smokehouse in Trophy Club, Texas, known for brisket, beef ribs, Texas Twinkies, and complimentary cobbler.",
+            "lat": 32.9863416,
+            "lng": -97.1701395,
+            "name": "The Original Roy Hutchins Barbeque"
+        },
+        {
+            "category": "urban",
+            "description": "Courtyard by Marriott at Cityview is a modern chain hotel in southwest Fort Worth, Texas, serving as a convenient base near shopping and highways.",
+            "lat": 32.6821929,
+            "lng": -97.4186897,
+            "name": "Courtyard by Marriott Fort Worth West at Cityview"
+        },
+        {
+            "category": "wellness",
+            "description": "Happy Panda Massage & Spa is a highly rated massage studio on Western Center Boulevard in Haltom City, Texas, offering Asian-style bodywork and spa treatments.",
+            "lat": 32.8603393,
+            "lng": -97.2758266,
+            "name": "Happy Panda Massage & Spa"
+        },
+        {
+            "category": "dining",
+            "description": "Hokkaido Ramen & Sushi is a Japanese chain restaurant in Watauga, Texas, specializing in tonkotsu ramen, sushi, and hibachi dishes.",
+            "lat": 32.8815261,
+            "lng": -97.2591828,
+            "name": "Hokkaido Ramen & Sushi (Watauga)"
+        },
+        {
+            "category": "nature",
+            "description": "Eagle Mountain Park is a 400-acre nature preserve on Eagle Mountain Lake near Fort Worth, offering hiking trails and scenic lakeside overlooks.",
+            "lat": 32.9359,
+            "lng": -97.482,
+            "name": "Eagle Mountain Park"
+        },
+        {
+            "category": "landmarks",
+            "description": "Historic Granbury Square is a preserved 19th-century courthouse square in Granbury, Texas, lined with shops, restaurants, and the landmark Granbury Opera House.",
+            "lat": 32.4424796,
+            "lng": -97.7869907,
+            "name": "Historic Granbury Square"
+        },
+        {
+            "category": "dining",
+            "description": "Dave's Hot Chicken is a fast-casual chain outpost in Georgetown, Texas, serving Nashville-style hot chicken tenders and sliders as a quick road-trip stop.",
+            "lat": 30.6325134,
+            "lng": -97.698484,
+            "name": "Dave's Hot Chicken"
+        }
+    ],
+    "year": 2026
+}

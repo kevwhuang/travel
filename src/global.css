@@ -1,32 +1,61 @@
 @import 'tailwindcss';
 
 @theme {
+    --color-azure: #4a90d9;
+    --color-azure-30: #4a90d94d;
+    --color-flint: #7f8f8c;
+    --color-gold: #d9a441;
+    --color-haze: #d8dfde;
+    --color-ink: #212b2e;
+    --color-ink-10: #212b2e1a;
+    --color-ink-20: #212b2e33;
+    --color-ink-30: #212b2e4d;
+    --color-ink-40: #212b2e66;
+    --color-ink-5: #212b2e0d;
+    --color-linen: #e4eae8;
+    --color-moss: #6ba368;
+    --color-paper: #f3f5f4;
+    --color-pearl: #c6d1cf;
     --color-pink: #ec4899;
-    --color-pink-20: #ec489933;
-    --color-pink-80: #ec4899cc;
-    --color-white: #ffffff;
-    --color-white-20: #ffffff33;
-    --color-white-40: #ffffff66;
-    --color-white-60: #ffffff99;
+    --color-slate: #3a4649;
+    --color-snow: #fbfcfb;
+    --color-snow-90: #fbfcfbe6;
+    --color-storm: #5a6a6e;
+    --color-taupe: #9a8674;
+    --color-teal: #54b8a5;
+    --color-terracotta: #e2725b;
+    --color-violet: #9b72cf;
+    --font-mono:
+        'Fragment Mono',
+        monospace;
     --font-sans:
-        'Geist Sans',
+        'Schibsted Grotesk',
         system-ui,
         sans-serif;
+    --font-serif:
+        'Gloock',
+        Georgia,
+        serif;
+}
+
+:root {
+    --duration-base: 0.3s;
+    --duration-fast: 0.2s;
+    --duration-slow: 0.6s;
+    --width-medium: calc(var(--width-wide) / 2);
+    --width-narrow: calc(var(--width-wide) / 4);
+    --width-shell: 1560px;
+    --width-shell-pad: 64px;
+    --width-wide: calc(var(--width-shell) - var(--width-shell-pad) * 2);
 }
 
 a,
-button,
-label,
-select {
+button {
     cursor: pointer;
 }
 
 html {
     scroll-behavior: smooth;
-}
-
-html[data-astro-transition] {
-    scroll-behavior: auto;
 }
 
 :disabled {
@@ -39,16 +68,36 @@ html[data-astro-transition] {
 
 :focus-visible:not(input, select, textarea) {
     border-radius: 2px;
-    outline: 2px solid var(--color-pink-80);
+    outline: 2px solid var(--color-ink);
     outline-offset: 2px;
 }
 
+::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-flint);
+    border: 2px solid var(--color-paper);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
 ::placeholder {
+    color: var(--color-storm);
     user-select: none;
 }
 
 ::selection {
-    background: var(--color-pink-20);
+    background: var(--color-azure-30);
+}
+
+html[data-astro-transition] {
+    scroll-behavior: auto;
 }
 
 @media (prefers-reduced-motion: reduce) {

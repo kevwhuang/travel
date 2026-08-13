@@ -1,0 +1,287 @@
+{
+    "name": "PNW",
+    "ordered": true,
+    "places": [
+        {
+            "category": "urban",
+            "description": "Seattle–Tacoma International Airport is the primary air hub of the Pacific Northwest, serving the Seattle metropolitan area from its location in SeaTac, Washington.",
+            "lat": 47.4483652,
+            "lng": -122.3085927,
+            "name": "Seattle–Tacoma International Airport"
+        },
+        {
+            "category": "urban",
+            "description": "Sonesta Select Seattle Renton Suites is an all-suite hotel in Renton, Washington, offering lodging near Lake Washington and Sea-Tac Airport.",
+            "lat": 47.463262,
+            "lng": -122.2210729,
+            "name": "Sonesta Select Seattle Renton Suites"
+        },
+        {
+            "category": "dining",
+            "description": "Ocha Thai Kitchen and Bar is a Thai restaurant in downtown Renton, Washington, known for its curries, noodle dishes, and craft cocktails.",
+            "lat": 47.4789846,
+            "lng": -122.2045152,
+            "name": "Ocha Thai Kitchen and Bar"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Space Needle is a 605-foot observation tower built for the 1962 World's Fair and the defining icon of the Seattle skyline.",
+            "lat": 47.6205063,
+            "lng": -122.3492774,
+            "name": "Space Needle"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Museum of Pop Culture is a Frank Gehry-designed museum at Seattle Center dedicated to music, science fiction, and popular culture.",
+            "lat": 47.6214824,
+            "lng": -122.3481245,
+            "name": "Museum of Pop Culture"
+        },
+        {
+            "category": "landmarks",
+            "description": "The International Fountain is a landmark water feature at Seattle Center, built for the 1962 World's Fair and known for its choreographed water-and-music shows.",
+            "lat": 47.6225227,
+            "lng": -122.3520323,
+            "name": "International Fountain"
+        },
+        {
+            "category": "urban",
+            "description": "This address served as a private home-base stay in the Woodinville area east of Seattle.",
+            "lat": 47.7097797,
+            "lng": -122.0720274,
+            "name": "19844 NE 124th Pl"
+        },
+        {
+            "category": "nature",
+            "description": "Lake Union Park is a waterfront park at the south end of Lake Union in Seattle, adjoining the Museum of History and Industry.",
+            "lat": 47.6277112,
+            "lng": -122.3368686,
+            "name": "Lake Union Park"
+        },
+        {
+            "category": "dining",
+            "description": "203° Fahrenheit Coffee Co. is an independent coffee roaster and cafe at the Village at Totem Lake in Kirkland, Washington, known for its pour-overs and pastries.",
+            "lat": 47.7126106,
+            "lng": -122.1800557,
+            "name": "203° Fahrenheit Coffee Co."
+        },
+        {
+            "category": "nature",
+            "description": "Waterfront Park is a public park on Seattle's central waterfront along Elliott Bay, offering piers, viewpoints, and access to the rebuilt downtown shoreline.",
+            "lat": 47.60704,
+            "lng": -122.3418276,
+            "name": "Waterfront Park"
+        },
+        {
+            "category": "dining",
+            "description": "Pike Place Chowder is a celebrated seafood counter in Seattle's Pike Place Market, famous for its award-winning New England clam chowder.",
+            "lat": 47.6094243,
+            "lng": -122.3412192,
+            "name": "Pike Place Chowder"
+        },
+        {
+            "category": "landmarks",
+            "description": "Pike Place Market is Seattle's historic public market overlooking Elliott Bay, famous for its fish-throwing vendors, farm stalls, and the original Starbucks.",
+            "lat": 47.6094076,
+            "lng": -122.3418358,
+            "name": "Pike Place Market"
+        },
+        {
+            "category": "urban",
+            "description": "This address served as a private home-base stay in Port Moody, British Columbia, during the Vancouver portion of the trip.",
+            "lat": 49.2892044,
+            "lng": -122.8766922,
+            "name": "32 Shoreline Cir"
+        },
+        {
+            "category": "landmarks",
+            "description": "Canada Place is a waterfront landmark in downtown Vancouver, distinguished by its white sail-shaped roofs and serving as the city's cruise ship terminal.",
+            "lat": 49.2888248,
+            "lng": -123.1111209,
+            "name": "Canada Place"
+        },
+        {
+            "category": "urban",
+            "description": "The Vancouver Convention Centre is a waterfront convention complex in downtown Vancouver, noted for its living green roof and views of Burrard Inlet.",
+            "lat": 49.2894131,
+            "lng": -123.116762,
+            "name": "Vancouver Convention Centre"
+        },
+        {
+            "category": "nature",
+            "description": "The Seawall Water Walk is a scenic harborside stretch of Vancouver's seawall along Coal Harbour, popular for strolling with views of the mountains and marina.",
+            "lat": 49.2903373,
+            "lng": -123.1213375,
+            "name": "Seawall Water Walk"
+        },
+        {
+            "category": "dining",
+            "description": "Tap & Barrel Bridges is a waterfront pub on Granville Island in Vancouver, serving local craft beer and wine in the landmark yellow former Bridges building.",
+            "lat": 49.2728058,
+            "lng": -123.1363961,
+            "name": "Tap & Barrel Bridges"
+        },
+        {
+            "category": "urban",
+            "description": "Granville Island Public Market is Vancouver's famed indoor market on False Creek, filled with fresh produce, seafood, artisan foods, and craft vendors.",
+            "lat": 49.2726609,
+            "lng": -123.1351387,
+            "name": "Granville Island Public Market"
+        },
+        {
+            "category": "urban",
+            "description": "This address served as a private home-base stay in Richmond, British Columbia, during the Vancouver portion of the trip.",
+            "lat": 49.162063,
+            "lng": -123.1820668,
+            "name": "3971 Lockhart Rd"
+        },
+        {
+            "category": "landmarks",
+            "description": "The University of British Columbia is a public research university on a peninsula campus in Vancouver, known for its gardens, beaches, and Museum of Anthropology.",
+            "lat": 49.2593121,
+            "lng": -123.2474966,
+            "name": "The University of British Columbia"
+        },
+        {
+            "category": "miscellaneous",
+            "description": "Whole Foods Market is a natural and organic grocery chain, with this location in Vancouver's Kitsilano area serving as a provisioning stop.",
+            "lat": 49.2683884,
+            "lng": -123.1570592,
+            "name": "Whole Foods Market"
+        },
+        {
+            "category": "urban",
+            "description": "This address served as a private home-base stay in Seattle's Magnolia neighborhood.",
+            "lat": 47.6560589,
+            "lng": -122.3998811,
+            "name": "4005 33rd Ave W"
+        },
+        {
+            "category": "dining",
+            "description": "Arashi Ramen is a Japanese noodle shop in Seattle's Ballard neighborhood known for its rich tonkotsu pork-broth ramen.",
+            "lat": 47.6681865,
+            "lng": -122.3823014,
+            "name": "Arashi Ramen"
+        },
+        {
+            "category": "landmarks",
+            "description": "The University of Washington is Seattle's flagship public university, famed for its Gothic quad, cherry blossoms, and Suzzallo Library.",
+            "lat": 47.6567171,
+            "lng": -122.3066181,
+            "name": "University of Washington"
+        },
+        {
+            "category": "dining",
+            "description": "Pagliacci Pizza is a Seattle pizzeria chain founded in 1979, serving hand-tossed New York-style pies across the city.",
+            "lat": 47.6488109,
+            "lng": -122.3785229,
+            "name": "Pagliacci Pizza"
+        },
+        {
+            "category": "dining",
+            "description": "Piatti is an Italian restaurant at Seattle's University Village, known for house-made pastas, wood-fired dishes, and patio dining.",
+            "lat": 47.6621735,
+            "lng": -122.2979334,
+            "name": "Piatti"
+        },
+        {
+            "category": "dining",
+            "description": "Núodle is a Chinese restaurant in Seattle's University District specializing in Lanzhou-style hand-pulled beef noodle soup.",
+            "lat": 47.6596096,
+            "lng": -122.3134541,
+            "name": "Núodle"
+        },
+        {
+            "category": "dining",
+            "description": "Tenth West is a breakfast and lunch cafe in Seattle's Queen Anne neighborhood, known for its omelets and paninis.",
+            "lat": 47.6361443,
+            "lng": -122.3707086,
+            "name": "Tenth West"
+        },
+        {
+            "category": "miscellaneous",
+            "description": "This Bank of America branch in Seattle's University District served as a practical banking stop during the trip.",
+            "lat": 47.663493,
+            "lng": -122.3134001,
+            "name": "Bank of America Financial Center"
+        },
+        {
+            "category": "nature",
+            "description": "Gas Works Park is a Seattle park on Lake Union built around a preserved gasification plant, offering skyline views and kite-flying hills.",
+            "lat": 47.6456308,
+            "lng": -122.3343532,
+            "name": "Gas Works Park"
+        },
+        {
+            "category": "dining",
+            "description": "Just Poké is a Seattle-based fast-casual chain serving customizable Hawaiian-style poke bowls, with this branch near Northgate Station.",
+            "lat": 47.7088063,
+            "lng": -122.3244721,
+            "name": "Just Poké Northgate"
+        },
+        {
+            "category": "miscellaneous",
+            "description": "Target is a national retail chain, and this Northgate Seattle store served as a convenient stop for everyday supplies.",
+            "lat": 47.7094843,
+            "lng": -122.3253625,
+            "name": "Target"
+        },
+        {
+            "category": "miscellaneous",
+            "description": "The Home Depot is a large home-improvement retail chain, with this north Seattle store serving as a practical errand stop.",
+            "lat": 47.7140634,
+            "lng": -122.3429597,
+            "name": "The Home Depot"
+        },
+        {
+            "category": "dining",
+            "description": "Mee Sum Pastry is a Chinese bakery-cafe on University Way in Seattle, known for its giant barbecue-pork hom bow buns.",
+            "lat": 47.6610743,
+            "lng": -122.3132751,
+            "name": "Mee Sum"
+        },
+        {
+            "category": "dining",
+            "description": "The Blue Heron is a neighborhood sandwich and coffee shop in Seattle's Magnolia district, serving cheesesteaks and breakfast sandwiches since 2005.",
+            "lat": 47.6559287,
+            "lng": -122.3869726,
+            "name": "The Blue Heron"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Ballard Locks are a working 1917 ship canal complex in Seattle where boats pass between Puget Sound and Lakes Union and Washington beside a fish ladder.",
+            "lat": 47.6655043,
+            "lng": -122.3971838,
+            "name": "Ballard (Hiram M. Chittenden) Locks"
+        },
+        {
+            "category": "nature",
+            "description": "Discovery Park is Seattle's largest park, covering 534 acres of bluffs, forest, and beach on Magnolia's Puget Sound shoreline with a historic lighthouse.",
+            "lat": 47.6613197,
+            "lng": -122.4171413,
+            "name": "Discovery Park"
+        },
+        {
+            "category": "nature",
+            "description": "Kerry Park is a small Queen Anne hillside viewpoint offering Seattle's classic postcard panorama of the skyline, Space Needle, and Mount Rainier.",
+            "lat": 47.6294692,
+            "lng": -122.3599224,
+            "name": "Kerry Park"
+        },
+        {
+            "category": "nature",
+            "description": "Alki Beach Park is a sandy West Seattle shoreline along Puget Sound, popular for its beach promenade and views of the downtown skyline.",
+            "lat": 47.5801902,
+            "lng": -122.4084891,
+            "name": "Alki Beach Park"
+        },
+        {
+            "category": "dining",
+            "description": "Salty's on Alki Beach is a waterfront seafood restaurant in West Seattle, known for its views of Elliott Bay and the Seattle skyline.",
+            "lat": 47.5865452,
+            "lng": -122.3764401,
+            "name": "Salty's on Alki Beach"
+        }
+    ],
+    "year": 2025
+}

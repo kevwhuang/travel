@@ -1,0 +1,399 @@
+{
+    "name": "Mérida",
+    "ordered": true,
+    "places": [
+        {
+            "category": "urban",
+            "description": "Mérida International Airport, formally Aeropuerto Internacional Manuel Crescencio Rejón, is the main air gateway to Yucatán's capital city.",
+            "lat": 20.9340284,
+            "lng": -89.6629729,
+            "name": "Mérida International Airport"
+        },
+        {
+            "category": "dining",
+            "description": "Hacienda Montejo is a restaurant inside Mérida International Airport serving Yucatecan classics like huevos motuleños to departing travelers.",
+            "lat": 20.9342342,
+            "lng": -89.6633452,
+            "name": "Hacienda Montejo"
+        },
+        {
+            "category": "dining",
+            "description": "La Chaya Maya is a beloved Yucatecan restaurant in downtown Mérida known for cochinita pibil, papadzules, and handmade tortillas.",
+            "lat": 20.9699203,
+            "lng": -89.6238919,
+            "name": "La Chaya Maya"
+        },
+        {
+            "category": "urban",
+            "description": "Erudita is a modern apartment complex with pool and coworking amenities in Temozón Norte, north Mérida, serving as the trip's home base.",
+            "lat": 21.0471216,
+            "lng": -89.6136922,
+            "name": "Erudita"
+        },
+        {
+            "category": "dining",
+            "description": "Te Extraño, Extraño is a contemporary restaurant in Temozón Norte, Mérida, popular for from-scratch breakfasts, chilaquiles, and a leafy terrace.",
+            "lat": 21.0501994,
+            "lng": -89.6186841,
+            "name": "Te Extraño, Extraño"
+        },
+        {
+            "category": "urban",
+            "description": "Plaza Altabrisa is a large shopping mall in northeast Mérida with department stores, international brands, a cinema, and restaurants.",
+            "lat": 21.0181879,
+            "lng": -89.5845506,
+            "name": "Plaza Altabrisa"
+        },
+        {
+            "category": "urban",
+            "description": "Women'secret is a Spanish lingerie and loungewear chain with a boutique inside Plaza Altabrisa in Mérida.",
+            "lat": 21.0190702,
+            "lng": -89.5846492,
+            "name": "Women'secret"
+        },
+        {
+            "category": "miscellaneous",
+            "description": "Soriana is a major Mexican supermarket chain, with this Altabrisa-area store serving as a convenient grocery stop in Mérida.",
+            "lat": 21.0192252,
+            "lng": -89.5841276,
+            "name": "Soriana"
+        },
+        {
+            "category": "urban",
+            "description": "Calvin Klein is an American fashion brand with a boutique at Plaza Altabrisa in Mérida selling apparel and accessories.",
+            "lat": 21.0167814,
+            "lng": -89.5843522,
+            "name": "Calvin Klein"
+        },
+        {
+            "category": "urban",
+            "description": "Altabrisa Bowling is a bowling alley and entertainment center inside Plaza Altabrisa mall in northeast Mérida.",
+            "lat": 21.019068,
+            "lng": -89.584058,
+            "name": "Altabrisa Bowling"
+        },
+        {
+            "category": "urban",
+            "description": "Puma Store is the German sportswear brand's retail outlet at Plaza Altabrisa in Mérida, selling athletic shoes and apparel.",
+            "lat": 21.0178267,
+            "lng": -89.5844591,
+            "name": "Puma Store"
+        },
+        {
+            "category": "dining",
+            "description": "Domino's is the international pizza delivery chain, with this Mérida branch serving as a quick and familiar meal stop.",
+            "lat": 21.0208701,
+            "lng": -89.6204761,
+            "name": "Domino's"
+        },
+        {
+            "category": "landmarks",
+            "description": "Paseo de Montejo is Mérida's grand tree-lined boulevard, famed for its French-inspired 19th-century mansions, monuments, and cafes.",
+            "lat": 20.9823677,
+            "lng": -89.6182953,
+            "name": "Paseo de Montejo"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Monumento a Justo Sierra on Paseo de Montejo honors the Campeche-born writer and educator who founded Mexico's national university.",
+            "lat": 20.9858318,
+            "lng": -89.6175652,
+            "name": "Monumento a Justo Sierra"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Catedral de San Ildefonso on Mérida's main plaza, completed in 1598, is the oldest cathedral on the American mainland.",
+            "lat": 20.9671945,
+            "lng": -89.6228814,
+            "name": "Catedral de San Ildefonso"
+        },
+        {
+            "category": "dining",
+            "description": "Menta & Rosa is a pink-and-mint cafe near Paseo de Montejo in Mérida, popular for breakfast, brunch, and pastries.",
+            "lat": 20.975825,
+            "lng": -89.6186423,
+            "name": "Menta & Rosa"
+        },
+        {
+            "category": "dining",
+            "description": "Crabster Seafood & Grill is a stylish restaurant on the Progreso malecón known for fresh ceviches, crab, and Yucatecan-influenced seafood.",
+            "lat": 21.2880342,
+            "lng": -89.6605651,
+            "name": "Crabster Seafood & Grill"
+        },
+        {
+            "category": "nature",
+            "description": "Playa de Progreso is the Gulf coast beach at Progreso, Yucatán, a popular seaside escape with calm waters and a long malecón.",
+            "lat": 21.2886968,
+            "lng": -89.6602536,
+            "name": "Playa de Progreso"
+        },
+        {
+            "category": "miscellaneous",
+            "description": "Costco Wholesale is the American membership warehouse club, with this Mérida location serving as a bulk-shopping stop for supplies.",
+            "lat": 21.0372415,
+            "lng": -89.6296245,
+            "name": "Costco Wholesale"
+        },
+        {
+            "category": "dining",
+            "description": "Yedam is a homestyle Korean restaurant and cafe in Mérida's Montebello area, serving bulgogi, japchae, mandu, and Korean coffee.",
+            "lat": 21.0304813,
+            "lng": -89.5929827,
+            "name": "Yedam"
+        },
+        {
+            "category": "wellness",
+            "description": "Smart Fit City Center is a branch of Latin America's largest budget gym chain, located at the City Center complex in north Mérida.",
+            "lat": 21.0370998,
+            "lng": -89.6046659,
+            "name": "Smart Fit City Center"
+        },
+        {
+            "category": "dining",
+            "description": "Lattejus is a cafe in northern Mérida known for iced lattes, chai, thick cookies, and health-focused bowls and sandwiches.",
+            "lat": 21.0371031,
+            "lng": -89.609518,
+            "name": "Lattejus"
+        },
+        {
+            "category": "dining",
+            "description": "Cabaña del Pibe is an Argentine steakhouse at La Isla Mérida serving grilled cuts, empanadas, provoleta, and wine.",
+            "lat": 21.0566086,
+            "lng": -89.5954726,
+            "name": "Cabaña del Pibe"
+        },
+        {
+            "category": "urban",
+            "description": "Cinépolis La Isla is a multiplex of Mexico's largest cinema chain inside the La Isla shopping center in north Mérida.",
+            "lat": 21.056972,
+            "lng": -89.5961024,
+            "name": "Cinépolis La Isla"
+        },
+        {
+            "category": "dining",
+            "description": "Kōfuku is a Japanese-Latin fusion restaurant in Mérida's Sodzil Norte, known for yōshoku street food, hirata buns, and sushi tacos.",
+            "lat": 21.0375383,
+            "lng": -89.619846,
+            "name": "Kōfuku"
+        },
+        {
+            "category": "urban",
+            "description": "City 32 is a modern mixed-use development in north Mérida combining a lifestyle shopping plaza, offices, and a Camino Real hotel.",
+            "lat": 21.0372882,
+            "lng": -89.6021479,
+            "name": "City 32"
+        },
+        {
+            "category": "wellness",
+            "description": "Smart Fit Urban Center is a branch of the popular Latin American gym chain at the Urban Center complex in northeast Mérida.",
+            "lat": 21.02076,
+            "lng": -89.597032,
+            "name": "Smart Fit Urban Center"
+        },
+        {
+            "category": "miscellaneous",
+            "description": "OXXO Cocoyoles is a branch of Mexico's ubiquitous convenience store chain in north Mérida, a practical stop for snacks and essentials.",
+            "lat": 21.0402879,
+            "lng": -89.6016108,
+            "name": "OXXO Cocoyoles"
+        },
+        {
+            "category": "dining",
+            "description": "Clandestino Café is a specialty coffee shop near Paseo de Montejo in Mérida known for pour-over brews and all-day breakfast.",
+            "lat": 20.9808004,
+            "lng": -89.6182123,
+            "name": "Clandestino Café"
+        },
+        {
+            "category": "landmarks",
+            "description": "El Pinar is a 1904 neo-Renaissance mansion on Calle 60 in Mérida that operates as a museum and luxury event venue.",
+            "lat": 20.9847863,
+            "lng": -89.6204481,
+            "name": "El Pinar"
+        },
+        {
+            "category": "dining",
+            "description": "José Rosé is a bistro and grill in Mérida's 1903 Casona 333, billed as Mexico's first restaurant devoted to rosé wine.",
+            "lat": 20.9842051,
+            "lng": -89.6203748,
+            "name": "José Rosé Bistro & Grill"
+        },
+        {
+            "category": "nature",
+            "description": "Gran Parque La Plancha is a large urban park in Mérida built on former railway yards, with gardens, lagoons, and promenades.",
+            "lat": 20.9782249,
+            "lng": -89.6117489,
+            "name": "Gran Parque La Plancha"
+        },
+        {
+            "category": "dining",
+            "description": "Paulo's Pizza is an artisanal pizzeria branch inside Mérida's Gran Parque La Plancha serving wood-fired pizzas, baguettes, and pastas.",
+            "lat": 20.9786678,
+            "lng": -89.6120923,
+            "name": "Paulo's Pizza La Plancha"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Railroad Museum of Yucatán at La Plancha park in Mérida displays historic locomotives and railcars from the peninsula's rail era.",
+            "lat": 20.9790006,
+            "lng": -89.610906,
+            "name": "Railroad Museum"
+        },
+        {
+            "category": "dining",
+            "description": "Alma Piedra is a café on Calle 50 in Mérida's historic center serving breakfast, brunch, and specialty coffee.",
+            "lat": 20.9761647,
+            "lng": -89.6140176,
+            "name": "Alma Piedra Centro"
+        },
+        {
+            "category": "dining",
+            "description": "Hogarento is a breakfast and brunch restaurant in Temozón Norte, north Mérida, popular for its home-style morning dishes.",
+            "lat": 21.0491339,
+            "lng": -89.6223202,
+            "name": "Hogarento"
+        },
+        {
+            "category": "landmarks",
+            "description": "Parque Zoológico del Centenario is Mérida's historic free zoo and amusement park, opened in 1910 for Mexico's independence centennial.",
+            "lat": 20.9692828,
+            "lng": -89.6401597,
+            "name": "Parque Zoológico del Centenario"
+        },
+        {
+            "category": "dining",
+            "description": "Santagloria is a Spanish bakery and coffee chain whose first Latin American branch serves pastries and breads at Mérida's La Isla mall.",
+            "lat": 21.0581865,
+            "lng": -89.5967369,
+            "name": "Santagloria Coffee & Bakery La Isla"
+        },
+        {
+            "category": "urban",
+            "description": "Enigma Rooms is a Mexican escape-room chain whose La Isla Mérida branch offers themed puzzle rooms for groups.",
+            "lat": 21.0556458,
+            "lng": -89.5959738,
+            "name": "Enigma Rooms La Isla"
+        },
+        {
+            "category": "dining",
+            "description": "Izakaya Sushi is a Japanese restaurant in Mérida's La Isla mall serving fresh sushi, sashimi, and shareable izakaya dishes.",
+            "lat": 21.0564516,
+            "lng": -89.5957318,
+            "name": "Izakaya Sushi"
+        },
+        {
+            "category": "dining",
+            "description": "Korea Chicken Town is a Korean fried chicken restaurant at Plaza Puerta de Hierro in north Mérida serving traditional dishes and drinks.",
+            "lat": 21.0174439,
+            "lng": -89.5859129,
+            "name": "Korea Chicken Town"
+        },
+        {
+            "category": "urban",
+            "description": "Galerías Mérida is a large enclosed shopping mall in northwest Mérida anchored by Liverpool with fashion retailers, dining, and a cinema.",
+            "lat": 21.0391303,
+            "lng": -89.6309493,
+            "name": "Galerías Mérida"
+        },
+        {
+            "category": "urban",
+            "description": "Zara is the Spanish fast-fashion chain's clothing store inside the Galerías Mérida shopping mall, a practical shopping stop.",
+            "lat": 21.0394208,
+            "lng": -89.6322313,
+            "name": "Zara"
+        },
+        {
+            "category": "dining",
+            "description": "La Recova is an Argentine-style steakhouse at the City Center complex in north Mérida, known for grilled cuts and empanadas.",
+            "lat": 21.0368048,
+            "lng": -89.6051004,
+            "name": "La Recova"
+        },
+        {
+            "category": "nature",
+            "description": "Cenotes Santa Bárbara is a park in Homún, Yucatán, where visitors bike or ride rail carts to swim in several cenotes.",
+            "lat": 20.7376297,
+            "lng": -89.3000281,
+            "name": "Cenotes Santa Bárbara"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Iglesia de San José de la Montaña at Hacienda Eknakán near Cuzamá is Yucatán's only fully neo-Gothic church, built in the late 1800s.",
+            "lat": 20.757838,
+            "lng": -89.3692351,
+            "name": "Iglesia de San José de la Montaña"
+        },
+        {
+            "category": "dining",
+            "description": "Thai Thai is a Thai restaurant in Mérida's Emiliano Zapata Norte neighborhood specializing in pad thai, curries, and som tam.",
+            "lat": 21.0088148,
+            "lng": -89.6126726,
+            "name": "Thai Thai"
+        },
+        {
+            "category": "urban",
+            "description": "Teya station is the Tren Maya railway stop serving Mérida, connecting the city to destinations across the Yucatán Peninsula.",
+            "lat": 20.9294023,
+            "lng": -89.5150073,
+            "name": "Tren Maya Estación Teya"
+        },
+        {
+            "category": "urban",
+            "description": "Izamal station is the Tren Maya railway stop outside Izamal, providing rail access to the yellow colonial town.",
+            "lat": 20.9363,
+            "lng": -89.08512,
+            "name": "Tren Maya Estación Izamal"
+        },
+        {
+            "category": "dining",
+            "description": "Kinich is a renowned Yucatecan restaurant in Izamal serving regional classics like cochinita pibil near the Kinich Kak Moo pyramid.",
+            "lat": 20.9359346,
+            "lng": -89.0183336,
+            "name": "Restaurante Kinich"
+        },
+        {
+            "category": "landmarks",
+            "description": "Kinich Kak Moo is a massive Maya pyramid in central Izamal, among the largest pre-Hispanic structures in Yucatán by volume.",
+            "lat": 20.9373315,
+            "lng": -89.0165915,
+            "name": "Pirámide Kinich Kak Moo"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Convento de San Antonio de Padua is a 16th-century Franciscan monastery in Izamal built atop a Maya platform, famed for its vast atrium.",
+            "lat": 20.932485,
+            "lng": -89.018042,
+            "name": "Convento de San Antonio de Padua"
+        },
+        {
+            "category": "dining",
+            "description": "Trattoria La Pasta is an Italian restaurant on Paseo de Montejo in Mérida known for homemade pastas and wood-fired pizzas.",
+            "lat": 20.9797055,
+            "lng": -89.6190071,
+            "name": "Trattoria La Pasta Montejo"
+        },
+        {
+            "category": "dining",
+            "description": "Bryan's Modern Grill is a New York-style grill restaurant in Mérida's Montecristo neighborhood, a longtime local dining fixture.",
+            "lat": 21.0184178,
+            "lng": -89.5933276,
+            "name": "Bryan's"
+        },
+        {
+            "category": "dining",
+            "description": "Voltacafé is a Mérida specialty coffee shop whose Altabrisa branch serves pour-over brews, espresso drinks, and pastries.",
+            "lat": 21.0217416,
+            "lng": -89.5822204,
+            "name": "Voltacafé Altabrisa"
+        },
+        {
+            "category": "dining",
+            "description": "Brasa Parrilla Uruguaya is an Uruguayan steakhouse in Mérida's Centro near Parque La Mejorada, grilling meats over charcoal in traditional parrilla style.",
+            "lat": 20.969962,
+            "lng": -89.618394,
+            "name": "Brasa Parrilla Uruguaya"
+        }
+    ],
+    "year": 2026
+}

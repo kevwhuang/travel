@@ -1,0 +1,275 @@
+{
+    "name": "South Texas",
+    "ordered": true,
+    "places": [
+        {
+            "category": "miscellaneous",
+            "description": "The Passport & Visa Company is an expediting agency in South Austin that handles rush passport renewals and travel visa processing.",
+            "lat": 30.2294478,
+            "lng": -97.7772847,
+            "name": "The Passport & Visa Company"
+        },
+        {
+            "category": "dining",
+            "description": "Firehouse Subs is a firefighter-founded American sandwich chain, this location serving hot subs in the Oaks at Slaughter center in South Austin.",
+            "lat": 30.1722683,
+            "lng": -97.785005,
+            "name": "Firehouse Subs"
+        },
+        {
+            "category": "dining",
+            "description": "JuiceLand is an Austin-born juice and smoothie chain known for fresh-pressed juices and vegan snacks, here on Slaughter Lane in South Austin.",
+            "lat": 30.1717812,
+            "lng": -97.7851616,
+            "name": "JuiceLand"
+        },
+        {
+            "category": "nature",
+            "description": "The Guadalupe River Access Trail is a shaded riverside path below Canyon Lake Dam near Sattler, Texas, winding among bald cypress trees.",
+            "lat": 29.8697359,
+            "lng": -98.1955637,
+            "name": "Guadalupe River Access Trail"
+        },
+        {
+            "category": "landmarks",
+            "description": "Gruene Historic District is a preserved 1870s German settlement in New Braunfels, Texas, home to Gruene Hall, the state's oldest dance hall.",
+            "lat": 29.738506,
+            "lng": -98.1045369,
+            "name": "Gruene Historic District"
+        },
+        {
+            "category": "urban",
+            "description": "H.D. Gruene Mercantile is a shop in a restored 1904 storefront in Gruene, Texas, selling apparel and goods from Texas makers.",
+            "lat": 29.738715,
+            "lng": -98.10423,
+            "name": "H.D. Gruene Mercantile"
+        },
+        {
+            "category": "nature",
+            "description": "Landa Park is a spring-fed public park in New Braunfels, Texas, known for the Comal Springs, paddle boats, and shaded picnic grounds.",
+            "lat": 29.7090026,
+            "lng": -98.13535,
+            "name": "Landa Park"
+        },
+        {
+            "category": "dining",
+            "description": "Hanzo is a Japanese-inspired izakaya and bar on Broadway in San Antonio's Alamo Heights area, known for craft cocktails and small plates.",
+            "lat": 29.4998233,
+            "lng": -98.467174,
+            "name": "Hanzo"
+        },
+        {
+            "category": "urban",
+            "description": "Days Inn & Suites by Wyndham Laredo is a budget hotel off Interstate 35 in Laredo, Texas, serving as an overnight base near the border.",
+            "lat": 27.5636628,
+            "lng": -99.5041321,
+            "name": "Days Inn & Suites by Wyndham Laredo"
+        },
+        {
+            "category": "dining",
+            "description": "Ramen Kai Noodle House is a small family-owned Japanese ramen shop on Springfield Avenue in Laredo, Texas, known for traditional and street-style bowls.",
+            "lat": 27.5430411,
+            "lng": -99.4921729,
+            "name": "Ramen Kai Noodle House"
+        },
+        {
+            "category": "landmarks",
+            "description": "San Agustín Plaza is the historic Spanish colonial square at the heart of downtown Laredo, Texas, anchored by San Agustín Cathedral.",
+            "lat": 27.5025981,
+            "lng": -99.50614,
+            "name": "San Agustín Plaza"
+        },
+        {
+            "category": "miscellaneous",
+            "description": "Target is a national retail chain, this Laredo, Texas, store serving as a practical stop for supplies and travel essentials.",
+            "lat": 27.5159282,
+            "lng": -99.4520874,
+            "name": "Target"
+        },
+        {
+            "category": "urban",
+            "description": "Ramada by Wyndham & Suites South Padre Island is a mid-range hotel on Padre Boulevard, a short walk from the island's Gulf beaches.",
+            "lat": 26.1321455,
+            "lng": -97.170524,
+            "name": "Ramada by Wyndham & Suites South Padre Island"
+        },
+        {
+            "category": "miscellaneous",
+            "description": "Stripes is a South Texas convenience store and gas station chain, this South Padre Island location a quick stop for fuel and snacks.",
+            "lat": 26.122616,
+            "lng": -97.1697045,
+            "name": "Stripes"
+        },
+        {
+            "category": "nature",
+            "description": "Sea Shell Beach is a quiet stretch of shoreline at the northern end of South Padre Island, Texas, known for abundant seashells and shallow water.",
+            "lat": 26.2504302,
+            "lng": -97.1856752,
+            "name": "Sea Shell Beach"
+        },
+        {
+            "category": "nature",
+            "description": "The South Padre Island Birding and Nature Center features boardwalks over Laguna Madre wetlands, offering views of migratory birds and resident alligators.",
+            "lat": 26.1374652,
+            "lng": -97.1742866,
+            "name": "South Padre Island Birding and Nature Center"
+        },
+        {
+            "category": "landmarks",
+            "description": "Sea Turtle, Inc. is a sea turtle rescue, rehabilitation, and education center on South Padre Island, Texas, where visitors can view recovering turtles.",
+            "lat": 26.1368605,
+            "lng": -97.1738288,
+            "name": "Sea Turtle, Inc."
+        },
+        {
+            "category": "nature",
+            "description": "Queen Isabella Memorial Park is a small waterfront park at the foot of the Queen Isabella Causeway on South Padre Island, popular for fishing and Laguna Madre views.",
+            "lat": 26.0847908,
+            "lng": -97.166284,
+            "name": "Queen Isabella Memorial Park"
+        },
+        {
+            "category": "nature",
+            "description": "Isla Blanca Beach is a broad Gulf beach at the southern tip of South Padre Island, Texas, known for its jetties, surfing, and dolphin sightings.",
+            "lat": 26.0705597,
+            "lng": -97.155122,
+            "name": "Isla Blanca Beach"
+        },
+        {
+            "category": "dining",
+            "description": "LongBoard Bar and Grill is a waterfront restaurant on South Padre Island known for fresh seafood, burgers, and daily live music.",
+            "lat": 26.0969544,
+            "lng": -97.1683511,
+            "name": "LongBoard Bar and Grill"
+        },
+        {
+            "category": "nature",
+            "description": "Laguna Atascosa National Wildlife Refuge protects coastal prairie and lagoon habitat near the Laguna Madre, sheltering ocelots and abundant birdlife.",
+            "lat": 26.2289704,
+            "lng": -97.3473127,
+            "name": "Laguna Atascosa National Wildlife Refuge"
+        },
+        {
+            "category": "landmarks",
+            "description": "Quinta Mazatlan is a historic 1930s adobe mansion in McAllen that now serves as a World Birding Center nature and events venue.",
+            "lat": 26.176732,
+            "lng": -98.2297691,
+            "name": "Quinta Mazatlan",
+            "starred": true
+        },
+        {
+            "category": "dining",
+            "description": "Tony's Kitchen is a family-owned deli in Edinburg serving sandwiches, pastas, and desserts built on bread baked daily from sourdough starter.",
+            "lat": 26.2996117,
+            "lng": -98.1522341,
+            "name": "Tony's Kitchen"
+        },
+        {
+            "category": "dining",
+            "description": "Vermillion Restaurant and Watering Hole is a Brownsville institution dating to 1934, famed for fajitas, enchiladas, and generous Tex-Mex portions.",
+            "lat": 25.9229074,
+            "lng": -97.4897247,
+            "name": "Vermillion Restaurant and Watering Hole"
+        },
+        {
+            "category": "landmarks",
+            "description": "The SpaceX Starship Orbital Launch Pad at Starbase near Boca Chica, Texas, is the launch site for the world's largest rocket.",
+            "lat": 25.9961646,
+            "lng": -97.1544529,
+            "name": "SpaceX Starship Orbital Launch Pad"
+        },
+        {
+            "category": "nature",
+            "description": "Boca Chica Beach is an undeveloped Gulf Coast beach at the Texas-Mexico border, popular for viewing nearby SpaceX Starship launches.",
+            "lat": 25.9965454,
+            "lng": -97.1500755,
+            "name": "Boca Chica Beach"
+        },
+        {
+            "category": "dining",
+            "description": "Marty McPies is a downtown Corpus Christi pizzeria known for crispy woodfired personal pies with inventive toppings like elote and hot honey.",
+            "lat": 27.7936596,
+            "lng": -97.3924837,
+            "name": "Marty McPies"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Selena Memorial Statue, or Mirador de la Flor, honors Tejano music star Selena Quintanilla on the Corpus Christi bayfront.",
+            "lat": 27.7966476,
+            "lng": -97.3910146,
+            "name": "Selena Memorial Statue"
+        },
+        {
+            "category": "nature",
+            "description": "The Corpus Christi Free Fishing Pier extends into Corpus Christi Bay near the Harbor Bridge, offering no-cost public fishing and bay views.",
+            "lat": 27.8146144,
+            "lng": -97.3893906,
+            "name": "Corpus Christi Free Fishing Pier"
+        },
+        {
+            "category": "nature",
+            "description": "North Beach is a sandy bayfront stretch in Corpus Christi near the USS Lexington and Texas State Aquarium, popular for swimming and strolling.",
+            "lat": 27.8244602,
+            "lng": -97.3844106,
+            "name": "North Beach"
+        },
+        {
+            "category": "nature",
+            "description": "Indian Point Pier is a lighted fishing pier on Corpus Christi Bay in Portland, Texas, known for wade fishing and birdwatching.",
+            "lat": 27.8501802,
+            "lng": -97.3536783,
+            "name": "Indian Point Pier"
+        },
+        {
+            "category": "urban",
+            "description": "Quality Inn Ingleside is a budget chain hotel in Ingleside, Texas, serving as a practical overnight base near Corpus Christi Bay.",
+            "lat": 27.884342,
+            "lng": -97.216779,
+            "name": "Quality Inn Ingleside"
+        },
+        {
+            "category": "dining",
+            "description": "Butter Churn is a family-owned buffet restaurant in Aransas Pass, Texas, serving all-you-can-eat country cooking like chicken fried steak and brisket.",
+            "lat": 27.9217285,
+            "lng": -97.1637813,
+            "name": "Butter Churn"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Texas State Aquarium in Corpus Christi showcases Gulf of Mexico and Caribbean marine life, including dolphins, sharks, and sea turtles.",
+            "lat": 27.813759,
+            "lng": -97.3919688,
+            "name": "Texas State Aquarium"
+        },
+        {
+            "category": "landmarks",
+            "description": "The USS Lexington is a World War II aircraft carrier permanently moored in Corpus Christi Bay as a naval museum ship.",
+            "lat": 27.8150729,
+            "lng": -97.3887026,
+            "name": "USS Lexington",
+            "starred": true
+        },
+        {
+            "category": "dining",
+            "description": "Mozzafiato is a locally owned Italian restaurant in Corpus Christi known for brick-oven pizza, fried mozzarella, and homemade desserts.",
+            "lat": 27.7825456,
+            "lng": -97.4016339,
+            "name": "Mozzafiato"
+        },
+        {
+            "category": "dining",
+            "description": "Seguin Schoolyard is a food truck park and entertainment venue in a repurposed elementary school in downtown Seguin, Texas.",
+            "lat": 29.5705542,
+            "lng": -97.9709187,
+            "name": "Seguin Schoolyard"
+        },
+        {
+            "category": "dining",
+            "description": "sMAC'n Noodles is an eatery at the Seguin Schoolyard specializing in customizable macaroni and cheese bowls with inventive mix-ins.",
+            "lat": 29.5705612,
+            "lng": -97.9707854,
+            "name": "sMAC'n Noodles"
+        }
+    ],
+    "year": 2026
+}

@@ -1,6 +1,9 @@
 ---
-import '@fontsource/geist-sans/400.css';
-import '@fontsource/geist-sans/600.css';
+import '@fontsource/fragment-mono/400.css';
+import '@fontsource/gloock/400.css';
+import '@fontsource/schibsted-grotesk/400.css';
+import '@fontsource/schibsted-grotesk/500.css';
+import '@fontsource/schibsted-grotesk/600.css';
 import { ClientRouter } from 'astro:transitions';
 
 import '@/global.css';
@@ -25,7 +28,7 @@ const ogImageUrl = `${Astro.site}og.png`;
         <title>{title}</title>
         <meta content={description} name="description" />
         <meta content="Kevin Huang" name="author" />
-        <meta content="#09090b" name="theme-color" />
+        <meta content="#f3f5f4" name="theme-color" />
         <meta content={noindex ? 'noindex, nofollow' : 'index, follow'} name="robots" />
         <link href={canonicalUrl} rel="canonical" />
         <link href="/apple-touch-icon.png" rel="apple-touch-icon" />
@@ -57,7 +60,7 @@ const ogImageUrl = `${Astro.site}og.png`;
         />
         <ClientRouter />
     </head>
-    <body class="flex flex-col min-h-screen antialiased font-sans bg-zinc-950 text-white">
+    <body class="flex flex-col min-h-screen antialiased font-sans bg-paper text-ink">
         <main class="flex flex-1 flex-col">
             <slot />
         </main>

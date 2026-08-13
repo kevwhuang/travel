@@ -1,0 +1,595 @@
+{
+    "name": "Chihuahuan",
+    "ordered": true,
+    "places": [
+        {
+            "category": "dining",
+            "description": "Spicy Boys Fried Chicken is a food truck on Springdale Road in Austin, known for Thai-influenced fried chicken sandwiches and wings.",
+            "lat": 30.325732,
+            "lng": -97.6579951,
+            "name": "Spicy Boys Fried Chicken"
+        },
+        {
+            "category": "dining",
+            "description": "KG BBQ is an Austin food truck where pitmaster Kareem El-Ghayesh fuses Texas barbecue with Egyptian flavors like pomegranate and za'atar.",
+            "lat": 30.2867548,
+            "lng": -97.7051671,
+            "name": "KG BBQ"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Austin Central Library is a six-story public library on Lady Bird Lake, known for its light-filled atrium and rooftop garden.",
+            "lat": 30.2657787,
+            "lng": -97.7519331,
+            "name": "Austin Central Library"
+        },
+        {
+            "category": "dining",
+            "description": "Mozart's Coffee Roasters is a coffeehouse on the shore of Lake Austin, known for house-roasted coffee, desserts, and its waterfront deck.",
+            "lat": 30.2954696,
+            "lng": -97.7839512,
+            "name": "Mozart's Coffee Roasters"
+        },
+        {
+            "category": "urban",
+            "description": "The Domain is a large open-air shopping, dining, and entertainment district in north Austin, often called the city's second downtown.",
+            "lat": 30.4020649,
+            "lng": -97.7258829,
+            "name": "The Domain",
+            "starred": true
+        },
+        {
+            "category": "urban",
+            "description": "The North Face is an outdoor apparel and gear store at The Domain in north Austin, stocking jackets, packs, and hiking equipment.",
+            "lat": 30.4029516,
+            "lng": -97.7230822,
+            "name": "The North Face"
+        },
+        {
+            "category": "urban",
+            "description": "REI is an outdoor recreation co-op store in north Austin, a practical stop for camping, hiking, and climbing gear before desert travel.",
+            "lat": 30.389364,
+            "lng": -97.740595,
+            "name": "REI"
+        },
+        {
+            "category": "dining",
+            "description": "Home Slice Pizza is an Austin pizzeria known for classic New York-style pies and slices in a casual, lively setting.",
+            "lat": 30.3159212,
+            "lng": -97.7184979,
+            "name": "Home Slice Pizza"
+        },
+        {
+            "category": "miscellaneous",
+            "description": "Advance Auto Parts is a national auto-parts retailer in north Austin, a practical stop for car supplies before the long West Texas drive.",
+            "lat": 30.4133677,
+            "lng": -97.6920795,
+            "name": "Advance Auto Parts"
+        },
+        {
+            "category": "nature",
+            "description": "Enchanted Rock is a massive pink granite dome north of Fredericksburg, Texas, popular for summit hikes and sweeping Hill Country views.",
+            "lat": 30.5065789,
+            "lng": -98.8189304,
+            "name": "Enchanted Rock"
+        },
+        {
+            "category": "dining",
+            "description": "Hitchin' Post Steakhouse is a casual restaurant in downtown Fredericksburg, Texas, serving steaks, fried chicken, and Texas comfort food.",
+            "lat": 30.2733431,
+            "lng": -98.8709186,
+            "name": "Hitchin' Post Steakhouse"
+        },
+        {
+            "category": "urban",
+            "description": "Fredericksburg General Store is a gift shop on historic Main Street in Fredericksburg, Texas, selling nostalgic candy, preserves, and souvenirs.",
+            "lat": 30.274108,
+            "lng": -98.871364,
+            "name": "Fredericksburg General Store"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Cross at Kerrville is a 77-foot steel cross, The Empty Cross, rising above the Coming King Sculpture Prayer Garden in Kerrville, Texas.",
+            "lat": 30.0742928,
+            "lng": -99.114171,
+            "name": "The Cross at Kerrville"
+        },
+        {
+            "category": "nature",
+            "description": "Garner State Park is a popular Texas Hill Country park on the Frio River, known for swimming, hiking, and summertime dances.",
+            "lat": 29.5990117,
+            "lng": -99.7439308,
+            "name": "Garner State Park"
+        },
+        {
+            "category": "urban",
+            "description": "Courtyard by Marriott San Angelo is a riverside hotel in San Angelo, Texas, serving as an overnight base along the route west.",
+            "lat": 31.4401388,
+            "lng": -100.4956706,
+            "name": "Courtyard by Marriott San Angelo"
+        },
+        {
+            "category": "miscellaneous",
+            "description": "H-E-B is a Texas supermarket chain location in San Angelo, a practical stop for groceries and road-trip supplies.",
+            "lat": 31.4439109,
+            "lng": -100.4787078,
+            "name": "H-E-B"
+        },
+        {
+            "category": "dining",
+            "description": "Jason's Deli is a Texas-founded chain restaurant in San Angelo, known for sandwiches, soups, its salad bar, and free soft-serve ice cream.",
+            "lat": 31.4283061,
+            "lng": -100.4578009,
+            "name": "Jason's Deli"
+        },
+        {
+            "category": "landmarks",
+            "description": "Fort Concho is a preserved 1867 frontier army post in San Angelo, Texas, with restored stone barracks and living-history museums.",
+            "lat": 31.4547729,
+            "lng": -100.4312343,
+            "name": "Fort Concho National Historic Landmark"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Permian Basin Petroleum Museum is an oil-industry museum in Midland, Texas, known for drilling exhibits, antique rigs, and its Chaparral race-car gallery.",
+            "lat": 31.9720665,
+            "lng": -102.0851728,
+            "name": "Permian Basin Petroleum Museum"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Stonehenge Replica is a limestone re-creation of the English monument at 70 percent height on the UT Permian Basin campus in Odessa, Texas.",
+            "lat": 31.8919472,
+            "lng": -102.3262472,
+            "name": "Stonehenge Replica"
+        },
+        {
+            "category": "dining",
+            "description": "Smoothie King is a national smoothie chain location in Odessa, Texas, a quick stop for blended fruit drinks on the road.",
+            "lat": 31.8850747,
+            "lng": -102.374304,
+            "name": "Smoothie King"
+        },
+        {
+            "category": "urban",
+            "description": "Comfort Suites Carlsbad is an all-suite hotel in Carlsbad, New Mexico, a convenient base for visiting Carlsbad Caverns National Park.",
+            "lat": 32.4449226,
+            "lng": -104.260809,
+            "name": "Comfort Suites Carlsbad"
+        },
+        {
+            "category": "dining",
+            "description": "Buffalo Wild Wings is a national sports-bar chain location in Carlsbad, New Mexico, serving wings, burgers, and beer amid wall-to-wall game screens.",
+            "lat": 32.435827,
+            "lng": -104.2485514,
+            "name": "Buffalo Wild Wings"
+        },
+        {
+            "category": "dining",
+            "description": "Dragon China Buffet is a Chinese buffet restaurant on South Canal Street in Carlsbad, New Mexico, offering stir-fries, sushi, and generous all-you-can-eat spreads.",
+            "lat": 32.3975,
+            "lng": -104.2225,
+            "name": "Dragon China Buffet"
+        },
+        {
+            "category": "nature",
+            "description": "Carlsbad Caverns National Park is a southern New Mexico park protecting over 119 limestone caves, known for the vast Big Room and evening bat flights.",
+            "lat": 32.137045,
+            "lng": -104.5437529,
+            "name": "Carlsbad Caverns National Park",
+            "starred": true
+        },
+        {
+            "category": "dining",
+            "description": "Joe's Italian is a family-friendly restaurant in Carlsbad, New Mexico, serving classic Italian dishes and pizza in generous portions.",
+            "lat": 32.4148614,
+            "lng": -104.2543162,
+            "name": "Joe's Italian"
+        },
+        {
+            "category": "urban",
+            "description": "The Roswell UFO Spacewalk is a walk-through blacklight art attraction in downtown Roswell, New Mexico, depicting aliens and outer-space scenes by artist Bryan Ward.",
+            "lat": 33.3940513,
+            "lng": -104.5218015,
+            "name": "Roswell UFO Spacewalk"
+        },
+        {
+            "category": "urban",
+            "description": "Spaceport Roswell is a virtual-reality ride attraction on Main Street in Roswell, New Mexico, simulating journeys to the 1947 UFO crash and Apollo 11.",
+            "lat": 33.3943949,
+            "lng": -104.5223344,
+            "name": "Spaceport Roswell"
+        },
+        {
+            "category": "dining",
+            "description": "The Soft Pretzel and Ice Cream Shop is a downtown Roswell snack spot known for fresh-baked pretzels, hand-dipped ice cream, and homemade fudge.",
+            "lat": 33.395519,
+            "lng": -104.522504,
+            "name": "The Soft Pretzel and Ice Cream Shop"
+        },
+        {
+            "category": "nature",
+            "description": "The Osha Trail is a popular forested loop hike near Cloudcroft, New Mexico, offering mountain views and cool pine-and-aspen scenery in the Sacramento Mountains.",
+            "lat": 32.9614716,
+            "lng": -105.7451979,
+            "name": "Osha Trail Trailhead"
+        },
+        {
+            "category": "nature",
+            "description": "Tunnel Vista is a roadside overlook beside the highway tunnel on US 82 near Cloudcroft, with sweeping views of Fresnal Canyon and the Tularosa Basin.",
+            "lat": 32.9461723,
+            "lng": -105.8602633,
+            "name": "Tunnel Vista Observation Site"
+        },
+        {
+            "category": "urban",
+            "description": "The Radisson Hotel El Paso Airport is a full-service hotel near El Paso International Airport, serving as a convenient base for travelers in West Texas.",
+            "lat": 31.7936244,
+            "lng": -106.3950808,
+            "name": "Radisson Hotel El Paso Airport"
+        },
+        {
+            "category": "dining",
+            "description": "Denny's is an American diner chain location near El Paso International Airport, a practical stop for pancakes, burgers, and classic breakfast fare.",
+            "lat": 31.7891993,
+            "lng": -106.3968638,
+            "name": "Denny's"
+        },
+        {
+            "category": "dining",
+            "description": "Kona Grill is an upscale casual chain restaurant in El Paso serving American fare, sushi, and cocktails in a contemporary setting.",
+            "lat": 31.7699659,
+            "lng": -106.3724955,
+            "name": "Kona Grill"
+        },
+        {
+            "category": "nature",
+            "description": "Franklin Mountains State Park is one of the largest urban parks in the United States, known for rugged Chihuahuan Desert hiking and climbing within El Paso.",
+            "lat": 31.9105609,
+            "lng": -106.518116,
+            "name": "Franklin Mountains State Park",
+            "starred": true
+        },
+        {
+            "category": "nature",
+            "description": "West Overlook 1 is a scenic viewpoint on the western slopes of the Franklin Mountains in El Paso, overlooking the surrounding Chihuahuan Desert.",
+            "lat": 31.8829838,
+            "lng": -106.503912,
+            "name": "West Overlook 1"
+        },
+        {
+            "category": "landmarks",
+            "description": "San Jacinto Plaza is the historic central square of downtown El Paso, known for its alligator sculpture, shade trees, and community events.",
+            "lat": 31.7596192,
+            "lng": -106.4885225,
+            "name": "San Jacinto Plaza"
+        },
+        {
+            "category": "urban",
+            "description": "12001 Paseo De Oro Ln is a private residence in east El Paso, Texas, used as a home-base stay during the trip.",
+            "lat": 31.7657458,
+            "lng": -106.2758952,
+            "name": "12001 Paseo De Oro Ln"
+        },
+        {
+            "category": "dining",
+            "description": "China 1 is a casual Chinese restaurant on Pebble Hills Boulevard in east El Paso, serving familiar takeout staples like fried rice and lo mein.",
+            "lat": 31.7817222,
+            "lng": -106.2858199,
+            "name": "China 1"
+        },
+        {
+            "category": "nature",
+            "description": "Hueco Tanks is a state park and historic site east of El Paso, known for water-holding rock basins, ancient pictographs, and world-class bouldering.",
+            "lat": 31.9163705,
+            "lng": -106.0434449,
+            "name": "Hueco Tanks State Park & Historic Site"
+        },
+        {
+            "category": "nature",
+            "description": "White Sands National Park is a Chihuahuan Desert park in New Mexico's Tularosa Basin, known for the world's largest gypsum dunefield of brilliant white sand.",
+            "lat": 32.7872403,
+            "lng": -106.3256816,
+            "name": "White Sands National Park",
+            "starred": true
+        },
+        {
+            "category": "nature",
+            "description": "Scenic Overlook Rest Area is a roadside rest stop west of Las Cruces, known for panoramic views over the Mesilla Valley and the Organ Mountains.",
+            "lat": 32.2813637,
+            "lng": -106.8666808,
+            "name": "Scenic Overlook Rest Area"
+        },
+        {
+            "category": "dining",
+            "description": "Umami Ramen House is a Japanese restaurant on North Mesa Street in El Paso, known for homemade noodles and tonkotsu broth simmered for hours.",
+            "lat": 31.8180228,
+            "lng": -106.5146855,
+            "name": "Umami Ramen House"
+        },
+        {
+            "category": "miscellaneous",
+            "description": "Family Dollar is a discount variety store in El Paso, a practical stop for inexpensive snacks and everyday supplies on the road.",
+            "lat": 31.7957481,
+            "lng": -106.5106153,
+            "name": "Family Dollar"
+        },
+        {
+            "category": "landmarks",
+            "description": "Prada Marfa is a permanent sculptural art installation resembling a Prada boutique, standing alone along US 90 in the West Texas desert near Valentine.",
+            "lat": 30.6034606,
+            "lng": -104.5184835,
+            "name": "Prada Marfa"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Chinati Foundation is a contemporary art museum founded by Donald Judd on a former army fort in Marfa, showcasing large-scale permanent installations.",
+            "lat": 30.3000247,
+            "lng": -104.0260464,
+            "name": "The Chinati Foundation"
+        },
+        {
+            "category": "nature",
+            "description": "Davis Mountains State Park is a high-desert mountain park near Fort Davis, Texas, known for scenic drives, hiking trails, and one of Texas's coolest climates.",
+            "lat": 30.5991199,
+            "lng": -103.9294064,
+            "name": "Davis Mountains State Park",
+            "starred": true
+        },
+        {
+            "category": "urban",
+            "description": "Hotel Parker at Quarter Circle 7 is a ranch-family-owned hotel in Alpine, Texas, set among Chihuahuan Desert foothills with views toward the Davis Mountains.",
+            "lat": 30.3476867,
+            "lng": -103.6963393,
+            "name": "Hotel Parker at Quarter Circle 7"
+        },
+        {
+            "category": "dining",
+            "description": "Spicewood Restaurant is the on-site eatery at the Quarter Circle 7 Hotel in Alpine, Texas, serving Western-style American dishes and craft cocktails.",
+            "lat": 30.3474792,
+            "lng": -103.6936999,
+            "name": "Spicewood Restaurant"
+        },
+        {
+            "category": "dining",
+            "description": "Line Thai Cafe is a small Thai restaurant in Alpine, Texas, known for generous portions of dishes like pad thai and yellow curry.",
+            "lat": 30.3567152,
+            "lng": -103.6657816,
+            "name": "Line Thai Cafe"
+        },
+        {
+            "category": "landmarks",
+            "description": "Fort Leaton State Historic Site is a preserved 1848 adobe trading post on the Rio Grande near Presidio, Texas, along the historic Chihuahua Trail.",
+            "lat": 29.5427693,
+            "lng": -104.3265076,
+            "name": "Fort Leaton State Historic Site"
+        },
+        {
+            "category": "nature",
+            "description": "Big Bend Ranch State Park is the largest state park in Texas, known for remote rugged canyons and desert wilderness along the Rio Grande.",
+            "lat": 29.4771863,
+            "lng": -103.9914471,
+            "name": "Big Bend Ranch State Park"
+        },
+        {
+            "category": "urban",
+            "description": "Terlingua Trading Company is a longtime general store and gift shop in the Terlingua Ghost Town, adjacent to the famous Starlight Theatre porch.",
+            "lat": 29.3210678,
+            "lng": -103.6168976,
+            "name": "Terlingua Trading Company"
+        },
+        {
+            "category": "dining",
+            "description": "Dead Hungry is a food truck in Terlingua, Texas, serving hearty slow-cooked international dishes and known as the town's late-night eating option.",
+            "lat": 29.3209183,
+            "lng": -103.6132162,
+            "name": "Dead Hungry"
+        },
+        {
+            "category": "dining",
+            "description": "DB's Rustic Iron BBQ is a barbecue joint in Terlingua Ghost Town, known for Texas-style brisket and ribs with desert mountain views.",
+            "lat": 29.3176253,
+            "lng": -103.6104016,
+            "name": "DB's Rustic Iron BBQ"
+        },
+        {
+            "category": "miscellaneous",
+            "description": "ALON Gas Station is a fuel station in Marathon, Texas, a practical supply stop before the long remote drive into the Big Bend region.",
+            "lat": 30.2066404,
+            "lng": -103.2371846,
+            "name": "ALON Gas Station"
+        },
+        {
+            "category": "nature",
+            "description": "Big Bend National Park is a vast Chihuahuan Desert park in West Texas, known for the Chisos Mountains and Rio Grande canyons.",
+            "lat": 29.2498194,
+            "lng": -103.2501636,
+            "name": "Big Bend National Park",
+            "starred": true
+        },
+        {
+            "category": "miscellaneous",
+            "description": "AutoZone Auto Parts is a national auto-parts retailer in Alpine, Texas, a practical stop for vehicle supplies on the trip.",
+            "lat": 30.359316,
+            "lng": -103.6537434,
+            "name": "AutoZone Auto Parts"
+        },
+        {
+            "category": "dining",
+            "description": "McDonald's is a fast-food chain location in Alpine, Texas, a quick stop for burgers and fries on the road.",
+            "lat": 30.3606491,
+            "lng": -103.6534075,
+            "name": "McDonald's"
+        },
+        {
+            "category": "miscellaneous",
+            "description": "ALON Gas Station is a fuel station in Study Butte, Texas, a key refueling stop near Big Bend National Park's west entrance.",
+            "lat": 29.3291447,
+            "lng": -103.5343281,
+            "name": "ALON Gas Station"
+        },
+        {
+            "category": "landmarks",
+            "description": "Paisano Pete is a giant roadrunner statue in Fort Stockton, Texas, long celebrated as one of the world's largest roadrunners.",
+            "lat": 30.8929252,
+            "lng": -102.8788487,
+            "name": "Paisano Pete"
+        },
+        {
+            "category": "dining",
+            "description": "V's Kitchen is a family-owned diner in Fort Stockton, Texas, known for scratch-made burgers and homemade fries near Interstate 10.",
+            "lat": 30.8985366,
+            "lng": -102.8796656,
+            "name": "V's Kitchen"
+        },
+        {
+            "category": "urban",
+            "description": "Drury Inn & Suites North Stone Oak is a mid-scale hotel in northern San Antonio that served as the trip's city base.",
+            "lat": 29.6108078,
+            "lng": -98.4820663,
+            "name": "Drury Inn & Suites San Antonio North Stone Oak"
+        },
+        {
+            "category": "urban",
+            "description": "The Rim is a sprawling open-air shopping and entertainment center in northwest San Antonio with major retailers and restaurants.",
+            "lat": 29.6093669,
+            "lng": -98.5987734,
+            "name": "The Rim"
+        },
+        {
+            "category": "dining",
+            "description": "North Italia is an upscale Italian restaurant chain serving handmade pasta and pizza at The Rim shopping center in San Antonio.",
+            "lat": 29.6109661,
+            "lng": -98.5989401,
+            "name": "North Italia"
+        },
+        {
+            "category": "nature",
+            "description": "Brackenridge Park is a historic 343-acre urban park along the San Antonio River, home to trails, gardens, and the city zoo.",
+            "lat": 29.4591001,
+            "lng": -98.4714912,
+            "name": "Brackenridge Park"
+        },
+        {
+            "category": "nature",
+            "description": "The Japanese Tea Garden is a 1918 landscaped garden in San Antonio's Brackenridge Park, built in a former quarry with koi ponds and a waterfall.",
+            "lat": 29.4607351,
+            "lng": -98.4773381,
+            "name": "Japanese Tea Garden"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Tower of the Americas is a 750-foot observation tower in downtown San Antonio built for the 1968 World's Fair.",
+            "lat": 29.4189838,
+            "lng": -98.483512,
+            "name": "Tower of the Americas"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Alamo is an 18th-century Spanish mission in San Antonio, famed as the site of the pivotal 1836 battle for Texas independence.",
+            "lat": 29.4259671,
+            "lng": -98.4861419,
+            "name": "The Alamo"
+        },
+        {
+            "category": "nature",
+            "description": "Natural Bridge Caverns is the largest known commercial cavern system in Texas, offering guided tours of vast limestone chambers near San Antonio.",
+            "lat": 29.6924095,
+            "lng": -98.3427276,
+            "name": "Natural Bridge Caverns"
+        },
+        {
+            "category": "urban",
+            "description": "The San Antonio River Walk is a network of riverside pedestrian paths below downtown street level, lined with restaurants and shops.",
+            "lat": 29.4229737,
+            "lng": -98.486034,
+            "name": "San Antonio River Walk",
+            "starred": true
+        },
+        {
+            "category": "landmarks",
+            "description": "La Villita is San Antonio's original neighborhood, now a historic arts village of galleries and shops beside the River Walk.",
+            "lat": 29.4217035,
+            "lng": -98.4891147,
+            "name": "La Villita Historic Village"
+        },
+        {
+            "category": "dining",
+            "description": "Tokyo Cowboy is an Asian-fusion restaurant on the San Antonio River Walk pairing Japanese street food with a Texan aesthetic.",
+            "lat": 29.4248388,
+            "lng": -98.4922737,
+            "name": "Tokyo Cowboy"
+        },
+        {
+            "category": "landmarks",
+            "description": "San Fernando Cathedral is a 1730s church on San Antonio's Main Plaza, among the oldest cathedrals in the United States.",
+            "lat": 29.4245523,
+            "lng": -98.494132,
+            "name": "San Fernando Cathedral"
+        },
+        {
+            "category": "nature",
+            "description": "Milam Park is a historic downtown San Antonio green space across from Market Square, containing the grave of Texas revolutionary Ben Milam.",
+            "lat": 29.4260398,
+            "lng": -98.4991236,
+            "name": "Milam Park"
+        },
+        {
+            "category": "miscellaneous",
+            "description": "Buc-ee's is a Texas travel-center chain location in New Braunfels, known as one of the world's largest convenience stores.",
+            "lat": 29.7263226,
+            "lng": -98.0783589,
+            "name": "Buc-ee's"
+        },
+        {
+            "category": "miscellaneous",
+            "description": "Target is a national retail chain location in south Austin, a convenient supply stop during the trip.",
+            "lat": 30.1633333,
+            "lng": -97.7934564,
+            "name": "Target"
+        },
+        {
+            "category": "urban",
+            "description": "Goodnight Ranch is a master-planned residential community in Southeast Austin that served as a private home-base stay for the trip.",
+            "lat": 30.1539346,
+            "lng": -97.7574711,
+            "name": "Goodnight Ranch"
+        },
+        {
+            "category": "miscellaneous",
+            "description": "WhiteWater Express Car Wash is a Texas car-wash chain location in north Austin, a quick stop for a post-desert vehicle cleanup.",
+            "lat": 30.3850513,
+            "lng": -97.6463922,
+            "name": "WhiteWater Express Car Wash"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Bullock Texas State History Museum is a museum near the Capitol in Austin, telling the story of Texas across three floors of exhibits.",
+            "lat": 30.280337,
+            "lng": -97.7390687,
+            "name": "Bullock Texas State History Museum"
+        },
+        {
+            "category": "urban",
+            "description": "The Texas Capitol Mall is a landscaped pedestrian promenade along Congress Avenue north of the Capitol, centerpiece of Austin's Capitol Complex.",
+            "lat": 30.2787192,
+            "lng": -97.7388412,
+            "name": "Texas Capitol Mall"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Texas State Capitol in Austin is an 1888 Renaissance Revival landmark of pink granite, taller than the U.S. Capitol.",
+            "lat": 30.2746652,
+            "lng": -97.7403505,
+            "name": "Texas Capitol"
+        },
+        {
+            "category": "urban",
+            "description": "Austin-Bergstrom International Airport is the main airport serving Austin, Texas, known for its live music stages and local food vendors.",
+            "lat": 30.194085,
+            "lng": -97.6710889,
+            "name": "Austin-Bergstrom International Airport"
+        }
+    ],
+    "year": 2026
+}

@@ -1,0 +1,213 @@
+{
+    "name": "Monterrey",
+    "ordered": true,
+    "places": [
+        {
+            "category": "urban",
+            "description": "Monterrey International Airport in Apodaca is the main air gateway to Nuevo León and northeastern Mexico.",
+            "lat": 25.7788305,
+            "lng": -100.1094654,
+            "name": "Monterrey International Airport"
+        },
+        {
+            "category": "urban",
+            "description": "Hotel Galería Plaza Monterrey is a modern high-rise hotel near the Macroplaza, serving as a central base in downtown Monterrey.",
+            "lat": 25.666102,
+            "lng": -100.3228374,
+            "name": "Hotel Galería Plaza Monterrey"
+        },
+        {
+            "category": "dining",
+            "description": "Palax is a long-running 24-hour diner in Monterrey's Obispado district, known for regional dishes like machacado con huevo and menudo.",
+            "lat": 25.673244,
+            "lng": -100.3507317,
+            "name": "Palax"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Macroplaza is one of the world's largest city squares, anchoring downtown Monterrey with the Faro del Comercio and government palaces.",
+            "lat": 25.6692292,
+            "lng": -100.3099193,
+            "name": "Macroplaza"
+        },
+        {
+            "category": "dining",
+            "description": "Once60 is a norteño grill and cultural venue by Paseo Santa Lucía in Monterrey, pairing regional barbecue with live northern music.",
+            "lat": 25.6706615,
+            "lng": -100.3071382,
+            "name": "Once60"
+        },
+        {
+            "category": "urban",
+            "description": "Paseo Santa Lucía is a landscaped artificial riverwalk in Monterrey linking the Macroplaza to Fundidora Park, navigable by sightseeing boats.",
+            "lat": 25.6709747,
+            "lng": -100.3061182,
+            "name": "Paseo Santa Lucía",
+            "starred": true
+        },
+        {
+            "category": "landmarks",
+            "description": "The Mexican Baseball Hall of Fame in Monterrey's Fundidora Park honors the greatest players and history of Mexican professional baseball.",
+            "lat": 25.6728637,
+            "lng": -100.2954987,
+            "name": "Mexican Baseball Hall of Fame"
+        },
+        {
+            "category": "urban",
+            "description": "Cinépolis Galerías Monterrey is a multiplex cinema inside the Galerías Monterrey shopping mall on the city's west side.",
+            "lat": 25.680479,
+            "lng": -100.355038,
+            "name": "Cinépolis Galerías Monterrey"
+        },
+        {
+            "category": "dining",
+            "description": "Roland Coffee Bar is a vinyl-driven listening café in Monterrey's Barrio Antiguo, serving specialty coffee by day and cocktails at night.",
+            "lat": 25.6665501,
+            "lng": -100.3065729,
+            "name": "Roland Coffee Bar"
+        },
+        {
+            "category": "wellness",
+            "description": "Smart Fit Punta Cero is a branch of the Latin American budget gym chain in eastern Monterrey, offering machines and group classes.",
+            "lat": 25.6764497,
+            "lng": -100.2902207,
+            "name": "Smart Fit Punta Cero"
+        },
+        {
+            "category": "nature",
+            "description": "Fundidora Park is a vast public park in Monterrey built on a former steel foundry, mixing green space with industrial heritage and museums.",
+            "lat": 25.6786078,
+            "lng": -100.2842013,
+            "name": "Fundidora Park",
+            "starred": true
+        },
+        {
+            "category": "dining",
+            "description": "UMAMI Ramen House is a Japanese restaurant on Río Orinoco in San Pedro Garza García, known for miso ramen and gyoza.",
+            "lat": 25.6582548,
+            "lng": -100.3600581,
+            "name": "UMAMI Ramen House Río Orinoco"
+        },
+        {
+            "category": "dining",
+            "description": "Bendito Café is a cozy coffee shop beside the Santa Lucía riverwalk in Monterrey, serving Mexican specialty coffee, crepes, and pastries.",
+            "lat": 25.6730885,
+            "lng": -100.2999004,
+            "name": "Bendito Café"
+        },
+        {
+            "category": "landmarks",
+            "description": "Museo del Acero Horno³ is a science museum built inside a preserved blast furnace in Fundidora Park, chronicling Monterrey's steelmaking history.",
+            "lat": 25.676103,
+            "lng": -100.282563,
+            "name": "Museo del Acero Horno³"
+        },
+        {
+            "category": "nature",
+            "description": "Rufino Tamayo Park is a leafy public park in San Pedro Garza García, popular for jogging paths, sculptures, and weekend markets.",
+            "lat": 25.6448967,
+            "lng": -100.328898,
+            "name": "Rufino Tamayo Park"
+        },
+        {
+            "category": "landmarks",
+            "description": "Museo La Milarca is a museum in San Pedro Garza García's Rufino Tamayo Park, exhibiting some 3,500 works of art, antiques, and numismatic pieces.",
+            "lat": 25.6443734,
+            "lng": -100.3273327,
+            "name": "Museo La Milarca"
+        },
+        {
+            "category": "urban",
+            "description": "Fashion Drive is an upscale shopping and dining complex in San Pedro Garza García, part of Monterrey's Valle Oriente commercial corridor.",
+            "lat": 25.6512503,
+            "lng": -100.3349906,
+            "name": "Fashion Drive"
+        },
+        {
+            "category": "dining",
+            "description": "Yi Hotpot is a Chinese hot pot restaurant in Plaza Áuriga, San Pedro Garza García, where diners build their own simmering broths.",
+            "lat": 25.6482377,
+            "lng": -100.3389912,
+            "name": "Yi Hotpot"
+        },
+        {
+            "category": "miscellaneous",
+            "description": "H-E-B Valle Oriente is a large supermarket in San Pedro Garza García, a convenient stop for groceries and travel supplies.",
+            "lat": 25.641632,
+            "lng": -100.332814,
+            "name": "H-E-B Valle Oriente"
+        },
+        {
+            "category": "dining",
+            "description": "San Huevito is a small breakfast spot in Monterrey's Obispado area, serving egg-centered sandwiches, bowls, and muffins with homemade sauces.",
+            "lat": 25.671259,
+            "lng": -100.3390309,
+            "name": "San Huevito"
+        },
+        {
+            "category": "nature",
+            "description": "The Mirador del Obispado is a hilltop lookout atop Cerro del Obispado, offering panoramic views of Monterrey beneath a giant Mexican flag.",
+            "lat": 25.6762642,
+            "lng": -100.346273,
+            "name": "Mirador del Obispado"
+        },
+        {
+            "category": "wellness",
+            "description": "Casa Azul Spa's Obispado branch in Monterrey offers therapeutic massages and body treatments using quartz, stones, chocolate, and mezcal rituals.",
+            "lat": 25.679054,
+            "lng": -100.346668,
+            "name": "Casa Azul Spa Obispado"
+        },
+        {
+            "category": "dining",
+            "description": "Taquería Orinoco's Centrito Valle branch serves the Monterrey-born chain's famous norteño-style trompo, res, and chicharrón tacos in San Pedro Garza García.",
+            "lat": 25.6602606,
+            "lng": -100.3675049,
+            "name": "Taquería Orinoco Centrito Valle"
+        },
+        {
+            "category": "dining",
+            "description": "El Gaucho is an Argentine steakhouse operating in Monterrey since 1968, famed for mesquite-grilled cuts, churrasco, and empanadas.",
+            "lat": 25.6419281,
+            "lng": -100.2869997,
+            "name": "El Gaucho"
+        },
+        {
+            "category": "dining",
+            "description": "Casamor is a beloved café and fondita in San Pedro Garza García, known for chilaquiles, huevos motuleños, and fluffy pancakes at breakfast.",
+            "lat": 25.6558623,
+            "lng": -100.3586632,
+            "name": "Casamor"
+        },
+        {
+            "category": "nature",
+            "description": "Chipinque Ecological Park is a forested reserve in the Sierra Madre above San Pedro Garza García, offering hiking trails and city views.",
+            "lat": 25.618744,
+            "lng": -100.3602415,
+            "name": "Chipinque Ecological Park",
+            "starred": true
+        },
+        {
+            "category": "dining",
+            "description": "El Gran Pastor is a classic Monterrey restaurant on Avenida Gonzalitos, renowned for cabrito, the region's signature roast kid goat.",
+            "lat": 25.6769701,
+            "lng": -100.3526842,
+            "name": "El Gran Pastor"
+        },
+        {
+            "category": "dining",
+            "description": "Lu'um Coffee Shop is an espresso bar in central Monterrey that doubles as a boutique flower and gift shop.",
+            "lat": 25.6761223,
+            "lng": -100.3248279,
+            "name": "Lu'um Coffee Shop"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Mexican History Museum beside the Santa Lucía riverwalk in Monterrey traces Mexico's story from pre-Hispanic civilizations to the modern era.",
+            "lat": 25.6716779,
+            "lng": -100.3064569,
+            "name": "Mexican History Museum"
+        }
+    ],
+    "year": 2026
+}

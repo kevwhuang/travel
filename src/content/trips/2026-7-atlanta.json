@@ -1,0 +1,359 @@
+{
+    "name": "Atlanta",
+    "ordered": true,
+    "places": [
+        {
+            "category": "urban",
+            "description": "Hartsfield-Jackson Atlanta International Airport is Atlanta's primary airport and consistently ranks among the busiest passenger hubs in the world.",
+            "lat": 33.6324187,
+            "lng": -84.4333116,
+            "name": "Hartsfield-Jackson Atlanta International Airport"
+        },
+        {
+            "category": "urban",
+            "description": "Hertz Car Rental operates from the rental car center at Hartsfield-Jackson Atlanta International Airport, providing vehicle pickup for arriving travelers.",
+            "lat": 33.639826,
+            "lng": -84.464172,
+            "name": "Hertz Car Rental"
+        },
+        {
+            "category": "urban",
+            "description": "Hyatt House Atlanta / Perimeter Center is an extended-stay hotel in the Perimeter Center business district near Dunwoody, north of Atlanta.",
+            "lat": 33.912112,
+            "lng": -84.3526418,
+            "name": "Hyatt House Atlanta / Perimeter Center"
+        },
+        {
+            "category": "miscellaneous",
+            "description": "Publix Super Market at Perimeter is a grocery store in the Perimeter Center area, a convenient stop for supplies near Dunwoody hotels.",
+            "lat": 33.9200151,
+            "lng": -84.3527224,
+            "name": "Publix Super Market at Perimeter"
+        },
+        {
+            "category": "dining",
+            "description": "Rreal Tacos is an Atlanta-based Mexican taqueria chain serving authentic street-style tacos, with this location in Sandy Springs.",
+            "lat": 33.9210776,
+            "lng": -84.382835,
+            "name": "Rreal Tacos"
+        },
+        {
+            "category": "miscellaneous",
+            "description": "Kroger is a major American supermarket chain, and this Chamblee-area store served as a practical grocery stop during the trip.",
+            "lat": 33.9227419,
+            "lng": -84.3156105,
+            "name": "Kroger"
+        },
+        {
+            "category": "wellness",
+            "description": "Life Time is an upscale athletic club chain, with this Sugarloaf-area club in Lawrenceville, Georgia, offering gyms, pools, and fitness classes.",
+            "lat": 33.9859758,
+            "lng": -84.0829673,
+            "name": "Life Time"
+        },
+        {
+            "category": "dining",
+            "description": "Kang's Kitchen BBQ is a Korean barbecue restaurant in Duluth, Georgia, known for tabletop-grilled prime meats and unlimited banchan.",
+            "lat": 33.9613002,
+            "lng": -84.1399643,
+            "name": "Kang's Kitchen BBQ"
+        },
+        {
+            "category": "miscellaneous",
+            "description": "Publix Super Market at Lenox Marketplace is a grocery store in Atlanta's Buckhead district, near the Lenox Square shopping area.",
+            "lat": 33.8509984,
+            "lng": -84.3597748,
+            "name": "Publix Super Market at Lenox Marketplace"
+        },
+        {
+            "category": "urban",
+            "description": "93East Apartments is a gated apartment community on Shallowford Road in northeast Atlanta, serving as a private home-base stay for the trip.",
+            "lat": 33.864071,
+            "lng": -84.286215,
+            "name": "93East Apartments"
+        },
+        {
+            "category": "nature",
+            "description": "Gibbs Gardens is a sprawling estate garden in Ball Ground, Georgia, famous for millions of daffodils and its expansive Japanese garden.",
+            "lat": 34.3786582,
+            "lng": -84.280281,
+            "name": "Gibbs Gardens"
+        },
+        {
+            "category": "urban",
+            "description": "Halcyon is a mixed-use development in Forsyth County near Alpharetta, combining shops, restaurants, and a village green along the Big Creek Greenway.",
+            "lat": 34.110717,
+            "lng": -84.2242954,
+            "name": "Halcyon"
+        },
+        {
+            "category": "dining",
+            "description": "Il Bottegone is an Italian market and deli at Halcyon in Alpharetta, known for paninis, fresh pastas, pastries, and Italian coffee.",
+            "lat": 34.1106636,
+            "lng": -84.2242308,
+            "name": "Il Bottegone"
+        },
+        {
+            "category": "urban",
+            "description": "Avalon is an upscale mixed-use district in Alpharetta, Georgia, featuring luxury shopping, restaurants, and a walkable boulevard of entertainment.",
+            "lat": 34.0707877,
+            "lng": -84.27717,
+            "name": "Avalon"
+        },
+        {
+            "category": "dining",
+            "description": "Craft Burger by Shane is a casual Alpharetta burger restaurant on Old Milton Parkway, known for handcrafted burgers and loaded fries.",
+            "lat": 34.0699414,
+            "lng": -84.2849221,
+            "name": "Craft Burger by Shane"
+        },
+        {
+            "category": "wellness",
+            "description": "Harmony Massage & Spa is a massage studio on Chamblee Tucker Road in northeast Atlanta, offering Swedish, deep tissue, and couples massage.",
+            "lat": 33.8868618,
+            "lng": -84.2555774,
+            "name": "Harmony Massage & Spa"
+        },
+        {
+            "category": "urban",
+            "description": "Embry Downs Ct is a private residence in the Tucker area of metro Atlanta, serving as the trip's home base.",
+            "lat": 33.89,
+            "lng": -84.24,
+            "name": "Embry Downs Ct"
+        },
+        {
+            "category": "dining",
+            "description": "Douceur de France is a French bakery and brunch cafe in Marietta, Georgia, known for authentic pastries, croissants, and crepes.",
+            "lat": 33.9481686,
+            "lng": -84.5499404,
+            "name": "Douceur de France"
+        },
+        {
+            "category": "landmarks",
+            "description": "Marietta Square is the historic town square of Marietta, Georgia, ringed by shops, restaurants, and theaters around Glover Park.",
+            "lat": 33.9527507,
+            "lng": -84.5496153,
+            "name": "Marietta Square"
+        },
+        {
+            "category": "miscellaneous",
+            "description": "Walgreens is a national pharmacy chain, and this store near Marietta Square served as a practical stop for essentials.",
+            "lat": 33.9518935,
+            "lng": -84.5514776,
+            "name": "Walgreens"
+        },
+        {
+            "category": "landmarks",
+            "description": "Kennesaw Mountain National Battlefield Park preserves a Civil War battlefield near Marietta, Georgia, with hiking trails and sweeping views of Atlanta.",
+            "lat": 33.9513354,
+            "lng": -84.5963993,
+            "name": "Kennesaw Mountain National Battlefield Park"
+        },
+        {
+            "category": "urban",
+            "description": "The Battery Atlanta is a mixed-use entertainment district surrounding Truist Park in Cobb County, home of the Atlanta Braves.",
+            "lat": 33.8904939,
+            "lng": -84.4698758,
+            "name": "The Battery Atlanta"
+        },
+        {
+            "category": "dining",
+            "description": "Shake Shack is a popular American fast-casual chain known for burgers and frozen custard, with this location at The Battery Atlanta.",
+            "lat": 33.8881863,
+            "lng": -84.4702177,
+            "name": "Shake Shack"
+        },
+        {
+            "category": "wellness",
+            "description": "LA Fitness is a national gym chain, and this Lawrenceville club in Gwinnett County offers weights, cardio, and classes.",
+            "lat": 33.9409123,
+            "lng": -83.9846583,
+            "name": "LA Fitness"
+        },
+        {
+            "category": "urban",
+            "description": "Mall of Georgia in Buford is the largest shopping mall in the state, anchoring a major retail district northeast of Atlanta.",
+            "lat": 34.0651406,
+            "lng": -83.9844837,
+            "name": "Mall of Georgia"
+        },
+        {
+            "category": "dining",
+            "description": "Okiboru Ramen & Tsukemen is a Michelin Bib Gourmand-recognized Japanese noodle shop at the Mall of Georgia in Buford, specializing in dipping-style tsukemen.",
+            "lat": 34.0638692,
+            "lng": -83.983534,
+            "name": "Okiboru Ramen & Tsukemen"
+        },
+        {
+            "category": "urban",
+            "description": "699 Milton St is a private home-base stay in the Decatur area east of Atlanta, Georgia.",
+            "lat": 33.7975922,
+            "lng": -84.2614215,
+            "name": "699 Milton St"
+        },
+        {
+            "category": "urban",
+            "description": "Ponce City Market is a mixed-use development in a historic Sears building on the Atlanta BeltLine, known for its food hall and shops.",
+            "lat": 33.7727683,
+            "lng": -84.3655967,
+            "name": "Ponce City Market"
+        },
+        {
+            "category": "nature",
+            "description": "Piedmont Park is Atlanta's flagship urban green space in Midtown, offering lawns, trails, and skyline views beside Lake Clara Meer.",
+            "lat": 33.7879265,
+            "lng": -84.3721682,
+            "name": "Piedmont Park"
+        },
+        {
+            "category": "dining",
+            "description": "Bangkok Thai Restaurant on Piedmont Avenue is regarded as Atlanta's first Thai restaurant, serving classic Thai dishes since 1977.",
+            "lat": 33.7957003,
+            "lng": -84.3708211,
+            "name": "Bangkok Thai Restaurant"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Georgia Institute of Technology is a leading public research university in Midtown Atlanta, renowned for its engineering and computing programs.",
+            "lat": 33.7779791,
+            "lng": -84.3979638,
+            "name": "Georgia Institute of Technology"
+        },
+        {
+            "category": "miscellaneous",
+            "description": "ALDI is a discount supermarket chain location in the Smyrna area northwest of Atlanta, serving as a practical grocery stop.",
+            "lat": 33.883794,
+            "lng": -84.477168,
+            "name": "ALDI"
+        },
+        {
+            "category": "nature",
+            "description": "Sweetwater Creek State Park is a wooded preserve west of Atlanta known for rocky creek rapids and the ruins of a Civil War-era textile mill.",
+            "lat": 33.7525384,
+            "lng": -84.628709,
+            "name": "Sweetwater Creek State Park"
+        },
+        {
+            "category": "dining",
+            "description": "Bellina Alimentari is an Italian restaurant and market inside Ponce City Market in Atlanta, known for handmade pasta and imported goods.",
+            "lat": 33.7729245,
+            "lng": -84.3662211,
+            "name": "Bellina Alimentari"
+        },
+        {
+            "category": "dining",
+            "description": "Krog Street Market is a food hall and shopping destination in a 1920s warehouse along the Atlanta BeltLine in Inman Park.",
+            "lat": 33.756877,
+            "lng": -84.3641688,
+            "name": "Krog Street Market"
+        },
+        {
+            "category": "dining",
+            "description": "Fred's Meat & Bread is a sandwich counter in Atlanta's Krog Street Market, celebrated for its burgers and cheesesteaks.",
+            "lat": 33.7568416,
+            "lng": -84.3639288,
+            "name": "Fred's Meat & Bread"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Krog Street Tunnel is a graffiti-covered underpass linking Cabbagetown and Inman Park, famous as an ever-changing canvas of Atlanta street art.",
+            "lat": 33.7529948,
+            "lng": -84.3636479,
+            "name": "Krog Street Tunnel"
+        },
+        {
+            "category": "nature",
+            "description": "Grant Park is Atlanta's oldest city park, a Victorian-era green space southeast of downtown that surrounds Zoo Atlanta.",
+            "lat": 33.735704,
+            "lng": -84.371164,
+            "name": "Grant Park"
+        },
+        {
+            "category": "nature",
+            "description": "Stone Mountain Park east of Atlanta surrounds a massive granite dome with hiking trails, a summit cable car, and a controversial Confederate carving.",
+            "lat": 33.8052096,
+            "lng": -84.1451453,
+            "name": "Stone Mountain Park"
+        },
+        {
+            "category": "landmarks",
+            "description": "Zoo Atlanta is a major zoological park in Grant Park, known for its gorilla collection and one of the largest reptile complexes in the country.",
+            "lat": 33.732596,
+            "lng": -84.371458,
+            "name": "Zoo Atlanta"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Martin Luther King, Jr. National Historical Park in Atlanta preserves the birthplace, church, and tomb of the civil rights leader.",
+            "lat": 33.7566739,
+            "lng": -84.3731798,
+            "name": "Martin Luther King, Jr. National Historical Park"
+        },
+        {
+            "category": "landmarks",
+            "description": "Freedom Plaza at The King Center in Atlanta holds the crypt of Martin Luther King Jr. and Coretta Scott King beside a reflecting pool.",
+            "lat": 33.7553762,
+            "lng": -84.3734121,
+            "name": "Freedom Plaza"
+        },
+        {
+            "category": "landmarks",
+            "description": "Historic Fire Station 6 is an 1894 firehouse in Atlanta's Sweet Auburn district, now a museum within the Martin Luther King Jr. historical park.",
+            "lat": 33.7553472,
+            "lng": -84.3718779,
+            "name": "Historic Fire Station 6"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Birth Home of Martin Luther King, Jr. is the Queen Anne-style house on Auburn Avenue in Atlanta where the civil rights leader was born in 1929.",
+            "lat": 33.7552152,
+            "lng": -84.371141,
+            "name": "Birth Home of Martin Luther King, Jr."
+        },
+        {
+            "category": "landmarks",
+            "description": "The High Museum of Art in Midtown Atlanta is the Southeast's leading art museum, housed in a striking white Richard Meier building.",
+            "lat": 33.7900632,
+            "lng": -84.385552,
+            "name": "High Museum of Art"
+        },
+        {
+            "category": "urban",
+            "description": "Pemberton Place is a downtown Atlanta plaza named for Coca-Cola's inventor, anchoring the World of Coca-Cola and the Georgia Aquarium.",
+            "lat": 33.7636055,
+            "lng": -84.3934955,
+            "name": "Pemberton Place"
+        },
+        {
+            "category": "landmarks",
+            "description": "The World of Coca-Cola is a downtown Atlanta museum chronicling the soft drink's history, with a tasting room of international beverages.",
+            "lat": 33.7625564,
+            "lng": -84.392436,
+            "name": "World of Coca-Cola"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Georgia Aquarium in downtown Atlanta is one of the world's largest aquariums, famed for its whale sharks and manta rays.",
+            "lat": 33.763382,
+            "lng": -84.3951098,
+            "name": "Georgia Aquarium",
+            "starred": true
+        },
+        {
+            "category": "nature",
+            "description": "The Atlanta Botanical Garden adjoins Piedmont Park in Midtown, known for its canopy walk, orchid center, and seasonal plant exhibitions.",
+            "lat": 33.7899568,
+            "lng": -84.3725988,
+            "name": "Atlanta Botanical Garden",
+            "starred": true
+        },
+        {
+            "category": "dining",
+            "description": "RUCHI Bangladeshi Cuisine is a family-run restaurant in Chamblee, Georgia, regarded as one of the Atlanta area's best sources of Bangladeshi food.",
+            "lat": 33.8941113,
+            "lng": -84.2957224,
+            "name": "RUCHI Bangladeshi Cuisine"
+        }
+    ],
+    "year": 2026
+}

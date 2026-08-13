@@ -1,0 +1,343 @@
+{
+    "name": "Great Western",
+    "ordered": true,
+    "places": [
+        {
+            "category": "urban",
+            "description": "Los Angeles International Airport is the primary airport serving Southern California and one of the busiest passenger hubs in the world.",
+            "lat": 33.942153,
+            "lng": -118.4036052,
+            "name": "Los Angeles International Airport"
+        },
+        {
+            "category": "dining",
+            "description": "DTLA AYCE KBBQ is an all-you-can-eat Korean barbecue restaurant in the Chinatown district of downtown Los Angeles.",
+            "lat": 34.0595704,
+            "lng": -118.237632,
+            "name": "DTLA AYCE KBBQ"
+        },
+        {
+            "category": "urban",
+            "description": "This address served as a private home-base stay near Los Angeles International Airport in the Inglewood area.",
+            "lat": 33.9393158,
+            "lng": -118.3459812,
+            "name": "10618 S Osage Ave"
+        },
+        {
+            "category": "landmarks",
+            "description": "The University of Southern California is a major private research university in Los Angeles, known for its film school and Trojan athletics.",
+            "lat": 34.0223519,
+            "lng": -118.285117,
+            "name": "University of Southern California"
+        },
+        {
+            "category": "dining",
+            "description": "Mediterrania Grill was a quick-service Mediterranean restaurant in Irvine, California, serving halal pita sandwiches, plates, and salads.",
+            "lat": 33.6869328,
+            "lng": -117.8558292,
+            "name": "Mediterrania Grill"
+        },
+        {
+            "category": "landmarks",
+            "description": "The University of California, Irvine is a public research university in Orange County, noted for its circular Aldrich Park campus design.",
+            "lat": 33.6423814,
+            "lng": -117.8416747,
+            "name": "University of California, Irvine"
+        },
+        {
+            "category": "urban",
+            "description": "This address served as a private home-base stay on Cruiser, a residential street in Irvine, California.",
+            "lat": 33.69,
+            "lng": -117.73,
+            "name": "Cruiser"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Santa Monica Pier is a historic oceanfront pier in Santa Monica, California, famous for its amusement park and Route 66 terminus.",
+            "lat": 34.0082821,
+            "lng": -118.4987585,
+            "name": "Santa Monica Pier"
+        },
+        {
+            "category": "dining",
+            "description": "Pier Burger is a casual walk-up burger stand on the Santa Monica Pier serving classic burgers, fries, and shakes.",
+            "lat": 34.0092009,
+            "lng": -118.4973332,
+            "name": "Pier Burger"
+        },
+        {
+            "category": "urban",
+            "description": "Mat Franco's Magic Reinvented Nightly is a resident magic show at The LINQ in Las Vegas headlined by the America's Got Talent winner.",
+            "lat": 36.1181779,
+            "lng": -115.1713151,
+            "name": "Mat Franco - Magic Reinvented Nightly"
+        },
+        {
+            "category": "dining",
+            "description": "Rock N' Potato is a rock-themed eatery in the Showcase Mall food court on the Las Vegas Strip, known for its over-the-top stuffed baked potatoes.",
+            "lat": 36.1031634,
+            "lng": -115.1723254,
+            "name": "Rock N' Potato"
+        },
+        {
+            "category": "urban",
+            "description": "Desert Rose Resort is an all-suite hotel just east of the Las Vegas Strip offering apartment-style rooms without a casino.",
+            "lat": 36.0980752,
+            "lng": -115.1669116,
+            "name": "Desert Rose Resort"
+        },
+        {
+            "category": "dining",
+            "description": "The Original Pancake House is a national breakfast chain, with this west Las Vegas location serving its signature Dutch Baby and apple pancakes.",
+            "lat": 36.1136105,
+            "lng": -115.2965717,
+            "name": "The Original Pancake House"
+        },
+        {
+            "category": "nature",
+            "description": "Red Rock Canyon is a national conservation area west of Las Vegas known for its red sandstone cliffs and 13-mile scenic drive.",
+            "lat": 36.1326065,
+            "lng": -115.4243374,
+            "name": "Red Rock Canyon"
+        },
+        {
+            "category": "nature",
+            "description": "Lost Creek Canyon is a short trail area in Red Rock Canyon near Las Vegas featuring a seasonal waterfall and ancient rock art.",
+            "lat": 36.157234,
+            "lng": -115.497205,
+            "name": "Lost Creek Canyon"
+        },
+        {
+            "category": "urban",
+            "description": "The Fremont Street Experience is a pedestrian mall in downtown Las Vegas famous for its massive overhead LED canopy light shows.",
+            "lat": 36.1707275,
+            "lng": -115.1438229,
+            "name": "Fremont Street Experience"
+        },
+        {
+            "category": "dining",
+            "description": "Lappert's Ice Cream is a Hawaii-founded ice cream shop serving tropical flavors inside the California Hotel & Casino in downtown Las Vegas.",
+            "lat": 36.1732257,
+            "lng": -115.145105,
+            "name": "Lappert's Ice Cream"
+        },
+        {
+            "category": "urban",
+            "description": "AREA15 is an immersive entertainment complex near the Las Vegas Strip housing Meow Wolf's Omega Mart and other interactive attractions.",
+            "lat": 36.1317582,
+            "lng": -115.1815485,
+            "name": "AREA15"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Sphere is a spherical entertainment venue in Las Vegas wrapped in the world's largest LED screen, hosting concerts and immersive films.",
+            "lat": 36.121217,
+            "lng": -115.1620404,
+            "name": "Sphere"
+        },
+        {
+            "category": "dining",
+            "description": "Earl of Sandwich is a sandwich chain, with this Las Vegas Strip location at Planet Hollywood known for its hot sandwiches.",
+            "lat": 36.1094075,
+            "lng": -115.1718747,
+            "name": "Earl of Sandwich"
+        },
+        {
+            "category": "urban",
+            "description": "The Bellagio is a luxury resort and casino on the Las Vegas Strip famous for its choreographed dancing fountains and conservatory.",
+            "lat": 36.1129455,
+            "lng": -115.1765067,
+            "name": "Bellagio Hotel & Casino"
+        },
+        {
+            "category": "dining",
+            "description": "Einstein Bros. Bagels is a national bagel and coffee chain, with this Las Vegas location serving as a quick breakfast stop.",
+            "lat": 36.1020839,
+            "lng": -115.15683,
+            "name": "Einstein Bros. Bagels"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Hoover Dam is a monumental concrete arch-gravity dam on the Colorado River between Nevada and Arizona, completed in 1935.",
+            "lat": 36.0160655,
+            "lng": -114.7377325,
+            "name": "Hoover Dam"
+        },
+        {
+            "category": "urban",
+            "description": "The Holiday Inn Express & Suites Grand Canyon is a hotel in Tusayan, Arizona, minutes from the South Rim entrance of Grand Canyon National Park.",
+            "lat": 35.9713171,
+            "lng": -112.1283223,
+            "name": "Holiday Inn Express & Suites Grand Canyon"
+        },
+        {
+            "category": "dining",
+            "description": "Plaza Bonita Restaurant is a family-friendly Mexican restaurant in Tusayan, Arizona, serving Mexican fare minutes from the Grand Canyon's South Rim.",
+            "lat": 35.9728511,
+            "lng": -112.1271513,
+            "name": "Plaza Bonita Restaurant"
+        },
+        {
+            "category": "nature",
+            "description": "The Grand Canyon Visitor Center is the main South Rim orientation hub near Mather Point, offering exhibits, park information, and shuttle connections.",
+            "lat": 36.0591151,
+            "lng": -112.1091934,
+            "name": "Grand Canyon Visitor Center"
+        },
+        {
+            "category": "nature",
+            "description": "The South Kaibab Trailhead marks the start of a steep ridgeline trail descending from the Grand Canyon's South Rim toward the Colorado River.",
+            "lat": 36.0529081,
+            "lng": -112.0838947,
+            "name": "South Kaibab Trailhead"
+        },
+        {
+            "category": "dining",
+            "description": "El Tovar Dining Room is the historic fine-dining restaurant inside the 1905 El Tovar Hotel on the Grand Canyon's South Rim.",
+            "lat": 36.0573917,
+            "lng": -112.1376139,
+            "name": "El Tovar Dining Room"
+        },
+        {
+            "category": "nature",
+            "description": "Hermit Road is a seven-mile scenic drive along the Grand Canyon's South Rim, linking overlooks such as Hopi Point and Pima Point.",
+            "lat": 36.0571756,
+            "lng": -112.1449252,
+            "name": "Hermit Road"
+        },
+        {
+            "category": "landmarks",
+            "description": "Desert View Watchtower is a 70-foot stone tower designed by Mary Colter in 1932, overlooking the Grand Canyon's eastern rim.",
+            "lat": 36.044096,
+            "lng": -111.8262494,
+            "name": "Desert View Watchtower"
+        },
+        {
+            "category": "urban",
+            "description": "This address served as a private home-base stay in Page, Arizona, a convenient overnight base for the trip.",
+            "lat": 36.914989,
+            "lng": -111.4625924,
+            "name": "425 Elm St"
+        },
+        {
+            "category": "dining",
+            "description": "Domino's Pizza is a national pizza-delivery chain, with this Page, Arizona, location serving as a quick meal stop on the trip.",
+            "lat": 36.9154499,
+            "lng": -111.4584896,
+            "name": "Domino's Pizza"
+        },
+        {
+            "category": "nature",
+            "description": "Antelope Canyon is a sculpted sandstone slot canyon on Navajo land near Page, Arizona, famous for its light beams and wave-like walls.",
+            "lat": 36.8619103,
+            "lng": -111.3743302,
+            "name": "Antelope Canyon"
+        },
+        {
+            "category": "dining",
+            "description": "Backroads Bistro was a small American bistro on Main Street in Panguitch, Utah, near Bryce Canyon, known for its salads, sandwiches, and desserts.",
+            "lat": 37.8229456,
+            "lng": -112.4359682,
+            "name": "Backroads Bistro"
+        },
+        {
+            "category": "urban",
+            "description": "This address served as a private home-base stay in Orem, Utah, an overnight base along the trip route.",
+            "lat": 40.3080582,
+            "lng": -111.7057959,
+            "name": "425 W 600 N St"
+        },
+        {
+            "category": "dining",
+            "description": "Outback Steakhouse is an Australian-themed American steakhouse chain, with this Provo, Utah, location serving as a familiar dinner stop on the trip.",
+            "lat": 40.272881,
+            "lng": -111.6855632,
+            "name": "Outback Steakhouse"
+        },
+        {
+            "category": "urban",
+            "description": "Outlets at Traverse Mountain is an open-air outlet shopping center in Lehi, Utah, featuring brand-name stores along Interstate 15.",
+            "lat": 40.4352734,
+            "lng": -111.8843297,
+            "name": "Outlets at Traverse Mountain"
+        },
+        {
+            "category": "urban",
+            "description": "The Shops at South Town is a large enclosed shopping mall in Sandy, Utah, anchoring retail in the southern Salt Lake Valley.",
+            "lat": 40.5620647,
+            "lng": -111.8937235,
+            "name": "The Shops at South Town"
+        },
+        {
+            "category": "dining",
+            "description": "Angler's Lodge & Riverfront Restaurant is a fly-fishing lodge and riverside restaurant on the Henry's Fork of the Snake River in Island Park, Idaho.",
+            "lat": 44.3689436,
+            "lng": -111.4018356,
+            "name": "Angler's Lodge & Riverfront Restaurant"
+        },
+        {
+            "category": "urban",
+            "description": "This address served as a private home-base stay in Island Park, Idaho, a base for exploring nearby Yellowstone.",
+            "lat": 44.5720676,
+            "lng": -111.3395621,
+            "name": "4778 Birch Rd"
+        },
+        {
+            "category": "nature",
+            "description": "Lower Geyser Basin is Yellowstone's largest geyser basin, home to the Fountain Paint Pot mud pots and frequently erupting Great Fountain Geyser.",
+            "lat": 44.5493164,
+            "lng": -110.8077192,
+            "name": "Lower Geyser Basin"
+        },
+        {
+            "category": "nature",
+            "description": "Midway Geyser Basin is a thermal area in Yellowstone National Park best known for Grand Prismatic Spring, the largest hot spring in the United States.",
+            "lat": 44.5253645,
+            "lng": -110.8369445,
+            "name": "Midway Geyser Basin"
+        },
+        {
+            "category": "nature",
+            "description": "Upper Geyser Basin in Yellowstone National Park holds the world's densest concentration of geysers, including the famous Old Faithful.",
+            "lat": 44.460036,
+            "lng": -110.8292198,
+            "name": "Upper Geyser Basin"
+        },
+        {
+            "category": "nature",
+            "description": "West Thumb is a geyser basin on the shore of Yellowstone Lake, where colorful hot springs and pools meet the lake's edge.",
+            "lat": 44.4154952,
+            "lng": -110.5754846,
+            "name": "West Thumb"
+        },
+        {
+            "category": "dining",
+            "description": "Firehole Bar-B-Que Co. is a family-owned barbecue joint in West Yellowstone, Montana, smoking its meats in-house and featured on Diners, Drive-Ins and Dives.",
+            "lat": 44.661951,
+            "lng": -111.100489,
+            "name": "Firehole Bar-B-Que Co."
+        },
+        {
+            "category": "nature",
+            "description": "Two Ribbons is a short boardwalk trail along the Madison River near Yellowstone's west entrance, showcasing forest regrowth from the 1988 fires.",
+            "lat": 44.6523063,
+            "lng": -111.0375228,
+            "name": "Two Ribbons"
+        },
+        {
+            "category": "urban",
+            "description": "Bozeman Yellowstone International Airport is Montana's busiest airport, located in Belgrade and serving as a primary gateway to Yellowstone National Park.",
+            "lat": 45.7784043,
+            "lng": -111.1612273,
+            "name": "Bozeman Yellowstone International Airport"
+        },
+        {
+            "category": "urban",
+            "description": "Denver International Airport is the largest airport in the United States by land area and a major hub for travel across the Rocky Mountain West.",
+            "lat": 39.8563497,
+            "lng": -104.6763991,
+            "name": "Denver International Airport"
+        }
+    ],
+    "year": 2024
+}

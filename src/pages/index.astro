@@ -1,8 +1,14 @@
 ---
+import Atlas from '@sections/Atlas.astro';
 import Layout from '@/Layout.astro';
+import { atlasDescription } from '@lib/atlas';
+
+const description = await atlasDescription();
 ---
 
 <Layout
-    description="Favorite travel places, landmarks, and attractions on an interactive map and card grid."
+    description={description}
     title="Travel"
-/>
+>
+    <Atlas />
+</Layout>

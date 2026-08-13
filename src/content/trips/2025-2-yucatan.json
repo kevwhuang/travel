@@ -1,0 +1,88 @@
+{
+    "name": "Yucatán",
+    "ordered": false,
+    "places": [
+        {
+            "category": "urban",
+            "description": "Cancún is a resort city on Mexico's Caribbean coast, known for its hotel zone, white-sand beaches, and nightlife.",
+            "lat": 21.161908,
+            "lng": -86.8515279,
+            "name": "Cancún"
+        },
+        {
+            "category": "landmarks",
+            "description": "Chichén Itzá is a UNESCO-listed Maya archaeological city in Yucatán, famed for the stepped pyramid El Castillo.",
+            "lat": 20.6842849,
+            "lng": -88.5677826,
+            "name": "Chichén Itzá",
+            "starred": true
+        },
+        {
+            "category": "urban",
+            "description": "Chuburná is a quiet fishing village on Yucatán's Gulf coast west of Progreso, known for its beaches and summer homes.",
+            "lat": 21.255713,
+            "lng": -89.804063,
+            "name": "Chuburná"
+        },
+        {
+            "category": "nature",
+            "description": "Isla Mujeres is a small island off Cancún, known for Playa Norte's calm turquoise waters and snorkeling reefs.",
+            "lat": 21.2321799,
+            "lng": -86.7340934,
+            "name": "Isla Mujeres",
+            "starred": true
+        },
+        {
+            "category": "urban",
+            "description": "Mérida is the colonial capital of Yucatán state, known for its pastel mansions, Maya heritage, and lively plazas.",
+            "lat": 20.9673702,
+            "lng": -89.5925857,
+            "name": "Mérida"
+        },
+        {
+            "category": "landmarks",
+            "description": "Mucuyché is a village south of Mérida, known for its restored henequen hacienda and crystal-clear cenotes open to swimmers.",
+            "lat": 20.6224122,
+            "lng": -89.6031586,
+            "name": "Mucuyché",
+            "starred": true
+        },
+        {
+            "category": "landmarks",
+            "description": "Oxkintok is a Maya archaeological site near Maxcanú in Yucatán, known for its early pyramids and the Tzat Tun Tzat labyrinth.",
+            "lat": 20.5602179,
+            "lng": -89.9526409,
+            "name": "Oxkintok"
+        },
+        {
+            "category": "urban",
+            "description": "Playa del Carmen is a beach city on the Riviera Maya, known for pedestrian Quinta Avenida and ferries to Cozumel.",
+            "lat": 20.6295586,
+            "lng": -87.0738851,
+            "name": "Playa del Carmen"
+        },
+        {
+            "category": "urban",
+            "description": "San Miguel de Cozumel is the main town on Cozumel island, known for its waterfront malecón, dive shops, and cruise port.",
+            "lat": 20.5071703,
+            "lng": -86.9446237,
+            "name": "San Miguel de Cozumel"
+        },
+        {
+            "category": "urban",
+            "description": "Valladolid is a colonial town in eastern Yucatán, known for its pastel facades, Cenote Zací, and proximity to Chichén Itzá.",
+            "lat": 20.68964,
+            "lng": -88.2022488,
+            "name": "Valladolid"
+        },
+        {
+            "category": "landmarks",
+            "description": "Xcaret Park is an eco-archaeological theme park near Playa del Carmen, known for underground rivers, wildlife, and Mexican cultural shows.",
+            "lat": 20.5809134,
+            "lng": -87.119698,
+            "name": "Xcaret Park",
+            "starred": true
+        }
+    ],
+    "year": 2025
+}
