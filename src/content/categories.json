@@ -1,38 +1,32 @@
 [
     {
         "color": "#e2725b",
-        "description": "Restaurants, cafes, and food experiences",
-        "id": "dining",
+        "description": "Food and drink, from cafes to steakhouses",
         "name": "Dining"
     },
     {
         "color": "#4a90d9",
-        "description": "Iconic sites and points of interest",
-        "id": "landmarks",
+        "description": "Notable sites, from museums to ancient ruins",
         "name": "Landmarks"
     },
     {
         "color": "#9a8674",
-        "description": "Practical stops and everyday errands",
-        "id": "miscellaneous",
-        "name": "Miscellaneous"
+        "description": "Practical stops, from groceries to gas stations",
+        "name": "Misc"
     },
     {
         "color": "#6ba368",
-        "description": "Outdoor scenery and natural wonders",
-        "id": "nature",
+        "description": "The outdoors, from beaches to canyon trails",
         "name": "Nature"
     },
     {
         "color": "#9b72cf",
-        "description": "City life, shopping, nightlife, and cultural hotspots",
-        "id": "urban",
+        "description": "City stops, from hotels to shopping malls",
         "name": "Urban"
     },
     {
         "color": "#54b8a5",
-        "description": "Relaxation and rejuvenation destinations",
-        "id": "wellness",
+        "description": "Rest and recovery, from spas to gyms",
         "name": "Wellness"
     }
 ]

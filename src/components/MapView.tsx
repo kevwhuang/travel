@@ -6,33 +6,27 @@ import { createRoot } from 'react-dom/client';
 import { layers } from '@protomaps/basemaps';
 import { useEffect, useRef, useState } from 'react';
 
-import CategoryBadge from '@components/CategoryBadge';
 import IconCategory from '@components/IconCategory';
-import IconClose from '@components/IconClose';
-import StarMark from '@components/StarMark';
-import { CARD_COORDINATES_CLASS, CARD_DESCRIPTION_CLASS, CARD_META_CLASS, CARD_NAME_CLASS, CARD_TRIP_NAME_CLASS, CARD_TRIP_YEAR_CLASS, STAR_COLOR, STAR_LABEL, STAR_PATH, STAR_SIZE } from '@lib/constants';
-import { categoryColor, formatCoordinates } from '@lib/utils';
+import IconStar from '@components/IconStar';
+import PlaceCard from '@components/PlaceCard';
+import { CATEGORY_COLORS, COVERAGE_REGIONS, STAR_COLOR, STAR_LABEL } from '@lib/constants';
+import { categoryColor, isModifiedEvent } from '@lib/utils';
+import { loadAtlasState, saveAtlasState } from '@lib/store';
 import { prefersReducedMotion } from '@lib/motion';
 
-import type { ExpressionSpecification, FitBoundsOptions, FlyToOptions, GeoJSONSource, LayerSpecification, RequestParameters, StyleSpecification } from 'maplibre-gl';
+import type { ExpressionSpecification, FitBoundsOptions, FlyToOptions, GeoJSONFeature, GeoJSONSource, LayerSpecification, MapMouseEvent, MapWheelEvent, RequestParameters, StyleSpecification, VectorSourceSpecification } from 'maplibre-gl';
 import type { Flavor } from '@protomaps/basemaps';
 import type { Root } from 'react-dom/client';
 
 type SourceData = Parameters<GeoJSONSource['setData']>[0];
 
-interface MapFeature {
-    geometry: { coordinates: [number, number] };
-    properties: Record<string, boolean | number | string>;
-}
-
 interface PinHandlers {
-    onEnter: () => void;
-    onLeave: () => void;
     onSelect: () => void;
 }
 
 interface PinMarker {
     button: HTMLButtonElement;
+    category: string;
     color: string;
     isOrdered: boolean;
     isStarred: boolean;
@@ -45,9 +39,11 @@ interface ScaleBar {
     width: number;
 }
 
-const BASEMAP_SOURCE_ID = 'basemap';
+const CAMERA_COORDINATE_DECIMALS = 5;
+const CAMERA_ZOOM_DECIMALS = 2;
+const CATEGORY_PIN_Z_TOP = 16;
 const CLUSTER_BASE_SIZE = 34;
-const CLUSTER_CLASS = 'atlas-fade atlas-marker active:scale-100 before:absolute before:content-[""] before:inset-[-7px] hover:scale-[1.09] relative p-0 border-none shadow-[0_3px_10px_var(--color-ink-20)] duration-[var(--duration-fast)] ease-[ease] transition-transform';
+const CLUSTER_CLASS = 'atlas-fade atlas-marker active:scale-100 before:absolute before:content-[""] before:inset-[-7px] hover:scale-[1.09] relative p-0 border-none duration-[var(--duration-fast)] ease-[ease] shadow-[0_3px_10px_var(--color-ink-20)] transition-transform';
 const CLUSTER_DISC_CLASS = 'absolute grid inset-[3px] place-items-center rounded-full font-serif text-[13px] bg-snow text-ink';
 const CLUSTER_GROWTH_FACTOR = 3;
 const CLUSTER_KEY_PREFIX = 'cluster-';
@@ -55,8 +51,8 @@ const CLUSTER_MAX_GROWTH = 24;
 const CLUSTER_MAX_ZOOM = 12;
 const CLUSTER_RADIUS = 36;
 const CLUSTER_RING_CLASS = 'absolute inset-[-5px] border border-dashed border-ink-30 rounded-full';
-const DEFAULT_CENTER = { lat: 33, lng: -100 } as const;
-const DEFAULT_ZOOM = 2.4;
+const DEFAULT_CENTER = { lat: 30.4, lng: -97.8 } as const;
+const DEFAULT_ZOOM = 3;
 const DEGREES_PER_HALF_TURN = 180;
 const EARTH_CIRCUMFERENCE = 40_075_016.686;
 const FEET_PER_MILE = 5_280;
@@ -159,21 +155,29 @@ const MAP_FLAVOR: Flavor = {
 const MAP_GLYPHS = '/fonts/map/{fontstack}/{range}.pbf';
 const MAP_LANGUAGE = 'en';
 const MAP_MAX_ZOOM = 15;
-const MAP_TILES_URL = 'pmtiles:///tiles/atlas.pmtiles';
-const MAP_WORLD_URL = 'pmtiles:///tiles/world.pmtiles';
+const MAP_TILES_URL = 'pmtiles:///tiles';
 const MARKER_SELECTOR = 'button.atlas-marker';
 const METERS_PER_MILE = 1_609.344;
 const MILE_MINIMUM = 0.5;
-const PIN_DOT_CLASS = 'atlas-fade atlas-marker active:scale-100 before:absolute before:content-[""] before:inset-[-18px] hover:scale-[1.3] block relative h-[13px] w-[13px] p-0 border-2 border-snow duration-[var(--duration-fast)] ease-[ease] transition-[background-color,border-color,box-shadow,color,transform]';
-const PIN_ICON_CLASS = 'atlas-fade atlas-marker active:scale-100 before:absolute before:content-[""] before:inset-[-12px] hover:scale-[1.3] grid place-items-center relative h-[24px] w-[24px] p-0 border-2 duration-[var(--duration-fast)] ease-[ease] transition-[background-color,border-color,box-shadow,color,transform]';
+const MIN_ZOOM = 2;
+const ORDINARY_PIN_Z_FLOOR = 11;
+const PIN_DOT_CLASS = 'atlas-fade atlas-marker active:scale-100 before:absolute before:content-[""] before:inset-[-14px] hover:scale-[1.3] block relative h-[24px] w-[24px] p-0 border-2 border-snow duration-[var(--duration-fast)] ease-[ease] transition-[background-color,border-color,box-shadow,color,scale]';
+const PIN_HALO_WIDTH = 6;
+const PIN_ICON_CLASS = 'atlas-fade atlas-marker active:scale-100 before:absolute before:content-[""] before:inset-[-14px] hover:scale-[1.3] grid place-items-center relative h-[24px] w-[24px] p-0 border-2 duration-[var(--duration-fast)] ease-[ease] transition-[background-color,border-color,box-shadow,color,scale]';
 const PIN_ICON_SIZE = 11;
-const PIN_STAR_CLASS = 'absolute right-[-7px] top-[-7px] leading-none pointer-events-none';
+const PIN_OUTLINE_COLOR = 'var(--color-storm)';
+const PIN_OUTLINE_WIDTH = 1;
+const PIN_STAR_CLASS = 'absolute right-[-9px] top-[-9px] leading-none pointer-events-none';
 const PLACE_KEY_PREFIX = 'place-';
-const POPUP_OFFSET = 18;
+const POPUP_EASE_DURATION = 300;
+const POPUP_OFFSET = 28;
+const POPUP_Z_INDEX = '25';
+const REGION_ACTIVE_FILL_OPACITY = 0.22;
+const REGION_ACTIVE_LINE_OPACITY = 0.5;
 
 const REGION_COLORS = {
+    active: '#e2725b',
     explored: '#9b72cf',
-    visiting: '#e2725b',
 } as const;
 
 const REGION_EXPLORED_FILL_OPACITY = 0.14;
@@ -181,46 +185,36 @@ const REGION_EXPLORED_LINE_OPACITY = 0.35;
 const REGION_FILL_LAYER_ID = 'atlas-regions-fill';
 const REGION_LINE_LAYER_ID = 'atlas-regions-line';
 const REGION_LINE_WIDTH = 1;
+const REGION_MIN_ZOOM = 7.5;
 const REGION_SOURCE_ID = 'atlas-regions';
-const REGION_VISITING_FILL_OPACITY = 0.22;
-const REGION_VISITING_LINE_OPACITY = 0.5;
 const SCALE_STEP_LARGE = 5;
 const SCALE_STEP_MEDIUM = 2;
 const SCALE_TARGET_WIDTH = 120;
-const SELECTED_PIN_Z_INDEX = '9';
+const SELECTED_PIN_Z_INDEX = '21';
 const SOURCE_ID = 'atlas-places';
-const STAR_OUTLINE_WIDTH = 2.6;
+const STARRED_PIN_Z_INDEX = '20';
 const STAR_RING_WIDTH = 2;
 const TILE_CACHE_LIMIT = 96;
 const TILE_ZOOM_OFFSET = 9;
+const UNCOVERED_MAX_ZOOM = 7.9;
 const WORLD_LAYER_PREFIX = 'w-';
 const WORLD_SOURCE_ID = 'world';
-const WORLD_ZOOM_CUTOFF = 6;
+const WORLD_ZOOM_CUTOFF = 8;
 const ZOOM_BASE = 2;
+const ZOOM_EPSILON = 0.01;
+
+const CATEGORY_PIN_Z_INDEXES = new Map(Object.keys(CATEGORY_COLORS)
+    .sort((first, second) => first.localeCompare(second))
+    .map((id, rank) => [id, String(Math.max(ORDINARY_PIN_Z_FLOOR, CATEGORY_PIN_Z_TOP - rank))] as const));
 
 const LABEL_TEXT_FIELD: ExpressionSpecification = ['coalesce', ['get', `name:${MAP_LANGUAGE}`], ['get', 'name']];
 
 const mapStyle: StyleSpecification = {
     glyphs: MAP_GLYPHS,
-    layers: [
-        ...flavorLayers(WORLD_SOURCE_ID).map(layer => ({
-            ...layer,
-            id: `${WORLD_LAYER_PREFIX}${layer.id}`,
-            maxzoom: Math.min(WORLD_ZOOM_CUTOFF, layer.maxzoom ?? WORLD_ZOOM_CUTOFF),
-        })),
-        ...flavorLayers(BASEMAP_SOURCE_ID).map(layer => ({ ...layer, minzoom: Math.max(WORLD_ZOOM_CUTOFF, layer.minzoom ?? 0) })),
-    ],
+    layers: [...worldLayers(), ...regionLayers()],
     sources: {
-        [BASEMAP_SOURCE_ID]: {
-            attribution: MAP_ATTRIBUTION,
-            type: 'vector',
-            url: MAP_TILES_URL,
-        },
-        [WORLD_SOURCE_ID]: {
-            attribution: MAP_ATTRIBUTION,
-            type: 'vector',
-            url: MAP_WORLD_URL,
-        },
+        ...Object.fromEntries(COVERAGE_REGIONS.map(region => [region.name, tileSourceOf(region.name)] as const)),
+        [WORLD_SOURCE_ID]: tileSourceOf(WORLD_SOURCE_ID),
     },
     version: 8,
 };
@@ -230,9 +224,9 @@ const tileProtocol = new Protocol();
 
 function addRegionLayers(map: MapLibreMap, regions: SourceData) {
     const beforeId = map.getStyle().layers.find(layer => layer.type === 'symbol' && !layer.id.startsWith(WORLD_LAYER_PREFIX))?.id;
-    const color: ExpressionSpecification = ['match', ['get', 'status'], 'visiting', REGION_COLORS.visiting, REGION_COLORS.explored];
-    const fillOpacity: ExpressionSpecification = ['match', ['get', 'status'], 'visiting', REGION_VISITING_FILL_OPACITY, REGION_EXPLORED_FILL_OPACITY];
-    const lineOpacity: ExpressionSpecification = ['match', ['get', 'status'], 'visiting', REGION_VISITING_LINE_OPACITY, REGION_EXPLORED_LINE_OPACITY];
+    const color: ExpressionSpecification = ['match', ['get', 'status'], 'active', REGION_COLORS.active, REGION_COLORS.explored];
+    const fillOpacity: ExpressionSpecification = ['match', ['get', 'status'], 'active', REGION_ACTIVE_FILL_OPACITY, REGION_EXPLORED_FILL_OPACITY];
+    const lineOpacity: ExpressionSpecification = ['match', ['get', 'status'], 'active', REGION_ACTIVE_LINE_OPACITY, REGION_EXPLORED_LINE_OPACITY];
 
     map.addSource(REGION_SOURCE_ID, { data: regions, type: 'geojson' });
     map.addLayer({
@@ -252,18 +246,19 @@ function addRegionLayers(map: MapLibreMap, regions: SourceData) {
 function applyPinState(pin: PinMarker, isSelected: boolean) {
     const halo = `color-mix(in oklab, ${pin.color} 26%, transparent)`;
     const orderedBackground = isSelected ? 'var(--color-ink)' : 'var(--color-snow)';
-    const shadows: string[] = [];
+    const shadows = [`0 0 0 ${PIN_OUTLINE_WIDTH}px ${PIN_OUTLINE_COLOR}`];
 
-    if (pin.isStarred) shadows.push(`0 0 0 ${STAR_RING_WIDTH}px ${STAR_COLOR}`);
+    if (pin.isStarred) shadows.push(`0 0 0 ${PIN_OUTLINE_WIDTH + STAR_RING_WIDTH}px ${STAR_COLOR}`);
 
-    if (isSelected) shadows.push(`0 0 0 6px ${halo}`, '0 3px 8px var(--color-ink-30)');
+    if (isSelected) shadows.push(`0 0 0 ${PIN_OUTLINE_WIDTH + PIN_HALO_WIDTH}px ${halo}`, '0 3px 8px var(--color-ink-30)');
     else shadows.push('0 2px 6px var(--color-ink-20)');
 
+    pin.button.setAttribute('aria-expanded', String(isSelected));
     pin.button.style.background = pin.isOrdered ? orderedBackground : pin.color;
     pin.button.style.borderColor = pin.isOrdered ? pin.color : 'var(--color-snow)';
     pin.button.style.boxShadow = shadows.join(', ');
     pin.button.style.color = isSelected ? 'var(--color-snow)' : pin.color;
-    pin.marker.getElement().style.zIndex = isSelected ? SELECTED_PIN_Z_INDEX : '';
+    pin.marker.getElement().style.zIndex = pinZIndexOf(pin, isSelected);
 }
 
 function boundsOf(places: AtlasPlace[]): [[number, number], [number, number]] | null {
@@ -282,6 +277,16 @@ function buttonOf(marker: Marker) {
     return marker.getElement().querySelector<HTMLButtonElement>(MARKER_SELECTOR);
 }
 
+function cameraOf(map: MapLibreMap) {
+    const center = map.getCenter().wrap();
+
+    return {
+        lat: Number(center.lat.toFixed(CAMERA_COORDINATE_DECIMALS)),
+        lng: Number(center.lng.toFixed(CAMERA_COORDINATE_DECIMALS)),
+        zoom: Number(Math.min(map.getZoom(), maxZoomAt(center)).toFixed(CAMERA_ZOOM_DECIMALS)),
+    };
+}
+
 function clusterPropertiesOf(categories: AtlasCategory[]) {
     const properties: Record<string, unknown> = {};
 
@@ -292,7 +297,7 @@ function clusterPropertiesOf(categories: AtlasCategory[]) {
     return properties;
 }
 
-function createClusterMarker(categories: AtlasCategory[], properties: MapFeature['properties'], onExpand: () => void) {
+function createClusterMarker(categories: AtlasCategory[], properties: GeoJSONFeature['properties'], onExpand: (hasFocus: boolean) => void) {
     const button = document.createElement('button');
     const count = Number(properties.point_count);
     const disc = document.createElement('span');
@@ -301,15 +306,15 @@ function createClusterMarker(categories: AtlasCategory[], properties: MapFeature
     const ring = document.createElement('span');
     const segments: string[] = [];
 
-    const label = `${count} places \u2014 click to expand`;
+    const label = `${count} places \u2014 expand`;
     const size = CLUSTER_BASE_SIZE + Math.min(CLUSTER_MAX_GROWTH, Math.round(Math.sqrt(count) * CLUSTER_GROWTH_FACTOR));
 
     function handleClick(event: MouseEvent) {
         event.stopPropagation();
-        onExpand();
+        onExpand(button.contains(document.activeElement));
     }
 
-    for (const category of sortedCategoriesOf(categories)) {
+    for (const category of [...categories].sort((first, second) => first.id.localeCompare(second.id))) {
         const value = Number(properties[category.id] ?? 0);
 
         if (!value) continue;
@@ -321,7 +326,7 @@ function createClusterMarker(categories: AtlasCategory[], properties: MapFeature
         offset += value;
     }
 
-    if (!segments.length) segments.push('var(--color-storm) 0deg 360deg');
+    if (!segments.length) segments.push(`var(--color-storm) 0deg ${FULL_CIRCLE_DEGREES}deg`);
 
     button.className = CLUSTER_CLASS;
     button.style.background = `conic-gradient(from 0deg, ${segments.join(', ')})`;
@@ -361,8 +366,6 @@ function createPinMarker(place: AtlasPlace, trip: AtlasTrip | undefined, handler
     button.type = 'button';
     button.setAttribute('aria-label', label);
     button.addEventListener('click', handleClick);
-    button.addEventListener('mouseenter', handlers.onEnter);
-    button.addEventListener('mouseleave', handlers.onLeave);
     element.append(button);
     root?.render(
         <PinMark
@@ -374,6 +377,7 @@ function createPinMarker(place: AtlasPlace, trip: AtlasTrip | undefined, handler
 
     return {
         button,
+        category: place.category,
         color: categoryColor(place.category),
         isOrdered,
         isStarred,
@@ -389,8 +393,10 @@ function flavorLayers(sourceId: string) {
         .map(withEnglishLabels);
 }
 
-function isModifiedKey(event: KeyboardEvent) {
-    return event.altKey || event.ctrlKey || event.metaKey || event.shiftKey;
+function isFocusIdle(map: MapLibreMap | null) {
+    const active = document.activeElement;
+
+    return active === null || active === document.body || active === map?.getCanvas();
 }
 
 async function loadTile(request: RequestParameters, abortController: AbortController) {
@@ -419,6 +425,31 @@ function markerButtonOf(node: EventTarget | null) {
     return node.closest<HTMLButtonElement>(MARKER_SELECTOR);
 }
 
+function maxZoomAt(lngLat: { lat: number; lng: number }) {
+    const region = COVERAGE_REGIONS.find(item => (
+        lngLat.lat >= item.south && lngLat.lat <= item.north && lngLat.lng >= item.west && lngLat.lng <= item.east
+    ));
+
+    return region?.maxZoom ?? UNCOVERED_MAX_ZOOM;
+}
+
+function pinZIndexOf(pin: PinMarker, isSelected: boolean) {
+    if (isSelected) return SELECTED_PIN_Z_INDEX;
+    if (pin.isStarred) return STARRED_PIN_Z_INDEX;
+
+    return CATEGORY_PIN_Z_INDEXES.get(pin.category) ?? String(ORDINARY_PIN_Z_FLOOR);
+}
+
+function regionLayers() {
+    const generated = COVERAGE_REGIONS.flatMap((region, index) => flavorLayers(region.name).filter(layer => !index || layer.type !== 'background').map(layer => ({
+        ...layer,
+        id: `${region.name}-${layer.id}`,
+        minzoom: Math.max(layer.type === 'background' ? WORLD_ZOOM_CUTOFF : REGION_MIN_ZOOM, layer.minzoom ?? 0),
+    })));
+
+    return [...generated.filter(layer => layer.type !== 'symbol'), ...generated.filter(layer => layer.type === 'symbol')];
+}
+
 function rovingIndexOf(key: string, index: number, count: number) {
     if (count < 1) return -1;
     if (key === 'ArrowLeft') return (index - 1 + count) % count;
@@ -440,9 +471,7 @@ function scaleBarOf(zoom: number, latitude: number) {
 
     const magnitude = MAGNITUDE_BASE ** Math.floor(Math.log10(raw));
 
-    const ratio = raw / magnitude;
-
-    const step = ratio >= SCALE_STEP_LARGE ? SCALE_STEP_LARGE : ratio >= SCALE_STEP_MEDIUM ? SCALE_STEP_MEDIUM : 1;
+    const step = scaleStepOf(raw / magnitude);
 
     const distance = magnitude * step;
 
@@ -454,8 +483,19 @@ function scaleBarOf(zoom: number, latitude: number) {
     };
 }
 
-function sortedCategoriesOf(categories: AtlasCategory[]) {
-    return [...categories].sort((first, second) => first.id.localeCompare(second.id));
+function scaleStepOf(ratio: number) {
+    if (ratio >= SCALE_STEP_LARGE) return SCALE_STEP_LARGE;
+    if (ratio >= SCALE_STEP_MEDIUM) return SCALE_STEP_MEDIUM;
+
+    return 1;
+}
+
+function tileSourceOf(name: string): VectorSourceSpecification {
+    return {
+        attribution: MAP_ATTRIBUTION,
+        type: 'vector',
+        url: `${MAP_TILES_URL}/${name}.pmtiles`,
+    };
 }
 
 function toFeatureCollection(places: AtlasPlace[]) {
@@ -510,6 +550,14 @@ function withoutIcons(layer: LayerSpecification) {
     return { ...layer, layout };
 }
 
+function worldLayers() {
+    return flavorLayers(WORLD_SOURCE_ID).map(layer => ({
+        ...layer,
+        id: `${WORLD_LAYER_PREFIX}${layer.id}`,
+        maxzoom: Math.min(WORLD_ZOOM_CUTOFF, layer.maxzoom ?? WORLD_ZOOM_CUTOFF),
+    }));
+}
+
 function PinMark({ category, isOrdered, isStarred }: {
     category: string;
     isOrdered: boolean;
@@ -526,106 +574,19 @@ function PinMark({ category, isOrdered, isStarred }: {
             )}
             {isStarred && (
                 <span className={PIN_STAR_CLASS}>
-                    <svg
-                        aria-hidden="true"
-                        fill={STAR_COLOR}
-                        height={STAR_SIZE}
-                        paintOrder="stroke"
-                        stroke="var(--color-snow)"
-                        strokeLinejoin="round"
-                        strokeWidth={STAR_OUTLINE_WIDTH}
-                        viewBox="0 0 24 24"
-                        width={STAR_SIZE}
-                    >
-                        <path d={STAR_PATH} />
-                    </svg>
+                    <IconStar color={STAR_COLOR} hasOutline />
                 </span>
             )}
         </>
     );
 }
 
-function PlacePopup({ category, onClose, onShowInCards, place, trip }: {
-    category: AtlasCategory;
-    onClose: () => void;
-    onShowInCards: () => void;
-    place: AtlasPlace;
-    trip: AtlasTrip | null;
-}) {
-    const isStarred = Boolean(place.starred);
-
-    return (
-        <article className="atlas-rise atlas-rise--quick overflow-y-auto relative max-h-[calc(100dvh-72px)] max-w-[calc(100dvw-36px)] w-[var(--width-narrow)] pb-[12px] pt-[16px] px-[16px] border border-haze rounded-[12px] bg-snow shadow-[0_18px_44px_var(--color-ink-20)]">
-            <button
-                className="atlas-pill after:absolute after:content-[''] after:inset-[-8px] absolute right-[10px] top-[10px] h-[32px] w-[32px] p-0 bg-paper text-storm"
-                aria-label="Close"
-                onClick={onClose}
-                type="button"
-            >
-                <IconClose size={11} />
-            </button>
-            <div className="mb-[8px]">
-                <CategoryBadge
-                    category={category.id}
-                    label={category.name}
-                />
-            </div>
-            <h2 className={`${CARD_NAME_CLASS} mb-[8px] pr-[28px]`}>
-                {place.name}
-                {isStarred && <StarMark />}
-            </h2>
-            <p className={`${CARD_DESCRIPTION_CLASS} mb-[12px]`}>{place.description}</p>
-            {trip && (
-                <PopupTrip
-                    order={place.order}
-                    trip={trip}
-                />
-            )}
-            <div className={CARD_META_CLASS}>
-                <span className={CARD_COORDINATES_CLASS}>{formatCoordinates(place)}</span>
-                <button
-                    className="atlas-pill atlas-pill--solid after:absolute after:content-[''] after:inset-x-0 after:inset-y-[-8px] relative px-[12px] py-[8px] font-medium text-[11px]"
-                    onClick={onShowInCards}
-                    type="button"
-                >
-                    Show in cards
-                </button>
-            </div>
-        </article>
-    );
-}
-
-function PopupTrip({ order, trip }: {
-    order: number;
-    trip: AtlasTrip;
-}) {
-    const stopLabel = `Stop ${order} of ${trip.count}`;
-
-    return (
-        <div className="flex flex-wrap items-baseline gap-[8px] mb-[12px]">
-            <span className={`${CARD_TRIP_NAME_CLASS} min-w-0`}>{trip.name}</span>
-            <time
-                className={CARD_TRIP_YEAR_CLASS}
-                dateTime={String(trip.year)}
-            >
-                {trip.year}
-            </time>
-            {trip.ordered && (
-                <span className="atlas-label px-[8px] py-[2px] border border-haze rounded-full text-[10px] tracking-[0.08em] whitespace-nowrap text-storm">{stopLabel}</span>
-            )}
-        </div>
-    );
-}
-
 addProtocol('pmtiles', loadTile);
 setWorkerUrl(mapWorkerUrl);
 
-export default function MapView({ categories, flyTarget, hasActiveFilters, hoverPlace, onHoverPlace, onSelectPlace, onShowInCards, places, regions, selectedPlaceId, trips }: {
+export default function MapView({ categories, flyTarget, onSelectPlace, onShowInCards, places, regions, selectedPlaceId, trips }: {
     categories: AtlasCategory[];
     flyTarget: AtlasFlyTarget | null;
-    hasActiveFilters: boolean;
-    hoverPlace: AtlasPlace | null;
-    onHoverPlace: (place: AtlasPlace | null) => void;
     onSelectPlace: (placeId: number | null) => void;
     onShowInCards: (place: AtlasPlace) => void;
     places: AtlasPlace[];
@@ -635,13 +596,18 @@ export default function MapView({ categories, flyTarget, hasActiveFilters, hover
 }) {
     const boundsKey = (boundsOf(places) ?? []).flat().join(',');
     const containerRef = useRef<HTMLDivElement>(null);
-    const contextRef = useRef({ categories, onHoverPlace, onSelectPlace, onShowInCards, places, regions, selectedPlaceId, trips });
+    const contextRef = useRef({ categories, onSelectPlace, onShowInCards, places, regions, selectedPlaceId, trips });
     const flownTargetRef = useRef<AtlasFlyTarget | null>(null);
-    const hasBottomStrip = hasActiveFilters || places.length === 0;
+    const hasSkippedInitialFitRef = useRef(false);
+    const isCameraFreeRef = useRef(false);
+    const isCorrectingRef = useRef(false);
     const [isMapReady, setIsMapReady] = useState(false);
     const mapRef = useRef<MapLibreMap | null>(null);
     const markersRef = useRef(new Map<string, Marker>());
+    const pendingClusterKeyRef = useRef<string | null>(null);
+    const pendingFocusRef = useRef<number | null>(null);
     const pinsRef = useRef(new Map<number, PinMarker>());
+    const pointerPointRef = useRef<{ x: number; y: number } | null>(null);
     const [popupPlaceId, setPopupPlaceId] = useState<number | null>(null);
     const popupPlaceRef = useRef<number | null>(null);
     const popupRef = useRef<Popup | null>(null);
@@ -695,25 +661,111 @@ export default function MapView({ categories, flyTarget, hasActiveFilters, hover
         mapRef.current?.getCanvas().focus();
     }
 
+    function correctZoom() {
+        const map = mapRef.current;
+
+        if (!map || isCameraFreeRef.current || isCorrectingRef.current) return;
+        if (map.dragPan.isActive() || map.scrollZoom.isActive() || map.touchZoomRotate.isActive()) return;
+
+        const cap = zoomCapOf(map);
+
+        if (map.getZoom() <= cap + ZOOM_EPSILON) return;
+
+        isCorrectingRef.current = true;
+        map.once('moveend', handleCorrectionEnd);
+        map.easeTo(withMotion({ zoom: cap }));
+    }
+
     function findPlace(placeId: number | null) {
         if (placeId === null) return null;
 
         return places.find(place => place.id === placeId) ?? null;
     }
 
-    function fitToPlaces(isImmediate: boolean) {
+    function fitToPlaces() {
         const bounds = boundsOf(contextRef.current.places);
         const map = mapRef.current;
 
         if (!bounds || !map) return;
 
-        const options: FitBoundsOptions = { maxZoom: FIT_MAX_ZOOM, padding: FIT_PADDING };
+        const [[west, south], [east, north]] = bounds;
 
-        map.fitBounds(bounds, isImmediate ? { ...options, duration: 0 } : withMotion(options));
+        const center = { lat: (south + north) / 2, lng: (west + east) / 2 };
+
+        const options: FitBoundsOptions = { maxZoom: Math.min(FIT_MAX_ZOOM, maxZoomAt(center)), padding: FIT_PADDING };
+
+        freeCamera();
+        map.fitBounds(bounds, withMotion(options));
     }
 
-    async function handleClusterExpand(clusterId: number, coordinates: [number, number]) {
+    function focusPendingCluster() {
+        const expandedKey = pendingClusterKeyRef.current;
+
+        if (expandedKey === null || markersRef.current.has(expandedKey)) return;
+
+        if (!isFocusIdle(mapRef.current)) {
+            pendingClusterKeyRef.current = null;
+
+            return;
+        }
+
+        const key = rovingKeyOf();
+
+        const marker = key === null ? undefined : markersRef.current.get(key);
+
+        const button = marker === undefined ? null : buttonOf(marker);
+
+        if (!button) return;
+
+        pendingClusterKeyRef.current = null;
+        button.focus();
+    }
+
+    function focusPendingPin() {
+        const placeId = pendingFocusRef.current;
+
+        if (placeId === null || !pinsRef.current.has(placeId)) return;
+
+        if (!isFocusIdle(mapRef.current)) {
+            pendingFocusRef.current = null;
+
+            return;
+        }
+
+        focusPin(placeId);
+    }
+
+    function focusPin(placeId: number) {
+        const pin = pinsRef.current.get(placeId);
+
+        if (!pin) {
+            pendingFocusRef.current = placeId;
+            mapRef.current?.getCanvas().focus();
+
+            return;
+        }
+
+        pendingFocusRef.current = null;
+        pin.button.focus();
+    }
+
+    function freeCamera() {
+        const map = mapRef.current;
+
+        if (!map) return;
+
+        isCameraFreeRef.current = true;
+        map.setMaxZoom(MAP_MAX_ZOOM);
+    }
+
+    async function handleClusterExpand(clusterId: number, coordinates: [number, number], hasFocus: boolean) {
+        const expandedKey = `${CLUSTER_KEY_PREFIX}${clusterId}`;
         const source = mapRef.current?.getSource<GeoJSONSource>(SOURCE_ID);
+
+        function handleExpandEnd() {
+            pendingClusterKeyRef.current = expandedKey;
+            focusPendingCluster();
+        }
 
         if (!source) return;
 
@@ -722,7 +774,19 @@ export default function MapView({ categories, flyTarget, hasActiveFilters, hover
 
         if (!map) return;
 
+        pendingClusterKeyRef.current = null;
+
+        if (hasFocus || isFocusIdle(map)) {
+            map.getCanvas().focus();
+            map.once('moveend', handleExpandEnd);
+        }
+
         map.easeTo(withMotion({ center: coordinates, zoom }));
+    }
+
+    function handleCorrectionEnd() {
+        isCorrectingRef.current = false;
+        correctZoom();
     }
 
     function handleLoad() {
@@ -745,6 +809,8 @@ export default function MapView({ categories, flyTarget, hasActiveFilters, hover
             source: SOURCE_ID,
             type: 'circle',
         });
+        handleMove();
+        correctZoom();
         setIsMapReady(true);
         syncRegions();
     }
@@ -761,7 +827,7 @@ export default function MapView({ categories, flyTarget, hasActiveFilters, hover
     }
 
     function handleMarkerKeyDown(event: KeyboardEvent) {
-        if (event.isComposing || isModifiedKey(event)) return;
+        if (event.isComposing || isModifiedEvent(event)) return;
 
         const button = markerButtonOf(event.target);
 
@@ -788,6 +854,27 @@ export default function MapView({ categories, flyTarget, hasActiveFilters, hover
         const next = scaleBarOf(map.getZoom(), map.getCenter().lat);
 
         setScaleBar(current => (current.label === next.label && current.width === next.width ? current : next));
+        syncMaxZoom();
+    }
+
+    function handleMoveEnd() {
+        const map = mapRef.current;
+
+        if (!map) return;
+
+        isCameraFreeRef.current = false;
+        syncMaxZoom();
+        correctZoom();
+        saveAtlasState({ camera: cameraOf(map) });
+    }
+
+    function handlePointerLeave() {
+        pointerPointRef.current = null;
+    }
+
+    function handlePointerMove(event: MapMouseEvent) {
+        pointerPointRef.current = { x: event.point.x, y: event.point.y };
+        syncMaxZoom();
     }
 
     function handleSync() {
@@ -796,12 +883,14 @@ export default function MapView({ categories, flyTarget, hasActiveFilters, hover
         if (!map || !map.getSource(SOURCE_ID) || !map.isSourceLoaded(SOURCE_ID)) return;
 
         const context = contextRef.current;
-        const features = map.querySourceFeatures(SOURCE_ID) as unknown as MapFeature[];
+        const features = map.querySourceFeatures(SOURCE_ID);
         let hasChanges = false;
         const visibleKeys = new Set<string>();
 
         for (const feature of features) {
-            const coordinates = feature.geometry.coordinates;
+            if (feature.geometry.type !== 'Point') continue;
+
+            const [lng, lat] = feature.geometry.coordinates;
             const properties = feature.properties;
 
             if (properties.cluster) {
@@ -815,9 +904,9 @@ export default function MapView({ categories, flyTarget, hasActiveFilters, hover
 
                 if (markersRef.current.has(key)) continue;
 
-                const marker = createClusterMarker(context.categories, properties, () => handleClusterExpand(clusterId, coordinates));
+                const marker = createClusterMarker(context.categories, properties, hasFocus => handleClusterExpand(clusterId, [lng, lat], hasFocus));
 
-                marker.setLngLat(coordinates).addTo(map);
+                marker.setLngLat([lng, lat]).addTo(map);
                 markersRef.current.set(key, marker);
                 hasChanges = true;
 
@@ -838,11 +927,7 @@ export default function MapView({ categories, flyTarget, hasActiveFilters, hover
 
             if (!place) continue;
 
-            const pin = createPinMarker(place, context.trips.find(trip => trip.id === place.trip), {
-                onEnter: () => contextRef.current.onHoverPlace(place),
-                onLeave: () => contextRef.current.onHoverPlace(null),
-                onSelect: () => contextRef.current.onSelectPlace(place.id),
-            });
+            const pin = createPinMarker(place, context.trips.find(trip => trip.id === place.trip), { onSelect: () => contextRef.current.onSelectPlace(place.id) });
 
             applyPinState(pin, context.selectedPlaceId === place.id);
             markersRef.current.set(key, pin.marker);
@@ -867,6 +952,20 @@ export default function MapView({ categories, flyTarget, hasActiveFilters, hover
         }
 
         if (hasChanges) applyRoving();
+
+        focusPendingCluster();
+        focusPendingPin();
+    }
+
+    function handleWheel(event: MapWheelEvent) {
+        const map = mapRef.current;
+
+        if (!map) return;
+
+        const rect = map.getContainer().getBoundingClientRect();
+
+        pointerPointRef.current = { x: event.originalEvent.clientX - rect.left, y: event.originalEvent.clientY - rect.top };
+        syncMaxZoom();
     }
 
     function markerButtons() {
@@ -885,6 +984,16 @@ export default function MapView({ categories, flyTarget, hasActiveFilters, hover
         for (const [key, marker] of markersRef.current) if (buttonOf(marker) === button) return key;
 
         return null;
+    }
+
+    function reanchorPopup(popup: Popup, place: AtlasPlace) {
+        function handleFrame() {
+            if (popupRef.current !== popup || popupPlaceRef.current !== place.id) return;
+
+            popup.setLngLat([place.lng, place.lat]);
+        }
+
+        requestAnimationFrame(() => requestAnimationFrame(handleFrame));
     }
 
     function rovingKeyOf() {
@@ -906,6 +1015,8 @@ export default function MapView({ categories, flyTarget, hasActiveFilters, hover
         const content = element.querySelector<HTMLElement>('.maplibregl-popup-content');
         const tip = element.querySelector<HTMLElement>('.maplibregl-popup-tip');
 
+        element.style.zIndex = POPUP_Z_INDEX;
+
         if (content) {
             content.style.background = 'none';
             content.style.borderRadius = '0';
@@ -914,6 +1025,18 @@ export default function MapView({ categories, flyTarget, hasActiveFilters, hover
         }
 
         if (tip) tip.style.display = 'none';
+    }
+
+    function syncMaxZoom() {
+        const map = mapRef.current;
+
+        if (!map || isCameraFreeRef.current) return;
+
+        const cap = zoomCapOf(map);
+
+        if (map.getZoom() > cap + ZOOM_EPSILON || map.getMaxZoom() === cap) return;
+
+        map.setMaxZoom(cap);
     }
 
     function syncRegions() {
@@ -934,8 +1057,17 @@ export default function MapView({ categories, flyTarget, hasActiveFilters, hover
         source.setData(data);
     }
 
+    function zoomCapOf(map: MapLibreMap) {
+        const centerCap = maxZoomAt(map.getCenter().wrap());
+        const pointer = pointerPointRef.current;
+
+        if (!pointer) return centerCap;
+
+        return Math.max(centerCap, maxZoomAt(map.unproject([pointer.x, pointer.y]).wrap()));
+    }
+
     useEffect(() => {
-        contextRef.current = { categories, onHoverPlace, onSelectPlace, onShowInCards, places, regions, selectedPlaceId, trips };
+        contextRef.current = { categories, onSelectPlace, onShowInCards, places, regions, selectedPlaceId, trips };
     });
 
     useEffect(() => {
@@ -943,16 +1075,19 @@ export default function MapView({ categories, flyTarget, hasActiveFilters, hover
 
         if (!container) return;
 
+        const storedCamera = loadAtlasState()?.camera ?? null;
+
         const map = new MapLibreMap({
             attributionControl: false,
-            center: DEFAULT_CENTER,
+            center: storedCamera ?? DEFAULT_CENTER,
             container,
             dragRotate: false,
             maxZoom: MAP_MAX_ZOOM,
+            minZoom: MIN_ZOOM,
             pitchWithRotate: false,
             style: mapStyle,
             touchPitch: false,
-            zoom: DEFAULT_ZOOM,
+            zoom: storedCamera?.zoom ?? DEFAULT_ZOOM,
         });
         const popup = new Popup({
             closeButton: false,
@@ -968,16 +1103,19 @@ export default function MapView({ categories, flyTarget, hasActiveFilters, hover
         popup.setDOMContent(popupContainer);
         map.on('click', () => contextRef.current.onSelectPlace(null));
         map.on('load', handleLoad);
+        map.on('mousemove', handlePointerMove);
+        map.on('mouseout', handlePointerLeave);
         map.on('move', handleMove);
+        map.on('moveend', handleMoveEnd);
         map.on('render', handleSync);
         map.on('sourcedata', handleSync);
+        map.on('wheel', handleWheel);
         popupContainer.addEventListener('click', event => event.stopPropagation());
         container.addEventListener('focusin', handleMarkerFocus);
         container.addEventListener('keydown', handleMarkerKeyDown, true);
         mapRef.current = map;
         popupRef.current = popup;
         popupRootRef.current = createRoot(popupContainer);
-        fitToPlaces(true);
 
         return () => {
             const root = popupRootRef.current;
@@ -1018,13 +1156,25 @@ export default function MapView({ categories, flyTarget, hasActiveFilters, hover
     useEffect(() => {
         if (!isMapReady) return;
 
-        fitToPlaces(false);
+        if (!hasSkippedInitialFitRef.current) {
+            hasSkippedInitialFitRef.current = true;
+
+            return;
+        }
+
+        fitToPlaces();
     }, [boundsKey, isMapReady]);
 
     useEffect(() => {
         const map = mapRef.current;
 
-        if (!isMapReady || !map) return;
+        if (!map) return;
+
+        if (!isMapReady) {
+            if (flyTarget && isFocusIdle(map)) map.getCanvas().focus();
+
+            return;
+        }
 
         const target = flyTarget;
 
@@ -1035,6 +1185,8 @@ export default function MapView({ categories, flyTarget, hasActiveFilters, hover
         }
 
         flownTargetRef.current = target;
+        pendingClusterKeyRef.current = null;
+        pendingFocusRef.current = null;
 
         const place = findPlace(target.placeId);
         const placeId = target.placeId;
@@ -1045,25 +1197,32 @@ export default function MapView({ categories, flyTarget, hasActiveFilters, hover
             return;
         }
 
-        function handleMoveEnd() {
+        function handleFlyEnd() {
             contextRef.current.onSelectPlace(placeId);
             setPopupPlaceId(placeId);
+            focusPin(placeId);
         }
 
         setPopupPlaceId(null);
         map.stop();
-        map.once('moveend', handleMoveEnd);
-        map.flyTo(withMotion({ center: [place.lng, place.lat], zoom: FLY_ZOOM }));
+        freeCamera();
+
+        if (isFocusIdle(map)) map.getCanvas().focus();
+
+        map.once('moveend', handleFlyEnd);
+        map.flyTo(withMotion({ center: [place.lng, place.lat], zoom: Math.min(FLY_ZOOM, maxZoomAt(place)) }));
 
         return () => {
-            map.off('moveend', handleMoveEnd);
+            map.off('moveend', handleFlyEnd);
         };
     }, [flyTarget, isMapReady, places, selectedPlaceId]);
 
     useEffect(() => {
         for (const [placeId, pin] of pinsRef.current) applyPinState(pin, placeId === selectedPlaceId);
 
-        if (selectedPlaceId !== null && pinsRef.current.has(selectedPlaceId)) rovingKeyRef.current = `${PLACE_KEY_PREFIX}${selectedPlaceId}`;
+        if (selectedPlaceId !== null && pinsRef.current.has(selectedPlaceId)) {
+            rovingKeyRef.current = `${PLACE_KEY_PREFIX}${selectedPlaceId}`;
+        }
 
         applyRoving();
     }, [selectedPlaceId]);
@@ -1072,6 +1231,7 @@ export default function MapView({ categories, flyTarget, hasActiveFilters, hover
         const map = mapRef.current;
         const place = findPlace(popupPlaceId);
         const popup = popupRef.current;
+        const previousPlaceId = popupPlaceRef.current;
         const root = popupRootRef.current;
 
         if (!map || !popup || !root) return;
@@ -1087,38 +1247,39 @@ export default function MapView({ categories, flyTarget, hasActiveFilters, hover
 
         popupPlaceRef.current = place.id;
         popup.setLngLat([place.lng, place.lat]);
+
+        if (popup.isOpen() && previousPlaceId !== null && previousPlaceId !== place.id) {
+            map.easeTo(withMotion({ center: [place.lng, place.lat], duration: POPUP_EASE_DURATION }));
+        }
+
         root.render(
-            <PlacePopup
-                category={category}
+            <PlaceCard
+                categoryLabel={category.name}
+                isFloating
+                key={place.id}
                 onClose={() => contextRef.current.onSelectPlace(null)}
-                onShowInCards={() => contextRef.current.onShowInCards(place)}
+                onShowInCards={selected => contextRef.current.onShowInCards(selected)}
                 place={place}
                 trip={trip}
             />,
         );
 
-        if (popup.isOpen()) return;
+        if (!popup.isOpen()) {
+            popup.addTo(map);
+            stylePopupChrome();
+        }
 
-        popup.addTo(map);
-        stylePopupChrome();
+        reanchorPopup(popup, place);
     }, [categories, places, popupPlaceId, trips]);
 
     return (
         <div className="atlas-fade atlas-fade--slow absolute inset-0 overflow-hidden">
             <div className="h-full w-full" ref={containerRef} />
-            <div className={`absolute flex flex-col inset-x-0 items-center z-10 w-fit mx-auto gap-[4px] pointer-events-none ${hasBottomStrip ? 'bottom-[104px] max-md:bottom-[18px]' : 'bottom-[18px]'}`}>
+            <div className="absolute bottom-[18px] flex flex-col inset-x-0 items-center z-30 w-fit gap-[4px] mx-auto pointer-events-none">
                 <div style={{ width: scaleBar.width }}>
                     <div className="h-[5px] border-b border-l border-r border-storm" aria-hidden="true" />
                 </div>
-                <p className="atlas-label px-[4px] py-[2px] rounded-[4px] leading-none text-[10px] tracking-[0.12em] bg-snow-90 text-storm backdrop-blur-[8px]">{scaleBar.label}</p>
-            </div>
-            <div className="absolute bottom-[86px] right-[18px] z-10 max-w-[calc(100%-36px)] min-h-[30px] text-right pointer-events-none">
-                {hoverPlace && (
-                    <div className="inline-block px-[8px] py-[4px] rounded-[10px] bg-snow-90 backdrop-blur-[8px]">
-                        <p className="mb-[2px] font-medium text-[11px] wrap-anywhere text-slate">{hoverPlace.name}</p>
-                        <p className="atlas-label text-[10px] tracking-[0.12em] text-storm">{formatCoordinates(hoverPlace)}</p>
-                    </div>
-                )}
+                <p className="px-[4px] py-[2px] rounded-[4px] font-mono leading-none text-[10px] tracking-[0.12em] uppercase bg-snow-90 text-storm backdrop-blur-[8px]">{scaleBar.label}</p>
             </div>
         </div>
     );

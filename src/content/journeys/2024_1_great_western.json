@@ -1,7 +1,5 @@
 {
-    "name": "Great Western",
-    "ordered": true,
-    "places": [
+    "markers": [
         {
             "category": "urban",
             "description": "Los Angeles International Airport is the primary airport serving Southern California and one of the busiest passenger hubs in the world.",
@@ -74,7 +72,7 @@
         },
         {
             "category": "dining",
-            "description": "Rock N' Potato is a rock-themed eatery in the Showcase Mall food court on the Las Vegas Strip, known for its over-the-top stuffed baked potatoes.",
+            "description": "Rock N' Potato is a rock-themed eatery in the Showcase Mall food court on the Las Vegas Strip, serving stuffed baked potatoes.",
             "lat": 36.1031634,
             "lng": -115.1723254,
             "name": "Rock N' Potato"
@@ -172,7 +170,7 @@
         },
         {
             "category": "dining",
-            "description": "Plaza Bonita Restaurant is a family-friendly Mexican restaurant in Tusayan, Arizona, serving Mexican fare minutes from the Grand Canyon's South Rim.",
+            "description": "Plaza Bonita Restaurant is a family-friendly Mexican restaurant in Tusayan, Arizona, minutes from the Grand Canyon's South Rim.",
             "lat": 35.9728511,
             "lng": -112.1271513,
             "name": "Plaza Bonita Restaurant"
@@ -214,14 +212,14 @@
         },
         {
             "category": "urban",
-            "description": "This address served as a private home-base stay in Page, Arizona, a convenient overnight base for the trip.",
+            "description": "This address served as a private home-base stay in Page, Arizona, a convenient overnight base for the journey.",
             "lat": 36.914989,
             "lng": -111.4625924,
             "name": "425 Elm St"
         },
         {
             "category": "dining",
-            "description": "Domino's Pizza is a national pizza-delivery chain, with this Page, Arizona, location serving as a quick meal stop on the trip.",
+            "description": "Domino's Pizza is a national pizza-delivery chain, with this Page, Arizona, location serving as a quick meal stop on the journey.",
             "lat": 36.9154499,
             "lng": -111.4584896,
             "name": "Domino's Pizza"
@@ -235,21 +233,21 @@
         },
         {
             "category": "dining",
-            "description": "Backroads Bistro was a small American bistro on Main Street in Panguitch, Utah, near Bryce Canyon, known for its salads, sandwiches, and desserts.",
+            "description": "Backroads Bistro was a small American bistro on Main Street in Panguitch, Utah, near Bryce Canyon, serving salads, sandwiches, and desserts.",
             "lat": 37.8229456,
             "lng": -112.4359682,
             "name": "Backroads Bistro"
         },
         {
             "category": "urban",
-            "description": "This address served as a private home-base stay in Orem, Utah, an overnight base along the trip route.",
+            "description": "This address served as a private home-base stay in Orem, Utah, an overnight base along the journey route.",
             "lat": 40.3080582,
             "lng": -111.7057959,
             "name": "425 W 600 N St"
         },
         {
             "category": "dining",
-            "description": "Outback Steakhouse is an Australian-themed American steakhouse chain, with this Provo, Utah, location serving as a familiar dinner stop on the trip.",
+            "description": "Outback Steakhouse is an Australian-themed American steakhouse chain, with this Provo, Utah, location serving as a familiar dinner stop on the journey.",
             "lat": 40.272881,
             "lng": -111.6855632,
             "name": "Outback Steakhouse"
@@ -284,7 +282,7 @@
         },
         {
             "category": "nature",
-            "description": "Lower Geyser Basin is Yellowstone's largest geyser basin, home to the Fountain Paint Pot mud pots and frequently erupting Great Fountain Geyser.",
+            "description": "Lower Geyser Basin is Yellowstone's largest geyser basin, home to the Fountain Paint Pot mud pots and the frequently erupting Great Fountain Geyser.",
             "lat": 44.5493164,
             "lng": -110.8077192,
             "name": "Lower Geyser Basin"
@@ -312,7 +310,7 @@
         },
         {
             "category": "dining",
-            "description": "Firehole Bar-B-Que Co. is a family-owned barbecue joint in West Yellowstone, Montana, smoking its meats in-house and featured on Diners, Drive-Ins and Dives.",
+            "description": "Firehole Bar-B-Que Co. is a family-owned barbecue joint in West Yellowstone, Montana, smoking its meats in-house.",
             "lat": 44.661951,
             "lng": -111.100489,
             "name": "Firehole Bar-B-Que Co."
@@ -339,5 +337,6 @@
             "name": "Denver International Airport"
         }
     ],
-    "year": 2024
+    "name": "Great Western",
+    "ordered": true
 }

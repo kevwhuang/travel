@@ -8,7 +8,7 @@
         transform var(--duration-fast) ease;
 }
 
-.atlas-card:hover {
+.atlas-card--lift:hover {
     border-color: var(--color-pearl);
     box-shadow: 0 12px 26px var(--color-ink-10);
     transform: translateY(-3px);
@@ -65,7 +65,7 @@
     display: flex;
     height: 48px;
     max-width: 48px;
-    overflow: hidden;
+    overflow: clip;
     transition:
         background var(--duration-base) ease,
         border-color var(--duration-base) ease,
@@ -83,8 +83,8 @@
     border-radius: 999px;
 }
 
-.atlas-control:focus-within,
-.atlas-control:hover {
+.atlas-control:hover,
+.atlas-control:not(:where(search)):focus-within {
     box-shadow: 0 8px 20px var(--color-ink-10);
     max-width: 280px;
 }
@@ -99,11 +99,17 @@
     max-width: min(340px, calc(100dvw - 90px));
 }
 
-search.atlas-control :focus-visible {
-    outline: none;
+.atlas-control--wide:focus-within,
+.atlas-control--wide:hover {
+    max-width: min(360px, calc(100dvw - 90px));
 }
 
-search.atlas-control:focus-within {
+search.atlas-control button:focus-visible {
+    border-radius: 999px;
+    outline-offset: -3px;
+}
+
+search.atlas-control:has(input:focus) {
     border-color: var(--color-ink);
     box-shadow:
         0 8px 20px var(--color-ink-10),
@@ -111,7 +117,7 @@ search.atlas-control:focus-within {
 }
 
 .atlas-fade {
-    animation: atlas__fade-in var(--duration-base) ease both;
+    animation: atlas-fade__in var(--duration-base) ease-out both;
 }
 
 .atlas-fade--slow {
@@ -126,11 +132,6 @@ search.atlas-control:focus-within {
     position: fixed;
 }
 
-.atlas-label {
-    font-family: var(--font-mono);
-    text-transform: uppercase;
-}
-
 .atlas-marker {
     border-radius: 999px;
 }
@@ -140,7 +141,7 @@ search.atlas-control:focus-within {
 }
 
 .atlas-panel {
-    animation: atlas__panel-in var(--duration-base) cubic-bezier(0.2, 0.9, 0.3, 1.05) both;
+    animation: atlas-panel__in var(--duration-base) ease-out both;
     background-color: var(--color-paper);
     border: 1px solid var(--color-haze);
     border-radius: 14px;
@@ -205,11 +206,11 @@ search.atlas-control:focus-within {
 }
 
 .atlas-pulse {
-    animation: atlas__fade-in var(--duration-slow) ease-in-out infinite alternate both;
+    animation: atlas-fade__in var(--duration-slow) ease-in-out infinite alternate both;
 }
 
 .atlas-rise {
-    animation: atlas__rise-in var(--duration-slow) ease both;
+    animation: atlas-rise__in var(--duration-slow) ease-out both;
 }
 
 .atlas-rise--quick {
@@ -217,14 +218,22 @@ search.atlas-control:focus-within {
 }
 
 .atlas-veil {
-    animation: atlas__fade-in var(--duration-base) ease both;
+    animation: atlas-fade__in var(--duration-base) ease-out both;
     backdrop-filter: blur(3px);
     background: var(--color-ink-40);
     inset: 0;
     position: fixed;
 }
 
-@keyframes atlas__fade-in {
+.maplibregl-canvas:focus-visible {
+    outline-offset: -3px;
+}
+
+.maplibregl-popup {
+    font-family: var(--font-sans);
+}
+
+@keyframes atlas-fade__in {
     from {
         opacity: 0;
     }
@@ -234,7 +243,7 @@ search.atlas-control:focus-within {
     }
 }
 
-@keyframes atlas__panel-in {
+@keyframes atlas-panel__in {
     from {
         opacity: 0;
         transform: translateY(16px) scale(0.97);
@@ -246,7 +255,7 @@ search.atlas-control:focus-within {
     }
 }
 
-@keyframes atlas__rise-in {
+@keyframes atlas-rise__in {
     from {
         opacity: 0;
         transform: translateY(12px);

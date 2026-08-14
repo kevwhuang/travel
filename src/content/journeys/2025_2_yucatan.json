@@ -1,10 +1,8 @@
 {
-    "name": "Yucatán",
-    "ordered": false,
-    "places": [
+    "markers": [
         {
             "category": "urban",
-            "description": "Cancún is a resort city on Mexico's Caribbean coast, known for its hotel zone, white-sand beaches, and nightlife.",
+            "description": "Cancún is a resort city on Mexico's Caribbean coast, known for its Hotel Zone, white-sand beaches, and nightlife.",
             "lat": 21.161908,
             "lng": -86.8515279,
             "name": "Cancún"
@@ -56,14 +54,14 @@
         },
         {
             "category": "urban",
-            "description": "Playa del Carmen is a beach city on the Riviera Maya, known for pedestrian Quinta Avenida and ferries to Cozumel.",
+            "description": "Playa del Carmen is a beach city on the Riviera Maya, known for its pedestrian Quinta Avenida and ferries to Cozumel.",
             "lat": 20.6295586,
             "lng": -87.0738851,
             "name": "Playa del Carmen"
         },
         {
             "category": "urban",
-            "description": "San Miguel de Cozumel is the main town on Cozumel island, known for its waterfront malecón, dive shops, and cruise port.",
+            "description": "San Miguel de Cozumel is the main town on the island of Cozumel, known for its waterfront malecón, dive shops, and cruise port.",
             "lat": 20.5071703,
             "lng": -86.9446237,
             "name": "San Miguel de Cozumel"
@@ -84,5 +82,6 @@
             "starred": true
         }
     ],
-    "year": 2025
+    "name": "Yucatán",
+    "ordered": false
 }

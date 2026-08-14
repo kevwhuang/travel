@@ -1,7 +1,5 @@
 {
-    "name": "Arlington",
-    "ordered": true,
-    "places": [
+    "markers": [
         {
             "category": "dining",
             "description": "Czech-American Restaurant is a family-run eatery on Main Street in West, Texas, serving authentic Czech and American comfort food since 1980.",
@@ -11,7 +9,7 @@
         },
         {
             "category": "dining",
-            "description": "Slovacek's is a famous I-35 roadside bakery and sausage shop in West, Texas, known for kolaches, klobasneks, and homemade smoked meats.",
+            "description": "Slovacek's is an Interstate 35 roadside bakery and sausage shop in West, Texas, known for kolaches, klobasneks, and homemade smoked meats.",
             "lat": 31.8017505,
             "lng": -97.1026055,
             "name": "Slovacek's West"
@@ -25,21 +23,21 @@
         },
         {
             "category": "urban",
-            "description": "Texas Live! is a dining and entertainment complex in Arlington, Texas, packed with restaurants, bars, and live-event venues beside Globe Life Field.",
+            "description": "Texas Live! is a dining and entertainment complex in Arlington, Texas, with restaurants, bars, and live-event venues beside Globe Life Field.",
             "lat": 32.749359,
             "lng": -97.0849553,
             "name": "Texas Live!"
         },
         {
             "category": "nature",
-            "description": "Richard Greene Linear Park is a landscaped promenade with fountains and walking paths threading Arlington's stadium district along Johnson Creek.",
+            "description": "Richard Greene Linear Park is a landscaped promenade with fountains and walking paths through Arlington's stadium district along Johnson Creek.",
             "lat": 32.7527542,
             "lng": -97.0854788,
             "name": "Richard Greene Linear Park"
         },
         {
             "category": "dining",
-            "description": "The Social House is a lively Arlington, Texas, restaurant and bar with a scratch kitchen, roughly 100 beers on tap, and popular brunch.",
+            "description": "The Social House is a lively Arlington, Texas, restaurant and bar with a scratch kitchen, roughly 100 beers on tap, and brunch.",
             "lat": 32.760786,
             "lng": -97.0959943,
             "name": "The Social House"
@@ -81,7 +79,7 @@
         },
         {
             "category": "dining",
-            "description": "The Original Roy Hutchins Barbeque is a family-run smokehouse in Trophy Club, Texas, known for brisket, beef ribs, Texas Twinkies, and complimentary cobbler.",
+            "description": "The Original Roy Hutchins Barbeque is a family-run smokehouse in Trophy Club, Texas, serving brisket, beef ribs, Texas Twinkies, and complimentary cobbler.",
             "lat": 32.9863416,
             "lng": -97.1701395,
             "name": "The Original Roy Hutchins Barbeque"
@@ -95,7 +93,7 @@
         },
         {
             "category": "wellness",
-            "description": "Happy Panda Massage & Spa is a highly rated massage studio on Western Center Boulevard in Haltom City, Texas, offering Asian-style bodywork and spa treatments.",
+            "description": "Happy Panda Massage & Spa is a massage studio on Western Center Boulevard in Haltom City, Texas, offering Asian-style bodywork and spa treatments.",
             "lat": 32.8603393,
             "lng": -97.2758266,
             "name": "Happy Panda Massage & Spa"
@@ -129,5 +127,6 @@
             "name": "Dave's Hot Chicken"
         }
     ],
-    "year": 2026
+    "name": "Arlington",
+    "ordered": true
 }

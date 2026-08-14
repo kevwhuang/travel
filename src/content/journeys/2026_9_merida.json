@@ -1,12 +1,10 @@
 {
-    "name": "Mérida",
-    "ordered": true,
-    "places": [
+    "markers": [
         {
             "category": "urban",
-            "description": "Mérida International Airport, formally Aeropuerto Internacional Manuel Crescencio Rejón, is the main air gateway to Yucatán's capital city.",
-            "lat": 20.9340284,
-            "lng": -89.6629729,
+            "description": "Mérida International Airport is the main air gateway to Yucatán state, serving domestic and international flights just south of the city center.",
+            "lat": 20.9241634,
+            "lng": -89.6584306,
             "name": "Mérida International Airport"
         },
         {
@@ -18,21 +16,21 @@
         },
         {
             "category": "dining",
-            "description": "La Chaya Maya is a beloved Yucatecan restaurant in downtown Mérida known for cochinita pibil, papadzules, and handmade tortillas.",
+            "description": "La Chaya Maya is a popular Yucatecan restaurant in downtown Mérida known for cochinita pibil, papadzules, and handmade tortillas.",
             "lat": 20.9699203,
             "lng": -89.6238919,
             "name": "La Chaya Maya"
         },
         {
             "category": "urban",
-            "description": "Erudita is a modern apartment complex with pool and coworking amenities in Temozón Norte, north Mérida, serving as the trip's home base.",
+            "description": "Erudita is a modern apartment complex with pool and coworking amenities in Temozón Norte, north Mérida, serving as the journey's home base.",
             "lat": 21.0471216,
             "lng": -89.6136922,
             "name": "Erudita"
         },
         {
             "category": "dining",
-            "description": "Te Extraño, Extraño is a contemporary restaurant in Temozón Norte, Mérida, popular for from-scratch breakfasts, chilaquiles, and a leafy terrace.",
+            "description": "Te Extraño, Extraño is a contemporary restaurant in Temozón Norte, Mérida, serving from-scratch breakfasts and chilaquiles on a leafy terrace.",
             "lat": 21.0501994,
             "lng": -89.6186841,
             "name": "Te Extraño, Extraño"
@@ -52,7 +50,7 @@
             "name": "Women'secret"
         },
         {
-            "category": "miscellaneous",
+            "category": "misc",
             "description": "Soriana is a major Mexican supermarket chain, with this Altabrisa-area store serving as a convenient grocery stop in Mérida.",
             "lat": 21.0192252,
             "lng": -89.5841276,
@@ -67,7 +65,7 @@
         },
         {
             "category": "urban",
-            "description": "Altabrisa Bowling is a bowling alley and entertainment center inside Plaza Altabrisa mall in northeast Mérida.",
+            "description": "Altabrisa Bowling is a bowling alley and entertainment center inside Plaza Altabrisa in northeast Mérida.",
             "lat": 21.019068,
             "lng": -89.584058,
             "name": "Altabrisa Bowling"
@@ -91,7 +89,8 @@
             "description": "Paseo de Montejo is Mérida's grand tree-lined boulevard, famed for its French-inspired 19th-century mansions, monuments, and cafes.",
             "lat": 20.9823677,
             "lng": -89.6182953,
-            "name": "Paseo de Montejo"
+            "name": "Paseo de Montejo",
+            "starred": true
         },
         {
             "category": "landmarks",
@@ -109,14 +108,14 @@
         },
         {
             "category": "dining",
-            "description": "Menta & Rosa is a pink-and-mint cafe near Paseo de Montejo in Mérida, popular for breakfast, brunch, and pastries.",
+            "description": "Menta & Rosa is a pink-and-mint cafe near Paseo de Montejo in Mérida, serving breakfast, brunch, and pastries.",
             "lat": 20.975825,
             "lng": -89.6186423,
             "name": "Menta & Rosa"
         },
         {
             "category": "dining",
-            "description": "Crabster Seafood & Grill is a stylish restaurant on the Progreso malecón known for fresh ceviches, crab, and Yucatecan-influenced seafood.",
+            "description": "Crabster Seafood & Grill is a seafood restaurant on the Progreso malecón serving fresh ceviches, crab, and Yucatecan-influenced seafood.",
             "lat": 21.2880342,
             "lng": -89.6605651,
             "name": "Crabster Seafood & Grill"
@@ -129,7 +128,7 @@
             "name": "Playa de Progreso"
         },
         {
-            "category": "miscellaneous",
+            "category": "misc",
             "description": "Costco Wholesale is the American membership warehouse club, with this Mérida location serving as a bulk-shopping stop for supplies.",
             "lat": 21.0372415,
             "lng": -89.6296245,
@@ -151,7 +150,7 @@
         },
         {
             "category": "dining",
-            "description": "Lattejus is a cafe in northern Mérida known for iced lattes, chai, thick cookies, and health-focused bowls and sandwiches.",
+            "description": "Lattejus is a cafe in north Mérida serving iced lattes, chai, thick cookies, and health-focused bowls and sandwiches.",
             "lat": 21.0371031,
             "lng": -89.609518,
             "name": "Lattejus"
@@ -172,7 +171,7 @@
         },
         {
             "category": "dining",
-            "description": "Kōfuku is a Japanese-Latin fusion restaurant in Mérida's Sodzil Norte, known for yōshoku street food, hirata buns, and sushi tacos.",
+            "description": "Kōfuku is a Japanese-Latin fusion restaurant in Mérida's Sodzil Norte, serving yōshoku street food, hirata buns, and sushi tacos.",
             "lat": 21.0375383,
             "lng": -89.619846,
             "name": "Kōfuku"
@@ -192,7 +191,7 @@
             "name": "Smart Fit Urban Center"
         },
         {
-            "category": "miscellaneous",
+            "category": "misc",
             "description": "OXXO Cocoyoles is a branch of Mexico's ubiquitous convenience store chain in north Mérida, a practical stop for snacks and essentials.",
             "lat": 21.0402879,
             "lng": -89.6016108,
@@ -200,7 +199,7 @@
         },
         {
             "category": "dining",
-            "description": "Clandestino Café is a specialty coffee shop near Paseo de Montejo in Mérida known for pour-over brews and all-day breakfast.",
+            "description": "Clandestino Café is a specialty coffee shop near Paseo de Montejo in Mérida serving pour-over brews and all-day breakfast.",
             "lat": 20.9808004,
             "lng": -89.6182123,
             "name": "Clandestino Café"
@@ -242,14 +241,14 @@
         },
         {
             "category": "dining",
-            "description": "Alma Piedra is a café on Calle 50 in Mérida's historic center serving breakfast, brunch, and specialty coffee.",
+            "description": "Alma Piedra is a cafe on Calle 50 in Mérida's historic center serving breakfast, brunch, and specialty coffee.",
             "lat": 20.9761647,
             "lng": -89.6140176,
             "name": "Alma Piedra Centro"
         },
         {
             "category": "dining",
-            "description": "Hogarento is a breakfast and brunch restaurant in Temozón Norte, north Mérida, popular for its home-style morning dishes.",
+            "description": "Hogarento is a breakfast and brunch restaurant in Temozón Norte, north Mérida, serving home-style morning dishes.",
             "lat": 21.0491339,
             "lng": -89.6223202,
             "name": "Hogarento"
@@ -291,7 +290,7 @@
         },
         {
             "category": "urban",
-            "description": "Galerías Mérida is a large enclosed shopping mall in northwest Mérida anchored by Liverpool with fashion retailers, dining, and a cinema.",
+            "description": "Galerías Mérida is a large enclosed shopping mall in northwest Mérida anchored by Liverpool, with fashion retailers, dining, and a cinema.",
             "lat": 21.0391303,
             "lng": -89.6309493,
             "name": "Galerías Mérida"
@@ -305,7 +304,7 @@
         },
         {
             "category": "dining",
-            "description": "La Recova is an Argentine-style steakhouse at the City Center complex in north Mérida, known for grilled cuts and empanadas.",
+            "description": "La Recova is an Argentine-style steakhouse at the City Center complex in north Mérida, serving grilled cuts and empanadas.",
             "lat": 21.0368048,
             "lng": -89.6051004,
             "name": "La Recova"
@@ -347,7 +346,7 @@
         },
         {
             "category": "dining",
-            "description": "Kinich is a renowned Yucatecan restaurant in Izamal serving regional classics like cochinita pibil near the Kinich Kak Moo pyramid.",
+            "description": "Kinich is a renowned Yucatecan restaurant in Izamal near the Kinich Kak Moo pyramid, serving regional classics like cochinita pibil.",
             "lat": 20.9359346,
             "lng": -89.0183336,
             "name": "Restaurante Kinich"
@@ -368,14 +367,14 @@
         },
         {
             "category": "dining",
-            "description": "Trattoria La Pasta is an Italian restaurant on Paseo de Montejo in Mérida known for homemade pastas and wood-fired pizzas.",
+            "description": "Trattoria La Pasta is an Italian restaurant on Paseo de Montejo in Mérida serving homemade pastas and wood-fired pizzas.",
             "lat": 20.9797055,
             "lng": -89.6190071,
             "name": "Trattoria La Pasta Montejo"
         },
         {
             "category": "dining",
-            "description": "Bryan's Modern Grill is a New York-style grill restaurant in Mérida's Montecristo neighborhood, a longtime local dining fixture.",
+            "description": "Bryan's Modern Grill is a New York-style grill restaurant in Mérida's Montecristo neighborhood.",
             "lat": 21.0184178,
             "lng": -89.5933276,
             "name": "Bryan's"
@@ -395,5 +394,6 @@
             "name": "Brasa Parrilla Uruguaya"
         }
     ],
-    "year": 2026
+    "name": "Mérida",
+    "ordered": true
 }

@@ -1,7 +1,5 @@
 {
-    "name": "Maya",
-    "ordered": true,
-    "places": [
+    "markers": [
         {
             "category": "urban",
             "description": "Mérida International Airport is the main air gateway to Yucatán state, serving domestic and international flights just south of the city center.",
@@ -11,7 +9,7 @@
         },
         {
             "category": "dining",
-            "description": "Los Taquitos de PM Altabrisa is a branch of a popular Mérida taqueria chain known for al pastor tacos and Yucatecan cochinita.",
+            "description": "Los Taquitos de PM Altabrisa is a branch of a Mérida taqueria chain serving al pastor tacos and Yucatecan cochinita.",
             "lat": 21.0269091,
             "lng": -89.5725323,
             "name": "Los Taquitos de PM Altabrisa"
@@ -31,7 +29,7 @@
             "name": "Chili's"
         },
         {
-            "category": "miscellaneous",
+            "category": "misc",
             "description": "Walmart is a large supermarket in northern Mérida, a practical stop for groceries and travel supplies.",
             "lat": 20.9863529,
             "lng": -89.6163864,
@@ -74,28 +72,28 @@
         },
         {
             "category": "urban",
-            "description": "Hotel Casa Melissa is a small hotel on Avenida Benito Juárez in Playa del Carmen, steps from Fifth Avenue, the beach, and the Cozumel ferry.",
+            "description": "Hotel Casa Melissa is a small hotel on Avenida Benito Juárez in Playa del Carmen, steps from Quinta Avenida, the beach, and the Cozumel ferry.",
             "lat": 20.6222819,
             "lng": -87.0747399,
             "name": "Hotel Casa Melissa"
         },
         {
             "category": "dining",
-            "description": "Les Amis is a French sandwich shop in central Playa del Carmen, known for baguette sandwiches on house-baked bread and fresh juices.",
+            "description": "Les Amis is a French sandwich shop in central Playa del Carmen, serving baguette sandwiches on house-baked bread and fresh juices.",
             "lat": 20.6263753,
             "lng": -87.0718244,
             "name": "Les Amis"
         },
         {
             "category": "urban",
-            "description": "Playa del Carmen is a resort city on Mexico's Riviera Maya, known for its beaches, the pedestrian Quinta Avenida, and ferries to Cozumel.",
-            "lat": 20.6230687,
-            "lng": -87.0733444,
+            "description": "Playa del Carmen is a beach city on the Riviera Maya, known for its pedestrian Quinta Avenida and ferries to Cozumel.",
+            "lat": 20.6295586,
+            "lng": -87.0738851,
             "name": "Playa del Carmen"
         },
         {
             "category": "dining",
-            "description": "Aldo's Gelato is an Italian-style gelateria on Playa del Carmen's Quinta Avenida, popular for its wide range of house-made flavors.",
+            "description": "Aldo's Gelato is an Italian-style gelateria on Playa del Carmen's Quinta Avenida, serving a wide range of house-made flavors.",
             "lat": 20.6235217,
             "lng": -87.0748409,
             "name": "Aldo's Gelato Quinta 9"
@@ -138,21 +136,21 @@
         },
         {
             "category": "dining",
-            "description": "La Cueva del Pescador is a fisherman-owned seafood restaurant with sand floors in Akumal, prized for ceviche and fresh catch of the day.",
+            "description": "La Cueva del Pescador is a fisherman-owned seafood restaurant with sand floors in Akumal, serving ceviche and fresh catch of the day.",
             "lat": 20.3974943,
             "lng": -87.3138394,
             "name": "La Cueva del Pescador"
         },
         {
             "category": "dining",
-            "description": "Mezzanine is a longstanding Thai restaurant and boutique hotel perched above Tulum's shoreline, known for ocean-view dining and traditional curries.",
+            "description": "Mezzanine is a Thai restaurant and boutique hotel perched above Tulum's shoreline, offering ocean-view dining and traditional curries.",
             "lat": 20.1973939,
             "lng": -87.437332,
             "name": "Mezzanine"
         },
         {
             "category": "dining",
-            "description": "Alfonsina Coffee Tulum is a bakery and coffee bar in Tulum, Quintana Roo, known for croissants, pistachio pastries, and specialty espresso drinks.",
+            "description": "Alfonsina Coffee Tulum is a bakery and coffee bar in Tulum, Quintana Roo, serving croissants, pistachio pastries, and specialty espresso drinks.",
             "lat": 20.2149946,
             "lng": -87.4550757,
             "name": "Alfonsina Coffee Tulum"
@@ -166,7 +164,7 @@
         },
         {
             "category": "urban",
-            "description": "Asilé Hotel Boutique is a small ten-room hotel in central Bacalar with a rooftop bar, steps from the town square and Fort San Felipe.",
+            "description": "Asilé Hotel Boutique is a small ten-room hotel in central Bacalar with a rooftop bar, steps from the town square and the Fuerte de San Felipe.",
             "lat": 18.677659,
             "lng": -88.3896111,
             "name": "Asilé Hotel Boutique"
@@ -208,7 +206,7 @@
         },
         {
             "category": "dining",
-            "description": "Taquería Beatriz is a decades-old taqueria in downtown Chetumal, a local institution serving carne asada tacos, tortas, and aguas frescas.",
+            "description": "Taquería Beatriz is a decades-old taqueria in downtown Chetumal, serving carne asada tacos, tortas, and aguas frescas.",
             "lat": 18.4946377,
             "lng": -88.2990787,
             "name": "Taquería Beatriz"
@@ -235,7 +233,7 @@
             "name": "The Dog House Sports Bar and Grill"
         },
         {
-            "category": "miscellaneous",
+            "category": "misc",
             "description": "The Village Supermarket is a grocery store just north of San Pedro Town on Ambergris Caye, stocking fresh produce, local goods, and international products.",
             "lat": 17.932581,
             "lng": -87.9551432,
@@ -243,7 +241,7 @@
         },
         {
             "category": "dining",
-            "description": "The Farmhouse Market & Cafe is an artisan grocery and cafe in the Tres Cocos area of San Pedro, Belize, known for sandwiches, smoothies, and baked goods.",
+            "description": "The Farmhouse Market & Cafe is an artisan grocery and cafe in the Tres Cocos area of San Pedro, Belize, serving sandwiches, smoothies, and baked goods.",
             "lat": 17.9334015,
             "lng": -87.9545379,
             "name": "The Farmhouse Market & Cafe"
@@ -264,14 +262,14 @@
         },
         {
             "category": "dining",
-            "description": "The Sun Deck is a small beachfront restaurant on northern Ambergris Caye, Belize, known for jerk, curry, and Mayan-style dishes at colorful seaside tables.",
+            "description": "The Sun Deck is a small beachfront restaurant on northern Ambergris Caye, Belize, serving jerk, curry, and Mayan-style dishes at colorful seaside tables.",
             "lat": 17.9889682,
             "lng": -87.9191208,
             "name": "The Sun Deck Restaurant and Bar"
         },
         {
             "category": "urban",
-            "description": "Searious Adventures is a beachfront tour operator on Barrier Reef Drive in San Pedro, Belize, running snorkeling, fishing, and mainland excursions with licensed local guides.",
+            "description": "Searious Adventures is a beachfront tour operator in San Pedro, Belize, running snorkeling, fishing, and mainland excursions.",
             "lat": 17.9170972,
             "lng": -87.9632314,
             "name": "Searious Adventures"
@@ -293,21 +291,21 @@
         },
         {
             "category": "nature",
-            "description": "The Split is a narrow channel dividing Caye Caulker, Belize, a favorite swimming and sunset spot anchored by the island's iconic Lazy Lizard bar.",
+            "description": "The Split is a narrow channel dividing Caye Caulker, Belize, a favorite swimming and sunset spot anchored by the island's Lazy Lizard bar.",
             "lat": 17.7506259,
             "lng": -88.0242707,
             "name": "The Split"
         },
         {
             "category": "dining",
-            "description": "Maggie's Sunset Kitchen is a family-run waterfront restaurant on Caye Caulker's west side, known for fresh Belizean seafood and sunset views.",
+            "description": "Maggie's Sunset Kitchen is a family-run waterfront restaurant on Caye Caulker's west side, serving fresh Belizean seafood with sunset views.",
             "lat": 17.7478467,
             "lng": -88.0245207,
             "name": "Maggie's Sunset Kitchen"
         },
         {
             "category": "dining",
-            "description": "The Lazy Lizard is a laid-back beach bar at the Split on Caye Caulker, famous for swim-up drinks and Caribbean sunset gatherings.",
+            "description": "The Lazy Lizard is a laid-back beach bar at the Split on Caye Caulker, with swim-up drinks and Caribbean sunset gatherings.",
             "lat": 17.75026,
             "lng": -88.02424,
             "name": "The Lazy Lizard"
@@ -328,7 +326,7 @@
         },
         {
             "category": "dining",
-            "description": "Crocs Sunset Sports Bar is a three-level lagoonside bar and grill north of San Pedro's bridge, known for sunset views and resident crocodiles.",
+            "description": "Crocs Sunset Sports Bar is a three-level lagoonside bar and grill north of San Pedro's bridge, with sunset views and resident crocodiles.",
             "lat": 17.9384051,
             "lng": -87.9512624,
             "name": "Crocs Sunset Sports Bar"
@@ -356,7 +354,7 @@
         },
         {
             "category": "landmarks",
-            "description": "Cahal Pech is a hilltop Maya archaeological site overlooking San Ignacio, Belize, preserving palace ruins occupied since around 1200 BC.",
+            "description": "Cahal Pech is a hilltop Maya archaeological site overlooking San Ignacio, Belize, preserving palace ruins first occupied around 1200 BC.",
             "lat": 17.1459623,
             "lng": -89.0739844,
             "name": "Cahal Pech Archaeological Reserve"
@@ -369,7 +367,7 @@
             "name": "Xunantunich"
         },
         {
-            "category": "miscellaneous",
+            "category": "misc",
             "description": "Quality Foods is a supermarket and deli run by Quality Poultry Products in San Ignacio, Belize, a practical stop for groceries and fresh bakery goods.",
             "lat": 17.164093,
             "lng": -89.0715567,
@@ -384,7 +382,7 @@
         },
         {
             "category": "urban",
-            "description": "The Guatemala-Belize border crossing links Benque Viejo del Carmen with Melchor de Mencos, the main overland gateway between western Belize and Petén.",
+            "description": "The Guatemala-Belize border crossing links Benque Viejo del Carmen with Melchor de Mencos and is the main overland gateway between western Belize and Petén.",
             "lat": 17.0577545,
             "lng": -89.1492027,
             "name": "Guatemala-Belize Border Crossing"
@@ -399,14 +397,14 @@
         },
         {
             "category": "dining",
-            "description": "Restaurante Gonzalez is a family-run eatery in El Remate, Guatemala, popular with Tikal visitors for affordable, home-style Guatemalan meals.",
+            "description": "Restaurante Gonzalez is an eatery in El Remate, Guatemala, serving affordable, home-style Guatemalan meals.",
             "lat": 17.0175294,
             "lng": -89.6744791,
             "name": "Restaurante Gonzalez"
         },
         {
             "category": "dining",
-            "description": "The Gully Grill is an open-air barbecue restaurant in San Ignacio, Belize, known for smoked meats, wings, and tacos with Belizean seasoning.",
+            "description": "The Gully Grill is an open-air barbecue restaurant in San Ignacio, Belize, serving smoked meats, wings, and tacos with Belizean seasoning.",
             "lat": 17.1630398,
             "lng": -89.0742765,
             "name": "The Gully Grill"
@@ -434,18 +432,19 @@
         },
         {
             "category": "dining",
-            "description": "Fuego Real is a Brazilian rodizio-style buffet restaurant in Mérida, Mexico, known for grilled meats, live music, and family dining.",
+            "description": "Fuego Real is a Brazilian rodizio-style buffet restaurant in Mérida, Mexico, offering grilled meats, live music, and family dining.",
             "lat": 21.0141726,
             "lng": -89.6085565,
             "name": "Fuego Real"
         },
         {
             "category": "dining",
-            "description": "JUSTO Bread Studio is an artisan bakery and café on Paseo de Montejo in Mérida, Mexico, specializing in daily sourdough and pastries.",
+            "description": "JUSTO Bread Studio is an artisan bakery and cafe on Paseo de Montejo in Mérida, Mexico, specializing in daily sourdough and pastries.",
             "lat": 20.9888798,
             "lng": -89.617227,
             "name": "JUSTO Bread Studio"
         }
     ],
-    "year": 2026
+    "name": "Maya",
+    "ordered": true
 }

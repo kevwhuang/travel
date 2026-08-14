@@ -2,6 +2,12 @@
 
 declare module 'eslint-plugin-jsx-a11y';
 
+interface AtlasCamera {
+    lat: number;
+    lng: number;
+    zoom: number;
+}
+
 interface AtlasCategory {
     description: string;
     id: string;
@@ -32,20 +38,22 @@ interface AtlasPlace {
 }
 
 interface AtlasRegionFeature {
-    geometry: { coordinates: unknown; type: string };
-    properties: { country: string; state: string; status: 'explored' | 'visiting' };
-    type: string;
+    geometry: { coordinates: unknown; type: 'MultiPolygon' };
+    properties: { status: 'active' | 'explored' };
+    type: 'Feature';
 }
 
 interface AtlasRegions {
     features: AtlasRegionFeature[];
-    type: string;
+    type: 'FeatureCollection';
 }
 
 interface AtlasState {
+    camera?: AtlasCamera;
     categories: string[];
     page: number;
     search: string;
+    starredOnly: boolean;
     trips: string[];
     view: 'cards' | 'map';
 }

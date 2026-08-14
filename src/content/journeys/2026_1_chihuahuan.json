@@ -1,10 +1,8 @@
 {
-    "name": "Chihuahuan",
-    "ordered": true,
-    "places": [
+    "markers": [
         {
             "category": "dining",
-            "description": "Spicy Boys Fried Chicken is a food truck on Springdale Road in Austin, known for Thai-influenced fried chicken sandwiches and wings.",
+            "description": "Spicy Boys Fried Chicken is a food truck on Springdale Road in Austin, serving Thai-influenced fried chicken sandwiches and wings.",
             "lat": 30.325732,
             "lng": -97.6579951,
             "name": "Spicy Boys Fried Chicken"
@@ -25,7 +23,7 @@
         },
         {
             "category": "dining",
-            "description": "Mozart's Coffee Roasters is a coffeehouse on the shore of Lake Austin, known for house-roasted coffee, desserts, and its waterfront deck.",
+            "description": "Mozart's Coffee Roasters is a coffeehouse on the shore of Lake Austin, with house-roasted coffee, desserts, and a waterfront deck.",
             "lat": 30.2954696,
             "lng": -97.7839512,
             "name": "Mozart's Coffee Roasters"
@@ -60,7 +58,7 @@
             "name": "Home Slice Pizza"
         },
         {
-            "category": "miscellaneous",
+            "category": "misc",
             "description": "Advance Auto Parts is a national auto-parts retailer in north Austin, a practical stop for car supplies before the long West Texas drive.",
             "lat": 30.4133677,
             "lng": -97.6920795,
@@ -109,7 +107,7 @@
             "name": "Courtyard by Marriott San Angelo"
         },
         {
-            "category": "miscellaneous",
+            "category": "misc",
             "description": "H-E-B is a Texas supermarket chain location in San Angelo, a practical stop for groceries and road-trip supplies.",
             "lat": 31.4439109,
             "lng": -100.4787078,
@@ -202,14 +200,14 @@
         },
         {
             "category": "dining",
-            "description": "The Soft Pretzel and Ice Cream Shop is a downtown Roswell snack spot known for fresh-baked pretzels, hand-dipped ice cream, and homemade fudge.",
+            "description": "The Soft Pretzel and Ice Cream Shop is a downtown Roswell snack spot serving fresh-baked pretzels, hand-dipped ice cream, and homemade fudge.",
             "lat": 33.395519,
             "lng": -104.522504,
             "name": "The Soft Pretzel and Ice Cream Shop"
         },
         {
             "category": "nature",
-            "description": "The Osha Trail is a popular forested loop hike near Cloudcroft, New Mexico, offering mountain views and cool pine-and-aspen scenery in the Sacramento Mountains.",
+            "description": "The Osha Trail is a forested loop hike near Cloudcroft, New Mexico, offering mountain views and cool pine-and-aspen scenery in the Sacramento Mountains.",
             "lat": 32.9614716,
             "lng": -105.7451979,
             "name": "Osha Trail Trailhead"
@@ -237,7 +235,7 @@
         },
         {
             "category": "dining",
-            "description": "Kona Grill is an upscale casual chain restaurant in El Paso serving American fare, sushi, and cocktails in a contemporary setting.",
+            "description": "Kona Grill is an upscale casual chain restaurant in El Paso, serving American fare, sushi, and cocktails in a contemporary setting.",
             "lat": 31.7699659,
             "lng": -106.3724955,
             "name": "Kona Grill"
@@ -266,7 +264,7 @@
         },
         {
             "category": "urban",
-            "description": "12001 Paseo De Oro Ln is a private residence in east El Paso, Texas, used as a home-base stay during the trip.",
+            "description": "12001 Paseo De Oro Ln is a private residence in east El Paso, Texas, used as a home-base stay during the journey.",
             "lat": 31.7657458,
             "lng": -106.2758952,
             "name": "12001 Paseo De Oro Ln"
@@ -302,13 +300,13 @@
         },
         {
             "category": "dining",
-            "description": "Umami Ramen House is a Japanese restaurant on North Mesa Street in El Paso, known for homemade noodles and tonkotsu broth simmered for hours.",
+            "description": "Umami Ramen House is a Japanese restaurant on North Mesa Street in El Paso, serving homemade noodles and tonkotsu broth simmered for hours.",
             "lat": 31.8180228,
             "lng": -106.5146855,
             "name": "Umami Ramen House"
         },
         {
-            "category": "miscellaneous",
+            "category": "misc",
             "description": "Family Dollar is a discount variety store in El Paso, a practical stop for inexpensive snacks and everyday supplies on the road.",
             "lat": 31.7957481,
             "lng": -106.5106153,
@@ -352,7 +350,7 @@
         },
         {
             "category": "dining",
-            "description": "Line Thai Cafe is a small Thai restaurant in Alpine, Texas, known for generous portions of dishes like pad thai and yellow curry.",
+            "description": "Line Thai Cafe is a small Thai restaurant in Alpine, Texas, serving generous portions of dishes like pad thai and yellow curry.",
             "lat": 30.3567152,
             "lng": -103.6657816,
             "name": "Line Thai Cafe"
@@ -380,20 +378,20 @@
         },
         {
             "category": "dining",
-            "description": "Dead Hungry is a food truck in Terlingua, Texas, serving hearty slow-cooked international dishes and known as the town's late-night eating option.",
+            "description": "Dead Hungry is a food truck in Terlingua, Texas, serving hearty slow-cooked international dishes late into the night.",
             "lat": 29.3209183,
             "lng": -103.6132162,
             "name": "Dead Hungry"
         },
         {
             "category": "dining",
-            "description": "DB's Rustic Iron BBQ is a barbecue joint in Terlingua Ghost Town, known for Texas-style brisket and ribs with desert mountain views.",
+            "description": "DB's Rustic Iron BBQ is a barbecue joint in Terlingua Ghost Town, serving Texas-style brisket and ribs with desert mountain views.",
             "lat": 29.3176253,
             "lng": -103.6104016,
             "name": "DB's Rustic Iron BBQ"
         },
         {
-            "category": "miscellaneous",
+            "category": "misc",
             "description": "ALON Gas Station is a fuel station in Marathon, Texas, a practical supply stop before the long remote drive into the Big Bend region.",
             "lat": 30.2066404,
             "lng": -103.2371846,
@@ -408,8 +406,8 @@
             "starred": true
         },
         {
-            "category": "miscellaneous",
-            "description": "AutoZone Auto Parts is a national auto-parts retailer in Alpine, Texas, a practical stop for vehicle supplies on the trip.",
+            "category": "misc",
+            "description": "AutoZone Auto Parts is a national auto-parts retailer in Alpine, Texas, a practical stop for vehicle supplies on the journey.",
             "lat": 30.359316,
             "lng": -103.6537434,
             "name": "AutoZone Auto Parts"
@@ -422,7 +420,7 @@
             "name": "McDonald's"
         },
         {
-            "category": "miscellaneous",
+            "category": "misc",
             "description": "ALON Gas Station is a fuel station in Study Butte, Texas, a key refueling stop near Big Bend National Park's west entrance.",
             "lat": 29.3291447,
             "lng": -103.5343281,
@@ -437,14 +435,14 @@
         },
         {
             "category": "dining",
-            "description": "V's Kitchen is a family-owned diner in Fort Stockton, Texas, known for scratch-made burgers and homemade fries near Interstate 10.",
+            "description": "V's Kitchen is a family-owned diner in Fort Stockton, Texas, serving scratch-made burgers and homemade fries near Interstate 10.",
             "lat": 30.8985366,
             "lng": -102.8796656,
             "name": "V's Kitchen"
         },
         {
             "category": "urban",
-            "description": "Drury Inn & Suites North Stone Oak is a mid-scale hotel in northern San Antonio that served as the trip's city base.",
+            "description": "Drury Inn & Suites North Stone Oak is a mid-scale hotel in northern San Antonio, serving as the journey's city base.",
             "lat": 29.6108078,
             "lng": -98.4820663,
             "name": "Drury Inn & Suites San Antonio North Stone Oak"
@@ -479,7 +477,7 @@
         },
         {
             "category": "landmarks",
-            "description": "The Tower of the Americas is a 750-foot observation tower in downtown San Antonio built for the 1968 World's Fair.",
+            "description": "The Tower of the Americas is a 750-foot observation tower in downtown San Antonio, built for the 1968 World's Fair.",
             "lat": 29.4189838,
             "lng": -98.483512,
             "name": "Tower of the Americas"
@@ -515,7 +513,7 @@
         },
         {
             "category": "dining",
-            "description": "Tokyo Cowboy is an Asian-fusion restaurant on the San Antonio River Walk pairing Japanese street food with a Texan aesthetic.",
+            "description": "Tokyo Cowboy is an Asian-fusion restaurant on the San Antonio River Walk, pairing Japanese street food with a Texan aesthetic.",
             "lat": 29.4248388,
             "lng": -98.4922737,
             "name": "Tokyo Cowboy"
@@ -535,28 +533,28 @@
             "name": "Milam Park"
         },
         {
-            "category": "miscellaneous",
+            "category": "misc",
             "description": "Buc-ee's is a Texas travel-center chain location in New Braunfels, known as one of the world's largest convenience stores.",
             "lat": 29.7263226,
             "lng": -98.0783589,
             "name": "Buc-ee's"
         },
         {
-            "category": "miscellaneous",
-            "description": "Target is a national retail chain location in south Austin, a convenient supply stop during the trip.",
+            "category": "misc",
+            "description": "Target is a national retail chain location in south Austin, a convenient supply stop during the journey.",
             "lat": 30.1633333,
             "lng": -97.7934564,
             "name": "Target"
         },
         {
             "category": "urban",
-            "description": "Goodnight Ranch is a master-planned residential community in Southeast Austin that served as a private home-base stay for the trip.",
+            "description": "Goodnight Ranch is a master-planned residential community in southeast Austin, serving as a private home-base stay for the journey.",
             "lat": 30.1539346,
             "lng": -97.7574711,
             "name": "Goodnight Ranch"
         },
         {
-            "category": "miscellaneous",
+            "category": "misc",
             "description": "WhiteWater Express Car Wash is a Texas car-wash chain location in north Austin, a quick stop for a post-desert vehicle cleanup.",
             "lat": 30.3850513,
             "lng": -97.6463922,
@@ -571,7 +569,7 @@
         },
         {
             "category": "urban",
-            "description": "The Texas Capitol Mall is a landscaped pedestrian promenade along Congress Avenue north of the Capitol, centerpiece of Austin's Capitol Complex.",
+            "description": "The Texas Capitol Mall is a landscaped pedestrian promenade along Congress Avenue north of the Capitol, the centerpiece of Austin's Capitol Complex.",
             "lat": 30.2787192,
             "lng": -97.7388412,
             "name": "Texas Capitol Mall"
@@ -591,5 +589,6 @@
             "name": "Austin-Bergstrom International Airport"
         }
     ],
-    "year": 2026
+    "name": "Chihuahuan",
+    "ordered": true
 }

@@ -1,7 +1,5 @@
 {
-    "name": "Monterrey",
-    "ordered": true,
-    "places": [
+    "markers": [
         {
             "category": "urban",
             "description": "Monterrey International Airport in Apodaca is the main air gateway to Nuevo León and northeastern Mexico.",
@@ -18,7 +16,7 @@
         },
         {
             "category": "dining",
-            "description": "Palax is a long-running 24-hour diner in Monterrey's Obispado district, known for regional dishes like machacado con huevo and menudo.",
+            "description": "Palax is a long-running 24-hour diner in Monterrey's Obispado district, serving regional dishes like machacado con huevo and menudo.",
             "lat": 25.673244,
             "lng": -100.3507317,
             "name": "Palax"
@@ -47,7 +45,7 @@
         },
         {
             "category": "landmarks",
-            "description": "The Mexican Baseball Hall of Fame in Monterrey's Fundidora Park honors the greatest players and history of Mexican professional baseball.",
+            "description": "The Mexican Baseball Hall of Fame in Monterrey's Fundidora Park honors the greatest players of Mexican professional baseball and the sport's history.",
             "lat": 25.6728637,
             "lng": -100.2954987,
             "name": "Mexican Baseball Hall of Fame"
@@ -61,7 +59,7 @@
         },
         {
             "category": "dining",
-            "description": "Roland Coffee Bar is a vinyl-driven listening café in Monterrey's Barrio Antiguo, serving specialty coffee by day and cocktails at night.",
+            "description": "Roland Coffee Bar is a vinyl-driven listening cafe in Monterrey's Barrio Antiguo, serving specialty coffee by day and cocktails at night.",
             "lat": 25.6665501,
             "lng": -100.3065729,
             "name": "Roland Coffee Bar"
@@ -83,7 +81,7 @@
         },
         {
             "category": "dining",
-            "description": "UMAMI Ramen House is a Japanese restaurant on Río Orinoco in San Pedro Garza García, known for miso ramen and gyoza.",
+            "description": "UMAMI Ramen House is a Japanese restaurant on Río Orinoco in San Pedro Garza García, serving miso ramen and gyoza.",
             "lat": 25.6582548,
             "lng": -100.3600581,
             "name": "UMAMI Ramen House Río Orinoco"
@@ -104,7 +102,7 @@
         },
         {
             "category": "nature",
-            "description": "Rufino Tamayo Park is a leafy public park in San Pedro Garza García, popular for jogging paths, sculptures, and weekend markets.",
+            "description": "Rufino Tamayo Park is a leafy public park in San Pedro Garza García, with jogging paths, sculptures, and weekend markets.",
             "lat": 25.6448967,
             "lng": -100.328898,
             "name": "Rufino Tamayo Park"
@@ -131,7 +129,7 @@
             "name": "Yi Hotpot"
         },
         {
-            "category": "miscellaneous",
+            "category": "misc",
             "description": "H-E-B Valle Oriente is a large supermarket in San Pedro Garza García, a convenient stop for groceries and travel supplies.",
             "lat": 25.641632,
             "lng": -100.332814,
@@ -139,7 +137,7 @@
         },
         {
             "category": "dining",
-            "description": "San Huevito is a small breakfast spot in Monterrey's Obispado area, serving egg-centered sandwiches, bowls, and muffins with homemade sauces.",
+            "description": "San Huevito is a small breakfast spot in Monterrey's Obispado area, serving egg-centered sandwiches, bowls, and muffins.",
             "lat": 25.671259,
             "lng": -100.3390309,
             "name": "San Huevito"
@@ -153,7 +151,7 @@
         },
         {
             "category": "wellness",
-            "description": "Casa Azul Spa's Obispado branch in Monterrey offers therapeutic massages and body treatments using quartz, stones, chocolate, and mezcal rituals.",
+            "description": "Casa Azul Spa's Obispado branch in Monterrey offers therapeutic massages and body treatments using quartz, stones, and chocolate, as well as mezcal rituals.",
             "lat": 25.679054,
             "lng": -100.346668,
             "name": "Casa Azul Spa Obispado"
@@ -167,14 +165,14 @@
         },
         {
             "category": "dining",
-            "description": "El Gaucho is an Argentine steakhouse operating in Monterrey since 1968, famed for mesquite-grilled cuts, churrasco, and empanadas.",
+            "description": "El Gaucho is an Argentine steakhouse operating in Monterrey since 1968, serving mesquite-grilled cuts, churrasco, and empanadas.",
             "lat": 25.6419281,
             "lng": -100.2869997,
             "name": "El Gaucho"
         },
         {
             "category": "dining",
-            "description": "Casamor is a beloved café and fondita in San Pedro Garza García, known for chilaquiles, huevos motuleños, and fluffy pancakes at breakfast.",
+            "description": "Casamor is a cafe and fondita in San Pedro Garza García, serving chilaquiles, huevos motuleños, and fluffy pancakes at breakfast.",
             "lat": 25.6558623,
             "lng": -100.3586632,
             "name": "Casamor"
@@ -209,5 +207,6 @@
             "name": "Mexican History Museum"
         }
     ],
-    "year": 2026
+    "name": "Monterrey",
+    "ordered": true
 }

@@ -1,5 +1,6 @@
 ---
 import Atlas from '@components/Atlas';
+import { TITLE_ID } from '@lib/constants';
 import { atlasData } from '@lib/atlas';
 
 const data = await atlasData();
@@ -7,7 +8,7 @@ const data = await atlasData();
 
 <section
     class="flex flex-1 flex-col"
-    aria-labelledby="atlas-title"
+    aria-labelledby={TITLE_ID}
 >
     <Atlas client:load data={data} />
 </section>

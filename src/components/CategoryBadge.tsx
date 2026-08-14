@@ -11,19 +11,22 @@ export default function CategoryBadge({ category, label }: {
 
     return (
         <span
-            className="atlas-label inline-flex items-center h-[24px] gap-[6px] px-[10px] border rounded-full text-[9px] tracking-[0.12em]"
+            className="inline-flex items-center h-[24px] max-w-full min-w-0 gap-[6px] px-[10px] border rounded-full font-mono text-[10px] tracking-[0.12em] uppercase"
             style={{
                 background: accentSurface(color),
                 borderColor: accentBorder(color),
                 color: foreground,
             }}
+            title={label}
         >
-            <IconCategory
-                category={category}
-                color={foreground}
-                size={11}
-            />
-            {label}
+            <span className="inline-flex relative top-[-1px] shrink-0">
+                <IconCategory
+                    category={category}
+                    color={foreground}
+                    size={11}
+                />
+            </span>
+            <span className="overflow-hidden text-ellipsis whitespace-nowrap">{label}</span>
         </span>
     );
 }

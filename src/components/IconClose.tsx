@@ -1,4 +1,7 @@
-export default function IconClose({ size }: { size: number }) {
+export default function IconClose({ size, strokeWidth }: {
+    size: number;
+    strokeWidth: number;
+}) {
     return (
         <svg
             aria-hidden="true"
@@ -6,7 +9,7 @@ export default function IconClose({ size }: { size: number }) {
             height={size}
             stroke="currentColor"
             strokeLinecap="round"
-            strokeWidth={2}
+            strokeWidth={strokeWidth}
             viewBox="0 0 24 24"
             width={size}
         >

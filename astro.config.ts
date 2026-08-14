@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 import tailwind from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
 
-import atlasAssets from './scripts/build';
+import pmtiles from './scripts/pmtiles';
 
 export default defineConfig({
     adapter: netlify(),
@@ -13,7 +13,7 @@ export default defineConfig({
         enabled: false,
     },
     integrations: [
-        atlasAssets(),
+        pmtiles(),
         react(),
         robots(),
         sitemap({ lastmod: new Date() }),

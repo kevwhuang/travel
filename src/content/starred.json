@@ -4,31 +4,27 @@
         "description": "The Lady Bird Lake Hike & Bike Trail, officially the Ann and Roy Butler Trail, is a 10-mile loop around the lake in central Austin, known for skyline views and a lakeside boardwalk.",
         "lat": 30.2599722,
         "lng": -97.7434889,
-        "name": "Lady Bird Lake Hike & Bike Trail",
-        "starred": true
+        "name": "Lady Bird Lake Hike & Bike Trail"
     },
     {
         "category": "landmarks",
         "description": "Parque Los Fundadores is Playa del Carmen's beachfront main square at the foot of Quinta Avenida, home to the towering Portal Maya sculpture.",
         "lat": 20.6218785,
         "lng": -87.0749087,
-        "name": "Parque Los Fundadores",
-        "starred": true
+        "name": "Parque Los Fundadores"
     },
     {
         "category": "nature",
         "description": "Playa Delfines, also called Dolphin Beach, is a wide public beach on the southern stretch of Cancún's Hotel Zone, known for its hilltop mirador and the giant CANCÚN letters.",
         "lat": 21.0619642,
         "lng": -86.778583,
-        "name": "Playa Delfines",
-        "starred": true
+        "name": "Playa Delfines"
     },
     {
         "category": "urban",
         "description": "The Shops at La Cantera is an upscale open-air mall in northwest San Antonio, anchored by Neiman Marcus, Nordstrom, and Dillard's.",
         "lat": 29.5932689,
         "lng": -98.6143878,
-        "name": "The Shops at La Cantera",
-        "starred": true
+        "name": "The Shops at La Cantera"
     }
 ]

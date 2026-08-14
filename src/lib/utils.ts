@@ -26,6 +26,10 @@ export function formatCoordinates(place: AtlasPlace): string {
     return `${formatDegrees(place.lat, 'S', 'N')} \u00b7 ${formatDegrees(place.lng, 'W', 'E')}`;
 }
 
+export function isModifiedEvent(event: { altKey: boolean; ctrlKey: boolean; metaKey: boolean; shiftKey: boolean }): boolean {
+    return event.altKey || event.ctrlKey || event.metaKey || event.shiftKey;
+}
+
 export function pageCountOf(total: number): number {
     return Math.max(1, Math.ceil(total / CARDS_PER_PAGE));
 }

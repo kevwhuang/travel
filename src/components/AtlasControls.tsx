@@ -1,46 +1,26 @@
+import BrandMark from '@components/BrandMark';
 import IconClose from '@components/IconClose';
 import IconFilters from '@components/IconFilters';
 import IconGrid from '@components/IconGrid';
 import IconMapPin from '@components/IconMapPin';
 import IconSearch from '@components/IconSearch';
+import { SEARCH_KEY, SEARCH_LENGTH_LIMIT } from '@lib/constants';
 
 import type { KeyboardEvent, RefObject } from 'react';
 
-const BRAND_HEIGHT = 18;
-const BRAND_WIDTH = 12;
+const CONTROL_ICON_SIZE = 17;
+const CONTROL_ICON_STROKE_WIDTH = 1.7;
 const COPYRIGHT_MARK = '\u00a9';
 const CREDIT_MAP = 'OpenStreetMap';
-const CREDIT_OWNER = 'Kevin Huang \u00b7 aephonics.com';
-const CREDIT_TITLE = `${COPYRIGHT_MARK} ${CREDIT_OWNER} \u00b7 ${COPYRIGHT_MARK} ${CREDIT_MAP}`;
+const CREDIT_OWNER = 'Aephonics';
+const CREDIT_SUFFIX = '. All rights reserved.';
 const HOME_URL = 'https://aephonics.com';
-const SEARCH_LABEL = 'Search places by name or description';
+const SEARCH_LABEL = 'Search places by name';
 const SEARCH_PLACEHOLDER = 'Search the atlas\u2026';
 
-function BrandMark() {
-    return (
-        <svg
-            className="text-pink"
-            aria-hidden="true"
-            fill="currentColor"
-            height={BRAND_HEIGHT}
-            viewBox="8 4 16 24"
-            width={BRAND_WIDTH}
-        >
-            <polygon points="16,6 22,26 16,21 10,26" />
-        </svg>
-    );
-}
+const creditYear = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Chicago', year: 'numeric' }).format(new Date());
 
-function CreditLine({ credit }: { credit: string }) {
-    return (
-        <span className="block">
-            <span className="relative top-[0.21em]">{COPYRIGHT_MARK}</span>
-            {` ${credit}`}
-        </span>
-    );
-}
-
-export default function AtlasControls({ filterCount, filtersRef, isSearchOpen, onClearSearch, onOpenFilters, onSearchBlur, onSearchChange, onSearchFocus, onToggleView, search, searchRef, view }: {
+export default function AtlasControls({ filterCount, filtersRef, isSearchOpen, onClearSearch, onOpenFilters, onSearchBlur, onSearchChange, onSearchFocus, onToggleView, search, searchButtonRef, searchRef, view }: {
     filterCount: number;
     filtersRef: RefObject<HTMLButtonElement | null>;
     isSearchOpen: boolean;
@@ -51,6 +31,7 @@ export default function AtlasControls({ filterCount, filtersRef, isSearchOpen, o
     onSearchFocus: () => void;
     onToggleView: () => void;
     search: string;
+    searchButtonRef: RefObject<HTMLButtonElement | null>;
     searchRef: RefObject<HTMLInputElement | null>;
     view: AtlasState['view'];
 }) {
@@ -69,6 +50,12 @@ export default function AtlasControls({ filterCount, filtersRef, isSearchOpen, o
     }
 
     function handleSearchKeyDown(event: KeyboardEvent<HTMLInputElement>) {
+        if (event.key === SEARCH_KEY) {
+            event.preventDefault();
+
+            return;
+        }
+
         if (event.key !== 'Enter' || event.nativeEvent.isComposing) return;
 
         event.preventDefault();
@@ -78,39 +65,41 @@ export default function AtlasControls({ filterCount, filtersRef, isSearchOpen, o
     return (
         <>
             <button
-                className={`atlas-control ${hasFilters ? 'atlas-control--active' : ''} fixed left-[18px] top-[18px] z-40 p-0 border ${hasFilters ? 'border-ink' : 'border-flint'}`}
+                className={`atlas-control ${hasFilters ? 'atlas-control--active' : 'border-flint'} fixed left-[18px] top-[18px] z-40 p-0 border`}
                 aria-haspopup="dialog"
-                aria-label="Open filters"
+                aria-label={hasFilters ? `Open filter, ${filterCount} active` : 'Open filter'}
                 onClick={onOpenFilters}
                 ref={filtersRef}
                 type="button"
             >
                 <span className="grid place-items-center shrink-0 h-[48px] w-[48px]">
-                    <IconFilters size={17} strokeWidth={1.7} />
+                    <IconFilters size={CONTROL_ICON_SIZE} strokeWidth={CONTROL_ICON_STROKE_WIDTH} />
                 </span>
                 <span className="flex items-center gap-[8px] pr-[16px]">
                     {hasFilters && (
-                        <span className="px-[8px] py-[2px] rounded-full font-mono text-[9.5px] bg-paper text-ink">{filterCount}</span>
+                        <span className="px-[8px] py-[2px] rounded-full font-mono text-[10px] bg-paper text-ink">{filterCount}</span>
                     )}
-                    <span className="font-medium text-[12.5px] whitespace-nowrap">Filters</span>
+                    <span className="font-medium text-[13px] whitespace-nowrap">Filter</span>
                 </span>
             </button>
             <search className={`atlas-control ${isSearchOpen ? 'atlas-control--open' : ''} fixed flex-row-reverse right-[18px] top-[18px] z-[41] gap-[8px] border ${hasSearch ? 'border-ink' : 'border-flint'}`}>
                 <button
-                    className="active:scale-[0.96] hover:text-storm grid place-items-center shrink-0 h-[48px] w-[48px] p-0 border-none bg-transparent text-ink duration-[var(--duration-fast)] ease-[ease] transition-[color,transform]"
+                    className="active:scale-[0.96] hover:text-ink grid place-items-center shrink-0 h-[48px] w-[48px] p-0 border-none rounded-full bg-transparent text-storm duration-[var(--duration-fast)] ease-[ease] transition-[color,scale]"
                     aria-label={hasSearch ? 'Clear search' : 'Search places'}
                     onClick={hasSearch ? handleClearSearch : handleFocusSearch}
+                    ref={searchButtonRef}
                     type="button"
                 >
-                    {hasSearch ? <IconClose size={17} /> : <IconSearch size={17} strokeWidth={1.7} />}
+                    {hasSearch ? <IconClose size={CONTROL_ICON_SIZE} strokeWidth={CONTROL_ICON_STROKE_WIDTH} /> : <IconSearch size={CONTROL_ICON_SIZE} strokeWidth={CONTROL_ICON_STROKE_WIDTH} />}
                 </button>
                 <label className="flex flex-1 min-w-[220px] max-md:min-w-0">
                     <span className="sr-only">{SEARCH_LABEL}</span>
                     <input
                         className="h-[48px] w-full pl-[16px] pr-0 border-none text-[13px] bg-transparent text-ink"
                         autoComplete="off"
+                        maxLength={SEARCH_LENGTH_LIMIT}
                         onBlur={onSearchBlur}
-                        onChange={event => onSearchChange(event.target.value)}
+                        onChange={event => onSearchChange(event.target.value.replaceAll(SEARCH_KEY, ''))}
                         onFocus={onSearchFocus}
                         onKeyDown={handleSearchKeyDown}
                         placeholder={SEARCH_PLACEHOLDER}
@@ -119,29 +108,40 @@ export default function AtlasControls({ filterCount, filtersRef, isSearchOpen, o
                     />
                 </label>
             </search>
-            <a
-                className="atlas-control hover:border-storm bottom-[18px] fixed left-[18px] z-40 border border-dashed border-flint no-underline text-ink"
-                href={HOME_URL}
-                rel="noreferrer"
-                target="_blank"
-                title={CREDIT_TITLE}
-            >
+            <div className="atlas-control atlas-control--wide hover:border-storm bottom-[18px] fixed left-[18px] z-40 border border-dashed border-flint">
                 <span className="grid place-items-center shrink-0 h-[48px] w-[48px]">
                     <BrandMark />
                 </span>
-                <span className="pr-[16px] font-mono text-[9.5px] tracking-[0.1em] whitespace-nowrap text-storm">
-                    <CreditLine credit={CREDIT_OWNER} />
-                    <CreditLine credit={CREDIT_MAP} />
+                <span className="pr-[16px] font-mono text-[10px] tracking-[0.1em] whitespace-nowrap text-storm max-md:whitespace-normal">
+                    <span className="block">
+                        <span className="relative top-[0.14em] text-[12px]">{COPYRIGHT_MARK}</span>
+                        {` ${CREDIT_MAP}`}
+                    </span>
+                    <span className="block">
+                        <span className="relative top-[0.14em] text-[12px]">{COPYRIGHT_MARK}</span>
+                        {' '}
+                        <time dateTime={creditYear}>{creditYear}</time>
+                        {' '}
+                        <a
+                            className="active:scale-[0.96] hover:text-ink inline-block decoration-dotted underline underline-offset-[2px] text-storm duration-[var(--duration-fast)] ease-[ease] transition-[color,scale]"
+                            href={HOME_URL}
+                            rel="noreferrer"
+                            target="_blank"
+                        >
+                            {CREDIT_OWNER}
+                        </a>
+                        {CREDIT_SUFFIX}
+                    </span>
                 </span>
-            </a>
+            </div>
             <button
                 className="atlas-control hover:border-storm bottom-[18px] fixed flex-row-reverse right-[18px] z-40 p-0 border border-flint"
-                aria-label={isCardView ? 'Switch to map view' : 'Switch to card view'}
+                aria-label={isCardView ? 'Switch to map' : 'Switch to cards'}
                 onClick={onToggleView}
                 type="button"
             >
-                <span className="grid place-items-center shrink-0 h-[48px] w-[48px]">{isCardView ? <IconMapPin size={17} strokeWidth={1.7} /> : <IconGrid size={17} strokeWidth={1.7} />}</span>
-                <span className="pl-[16px] font-medium text-[12.5px] whitespace-nowrap">{isCardView ? 'Map view' : 'Card view'}</span>
+                <span className="grid place-items-center shrink-0 h-[48px] w-[48px]">{isCardView ? <IconMapPin size={CONTROL_ICON_SIZE} strokeWidth={CONTROL_ICON_STROKE_WIDTH} /> : <IconGrid size={CONTROL_ICON_SIZE} strokeWidth={CONTROL_ICON_STROKE_WIDTH} />}</span>
+                <span className="pl-[16px] font-medium text-[13px] whitespace-nowrap">{isCardView ? 'Map' : 'Cards'}</span>
             </button>
         </>
     );

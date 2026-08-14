@@ -1,7 +1,5 @@
 {
-    "name": "China",
-    "ordered": false,
-    "places": [
+    "markers": [
         {
             "category": "urban",
             "description": "Hangzhou is the capital of China's Zhejiang province, known for the UNESCO-listed West Lake, the southern terminus of the Grand Canal, and its Longjing tea hills.",
@@ -11,7 +9,7 @@
         },
         {
             "category": "urban",
-            "description": "Nanjing is the county-seat city of Nanjing County in Zhangzhou, Fujian, and the gateway to the UNESCO-listed Fujian tulou, known for the Tianluokeng and Hekeng clusters of rammed-earth Hakka roundhouses and the riverside village of Yunshuiyao.",
+            "description": "Nanjing is a county seat in Zhangzhou, Fujian, and a gateway to the UNESCO-listed Fujian tulou roundhouses.",
             "lat": 24.5147,
             "lng": 117.3573,
             "name": "Nanjing"
@@ -38,5 +36,6 @@
             "name": "Wuxi"
         }
     ],
-    "year": 2026
+    "name": "China",
+    "ordered": false
 }

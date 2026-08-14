@@ -1,9 +1,7 @@
 {
-    "name": "South Texas",
-    "ordered": true,
-    "places": [
+    "markers": [
         {
-            "category": "miscellaneous",
+            "category": "misc",
             "description": "The Passport & Visa Company is an expediting agency in South Austin that handles rush passport renewals and travel visa processing.",
             "lat": 30.2294478,
             "lng": -97.7772847,
@@ -11,7 +9,7 @@
         },
         {
             "category": "dining",
-            "description": "Firehouse Subs is a firefighter-founded American sandwich chain, this location serving hot subs in the Oaks at Slaughter center in South Austin.",
+            "description": "Firehouse Subs is a firefighter-founded American sandwich chain, with this location serving hot subs in the Oaks at Slaughter center in South Austin.",
             "lat": 30.1722683,
             "lng": -97.785005,
             "name": "Firehouse Subs"
@@ -53,7 +51,7 @@
         },
         {
             "category": "dining",
-            "description": "Hanzo is a Japanese-inspired izakaya and bar on Broadway in San Antonio's Alamo Heights area, known for craft cocktails and small plates.",
+            "description": "Hanzo is a Japanese-inspired izakaya and bar on Broadway in San Antonio's Alamo Heights area, serving craft cocktails and small plates.",
             "lat": 29.4998233,
             "lng": -98.467174,
             "name": "Hanzo"
@@ -67,7 +65,7 @@
         },
         {
             "category": "dining",
-            "description": "Ramen Kai Noodle House is a small family-owned Japanese ramen shop on Springfield Avenue in Laredo, Texas, known for traditional and street-style bowls.",
+            "description": "Ramen Kai Noodle House is a small family-owned Japanese ramen shop on Springfield Avenue in Laredo, Texas, serving traditional and street-style bowls.",
             "lat": 27.5430411,
             "lng": -99.4921729,
             "name": "Ramen Kai Noodle House"
@@ -80,8 +78,8 @@
             "name": "San Agustín Plaza"
         },
         {
-            "category": "miscellaneous",
-            "description": "Target is a national retail chain, this Laredo, Texas, store serving as a practical stop for supplies and travel essentials.",
+            "category": "misc",
+            "description": "Target is a national retail chain, with this Laredo, Texas, store serving as a practical stop for supplies and travel essentials.",
             "lat": 27.5159282,
             "lng": -99.4520874,
             "name": "Target"
@@ -94,8 +92,8 @@
             "name": "Ramada by Wyndham & Suites South Padre Island"
         },
         {
-            "category": "miscellaneous",
-            "description": "Stripes is a South Texas convenience store and gas station chain, this South Padre Island location a quick stop for fuel and snacks.",
+            "category": "misc",
+            "description": "Stripes is a South Texas convenience store and gas station chain, with this South Padre Island location serving as a quick stop for fuel and snacks.",
             "lat": 26.122616,
             "lng": -97.1697045,
             "name": "Stripes"
@@ -123,7 +121,7 @@
         },
         {
             "category": "nature",
-            "description": "Queen Isabella Memorial Park is a small waterfront park at the foot of the Queen Isabella Causeway on South Padre Island, popular for fishing and Laguna Madre views.",
+            "description": "Queen Isabella Memorial Park is a small waterfront park at the foot of the Queen Isabella Causeway on South Padre Island, offering fishing and Laguna Madre views.",
             "lat": 26.0847908,
             "lng": -97.166284,
             "name": "Queen Isabella Memorial Park"
@@ -137,7 +135,7 @@
         },
         {
             "category": "dining",
-            "description": "LongBoard Bar and Grill is a waterfront restaurant on South Padre Island known for fresh seafood, burgers, and daily live music.",
+            "description": "LongBoard Bar and Grill is a waterfront restaurant on South Padre Island offering fresh seafood, burgers, and daily live music.",
             "lat": 26.0969544,
             "lng": -97.1683511,
             "name": "LongBoard Bar and Grill"
@@ -159,14 +157,14 @@
         },
         {
             "category": "dining",
-            "description": "Tony's Kitchen is a family-owned deli in Edinburg serving sandwiches, pastas, and desserts built on bread baked daily from sourdough starter.",
+            "description": "Tony's Kitchen is a family-owned deli in Edinburg serving sandwiches, pastas, and desserts.",
             "lat": 26.2996117,
             "lng": -98.1522341,
             "name": "Tony's Kitchen"
         },
         {
             "category": "dining",
-            "description": "Vermillion Restaurant and Watering Hole is a Brownsville institution dating to 1934, famed for fajitas, enchiladas, and generous Tex-Mex portions.",
+            "description": "Vermillion Restaurant and Watering Hole is a Brownsville restaurant dating to 1934, serving fajitas, enchiladas, and generous Tex-Mex portions.",
             "lat": 25.9229074,
             "lng": -97.4897247,
             "name": "Vermillion Restaurant and Watering Hole"
@@ -187,7 +185,7 @@
         },
         {
             "category": "dining",
-            "description": "Marty McPies is a downtown Corpus Christi pizzeria known for crispy woodfired personal pies with inventive toppings like elote and hot honey.",
+            "description": "Marty McPies is a downtown Corpus Christi pizzeria serving crispy wood-fired personal pies with inventive toppings like elote and hot honey.",
             "lat": 27.7936596,
             "lng": -97.3924837,
             "name": "Marty McPies"
@@ -208,14 +206,14 @@
         },
         {
             "category": "nature",
-            "description": "North Beach is a sandy bayfront stretch in Corpus Christi near the USS Lexington and Texas State Aquarium, popular for swimming and strolling.",
+            "description": "North Beach is a sandy bayfront stretch in Corpus Christi near the USS Lexington and Texas State Aquarium, used for swimming and strolling.",
             "lat": 27.8244602,
             "lng": -97.3844106,
             "name": "North Beach"
         },
         {
             "category": "nature",
-            "description": "Indian Point Pier is a lighted fishing pier on Corpus Christi Bay in Portland, Texas, known for wade fishing and birdwatching.",
+            "description": "Indian Point Pier is a lighted fishing pier on Corpus Christi Bay in Portland, Texas, used for wade fishing and birdwatching.",
             "lat": 27.8501802,
             "lng": -97.3536783,
             "name": "Indian Point Pier"
@@ -251,7 +249,7 @@
         },
         {
             "category": "dining",
-            "description": "Mozzafiato is a locally owned Italian restaurant in Corpus Christi known for brick-oven pizza, fried mozzarella, and homemade desserts.",
+            "description": "Mozzafiato is a locally owned Italian restaurant in Corpus Christi serving brick-oven pizza, fried mozzarella, and homemade desserts.",
             "lat": 27.7825456,
             "lng": -97.4016339,
             "name": "Mozzafiato"
@@ -265,11 +263,12 @@
         },
         {
             "category": "dining",
-            "description": "sMAC'n Noodles is an eatery at the Seguin Schoolyard specializing in customizable macaroni and cheese bowls with inventive mix-ins.",
+            "description": "sMAC'n Noodles is an eatery at Seguin Schoolyard specializing in customizable macaroni and cheese bowls with inventive mix-ins.",
             "lat": 29.5705612,
             "lng": -97.9707854,
             "name": "sMAC'n Noodles"
         }
     ],
-    "year": 2026
+    "name": "South Texas",
+    "ordered": true
 }

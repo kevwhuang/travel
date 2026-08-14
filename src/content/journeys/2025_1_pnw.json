@@ -1,7 +1,5 @@
 {
-    "name": "PNW",
-    "ordered": true,
-    "places": [
+    "markers": [
         {
             "category": "urban",
             "description": "Seattle–Tacoma International Airport is the primary air hub of the Pacific Northwest, serving the Seattle metropolitan area from its location in SeaTac, Washington.",
@@ -18,14 +16,14 @@
         },
         {
             "category": "dining",
-            "description": "Ocha Thai Kitchen and Bar is a Thai restaurant in downtown Renton, Washington, known for its curries, noodle dishes, and craft cocktails.",
+            "description": "Ocha Thai Kitchen and Bar is a Thai restaurant in downtown Renton, Washington, serving curries, noodle dishes, and craft cocktails.",
             "lat": 47.4789846,
             "lng": -122.2045152,
             "name": "Ocha Thai Kitchen and Bar"
         },
         {
             "category": "landmarks",
-            "description": "The Space Needle is a 605-foot observation tower built for the 1962 World's Fair and the defining icon of the Seattle skyline.",
+            "description": "The Space Needle is a 605-foot observation tower built for the 1962 World's Fair and an icon of the Seattle skyline.",
             "lat": 47.6205063,
             "lng": -122.3492774,
             "name": "Space Needle"
@@ -60,7 +58,7 @@
         },
         {
             "category": "dining",
-            "description": "203° Fahrenheit Coffee Co. is an independent coffee roaster and cafe at the Village at Totem Lake in Kirkland, Washington, known for its pour-overs and pastries.",
+            "description": "203° Fahrenheit Coffee Co. is an independent coffee roaster and cafe at the Village at Totem Lake in Kirkland, Washington, serving pour-overs and pastries.",
             "lat": 47.7126106,
             "lng": -122.1800557,
             "name": "203° Fahrenheit Coffee Co."
@@ -74,7 +72,7 @@
         },
         {
             "category": "dining",
-            "description": "Pike Place Chowder is a celebrated seafood counter in Seattle's Pike Place Market, famous for its award-winning New England clam chowder.",
+            "description": "Pike Place Chowder is a seafood counter in Seattle's Pike Place Market, famous for its award-winning New England clam chowder.",
             "lat": 47.6094243,
             "lng": -122.3412192,
             "name": "Pike Place Chowder"
@@ -88,7 +86,7 @@
         },
         {
             "category": "urban",
-            "description": "This address served as a private home-base stay in Port Moody, British Columbia, during the Vancouver portion of the trip.",
+            "description": "This address served as a private home-base stay in Port Moody, British Columbia, during the Vancouver portion of the journey.",
             "lat": 49.2892044,
             "lng": -122.8766922,
             "name": "32 Shoreline Cir"
@@ -130,7 +128,7 @@
         },
         {
             "category": "urban",
-            "description": "This address served as a private home-base stay in Richmond, British Columbia, during the Vancouver portion of the trip.",
+            "description": "This address served as a private home-base stay in Richmond, British Columbia, during the Vancouver portion of the journey.",
             "lat": 49.162063,
             "lng": -123.1820668,
             "name": "3971 Lockhart Rd"
@@ -143,7 +141,7 @@
             "name": "The University of British Columbia"
         },
         {
-            "category": "miscellaneous",
+            "category": "misc",
             "description": "Whole Foods Market is a natural and organic grocery chain, with this location in Vancouver's Kitsilano area serving as a provisioning stop.",
             "lat": 49.2683884,
             "lng": -123.1570592,
@@ -158,7 +156,7 @@
         },
         {
             "category": "dining",
-            "description": "Arashi Ramen is a Japanese noodle shop in Seattle's Ballard neighborhood known for its rich tonkotsu pork-broth ramen.",
+            "description": "Arashi Ramen is a Japanese noodle shop in Seattle's Ballard neighborhood, serving rich tonkotsu pork-broth ramen.",
             "lat": 47.6681865,
             "lng": -122.3823014,
             "name": "Arashi Ramen"
@@ -179,28 +177,28 @@
         },
         {
             "category": "dining",
-            "description": "Piatti is an Italian restaurant at Seattle's University Village, known for house-made pastas, wood-fired dishes, and patio dining.",
+            "description": "Piatti is an Italian restaurant at Seattle's University Village, with house-made pastas, wood-fired dishes, and patio dining.",
             "lat": 47.6621735,
             "lng": -122.2979334,
             "name": "Piatti"
         },
         {
             "category": "dining",
-            "description": "Núodle is a Chinese restaurant in Seattle's University District specializing in Lanzhou-style hand-pulled beef noodle soup.",
+            "description": "Núodle is a Chinese restaurant in Seattle's University District, specializing in Lanzhou-style hand-pulled beef noodle soup.",
             "lat": 47.6596096,
             "lng": -122.3134541,
             "name": "Núodle"
         },
         {
             "category": "dining",
-            "description": "Tenth West is a breakfast and lunch cafe in Seattle's Queen Anne neighborhood, known for its omelets and paninis.",
+            "description": "Tenth West is a breakfast and lunch cafe in Seattle's Queen Anne neighborhood, serving omelets and paninis.",
             "lat": 47.6361443,
             "lng": -122.3707086,
             "name": "Tenth West"
         },
         {
-            "category": "miscellaneous",
-            "description": "This Bank of America branch in Seattle's University District served as a practical banking stop during the trip.",
+            "category": "misc",
+            "description": "Bank of America is a national bank, and this University District branch in Seattle serves as a practical banking stop during the journey.",
             "lat": 47.663493,
             "lng": -122.3134001,
             "name": "Bank of America Financial Center"
@@ -220,14 +218,14 @@
             "name": "Just Poké Northgate"
         },
         {
-            "category": "miscellaneous",
-            "description": "Target is a national retail chain, and this Northgate Seattle store served as a convenient stop for everyday supplies.",
+            "category": "misc",
+            "description": "Target is a national retail chain, and this Northgate Seattle store serves as a convenient stop for everyday supplies.",
             "lat": 47.7094843,
             "lng": -122.3253625,
             "name": "Target"
         },
         {
-            "category": "miscellaneous",
+            "category": "misc",
             "description": "The Home Depot is a large home-improvement retail chain, with this north Seattle store serving as a practical errand stop.",
             "lat": 47.7140634,
             "lng": -122.3429597,
@@ -235,7 +233,7 @@
         },
         {
             "category": "dining",
-            "description": "Mee Sum Pastry is a Chinese bakery-cafe on University Way in Seattle, known for its giant barbecue-pork hom bow buns.",
+            "description": "Mee Sum Pastry is a Chinese bakery-cafe on University Way in Seattle, serving giant barbecue-pork hom bow buns.",
             "lat": 47.6610743,
             "lng": -122.3132751,
             "name": "Mee Sum"
@@ -249,7 +247,7 @@
         },
         {
             "category": "landmarks",
-            "description": "The Ballard Locks are a working 1917 ship canal complex in Seattle where boats pass between Puget Sound and Lakes Union and Washington beside a fish ladder.",
+            "description": "The Ballard Locks are a working 1917 ship canal complex in Seattle where boats pass between Puget Sound and Lakes Union and Washington, with a fish ladder alongside.",
             "lat": 47.6655043,
             "lng": -122.3971838,
             "name": "Ballard (Hiram M. Chittenden) Locks"
@@ -263,7 +261,7 @@
         },
         {
             "category": "nature",
-            "description": "Kerry Park is a small Queen Anne hillside viewpoint offering Seattle's classic postcard panorama of the skyline, Space Needle, and Mount Rainier.",
+            "description": "Kerry Park is a small Queen Anne hillside viewpoint offering a panoramic view of the Seattle skyline, Space Needle, and Mount Rainier.",
             "lat": 47.6294692,
             "lng": -122.3599224,
             "name": "Kerry Park"
@@ -283,5 +281,6 @@
             "name": "Salty's on Alki Beach"
         }
     ],
-    "year": 2025
+    "name": "PNW",
+    "ordered": true
 }

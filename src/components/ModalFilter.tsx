@@ -2,13 +2,15 @@ import { useEffect, useRef } from 'react';
 
 import IconCategory from '@components/IconCategory';
 import IconClose from '@components/IconClose';
+import IconStar from '@components/IconStar';
+import { STAR_COLOR } from '@lib/constants';
 import { categoryColor } from '@lib/utils';
 
-const CATEGORY_CHIP_CLASS = 'atlas-chip after:absolute after:content-[""] after:inset-x-0 after:inset-y-[-6px] hover:brightness-[0.97] relative gap-[6px] px-[14px] py-[8px] font-medium text-[12px]';
-const DIALOG_CLASS = 'atlas-panel static overflow-y-auto max-h-[min(780px,calc(100dvh-40px))] w-[min(var(--width-medium),100%)] m-0 p-0 text-ink';
+const CATEGORY_CHIP_CLASS = 'atlas-chip after:absolute after:content-[""] after:inset-x-0 after:inset-y-[-6px] hover:brightness-[0.97] relative max-w-full gap-[6px] px-[14px] py-[8px] font-medium text-[12px] wrap-anywhere';
+const DIALOG_CLASS = 'atlas-panel overflow-y-auto static max-h-[min(780px,calc(100dvh-40px))] w-[min(var(--width-medium),100%)] m-0 p-0 text-ink';
 const FOCUSABLE_SELECTOR = 'a[href], button:not(:disabled), input:not(:disabled), select:not(:disabled), textarea:not(:disabled), [tabindex]:not([tabindex="-1"])';
-const GROUP_LABEL_CLASS = 'atlas-label text-[10px] tracking-[0.22em] text-storm';
-const TRIP_CLASS = 'after:absolute after:content-[""] after:inset-x-0 after:inset-y-[-6px] relative gap-[8px] px-[14px] py-[8px]';
+const GROUP_LABEL_CLASS = 'font-mono text-[10px] tracking-[0.22em] uppercase text-storm';
+const TRIP_CLASS = 'after:absolute after:content-[""] after:inset-x-0 after:inset-y-[-6px] relative max-w-full gap-[8px] px-[14px] py-[8px] wrap-anywhere';
 const TRIP_SCROLLER_CLASS = 'overflow-y-auto overscroll-contain max-h-[40dvh] pr-[8px] [scrollbar-color:var(--color-flint)_transparent] [scrollbar-width:thin]';
 
 function getCategoryChipStyle(categoryId: string, isSelected: boolean) {
@@ -25,6 +27,20 @@ function getCategoryChipStyle(categoryId: string, isSelected: boolean) {
 
 function getCategoryForeground(categoryId: string) {
     return `color-mix(in oklab, ${categoryColor(categoryId)} 55%, var(--color-ink))`;
+}
+
+function getStarredChipStyle(isSelected: boolean) {
+    if (!isSelected) return undefined;
+
+    return {
+        background: `color-mix(in oklab, ${STAR_COLOR} 13%, var(--color-snow))`,
+        borderColor: `color-mix(in oklab, ${STAR_COLOR} 55%, var(--color-snow))`,
+        color: getStarredForeground(),
+    };
+}
+
+function getStarredForeground() {
+    return `color-mix(in oklab, ${STAR_COLOR} 55%, var(--color-ink))`;
 }
 
 function getTripClassName(isOrdered: boolean, isSelected: boolean) {
@@ -67,12 +83,14 @@ function trapTabKey(event: KeyboardEvent, dialog: HTMLElement) {
     }
 }
 
-export default function ModalFilter({ categories, filterCount, onClearAll, onClose, onToggleCategory, onToggleTrip, selectedCategories, selectedTrips, shownCount, totalCount, trips }: {
+export default function ModalFilter({ canClear, categories, isStarredOnly, onClearAll, onClose, onToggleCategory, onToggleStarred, onToggleTrip, selectedCategories, selectedTrips, shownCount, totalCount, trips }: {
+    canClear: boolean;
     categories: AtlasCategory[];
-    filterCount: number;
+    isStarredOnly: boolean;
     onClearAll: () => void;
     onClose: () => void;
     onToggleCategory: (categoryId: string) => void;
+    onToggleStarred: () => void;
     onToggleTrip: (tripId: string) => void;
     selectedCategories: string[];
     selectedTrips: string[];
@@ -118,7 +136,7 @@ export default function ModalFilter({ categories, filterCount, onClearAll, onClo
                 open
                 ref={dialogRef}
             >
-                <div className="relative pb-[20px] pt-[24px] px-[28px] border-b border-linen">
+                <header className="relative pb-[20px] pt-[24px] px-[28px] border-b border-linen">
                     <h2
                         id="filter-modal-title"
                         className="font-serif text-[26px]"
@@ -126,17 +144,35 @@ export default function ModalFilter({ categories, filterCount, onClearAll, onClo
                         Filter
                     </h2>
                     <button
-                        className="atlas-pill after:absolute after:content-[''] after:inset-[-8px] absolute right-[20px] top-[20px] h-[32px] w-[32px] p-0 bg-snow text-storm"
-                        aria-label="Close filters"
+                        className="atlas-pill after:absolute after:content-[''] after:inset-[-9px] absolute right-[20px] top-[20px] h-[32px] w-[32px] p-0 text-storm"
+                        aria-label="Close filter"
                         onClick={onClose}
                         type="button"
                     >
-                        <IconClose size={11} />
+                        <IconClose size={11} strokeWidth={2} />
                     </button>
-                </div>
+                </header>
                 <div className="pb-[8px] pt-[20px] px-[28px]">
                     <h3 className={`${GROUP_LABEL_CLASS} mb-[12px]`}>Categories</h3>
                     <ul className="flex flex-wrap gap-[8px]">
+                        <li>
+                            <button
+                                className={CATEGORY_CHIP_CLASS}
+                                aria-pressed={isStarredOnly}
+                                onClick={onToggleStarred}
+                                style={getStarredChipStyle(isStarredOnly)}
+                                title="Show starred places only"
+                                type="button"
+                            >
+                                <span className="inline-flex shrink-0">
+                                    <IconStar
+                                        color={isStarredOnly ? getStarredForeground() : 'var(--color-storm)'}
+                                        size={13}
+                                    />
+                                </span>
+                                Starred
+                            </button>
+                        </li>
                         {categories.map((category) => {
                             const isSelected = selectedCategories.includes(category.id);
 
@@ -163,11 +199,11 @@ export default function ModalFilter({ categories, filterCount, onClearAll, onClo
                     </ul>
                 </div>
                 <div className="pb-[8px] pt-[20px] px-[28px]">
-                    <h3 className={`${GROUP_LABEL_CLASS} mb-[4px]`}>Trips</h3>
+                    <h3 className={`${GROUP_LABEL_CLASS} mb-[4px]`}>Journeys</h3>
                     <ul className={TRIP_SCROLLER_CLASS}>
                         {years.map(year => (
                             <li
-                                className="flex gap-[16px] py-[16px]"
+                                className="flex gap-[16px] py-[16px] max-md:flex-col max-md:gap-[12px]"
                                 key={year}
                             >
                                 <h4 className="flex-none w-[82px] font-serif leading-none text-[26px]">
@@ -187,7 +223,12 @@ export default function ModalFilter({ categories, filterCount, onClearAll, onClo
                                                     type="button"
                                                 >
                                                     <span className="self-baseline font-serif text-[13px]">{trip.name}</span>
-                                                    <span className="self-baseline font-mono text-[10px] opacity-[0.85]">{trip.count}</span>
+                                                    <span
+                                                        className="self-baseline font-mono text-[10px] opacity-[0.85]"
+                                                        aria-hidden="true"
+                                                    >
+                                                        {trip.count}
+                                                    </span>
                                                 </button>
                                             </li>
                                         );
@@ -197,16 +238,16 @@ export default function ModalFilter({ categories, filterCount, onClearAll, onClo
                         ))}
                     </ul>
                 </div>
-                <div className="flex flex-wrap items-center justify-between gap-[12px] pb-[24px] pt-[16px] px-[28px]">
-                    <span className="atlas-label text-[10px] tracking-[0.16em] text-storm">{`Showing ${shownCount} of ${totalCount}`}</span>
-                    <span className="inline-flex gap-[9px]">
+                <footer className="flex flex-wrap items-center justify-between gap-[12px] pb-[24px] pt-[16px] px-[28px]">
+                    <span className="font-mono text-[10px] tracking-[0.16em] uppercase text-storm">{`Showing ${shownCount} of ${totalCount}`}</span>
+                    <span className="inline-flex gap-[8px]">
                         <button
                             className="atlas-pill after:absolute after:content-[''] after:inset-x-0 after:inset-y-[-6px] relative px-[16px] py-[8px] font-medium text-[12px] text-slate"
-                            disabled={filterCount === 0}
+                            disabled={!canClear}
                             onClick={onClearAll}
                             type="button"
                         >
-                            Clear all
+                            Clear
                         </button>
                         <button
                             className="atlas-pill atlas-pill--solid after:absolute after:content-[''] after:inset-x-0 after:inset-y-[-6px] relative px-[20px] py-[8px] font-medium text-[12px]"
@@ -216,7 +257,7 @@ export default function ModalFilter({ categories, filterCount, onClearAll, onClo
                             Done
                         </button>
                     </span>
-                </div>
+                </footer>
             </dialog>
         </div>
     );
