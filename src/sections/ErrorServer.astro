@@ -1,20 +1,20 @@
 ---
-
+const CLASS_ERROR_CODE = 'mb-[clamp(24px,calc(16px+2.5vw),48px)] font-normal font-serif leading-none text-[clamp(96px,calc(48px+15vw),240px)] bg-clip-text bg-linear-to-b from-ink text-transparent to-storm';
 ---
 
 <section
-    class="flex flex-1 items-center justify-center px-[clamp(16px,calc(8px+2.5vw),40px)] py-[clamp(24px,10svh,96px)]"
+    class="flex flex-1 items-center justify-center px-[var(--shell-pad)] py-[clamp(24px,10svh,96px)]"
     aria-labelledby="error-server-title"
 >
     <div class="text-center select-none">
         <h1
             id="error-server-title"
-            class="mb-[clamp(24px,calc(16px+2.5vw),48px)] font-normal font-serif leading-none text-[clamp(96px,calc(48px+15vw),240px)] tracking-[0.01em] bg-clip-text bg-linear-to-b from-ink text-transparent to-storm"
+            class={CLASS_ERROR_CODE}
         >
             500
         </h1>
         <a
-            class="atlas-pill min-h-[clamp(48px,calc(45.34px+0.833vw),56px)] px-[clamp(20px,calc(16px+1.25vw),32px)] font-mono text-[16px] tracking-[0.2em] uppercase text-slate"
+            class="pill min-h-[48px] px-[28px] font-mono text-[16px] tracking-[0.2em] uppercase text-slate"
             aria-label="Return to home"
             href="/"
         >

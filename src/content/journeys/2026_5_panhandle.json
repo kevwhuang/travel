@@ -2,21 +2,21 @@
     "markers": [
         {
             "category": "urban",
-            "description": "Rockwood Apartment Homes is an apartment community in north Austin, Texas, serving as a private home-base stay for the journey.",
+            "description": "Rockwood Apartment Homes is an apartment community in north Austin, serving as a private home-base stay for the journey.",
             "lat": 30.3684651,
             "lng": -97.7296492,
             "name": "Rockwood Apartment Homes"
         },
         {
             "category": "dining",
-            "description": "Cork and Pig Tavern is a San Angelo-born Texas tavern with a branch in Abilene, serving wood-fired pizzas, craft cocktails, and casual American fare.",
+            "description": "Cork & Pig Tavern is a San Angelo-born Texas tavern chain, with this Abilene, Texas, location serving wood-fired pizzas, craft cocktails, and casual American fare.",
             "lat": 32.4766181,
             "lng": -99.7066774,
-            "name": "Cork and Pig Tavern"
+            "name": "Cork & Pig Tavern"
         },
         {
             "category": "urban",
-            "description": "This address served as a private home-base stay in Amarillo, Texas, used as lodging during the Panhandle portion of the journey.",
+            "description": "This address served as a private home-base stay in Amarillo, Texas, during the Panhandle portion of the journey.",
             "lat": 35.1582566,
             "lng": -101.8520152,
             "name": "4803 Mc Kinley Ln"
@@ -45,7 +45,7 @@
         },
         {
             "category": "landmarks",
-            "description": "Cadillac Ranch is a public art installation west of Amarillo where ten graffiti-covered Cadillacs stand buried nose-first in a field.",
+            "description": "Cadillac Ranch is a public art installation west of Amarillo where 10 graffiti-covered Cadillacs stand buried nose-first in a field.",
             "lat": 35.1872366,
             "lng": -101.9870486,
             "name": "Cadillac Ranch"
@@ -66,7 +66,7 @@
         },
         {
             "category": "misc",
-            "description": "Allsup's is a convenience store chain widespread across New Mexico and West Texas, with its Spur location serving as a practical stop for fuel and snacks.",
+            "description": "Allsup's is a convenience store chain widespread across New Mexico and West Texas, with this Spur, Texas, location serving as a practical stop for fuel and snacks.",
             "lat": 33.4832249,
             "lng": -100.8557384,
             "name": "Allsup's Convenience Store"

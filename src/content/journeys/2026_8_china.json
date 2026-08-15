@@ -9,7 +9,7 @@
         },
         {
             "category": "urban",
-            "description": "Nanjing is a county seat in Zhangzhou, Fujian, and a gateway to the UNESCO-listed Fujian tulou roundhouses.",
+            "description": "Nanjing is a county in Zhangzhou, in China's Fujian province, and a gateway to the UNESCO-listed Fujian tulou roundhouses.",
             "lat": 24.5147,
             "lng": 117.3573,
             "name": "Nanjing"
@@ -31,8 +31,8 @@
         {
             "category": "urban",
             "description": "Wuxi is a city on the shore of Lake Tai in China's Jiangsu province, known for its Grand Canal waterways, the Lingshan Grand Buddha, and its early industrial heritage.",
-            "lat": 31.5491667,
-            "lng": 120.0572222,
+            "lat": 31.5776626,
+            "lng": 120.2952752,
             "name": "Wuxi"
         }
     ],

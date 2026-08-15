@@ -7,12 +7,12 @@ const ICON_PATHS = {
     wellness: ['M12 5.5c-2 2.5-2 6 0 8.5 2-2.5 2-6 0-8.5', 'M5 10.5c0 5 3 8 7 8', 'M19 10.5c0 5-3 8-7 8'],
 } as const;
 
-export default function IconCategory({ category, color, size }: {
-    category: string;
+export default function IconCategory({ categoryId, color, size }: {
+    categoryId: string;
     color: string;
     size: number;
 }) {
-    const paths = ICON_PATHS[category as keyof typeof ICON_PATHS] ?? [];
+    const paths = ICON_PATHS[categoryId as keyof typeof ICON_PATHS] ?? [];
 
     return (
         <svg

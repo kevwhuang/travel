@@ -1,4 +1,4 @@
-export default function IconNorthArrow({ size, strokeWidth }: {
+export default function IconNorth({ size, strokeWidth }: {
     size: number;
     strokeWidth: number;
 }) {

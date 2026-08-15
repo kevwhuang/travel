@@ -2,7 +2,7 @@
     "markers": [
         {
             "category": "urban",
-            "description": "Mérida International Airport is the main air gateway to Yucatán state, serving domestic and international flights just south of the city center.",
+            "description": "Mérida International Airport is the main air gateway to Yucatán state, serving domestic and international flights just southwest of the city center.",
             "lat": 20.9241634,
             "lng": -89.6584306,
             "name": "Mérida International Airport"
@@ -30,7 +30,7 @@
         },
         {
             "category": "dining",
-            "description": "Te Extraño, Extraño is a contemporary restaurant in Temozón Norte, Mérida, serving from-scratch breakfasts and chilaquiles on a leafy terrace.",
+            "description": "Te Extraño, Extraño is a contemporary restaurant in Temozón Norte, north Mérida, serving from-scratch breakfasts and chilaquiles on a leafy terrace.",
             "lat": 21.0501994,
             "lng": -89.6186841,
             "name": "Te Extraño, Extraño"
@@ -79,7 +79,7 @@
         },
         {
             "category": "dining",
-            "description": "Domino's is the international pizza delivery chain, with this Mérida branch serving as a quick and familiar meal stop.",
+            "description": "Domino's is the international pizza-delivery chain, with this Mérida branch serving as a quick and familiar meal stop.",
             "lat": 21.0208701,
             "lng": -89.6204761,
             "name": "Domino's"
@@ -136,7 +136,7 @@
         },
         {
             "category": "dining",
-            "description": "Yedam is a homestyle Korean restaurant and cafe in Mérida's Montebello area, serving bulgogi, japchae, mandu, and Korean coffee.",
+            "description": "Yedam is a home-style Korean restaurant and cafe in Mérida's Montebello area, serving bulgogi, japchae, mandu, and Korean coffee.",
             "lat": 21.0304813,
             "lng": -89.5929827,
             "name": "Yedam"
@@ -237,7 +237,7 @@
             "description": "The Railroad Museum of Yucatán at La Plancha park in Mérida displays historic locomotives and railcars from the peninsula's rail era.",
             "lat": 20.9790006,
             "lng": -89.610906,
-            "name": "Railroad Museum"
+            "name": "Railroad Museum of Yucatán"
         },
         {
             "category": "dining",
@@ -283,7 +283,7 @@
         },
         {
             "category": "dining",
-            "description": "Korea Chicken Town is a Korean fried chicken restaurant at Plaza Puerta de Hierro in north Mérida serving traditional dishes and drinks.",
+            "description": "Korea Chicken Town is a Korean fried chicken restaurant at Plaza Puerta de Hierro in northeast Mérida, serving traditional dishes and drinks.",
             "lat": 21.0174439,
             "lng": -89.5859129,
             "name": "Korea Chicken Town"
@@ -377,7 +377,7 @@
             "description": "Bryan's Modern Grill is a New York-style grill restaurant in Mérida's Montecristo neighborhood.",
             "lat": 21.0184178,
             "lng": -89.5933276,
-            "name": "Bryan's"
+            "name": "Bryan's Modern Grill"
         },
         {
             "category": "dining",
@@ -388,7 +388,7 @@
         },
         {
             "category": "dining",
-            "description": "Brasa Parrilla Uruguaya is an Uruguayan steakhouse in Mérida's Centro near Parque La Mejorada, grilling meats over charcoal in traditional parrilla style.",
+            "description": "Brasa Parrilla Uruguaya is an Uruguayan steakhouse in Mérida's historic center near Parque La Mejorada, grilling meats over charcoal in traditional parrilla style.",
             "lat": 20.969962,
             "lng": -89.618394,
             "name": "Brasa Parrilla Uruguaya"

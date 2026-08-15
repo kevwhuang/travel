@@ -101,21 +101,21 @@
         },
         {
             "category": "urban",
-            "description": "Courtyard by Marriott San Angelo is a riverside hotel in San Angelo, Texas, serving as an overnight base along the route west.",
+            "description": "Courtyard by Marriott San Angelo is a modern chain hotel in San Angelo, Texas, serving as an overnight base along the route west.",
             "lat": 31.4401388,
             "lng": -100.4956706,
             "name": "Courtyard by Marriott San Angelo"
         },
         {
             "category": "misc",
-            "description": "H-E-B is a Texas supermarket chain location in San Angelo, a practical stop for groceries and road-trip supplies.",
+            "description": "H-E-B is a Texas supermarket chain location in San Angelo, Texas, a practical stop for groceries and road-trip supplies.",
             "lat": 31.4439109,
             "lng": -100.4787078,
             "name": "H-E-B"
         },
         {
             "category": "dining",
-            "description": "Jason's Deli is a Texas-founded chain restaurant in San Angelo, known for sandwiches, soups, its salad bar, and free soft-serve ice cream.",
+            "description": "Jason's Deli is a Texas-founded chain restaurant in San Angelo, Texas, known for sandwiches, soups, its salad bar, and free soft-serve ice cream.",
             "lat": 31.4283061,
             "lng": -100.4578009,
             "name": "Jason's Deli"
@@ -214,7 +214,7 @@
         },
         {
             "category": "nature",
-            "description": "Tunnel Vista is a roadside overlook beside the highway tunnel on US 82 near Cloudcroft, with sweeping views of Fresnal Canyon and the Tularosa Basin.",
+            "description": "Tunnel Vista is a roadside overlook beside the highway tunnel on US 82 near Cloudcroft, New Mexico, with sweeping views of Fresnal Canyon and the Tularosa Basin.",
             "lat": 32.9461723,
             "lng": -105.8602633,
             "name": "Tunnel Vista Observation Site"
@@ -235,7 +235,7 @@
         },
         {
             "category": "dining",
-            "description": "Kona Grill is an upscale casual chain restaurant in El Paso, serving American fare, sushi, and cocktails in a contemporary setting.",
+            "description": "Kona Grill is an upscale-casual chain restaurant in El Paso, serving American fare, sushi, and cocktails in a contemporary setting.",
             "lat": 31.7699659,
             "lng": -106.3724955,
             "name": "Kona Grill"
@@ -264,7 +264,7 @@
         },
         {
             "category": "urban",
-            "description": "12001 Paseo De Oro Ln is a private residence in east El Paso, Texas, used as a home-base stay during the journey.",
+            "description": "This address served as a private home-base stay in east El Paso during the journey.",
             "lat": 31.7657458,
             "lng": -106.2758952,
             "name": "12001 Paseo De Oro Ln"
@@ -293,7 +293,7 @@
         },
         {
             "category": "nature",
-            "description": "Scenic Overlook Rest Area is a roadside rest stop west of Las Cruces, known for panoramic views over the Mesilla Valley and the Organ Mountains.",
+            "description": "Scenic Overlook Rest Area is a roadside rest stop west of Las Cruces, New Mexico, known for panoramic views over the Mesilla Valley and the Organ Mountains.",
             "lat": 32.2813637,
             "lng": -106.8666808,
             "name": "Scenic Overlook Rest Area"
@@ -343,7 +343,7 @@
         },
         {
             "category": "dining",
-            "description": "Spicewood Restaurant is the on-site eatery at the Quarter Circle 7 Hotel in Alpine, Texas, serving Western-style American dishes and craft cocktails.",
+            "description": "Spicewood Restaurant is the on-site eatery of Hotel Parker at Quarter Circle 7 in Alpine, Texas, serving Western-style American dishes and craft cocktails.",
             "lat": 30.3474792,
             "lng": -103.6936999,
             "name": "Spicewood Restaurant"
@@ -371,7 +371,7 @@
         },
         {
             "category": "urban",
-            "description": "Terlingua Trading Company is a longtime general store and gift shop in the Terlingua Ghost Town, adjacent to the famous Starlight Theatre porch.",
+            "description": "Terlingua Trading Company is a longtime general store and gift shop in Terlingua Ghost Town, adjacent to the famous Starlight Theatre porch.",
             "lat": 29.3210678,
             "lng": -103.6168976,
             "name": "Terlingua Trading Company"
@@ -534,7 +534,7 @@
         },
         {
             "category": "misc",
-            "description": "Buc-ee's is a Texas travel-center chain location in New Braunfels, known as one of the world's largest convenience stores.",
+            "description": "Buc-ee's is a Texas travel-center chain location in New Braunfels, Texas, known as one of the world's largest convenience stores.",
             "lat": 29.7263226,
             "lng": -98.0783589,
             "name": "Buc-ee's"
@@ -579,11 +579,11 @@
             "description": "The Texas State Capitol in Austin is an 1888 Renaissance Revival landmark of pink granite, taller than the U.S. Capitol.",
             "lat": 30.2746652,
             "lng": -97.7403505,
-            "name": "Texas Capitol"
+            "name": "Texas State Capitol"
         },
         {
             "category": "urban",
-            "description": "Austin-Bergstrom International Airport is the main airport serving Austin, Texas, known for its live music stages and local food vendors.",
+            "description": "Austin-Bergstrom International Airport is the main airport serving Austin, known for its live music stages and local food vendors.",
             "lat": 30.194085,
             "lng": -97.6710889,
             "name": "Austin-Bergstrom International Airport"

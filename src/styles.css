@@ -1,3 +1,27 @@
+search.atlas-control {
+    width: min(clamp(340px, calc(280px + 18.75vw), 520px), calc(100dvw - 102px));
+}
+
+search.atlas-control:has(input:focus) {
+    border-color: var(--color-ink);
+    box-shadow:
+        0 8px 20px var(--color-ink-10),
+        0 0 0 1px var(--color-ink);
+}
+
+search.atlas-control button:focus-visible {
+    border-radius: 999px;
+    outline-offset: -2px;
+}
+
+.atlas-backdrop {
+    animation: atlas-fade__in var(--duration-base) ease-out both;
+    backdrop-filter: blur(4px);
+    background: var(--color-ink-40);
+    inset: 0;
+    position: fixed;
+}
+
 .atlas-card {
     background: var(--color-snow);
     border: 1px solid var(--color-haze);
@@ -11,7 +35,7 @@
 .atlas-card--lift:hover {
     border-color: var(--color-pearl);
     box-shadow: 0 12px 26px var(--color-ink-10);
-    transform: translateY(-3px);
+    transform: translateY(-4px);
 }
 
 .atlas-chip {
@@ -96,24 +120,12 @@
 }
 
 .atlas-control.atlas-control--open {
-    max-width: min(340px, calc(100dvw - 102px));
+    max-width: min(clamp(340px, calc(280px + 18.75vw), 520px), calc(100dvw - 102px));
 }
 
 .atlas-control--wide:focus-within,
 .atlas-control--wide:hover {
     max-width: min(360px, calc(100dvw - 102px));
-}
-
-search.atlas-control button:focus-visible {
-    border-radius: 999px;
-    outline-offset: -3px;
-}
-
-search.atlas-control:has(input:focus) {
-    border-color: var(--color-ink);
-    box-shadow:
-        0 8px 20px var(--color-ink-10),
-        0 0 0 1px var(--color-ink);
 }
 
 .atlas-fade {
@@ -140,15 +152,47 @@ search.atlas-control:has(input:focus) {
     border-radius: 999px;
 }
 
-.atlas-panel {
-    animation: atlas-panel__in var(--duration-base) ease-out both;
+.atlas-modal {
+    animation: atlas-modal__in var(--duration-base) ease-out both;
     background-color: var(--color-paper);
     border: 1px solid var(--color-haze);
     border-radius: 14px;
     box-shadow: 0 30px 80px var(--color-ink-30);
 }
 
-.atlas-pill {
+.atlas-plot {
+    background-image:
+        repeating-linear-gradient(to right, var(--color-ink-05) 0 1px, transparent 1px 148px),
+        repeating-linear-gradient(to bottom, var(--color-ink-05) 0 1px, transparent 1px 148px);
+}
+
+.atlas-plot:has(.atlas-control--wide:focus-within, .atlas-control--wide:hover) .atlas-scale-bar {
+    opacity: 0;
+}
+
+.atlas-pulse {
+    animation: atlas-fade__in var(--duration-slow) ease-in-out infinite alternate both;
+}
+
+.atlas-rise {
+    animation: atlas-rise__in var(--duration-base) ease-out both;
+}
+
+.atlas-scale-bar {
+    transition: opacity var(--duration-fast) ease;
+}
+
+.maplibregl-canvas:focus-visible {
+    outline-offset: -2px;
+}
+
+.maplibregl-popup {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.pill {
     align-items: center;
     border: 1px solid var(--color-flint);
     border-radius: 999px;
@@ -161,84 +205,55 @@ search.atlas-control:has(input:focus) {
         transform var(--duration-fast) ease;
 }
 
-.atlas-pill:active {
+.pill:active {
     transform: scale(0.96);
 }
 
-.atlas-pill:disabled {
+.pill:disabled {
     background: none;
     border-color: var(--color-haze);
     color: var(--color-storm);
 }
 
-.atlas-pill:disabled:hover {
+.pill:disabled:hover {
     background: none;
     border-color: var(--color-haze);
     color: var(--color-storm);
 }
 
-.atlas-pill:focus-visible {
+.pill:focus-visible {
     border-radius: 999px;
 }
 
-.atlas-pill:hover {
+.pill:hover {
     background: var(--color-ink);
     border-color: var(--color-ink);
     color: var(--color-paper);
 }
 
-.atlas-pill--solid {
+.pill--solid {
     background: var(--color-ink);
     border-color: var(--color-ink);
     color: var(--color-paper);
 }
 
-.atlas-pill--solid:hover {
+.pill--solid:hover {
     background: var(--color-slate);
     border-color: var(--color-slate);
     color: var(--color-paper);
 }
 
-.atlas-plot {
-    background-image:
-        repeating-linear-gradient(to right, var(--color-ink-5) 0 1px, transparent 1px 148px),
-        repeating-linear-gradient(to bottom, var(--color-ink-5) 0 1px, transparent 1px 148px);
+@media (max-width: 768px) {
+    .atlas-plot:has(.atlas-control--open) .atlas-control:not(:where(search)):hover,
+    .atlas-plot:has(.atlas-control--open) .atlas-control:not(:where(search)):focus-within {
+        max-width: 48px;
+    }
 }
 
-.atlas-plot:has(.atlas-control--wide:focus-within, .atlas-control--wide:hover) .atlas-scale {
-    opacity: 0;
-}
-
-.atlas-pulse {
-    animation: atlas-fade__in var(--duration-slow) ease-in-out infinite alternate both;
-}
-
-.atlas-rise {
-    animation: atlas-rise__in var(--duration-slow) ease-out both;
-}
-
-.atlas-rise--quick {
-    animation-duration: var(--duration-base);
-}
-
-.atlas-scale {
-    transition: opacity var(--duration-fast) ease;
-}
-
-.atlas-veil {
-    animation: atlas-fade__in var(--duration-base) ease-out both;
-    backdrop-filter: blur(3px);
-    background: var(--color-ink-40);
-    inset: 0;
-    position: fixed;
-}
-
-.maplibregl-canvas:focus-visible {
-    outline-offset: -3px;
-}
-
-.maplibregl-popup {
-    font-family: var(--font-sans);
+@media (prefers-reduced-motion: reduce) {
+    .maplibregl-popup-content {
+        transition: none !important;
+    }
 }
 
 @keyframes atlas-fade__in {
@@ -251,7 +266,7 @@ search.atlas-control:has(input:focus) {
     }
 }
 
-@keyframes atlas-panel__in {
+@keyframes atlas-modal__in {
     from {
         opacity: 0;
         transform: translateY(16px) scale(0.97);

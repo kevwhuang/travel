@@ -1,193 +1,184 @@
 import { Suspense, lazy, useEffect, useMemo, useRef, useState } from 'react';
 
-import AtlasControls from '@components/AtlasControls';
-import CardView from '@components/CardView';
 import ErrorBoundary from '@components/ErrorBoundary';
-import IconNorthArrow from '@components/IconNorthArrow';
-import ModalFilter from '@components/ModalFilter';
-import { CARDS_PER_PAGE, SEARCH_KEY, TITLE, TITLE_ID } from '@lib/constants';
+import IconNorth from '@components/IconNorth';
+import ModalFilters from '@components/ModalFilters';
+import Overlay from '@components/Overlay';
+import ViewCards from '@components/ViewCards';
+import { ARROW_PAGE_STEPS, ATLAS_TITLE, CARDS_PER_PAGE, SEARCH_SHORTCUT } from '@lib/constants';
+import { getJourneysById, getPageCount } from '@lib/utils';
 import { loadAtlasState, saveAtlasState } from '@lib/store';
-import { pageCountOf, tripsByIdOf } from '@lib/utils';
 
 import type { Dispatch, SetStateAction } from 'react';
 
-interface AtlasStateValue {
-    cardPlaces: AtlasPlace[];
+interface AtlasState {
+    cardMarkers: AtlasMarker[];
     currentPage: number;
     filterCount: number;
-    filteredPlaces: AtlasPlace[];
+    filteredMarkers: AtlasMarker[];
     flyTarget: AtlasFlyTarget | null;
     hasSearch: boolean;
-    highlightId: number | null;
+    highlightedMarkerId: number | null;
     isModalOpen: boolean;
     isSearchExpanded: boolean;
     isSearchOpen: boolean;
     isStarredOnly: boolean;
     pageCount: number;
-    search: string;
-    selectedCategories: string[];
-    selectedPlaceId: number | null;
-    selectedTrips: string[];
+    searchValue: string;
+    selectedCategoryIds: string[];
+    selectedJourneyIds: string[];
+    selectedMarkerId: number | null;
     setFlyTarget: Dispatch<SetStateAction<AtlasFlyTarget | null>>;
-    setHighlightId: Dispatch<SetStateAction<number | null>>;
+    setHighlightedMarkerId: Dispatch<SetStateAction<number | null>>;
     setIsModalOpen: Dispatch<SetStateAction<boolean>>;
     setIsSearchOpen: Dispatch<SetStateAction<boolean>>;
     setIsStarredOnly: Dispatch<SetStateAction<boolean>>;
     setPage: Dispatch<SetStateAction<number>>;
-    setSearch: Dispatch<SetStateAction<string>>;
-    setSelectedCategories: Dispatch<SetStateAction<string[]>>;
-    setSelectedPlaceId: Dispatch<SetStateAction<number | null>>;
-    setSelectedTrips: Dispatch<SetStateAction<string[]>>;
-    setView: Dispatch<SetStateAction<AtlasState['view']>>;
+    setSearchValue: Dispatch<SetStateAction<string>>;
+    setSelectedCategoryIds: Dispatch<SetStateAction<string[]>>;
+    setSelectedJourneyIds: Dispatch<SetStateAction<string[]>>;
+    setSelectedMarkerId: Dispatch<SetStateAction<number | null>>;
+    setView: Dispatch<SetStateAction<AtlasView>>;
     totalCount: number;
-    view: AtlasState['view'];
+    view: AtlasView;
 }
 
 const DEFAULT_VIEW = 'map';
 const EDITABLE_TAGS = new Set(['INPUT', 'SELECT', 'TEXTAREA']);
-const EMPTY_STATUS = 'No places match';
+const EMPTY_STATUS = 'No markers match';
 const HIGHLIGHT_DURATION = 2_600;
-const PAGE_STEPS: Record<string, number> = { ArrowLeft: -1, ArrowRight: 1 };
 
-const MapView = lazy(() => import('@components/MapView'));
+const ViewMap = lazy(() => import('@components/ViewMap'));
 
-function compareCardPlaces(first: AtlasPlace, second: AtlasPlace, tripsById: Record<string, AtlasTrip>) {
-    const tripOrder = compareTrips(first, second, tripsById);
+function compareCardMarkers(first: AtlasMarker, second: AtlasMarker, journeysById: Record<string, AtlasJourney>) {
+    const firstJourney = findJourney(first, journeysById);
+    const secondJourney = findJourney(second, journeysById);
 
-    if (tripOrder !== 0) return tripOrder;
+    if (!firstJourney || !secondJourney) {
+        const journeyOrder = Number(!firstJourney) - Number(!secondJourney);
+
+        return journeyOrder === 0 ? first.id - second.id : journeyOrder;
+    }
+
+    if (firstJourney.year !== secondJourney.year) return secondJourney.year - firstJourney.year;
+    if (firstJourney.order !== secondJourney.order) return secondJourney.order - firstJourney.order;
 
     return first.id - second.id;
 }
 
-function compareTrips(first: AtlasPlace, second: AtlasPlace, tripsById: Record<string, AtlasTrip>) {
-    const firstTrip = tripOf(first, tripsById);
-    const secondTrip = tripOf(second, tripsById);
-
-    if (!firstTrip || !secondTrip) return Number(!firstTrip) - Number(!secondTrip);
-    if (firstTrip.year !== secondTrip.year) return secondTrip.year - firstTrip.year;
-
-    return secondTrip.order - firstTrip.order;
+function findJourney(marker: AtlasMarker, journeysById: Record<string, AtlasJourney>) {
+    return marker.journeyId === null ? null : journeysById[marker.journeyId] ?? null;
 }
 
-function foldedText(value: string) {
+function foldText(value: string) {
     return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 }
 
-function isEditableTarget(target: EventTarget | null) {
-    if (!(target instanceof HTMLElement)) return false;
-    if (target.isContentEditable) return true;
-
-    return EDITABLE_TAGS.has(target.tagName);
-}
-
-function knownIdsOf(stored: string[], known: { id: string }[]) {
-    return stored.filter(id => known.some(item => item.id === id));
+function getKnownIds(storedIds: string[], knownItems: { id: string }[]) {
+    return storedIds.filter(id => knownItems.some(item => item.id === id));
 }
 
 function toggleValue(values: string[], value: string) {
     return values.includes(value) ? values.filter(item => item !== value) : [...values, value];
 }
 
-function tripOf(place: AtlasPlace, tripsById: Record<string, AtlasTrip>) {
-    return place.trip === null ? null : tripsById[place.trip] ?? null;
-}
-
-function useAtlasState(data: AtlasData): AtlasStateValue {
+function useAtlasState(data: AtlasData): AtlasState {
     const [flyTarget, setFlyTarget] = useState<AtlasFlyTarget | null>(null);
-    const [highlightId, setHighlightId] = useState<number | null>(null);
+    const [highlightedMarkerId, setHighlightedMarkerId] = useState<number | null>(null);
     const [isHydrated, setIsHydrated] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [isStarredOnly, setIsStarredOnly] = useState(false);
+    const journeysById = useMemo(() => getJourneysById(data.journeys), [data.journeys]);
     const [page, setPage] = useState(0);
-    const [search, setSearch] = useState('');
-    const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-    const [selectedPlaceId, setSelectedPlaceId] = useState<number | null>(null);
-    const [selectedTrips, setSelectedTrips] = useState<string[]>([]);
-    const tripsById = useMemo(() => tripsByIdOf(data.trips), [data.trips]);
-    const [view, setView] = useState<AtlasState['view']>(DEFAULT_VIEW);
+    const [searchValue, setSearchValue] = useState('');
+    const [selectedCategoryIds, setSelectedCategoryIds] = useState<string[]>([]);
+    const [selectedJourneyIds, setSelectedJourneyIds] = useState<string[]>([]);
+    const [selectedMarkerId, setSelectedMarkerId] = useState<number | null>(null);
+    const [view, setView] = useState<AtlasView>(DEFAULT_VIEW);
 
-    const filteredPlaces = useMemo(() => {
-        const query = foldedText(search.trim());
+    const filteredMarkers = useMemo(() => {
+        const query = foldText(searchValue.trim());
 
-        return data.places.filter((place) => {
-            if (selectedCategories.length > 0 && !selectedCategories.includes(place.category)) return false;
-            if (selectedTrips.length > 0 && (place.trip === null || !selectedTrips.includes(place.trip))) return false;
-            if (isStarredOnly && place.starred !== true) return false;
-            if (!foldedText(place.name).includes(query) && query.length > 0) return false;
+        return data.markers.filter((marker) => {
+            if (selectedCategoryIds.length > 0 && !selectedCategoryIds.includes(marker.categoryId)) return false;
+            if (selectedJourneyIds.length > 0 && (marker.journeyId === null || !selectedJourneyIds.includes(marker.journeyId))) return false;
+            if (isStarredOnly && !marker.isStarred) return false;
+            if (!foldText(marker.name).includes(query) && query.length > 0) return false;
 
             return true;
         });
-    }, [data.places, isStarredOnly, search, selectedCategories, selectedTrips]);
+    }, [data.markers, isStarredOnly, searchValue, selectedCategoryIds, selectedJourneyIds]);
 
-    const cardPlaces = useMemo(() => [...filteredPlaces].sort((first, second) => compareCardPlaces(first, second, tripsById)), [filteredPlaces, tripsById]);
+    const cardMarkers = useMemo(() => [...filteredMarkers]
+        .sort((first, second) => compareCardMarkers(first, second, journeysById)), [filteredMarkers, journeysById]);
 
-    const hasSearch = search.trim().length > 0;
-    const pageCount = pageCountOf(cardPlaces.length);
+    const hasSearch = searchValue.trim().length > 0;
+    const pageCount = getPageCount(cardMarkers.length);
 
     const currentPage = Math.min(page, pageCount - 1);
-    const filterCount = selectedCategories.length + selectedTrips.length + (isStarredOnly ? 1 : 0);
+    const filterCount = selectedCategoryIds.length + selectedJourneyIds.length + (isStarredOnly ? 1 : 0);
     const isSearchExpanded = hasSearch || isSearchOpen;
-    const totalCount = data.places.length;
+    const totalCount = data.markers.length;
 
     useEffect(() => {
-        const stored = loadAtlasState();
+        const storedState = loadAtlasState();
 
-        if (stored?.categories) setSelectedCategories(knownIdsOf(stored.categories, data.categories));
-        if (stored?.page !== undefined) setPage(stored.page);
-        if (stored?.search !== undefined) setSearch(stored.search);
-        if (stored?.starredOnly) setIsStarredOnly(true);
-        if (stored?.trips) setSelectedTrips(knownIdsOf(stored.trips, data.trips));
+        if (storedState?.isStarredOnly) setIsStarredOnly(true);
+        if (storedState?.page !== undefined) setPage(storedState.page);
+        if (storedState?.searchValue !== undefined) setSearchValue(storedState.searchValue);
+        if (storedState?.selectedCategoryIds) setSelectedCategoryIds(getKnownIds(storedState.selectedCategoryIds, data.categories));
+        if (storedState?.selectedJourneyIds) setSelectedJourneyIds(getKnownIds(storedState.selectedJourneyIds, data.journeys));
 
         setIsHydrated(true);
-        setView(stored?.view ?? DEFAULT_VIEW);
+        setView(storedState?.view ?? DEFAULT_VIEW);
     }, []);
 
     useEffect(() => {
         if (!isHydrated) return;
 
-        saveAtlasState({ categories: selectedCategories, page, search, starredOnly: isStarredOnly, trips: selectedTrips, view });
-    }, [isHydrated, isStarredOnly, page, search, selectedCategories, selectedTrips, view]);
+        saveAtlasState({ isStarredOnly, page: currentPage, searchValue, selectedCategoryIds, selectedJourneyIds, view });
+    }, [currentPage, isHydrated, isStarredOnly, searchValue, selectedCategoryIds, selectedJourneyIds, view]);
 
     useEffect(() => {
         setPage(current => Math.min(current, pageCount - 1));
     }, [pageCount]);
 
     useEffect(() => {
-        if (highlightId === null) return;
+        if (highlightedMarkerId === null) return;
 
-        const timer = setTimeout(() => setHighlightId(null), HIGHLIGHT_DURATION);
+        const timer = setTimeout(() => setHighlightedMarkerId(null), HIGHLIGHT_DURATION);
 
         return () => clearTimeout(timer);
-    }, [highlightId]);
+    }, [highlightedMarkerId]);
 
     return {
-        cardPlaces,
+        cardMarkers,
         currentPage,
         filterCount,
-        filteredPlaces,
+        filteredMarkers,
         flyTarget,
         hasSearch,
-        highlightId,
+        highlightedMarkerId,
         isModalOpen,
         isSearchExpanded,
         isSearchOpen,
         isStarredOnly,
         pageCount,
-        search,
-        selectedCategories,
-        selectedPlaceId,
-        selectedTrips,
+        searchValue,
+        selectedCategoryIds,
+        selectedJourneyIds,
+        selectedMarkerId,
         setFlyTarget,
-        setHighlightId,
+        setHighlightedMarkerId,
         setIsModalOpen,
         setIsSearchOpen,
         setIsStarredOnly,
         setPage,
-        setSearch,
-        setSelectedCategories,
-        setSelectedPlaceId,
-        setSelectedTrips,
+        setSearchValue,
+        setSelectedCategoryIds,
+        setSelectedJourneyIds,
+        setSelectedMarkerId,
         setView,
         totalCount,
         view,
@@ -196,23 +187,26 @@ function useAtlasState(data: AtlasData): AtlasStateValue {
 
 function AtlasInner({ data }: { data: AtlasData }) {
     const atlas = useAtlasState(data);
-    const filtersRef = useRef<HTMLButtonElement>(null);
+    const filterButtonRef = useRef<HTMLButtonElement>(null);
     const isKeyboardPagingRef = useRef(false);
     const searchButtonRef = useRef<HTMLButtonElement>(null);
-    const searchRef = useRef<HTMLInputElement>(null);
+    const searchInputRef = useRef<HTMLInputElement>(null);
     const wasModalOpenRef = useRef(false);
 
-    const statusMessage = atlas.filteredPlaces.length === 0 ? EMPTY_STATUS : `${atlas.filteredPlaces.length} of ${atlas.totalCount} places shown`;
+    const pageSuffix = atlas.pageCount > 1 && atlas.view === 'cards' ? `, page ${atlas.currentPage + 1} of ${atlas.pageCount}` : '';
+    const shownCount = atlas.filteredMarkers.length;
+
+    const statusMessage = shownCount === 0 ? EMPTY_STATUS : `${shownCount} of ${atlas.totalCount} markers shown${pageSuffix}`;
 
     function handleClearAll() {
         atlas.setIsStarredOnly(false);
-        atlas.setSelectedCategories([]);
-        atlas.setSelectedTrips([]);
+        atlas.setSelectedCategoryIds([]);
+        atlas.setSelectedJourneyIds([]);
         resetAfterFilterChange();
     }
 
     function handleClearSearch() {
-        atlas.setSearch('');
+        atlas.setSearchValue('');
         resetAfterFilterChange();
     }
 
@@ -227,8 +221,8 @@ function AtlasInner({ data }: { data: AtlasData }) {
             return;
         }
 
-        if (atlas.selectedPlaceId !== null) {
-            atlas.setSelectedPlaceId(null);
+        if (atlas.selectedMarkerId !== null) {
+            atlas.setSelectedMarkerId(null);
 
             return;
         }
@@ -236,7 +230,7 @@ function AtlasInner({ data }: { data: AtlasData }) {
         if (atlas.hasSearch) {
             handleClearSearch();
 
-            if (document.activeElement !== searchRef.current) atlas.setIsSearchOpen(false);
+            if (document.activeElement !== searchInputRef.current) atlas.setIsSearchOpen(false);
 
             return;
         }
@@ -245,11 +239,6 @@ function AtlasInner({ data }: { data: AtlasData }) {
 
         atlas.setIsSearchOpen(false);
         searchButtonRef.current?.focus();
-    }
-
-    function handleFocusSearch() {
-        atlas.setIsSearchOpen(true);
-        searchRef.current?.focus();
     }
 
     function handleKeyDown(event: KeyboardEvent) {
@@ -261,10 +250,13 @@ function AtlasInner({ data }: { data: AtlasData }) {
             return;
         }
 
-        if (event.altKey || event.ctrlKey || event.metaKey) return;
-        if (atlas.isModalOpen || isEditableTarget(event.target)) return;
+        const target = event.target;
 
-        const step = PAGE_STEPS[event.key];
+        if (event.altKey || event.ctrlKey || event.metaKey) return;
+        if (atlas.isModalOpen) return;
+        if (target instanceof HTMLElement && (EDITABLE_TAGS.has(target.tagName) || target.isContentEditable)) return;
+
+        const step = ARROW_PAGE_STEPS[event.key];
 
         if (step !== undefined) {
             handlePageStep(event, step);
@@ -272,49 +264,55 @@ function AtlasInner({ data }: { data: AtlasData }) {
             return;
         }
 
-        if (event.key !== SEARCH_KEY) return;
+        if (event.key !== SEARCH_SHORTCUT) return;
 
+        atlas.setIsSearchOpen(true);
         event.preventDefault();
-        handleFocusSearch();
+        searchInputRef.current?.focus();
     }
 
     function handlePageStep(event: KeyboardEvent, step: number) {
         if (atlas.view !== 'cards' || event.defaultPrevented || event.shiftKey) return;
 
-        const target = Math.max(0, Math.min(atlas.pageCount - 1, atlas.currentPage + step));
+        const targetPage = Math.max(0, Math.min(atlas.pageCount - 1, atlas.currentPage + step));
 
-        if (target === atlas.currentPage) return;
+        if (targetPage === atlas.currentPage) return;
 
-        event.preventDefault();
         isKeyboardPagingRef.current = true;
-        atlas.setPage(target);
+        atlas.setPage(targetPage);
+        event.preventDefault();
     }
 
     function handleSearchChange(value: string) {
         atlas.setIsSearchOpen(true);
-        atlas.setSearch(value);
+        atlas.setSearchValue(value);
         resetAfterFilterChange();
     }
 
-    function handleShowInCards(place: AtlasPlace) {
-        const index = atlas.cardPlaces.findIndex(item => item.id === place.id);
+    function handleShowInCards(marker: AtlasMarker) {
+        const index = atlas.cardMarkers.findIndex(item => item.id === marker.id);
 
         atlas.setFlyTarget(null);
-        atlas.setHighlightId(place.id);
+        atlas.setHighlightedMarkerId(marker.id);
         atlas.setPage(Math.max(0, Math.floor(index / CARDS_PER_PAGE)));
-        atlas.setSelectedPlaceId(null);
+        atlas.setSelectedMarkerId(null);
         atlas.setView('cards');
     }
 
-    function handleShowOnMap(place: AtlasPlace) {
-        atlas.setFlyTarget({ placeId: place.id });
-        atlas.setHighlightId(null);
-        atlas.setSelectedPlaceId(null);
+    function handleShowOnMap(marker: AtlasMarker) {
+        atlas.setFlyTarget({ markerId: marker.id });
+        atlas.setHighlightedMarkerId(null);
+        atlas.setSelectedMarkerId(null);
         atlas.setView('map');
     }
 
     function handleToggleCategory(id: string) {
-        atlas.setSelectedCategories(current => toggleValue(current, id));
+        atlas.setSelectedCategoryIds(current => toggleValue(current, id));
+        resetAfterFilterChange();
+    }
+
+    function handleToggleJourney(id: string) {
+        atlas.setSelectedJourneyIds(current => toggleValue(current, id));
         resetAfterFilterChange();
     }
 
@@ -323,56 +321,20 @@ function AtlasInner({ data }: { data: AtlasData }) {
         resetAfterFilterChange();
     }
 
-    function handleToggleTrip(id: string) {
-        atlas.setSelectedTrips(current => toggleValue(current, id));
-        resetAfterFilterChange();
-    }
-
     function handleToggleView() {
         atlas.setFlyTarget(null);
-        atlas.setSelectedPlaceId(null);
+        atlas.setSelectedMarkerId(null);
         atlas.setView(current => (current === 'cards' ? 'map' : 'cards'));
-    }
-
-    function renderView() {
-        if (atlas.view === 'map') {
-            return (
-                <Suspense fallback={<MapSkeleton />}>
-                    <MapView
-                        categories={data.categories}
-                        flyTarget={atlas.flyTarget}
-                        onSelectPlace={atlas.setSelectedPlaceId}
-                        onShowInCards={handleShowInCards}
-                        places={atlas.filteredPlaces}
-                        regions={data.regions}
-                        selectedPlaceId={atlas.selectedPlaceId}
-                        trips={data.trips}
-                    />
-                </Suspense>
-            );
-        }
-
-        return (
-            <CardView
-                data={data}
-                highlightId={atlas.highlightId}
-                isKeyboardPagingRef={isKeyboardPagingRef}
-                onPageChange={atlas.setPage}
-                onShowOnMap={handleShowOnMap}
-                page={atlas.currentPage}
-                places={atlas.cardPlaces}
-            />
-        );
     }
 
     function resetAfterFilterChange() {
         atlas.setFlyTarget(null);
         atlas.setPage(0);
-        atlas.setSelectedPlaceId(null);
+        atlas.setSelectedMarkerId(null);
     }
 
     useEffect(() => {
-        if (!atlas.isModalOpen && wasModalOpenRef.current) filtersRef.current?.focus();
+        if (!atlas.isModalOpen && wasModalOpenRef.current) filterButtonRef.current?.focus();
 
         wasModalOpenRef.current = atlas.isModalOpen;
     }, [atlas.isModalOpen]);
@@ -381,33 +343,53 @@ function AtlasInner({ data }: { data: AtlasData }) {
         window.addEventListener('keydown', handleKeyDown);
 
         return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [atlas.currentPage, atlas.hasSearch, atlas.isModalOpen, atlas.isSearchOpen, atlas.pageCount, atlas.selectedPlaceId, atlas.view]);
+    }, [atlas.currentPage, atlas.hasSearch, atlas.isModalOpen, atlas.isSearchOpen, atlas.pageCount, atlas.selectedMarkerId, atlas.view]);
 
     return (
         <div className="atlas-plot fixed inset-0 overflow-hidden bg-paper text-ink">
             <div className="contents" inert={atlas.isModalOpen || undefined}>
                 {atlas.view !== 'cards' && (
-                    <h1
-                        id={TITLE_ID}
-                        className="sr-only"
-                    >
-                        {TITLE}
-                    </h1>
+                    <h1 className="sr-only">{ATLAS_TITLE}</h1>
                 )}
-                {renderView()}
-                <AtlasControls
+                {atlas.view === 'map'
+                    ? (
+                            <Suspense fallback={<Skeleton />}>
+                                <ViewMap
+                                    categories={data.categories}
+                                    flyTarget={atlas.flyTarget}
+                                    journeys={data.journeys}
+                                    markers={atlas.filteredMarkers}
+                                    onSelectMarker={atlas.setSelectedMarkerId}
+                                    onShowInCards={handleShowInCards}
+                                    regions={data.regions}
+                                    selectedMarkerId={atlas.selectedMarkerId}
+                                />
+                            </Suspense>
+                        )
+                    : (
+                            <ViewCards
+                                data={data}
+                                highlightedMarkerId={atlas.highlightedMarkerId}
+                                isKeyboardPagingRef={isKeyboardPagingRef}
+                                markers={atlas.cardMarkers}
+                                onPageChange={atlas.setPage}
+                                onShowOnMap={handleShowOnMap}
+                                page={atlas.currentPage}
+                            />
+                        )}
+                <Overlay
+                    filterButtonRef={filterButtonRef}
                     filterCount={atlas.filterCount}
-                    filtersRef={filtersRef}
-                    isSearchOpen={atlas.isSearchExpanded}
+                    isSearchExpanded={atlas.isSearchExpanded}
                     onClearSearch={handleClearSearch}
                     onOpenFilters={() => atlas.setIsModalOpen(true)}
                     onSearchBlur={() => { if (!atlas.hasSearch) atlas.setIsSearchOpen(false); }}
                     onSearchChange={handleSearchChange}
                     onSearchFocus={() => atlas.setIsSearchOpen(true)}
                     onToggleView={handleToggleView}
-                    search={atlas.search}
                     searchButtonRef={searchButtonRef}
-                    searchRef={searchRef}
+                    searchInputRef={searchInputRef}
+                    searchValue={atlas.searchValue}
                     view={atlas.view}
                 />
                 <div className="atlas-grain z-[90]" aria-hidden="true" />
@@ -419,27 +401,27 @@ function AtlasInner({ data }: { data: AtlasData }) {
                 {statusMessage}
             </p>
             {atlas.isModalOpen && (
-                <ModalFilter
-                    canClear={atlas.filterCount > 0}
+                <ModalFilters
                     categories={data.categories}
+                    filterCount={atlas.filterCount}
                     isStarredOnly={atlas.isStarredOnly}
+                    journeys={data.journeys}
                     onClearAll={handleClearAll}
                     onClose={handleCloseModal}
                     onToggleCategory={handleToggleCategory}
+                    onToggleJourney={handleToggleJourney}
                     onToggleStarred={handleToggleStarred}
-                    onToggleTrip={handleToggleTrip}
-                    selectedCategories={atlas.selectedCategories}
-                    selectedTrips={atlas.selectedTrips}
-                    shownCount={atlas.filteredPlaces.length}
+                    selectedCategoryIds={atlas.selectedCategoryIds}
+                    selectedJourneyIds={atlas.selectedJourneyIds}
+                    shownCount={shownCount}
                     totalCount={atlas.totalCount}
-                    trips={data.trips}
                 />
             )}
         </div>
     );
 }
 
-function MapSkeleton() {
+function Skeleton() {
     return (
         <div
             className="atlas-fade absolute grid inset-0 place-items-center"
@@ -447,9 +429,9 @@ function MapSkeleton() {
         >
             <div className="flex flex-col items-center gap-[16px]">
                 <div className="atlas-pulse grid place-items-center h-[64px] w-[64px] border border-dashed border-storm rounded-full text-storm">
-                    <IconNorthArrow size={22} strokeWidth={1.6} />
+                    <IconNorth size={22} strokeWidth={1.6} />
                 </div>
-                <p className="font-mono text-[10px] tracking-[0.14em] uppercase text-storm">Plotting the map</p>
+                <p className="font-serif text-[clamp(20px,calc(18px+0.625vw),26px)] text-storm select-none">Loading</p>
             </div>
         </div>
     );

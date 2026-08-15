@@ -9,6 +9,10 @@ export default class ErrorBoundary extends Component<{ children: ReactNode }, { 
         return { hasError: true };
     }
 
+    componentDidCatch() {
+        window.location.replace('/500');
+    }
+
     render() {
         if (this.state.hasError) return null;
 

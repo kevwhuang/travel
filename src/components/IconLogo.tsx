@@ -1,7 +1,7 @@
 const BRAND_HEIGHT = 18;
 const BRAND_WIDTH = 12;
 
-export default function BrandMark() {
+export default function IconLogo() {
     return (
         <svg
             className="text-pink"

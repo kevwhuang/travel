@@ -1,4 +1,4 @@
-export default function IconMapPin({ size, strokeWidth }: {
+export default function IconPin({ size, strokeWidth }: {
     size: number;
     strokeWidth: number;
 }) {

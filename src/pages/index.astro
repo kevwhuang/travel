@@ -1,9 +1,11 @@
 ---
 import Atlas from '@sections/Atlas.astro';
 import Layout from '@/Layout.astro';
-import { atlasDescription } from '@lib/atlas';
+import { getAtlasData } from '@lib/atlas';
 
-const description = await atlasDescription();
+const { journeys, markers } = await getAtlasData();
+
+const description = `Personal travel atlas of ${markers.length} markers across ${journeys.length} journeys, plotted on an interactive map and listed as cards, with category and starred filters, and search.`;
 ---
 
 <Layout

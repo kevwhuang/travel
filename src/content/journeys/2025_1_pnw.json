@@ -106,7 +106,7 @@
             "name": "Vancouver Convention Centre"
         },
         {
-            "category": "nature",
+            "category": "urban",
             "description": "The Seawall Water Walk is a scenic harborside stretch of Vancouver's seawall along Coal Harbour, popular for strolling with views of the mountains and marina.",
             "lat": 49.2903373,
             "lng": -123.1213375,
@@ -120,7 +120,7 @@
             "name": "Tap & Barrel Bridges"
         },
         {
-            "category": "urban",
+            "category": "landmarks",
             "description": "Granville Island Public Market is Vancouver's famed indoor market on False Creek, filled with fresh produce, seafood, artisan foods, and craft vendors.",
             "lat": 49.2726609,
             "lng": -123.1351387,
@@ -205,21 +205,21 @@
         },
         {
             "category": "nature",
-            "description": "Gas Works Park is a Seattle park on Lake Union built around a preserved gasification plant, offering skyline views and kite-flying hills.",
+            "description": "Gas Works Park is a Seattle park on Lake Union built around a preserved gasification plant, offering skyline views and a kite-flying hill.",
             "lat": 47.6456308,
             "lng": -122.3343532,
             "name": "Gas Works Park"
         },
         {
             "category": "dining",
-            "description": "Just Poké is a Seattle-based fast-casual chain serving customizable Hawaiian-style poke bowls, with this branch near Northgate Station.",
+            "description": "Just Poké is a Seattle-based fast-casual chain, with this location near Northgate Station serving customizable Hawaiian-style poke bowls.",
             "lat": 47.7088063,
             "lng": -122.3244721,
             "name": "Just Poké Northgate"
         },
         {
             "category": "misc",
-            "description": "Target is a national retail chain, and this Northgate Seattle store serves as a convenient stop for everyday supplies.",
+            "description": "Target is a national retail chain, with this Northgate Seattle store serving as a convenient stop for everyday supplies.",
             "lat": 47.7094843,
             "lng": -122.3253625,
             "name": "Target"
@@ -236,11 +236,11 @@
             "description": "Mee Sum Pastry is a Chinese bakery-cafe on University Way in Seattle, serving giant barbecue-pork hom bow buns.",
             "lat": 47.6610743,
             "lng": -122.3132751,
-            "name": "Mee Sum"
+            "name": "Mee Sum Pastry"
         },
         {
             "category": "dining",
-            "description": "The Blue Heron is a neighborhood sandwich and coffee shop in Seattle's Magnolia district, serving cheesesteaks and breakfast sandwiches since 2005.",
+            "description": "The Blue Heron is a sandwich and coffee shop in Seattle's Magnolia neighborhood, serving cheesesteaks and breakfast sandwiches since 2005.",
             "lat": 47.6559287,
             "lng": -122.3869726,
             "name": "The Blue Heron"

@@ -2,21 +2,21 @@
     "markers": [
         {
             "category": "misc",
-            "description": "The Passport & Visa Company is an expediting agency in South Austin that handles rush passport renewals and travel visa processing.",
+            "description": "The Passport & Visa Company is an expediting agency in south Austin that handles rush passport renewals and travel visa processing.",
             "lat": 30.2294478,
             "lng": -97.7772847,
             "name": "The Passport & Visa Company"
         },
         {
             "category": "dining",
-            "description": "Firehouse Subs is a firefighter-founded American sandwich chain, with this location serving hot subs in the Oaks at Slaughter center in South Austin.",
+            "description": "Firehouse Subs is a firefighter-founded American sandwich chain, with this location serving hot subs in the Oaks at Slaughter center in south Austin.",
             "lat": 30.1722683,
             "lng": -97.785005,
             "name": "Firehouse Subs"
         },
         {
             "category": "dining",
-            "description": "JuiceLand is an Austin-born juice and smoothie chain known for fresh-pressed juices and vegan snacks, here on Slaughter Lane in South Austin.",
+            "description": "JuiceLand is an Austin-born juice and smoothie chain, with this Slaughter Lane location in south Austin serving fresh-pressed juices and vegan snacks.",
             "lat": 30.1717812,
             "lng": -97.7851616,
             "name": "JuiceLand"
@@ -135,7 +135,7 @@
         },
         {
             "category": "dining",
-            "description": "LongBoard Bar and Grill is a waterfront restaurant on South Padre Island offering fresh seafood, burgers, and daily live music.",
+            "description": "LongBoard Bar and Grill is a waterfront restaurant on South Padre Island, offering fresh seafood, burgers, and daily live music.",
             "lat": 26.0969544,
             "lng": -97.1683511,
             "name": "LongBoard Bar and Grill"
@@ -149,7 +149,7 @@
         },
         {
             "category": "landmarks",
-            "description": "Quinta Mazatlan is a historic 1930s adobe mansion in McAllen that now serves as a World Birding Center nature and events venue.",
+            "description": "Quinta Mazatlan is a historic 1930s adobe mansion in McAllen, Texas, that now serves as a World Birding Center nature and events venue.",
             "lat": 26.176732,
             "lng": -98.2297691,
             "name": "Quinta Mazatlan",
@@ -157,14 +157,14 @@
         },
         {
             "category": "dining",
-            "description": "Tony's Kitchen is a family-owned deli in Edinburg serving sandwiches, pastas, and desserts.",
+            "description": "Tony's Kitchen is a family-owned deli in Edinburg, Texas, serving sandwiches, pastas, and desserts.",
             "lat": 26.2996117,
             "lng": -98.1522341,
             "name": "Tony's Kitchen"
         },
         {
             "category": "dining",
-            "description": "Vermillion Restaurant and Watering Hole is a Brownsville restaurant dating to 1934, serving fajitas, enchiladas, and generous Tex-Mex portions.",
+            "description": "Vermillion Restaurant and Watering Hole is a Tex-Mex restaurant in Brownsville, Texas, dating to 1934 and serving fajitas, enchiladas, and generous portions.",
             "lat": 25.9229074,
             "lng": -97.4897247,
             "name": "Vermillion Restaurant and Watering Hole"
@@ -227,7 +227,7 @@
         },
         {
             "category": "dining",
-            "description": "Butter Churn is a family-owned buffet restaurant in Aransas Pass, Texas, serving all-you-can-eat country cooking like chicken fried steak and brisket.",
+            "description": "Butter Churn is a family-owned buffet restaurant in Aransas Pass, Texas, serving all-you-can-eat country cooking like chicken-fried steak and brisket.",
             "lat": 27.9217285,
             "lng": -97.1637813,
             "name": "Butter Churn"
@@ -249,14 +249,14 @@
         },
         {
             "category": "dining",
-            "description": "Mozzafiato is a locally owned Italian restaurant in Corpus Christi serving brick-oven pizza, fried mozzarella, and homemade desserts.",
+            "description": "Mozzafiato is a locally owned Italian restaurant in Corpus Christi, serving brick-oven pizza, fried mozzarella, and homemade desserts.",
             "lat": 27.7825456,
             "lng": -97.4016339,
             "name": "Mozzafiato"
         },
         {
             "category": "dining",
-            "description": "Seguin Schoolyard is a food truck park and entertainment venue in a repurposed elementary school in downtown Seguin, Texas.",
+            "description": "Seguin Schoolyard is a food-truck park and entertainment venue in a repurposed elementary school in downtown Seguin, Texas.",
             "lat": 29.5705542,
             "lng": -97.9709187,
             "name": "Seguin Schoolyard"

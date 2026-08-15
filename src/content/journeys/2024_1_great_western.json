@@ -58,14 +58,14 @@
         },
         {
             "category": "dining",
-            "description": "Pier Burger is a casual walk-up burger stand on the Santa Monica Pier serving classic burgers, fries, and shakes.",
+            "description": "Pier Burger is a casual walk-up burger stand on the Santa Monica Pier, serving classic burgers, fries, and shakes.",
             "lat": 34.0092009,
             "lng": -118.4973332,
             "name": "Pier Burger"
         },
         {
             "category": "urban",
-            "description": "Mat Franco's Magic Reinvented Nightly is a resident magic show at The LINQ in Las Vegas headlined by the America's Got Talent winner.",
+            "description": "Mat Franco's Magic Reinvented Nightly is a resident magic show at The LINQ in Las Vegas, headlined by the America's Got Talent winner.",
             "lat": 36.1181779,
             "lng": -115.1713151,
             "name": "Mat Franco - Magic Reinvented Nightly"
@@ -79,7 +79,7 @@
         },
         {
             "category": "urban",
-            "description": "Desert Rose Resort is an all-suite hotel just east of the Las Vegas Strip offering apartment-style rooms without a casino.",
+            "description": "Desert Rose Resort is an all-suite hotel just east of the Las Vegas Strip, offering apartment-style rooms without a casino.",
             "lat": 36.0980752,
             "lng": -115.1669116,
             "name": "Desert Rose Resort"
@@ -93,21 +93,21 @@
         },
         {
             "category": "nature",
-            "description": "Red Rock Canyon is a national conservation area west of Las Vegas known for its red sandstone cliffs and 13-mile scenic drive.",
+            "description": "Red Rock Canyon is a national conservation area west of Las Vegas, known for its red sandstone cliffs and 13-mile scenic drive.",
             "lat": 36.1326065,
             "lng": -115.4243374,
-            "name": "Red Rock Canyon"
+            "name": "Red Rock Canyon National Conservation Area"
         },
         {
             "category": "nature",
-            "description": "Lost Creek Canyon is a short trail area in Red Rock Canyon near Las Vegas featuring a seasonal waterfall and ancient rock art.",
+            "description": "Lost Creek Canyon is a short trail area in Red Rock Canyon near Las Vegas, featuring a seasonal waterfall and ancient rock art.",
             "lat": 36.157234,
             "lng": -115.497205,
             "name": "Lost Creek Canyon"
         },
         {
             "category": "urban",
-            "description": "The Fremont Street Experience is a pedestrian mall in downtown Las Vegas famous for its massive overhead LED canopy light shows.",
+            "description": "The Fremont Street Experience is a pedestrian mall in downtown Las Vegas, famous for its massive overhead LED canopy light shows.",
             "lat": 36.1707275,
             "lng": -115.1438229,
             "name": "Fremont Street Experience"
@@ -121,7 +121,7 @@
         },
         {
             "category": "urban",
-            "description": "AREA15 is an immersive entertainment complex near the Las Vegas Strip housing Meow Wolf's Omega Mart and other interactive attractions.",
+            "description": "AREA15 is an immersive entertainment complex near the Las Vegas Strip, housing Meow Wolf's Omega Mart and other interactive attractions.",
             "lat": 36.1317582,
             "lng": -115.1815485,
             "name": "AREA15"
@@ -142,7 +142,7 @@
         },
         {
             "category": "urban",
-            "description": "The Bellagio is a luxury resort and casino on the Las Vegas Strip famous for its choreographed dancing fountains and conservatory.",
+            "description": "The Bellagio is a luxury resort and casino on the Las Vegas Strip, famous for its choreographed dancing fountains and conservatory.",
             "lat": 36.1129455,
             "lng": -115.1765067,
             "name": "Bellagio Hotel & Casino"
@@ -156,7 +156,7 @@
         },
         {
             "category": "landmarks",
-            "description": "The Hoover Dam is a monumental concrete arch-gravity dam on the Colorado River between Nevada and Arizona, completed in 1935.",
+            "description": "The Hoover Dam is a monumental concrete arch-gravity dam on the Colorado River between Nevada and Arizona, dedicated in 1935.",
             "lat": 36.0160655,
             "lng": -114.7377325,
             "name": "Hoover Dam"
@@ -205,7 +205,7 @@
         },
         {
             "category": "landmarks",
-            "description": "Desert View Watchtower is a 70-foot stone tower designed by Mary Colter in 1932, overlooking the Grand Canyon's eastern rim.",
+            "description": "Desert View Watchtower is a 70-foot stone tower designed by Mary Colter and completed in 1932, overlooking the Grand Canyon's eastern rim.",
             "lat": 36.044096,
             "lng": -111.8262494,
             "name": "Desert View Watchtower"
@@ -282,14 +282,14 @@
         },
         {
             "category": "nature",
-            "description": "Lower Geyser Basin is Yellowstone's largest geyser basin, home to the Fountain Paint Pot mud pots and the frequently erupting Great Fountain Geyser.",
+            "description": "Lower Geyser Basin is Yellowstone's largest geyser basin, home to the Fountain Paint Pot mud pots and the predictably erupting Great Fountain Geyser.",
             "lat": 44.5493164,
             "lng": -110.8077192,
             "name": "Lower Geyser Basin"
         },
         {
             "category": "nature",
-            "description": "Midway Geyser Basin is a thermal area in Yellowstone National Park best known for Grand Prismatic Spring, the largest hot spring in the United States.",
+            "description": "Midway Geyser Basin is a thermal area in Yellowstone National Park, best known for Grand Prismatic Spring, the largest hot spring in the United States.",
             "lat": 44.5253645,
             "lng": -110.8369445,
             "name": "Midway Geyser Basin"
@@ -303,10 +303,10 @@
         },
         {
             "category": "nature",
-            "description": "West Thumb is a geyser basin on the shore of Yellowstone Lake, where colorful hot springs and pools meet the lake's edge.",
+            "description": "West Thumb Geyser Basin is a thermal area on the shore of Yellowstone Lake, where colorful hot springs and pools meet the lake's edge.",
             "lat": 44.4154952,
             "lng": -110.5754846,
-            "name": "West Thumb"
+            "name": "West Thumb Geyser Basin"
         },
         {
             "category": "dining",
@@ -317,10 +317,10 @@
         },
         {
             "category": "nature",
-            "description": "Two Ribbons is a short boardwalk trail along the Madison River near Yellowstone's west entrance, showcasing forest regrowth from the 1988 fires.",
+            "description": "Two Ribbons Trail is a short boardwalk trail along the Madison River near Yellowstone's west entrance, showcasing forest regrowth from the 1988 fires.",
             "lat": 44.6523063,
             "lng": -111.0375228,
-            "name": "Two Ribbons"
+            "name": "Two Ribbons Trail"
         },
         {
             "category": "urban",

@@ -1,7 +1,7 @@
 [
     {
         "category": "nature",
-        "description": "The Lady Bird Lake Hike & Bike Trail, officially the Ann and Roy Butler Trail, is a 10-mile loop around the lake in central Austin, known for skyline views and a lakeside boardwalk.",
+        "description": "The Lady Bird Lake Hike & Bike Trail is a 10-mile loop around the lake in central Austin, known for skyline views and a lakeside boardwalk.",
         "lat": 30.2599722,
         "lng": -97.7434889,
         "name": "Lady Bird Lake Hike & Bike Trail"
@@ -15,7 +15,7 @@
     },
     {
         "category": "nature",
-        "description": "Playa Delfines, also called Dolphin Beach, is a wide public beach on the southern stretch of Cancún's Hotel Zone, known for its hilltop mirador and the giant CANCÚN letters.",
+        "description": "Playa Delfines is a wide public beach on the southern stretch of Cancún's Hotel Zone, known for its hilltop mirador and the giant CANCÚN letters.",
         "lat": 21.0619642,
         "lng": -86.778583,
         "name": "Playa Delfines"

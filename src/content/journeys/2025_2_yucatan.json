@@ -17,10 +17,18 @@
         },
         {
             "category": "urban",
-            "description": "Chuburná is a quiet fishing village on Yucatán's Gulf coast west of Progreso, known for its beaches and summer homes.",
+            "description": "Chuburná Puerto is a quiet fishing village on Yucatán's Gulf coast west of Progreso, known for its beaches and summer homes.",
             "lat": 21.255713,
             "lng": -89.804063,
-            "name": "Chuburná"
+            "name": "Chuburná Puerto"
+        },
+        {
+            "category": "landmarks",
+            "description": "Hacienda Mucuyché is a restored henequen hacienda in the village of Mucuyché, south of Mérida, known for its crystal-clear cenotes open to swimmers.",
+            "lat": 20.6224122,
+            "lng": -89.6031586,
+            "name": "Hacienda Mucuyché",
+            "starred": true
         },
         {
             "category": "nature",
@@ -36,14 +44,6 @@
             "lat": 20.9673702,
             "lng": -89.5925857,
             "name": "Mérida"
-        },
-        {
-            "category": "landmarks",
-            "description": "Mucuyché is a village south of Mérida, known for its restored henequen hacienda and crystal-clear cenotes open to swimmers.",
-            "lat": 20.6224122,
-            "lng": -89.6031586,
-            "name": "Mucuyché",
-            "starred": true
         },
         {
             "category": "landmarks",

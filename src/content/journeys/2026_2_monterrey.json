@@ -19,7 +19,7 @@
             "description": "Palax is a long-running 24-hour diner in Monterrey's Obispado district, serving regional dishes like machacado con huevo and menudo.",
             "lat": 25.673244,
             "lng": -100.3507317,
-            "name": "Palax"
+            "name": "Palax Obispado"
         },
         {
             "category": "landmarks",
@@ -81,7 +81,7 @@
         },
         {
             "category": "dining",
-            "description": "UMAMI Ramen House is a Japanese restaurant on Río Orinoco in San Pedro Garza García, serving miso ramen and gyoza.",
+            "description": "UMAMI Ramen House is a Japanese restaurant on Calle Río Orinoco in San Pedro Garza García, serving miso ramen and gyoza.",
             "lat": 25.6582548,
             "lng": -100.3600581,
             "name": "UMAMI Ramen House Río Orinoco"
@@ -116,7 +116,7 @@
         },
         {
             "category": "urban",
-            "description": "Fashion Drive is an upscale shopping and dining complex in San Pedro Garza García, part of Monterrey's Valle Oriente commercial corridor.",
+            "description": "Fashion Drive is an upscale shopping and dining complex in San Pedro Garza García, part of the Valle Oriente commercial corridor.",
             "lat": 25.6512503,
             "lng": -100.3349906,
             "name": "Fashion Drive"
@@ -158,7 +158,7 @@
         },
         {
             "category": "dining",
-            "description": "Taquería Orinoco's Centrito Valle branch serves the Monterrey-born chain's famous norteño-style trompo, res, and chicharrón tacos in San Pedro Garza García.",
+            "description": "Taquería Orinoco Centrito Valle is a branch of the Monterrey-born taco chain in San Pedro Garza García, serving its famous norteño-style trompo, res, and chicharrón tacos.",
             "lat": 25.6602606,
             "lng": -100.3675049,
             "name": "Taquería Orinoco Centrito Valle"
@@ -179,7 +179,7 @@
         },
         {
             "category": "nature",
-            "description": "Chipinque Ecological Park is a forested reserve in the Sierra Madre above San Pedro Garza García, offering hiking trails and city views.",
+            "description": "Chipinque Ecological Park is a forested reserve in the Sierra Madre Oriental above San Pedro Garza García, offering hiking trails and city views.",
             "lat": 25.618744,
             "lng": -100.3602415,
             "name": "Chipinque Ecological Park",

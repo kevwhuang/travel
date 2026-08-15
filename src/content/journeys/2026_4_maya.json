@@ -2,14 +2,14 @@
     "markers": [
         {
             "category": "urban",
-            "description": "Mérida International Airport is the main air gateway to Yucatán state, serving domestic and international flights just south of the city center.",
+            "description": "Mérida International Airport is the main air gateway to Yucatán state, serving domestic and international flights just southwest of the city center.",
             "lat": 20.9241634,
             "lng": -89.6584306,
             "name": "Mérida International Airport"
         },
         {
             "category": "dining",
-            "description": "Los Taquitos de PM Altabrisa is a branch of a Mérida taqueria chain serving al pastor tacos and Yucatecan cochinita.",
+            "description": "Los Taquitos de PM Altabrisa is a branch of a local taqueria chain in northeast Mérida, serving al pastor tacos and Yucatecan cochinita.",
             "lat": 21.0269091,
             "lng": -89.5725323,
             "name": "Los Taquitos de PM Altabrisa"
@@ -65,7 +65,7 @@
         },
         {
             "category": "urban",
-            "description": "The ADO stop in Mérida's historic center is a boarding point for intercity coaches connecting the city with the wider Yucatán Peninsula.",
+            "description": "The ADO terminal in Mérida's historic center is the city's main intercity bus station, linking Mérida with the wider Yucatán Peninsula.",
             "lat": 20.9628806,
             "lng": -89.6302824,
             "name": "ADO Autobuses Centro Histórico"
@@ -150,7 +150,7 @@
         },
         {
             "category": "dining",
-            "description": "Alfonsina Coffee Tulum is a bakery and coffee bar in Tulum, Quintana Roo, serving croissants, pistachio pastries, and specialty espresso drinks.",
+            "description": "Alfonsina Coffee Tulum is a bakery and coffee bar in Tulum's town center, serving croissants, pistachio pastries, and specialty espresso drinks.",
             "lat": 20.2149946,
             "lng": -87.4550757,
             "name": "Alfonsina Coffee Tulum"
@@ -164,7 +164,7 @@
         },
         {
             "category": "urban",
-            "description": "Asilé Hotel Boutique is a small ten-room hotel in central Bacalar with a rooftop bar, steps from the town square and the Fuerte de San Felipe.",
+            "description": "Asilé Hotel Boutique is a small 10-room hotel in central Bacalar with a rooftop bar, steps from the town square and the Fuerte de San Felipe.",
             "lat": 18.677659,
             "lng": -88.3896111,
             "name": "Asilé Hotel Boutique"
@@ -234,7 +234,7 @@
         },
         {
             "category": "misc",
-            "description": "The Village Supermarket is a grocery store just north of San Pedro Town on Ambergris Caye, stocking fresh produce, local goods, and international products.",
+            "description": "The Village Supermarket is a grocery store just north of San Pedro on Ambergris Caye, stocking fresh produce, local goods, and international products.",
             "lat": 17.932581,
             "lng": -87.9551432,
             "name": "The Village Supermarket"
@@ -262,7 +262,7 @@
         },
         {
             "category": "dining",
-            "description": "The Sun Deck is a small beachfront restaurant on northern Ambergris Caye, Belize, serving jerk, curry, and Mayan-style dishes at colorful seaside tables.",
+            "description": "The Sun Deck is a small beachfront restaurant on northern Ambergris Caye, Belize, serving jerk, curry, and Maya-style dishes at colorful seaside tables.",
             "lat": 17.9889682,
             "lng": -87.9191208,
             "name": "The Sun Deck Restaurant and Bar"
@@ -354,7 +354,7 @@
         },
         {
             "category": "landmarks",
-            "description": "Cahal Pech is a hilltop Maya archaeological site overlooking San Ignacio, Belize, preserving palace ruins first occupied around 1200 BC.",
+            "description": "Cahal Pech is a hilltop Maya archaeological site overlooking San Ignacio, Belize, preserving palace ruins at a settlement first occupied around 1200 BC.",
             "lat": 17.1459623,
             "lng": -89.0739844,
             "name": "Cahal Pech Archaeological Reserve"
@@ -364,7 +364,7 @@
             "description": "Xunantunich is a Maya archaeological site near the Mopan River in western Belize, crowned by the 40-meter El Castillo pyramid.",
             "lat": 17.0898859,
             "lng": -89.1422331,
-            "name": "Xunantunich"
+            "name": "Xunantunich Archaeological Reserve"
         },
         {
             "category": "misc",
@@ -375,7 +375,7 @@
         },
         {
             "category": "dining",
-            "description": "Zar's Cafe and Resto is a restaurant inside Midas Resort in San Ignacio, Belize, serving breakfast and Caribbean-style dishes daily.",
+            "description": "Zar's Cafe and Resto is a restaurant inside the Midas Belize resort in San Ignacio, serving breakfast and Caribbean-style dishes daily.",
             "lat": 17.1643673,
             "lng": -89.0704278,
             "name": "Zar's Cafe and Resto"
@@ -397,10 +397,10 @@
         },
         {
             "category": "dining",
-            "description": "Restaurante Gonzalez is an eatery in El Remate, Guatemala, serving affordable, home-style Guatemalan meals.",
+            "description": "Restaurante González is an eatery in El Remate, Guatemala, serving affordable, home-style Guatemalan meals.",
             "lat": 17.0175294,
             "lng": -89.6744791,
-            "name": "Restaurante Gonzalez"
+            "name": "Restaurante González"
         },
         {
             "category": "dining",
@@ -411,7 +411,7 @@
         },
         {
             "category": "urban",
-            "description": "The northern border crossing at Santa Elena, Belize, connects Corozal District with Chetumal, Mexico, over the Río Hondo.",
+            "description": "The northern border crossing at Santa Elena, Belize, connects Corozal District with Subteniente López near Chetumal, Mexico, over the Río Hondo.",
             "lat": 18.4862247,
             "lng": -88.4003432,
             "name": "Northern Border"
@@ -425,7 +425,7 @@
         },
         {
             "category": "urban",
-            "description": "Hotel Victoria is a Victorian-styled hotel on Paseo de Montejo in Mérida, Mexico, steps from the Monumento a la Patria.",
+            "description": "Hotel Victoria is a Victorian-style hotel on Paseo de Montejo in Mérida, steps from the Monumento a la Patria.",
             "lat": 20.988585,
             "lng": -89.616811,
             "name": "Hotel Victoria"

@@ -2,11 +2,8 @@
 
 declare module 'eslint-plugin-jsx-a11y';
 
-interface AtlasCamera {
-    lat: number;
-    lng: number;
-    zoom: number;
-}
+type AtlasRegionStatus = 'active' | 'explored';
+type AtlasView = 'cards' | 'map';
 
 interface AtlasCategory {
     description: string;
@@ -16,55 +13,45 @@ interface AtlasCategory {
 
 interface AtlasData {
     categories: AtlasCategory[];
-    places: AtlasPlace[];
+    journeys: AtlasJourney[];
+    markers: AtlasMarker[];
     regions: AtlasRegions;
-    trips: AtlasTrip[];
 }
 
 interface AtlasFlyTarget {
-    placeId: number;
+    markerId: number;
 }
 
-interface AtlasPlace {
-    category: string;
+interface AtlasJourney {
+    id: string;
+    isOrdered: boolean;
+    markerCount: number;
+    name: string;
+    order: number;
+    year: number;
+}
+
+interface AtlasMarker {
+    categoryId: string;
     description: string;
     id: number;
+    isStarred: boolean;
+    journeyId: string | null;
     lat: number;
     lng: number;
     name: string;
-    order: number;
-    starred?: boolean;
-    trip: string | null;
+    stopNumber: number;
 }
 
 interface AtlasRegionFeature {
     geometry: { coordinates: unknown; type: 'MultiPolygon' };
-    properties: { status: 'active' | 'explored' };
+    properties: { status: AtlasRegionStatus };
     type: 'Feature';
 }
 
 interface AtlasRegions {
     features: AtlasRegionFeature[];
     type: 'FeatureCollection';
-}
-
-interface AtlasState {
-    camera?: AtlasCamera;
-    categories: string[];
-    page: number;
-    search: string;
-    starredOnly: boolean;
-    trips: string[];
-    view: 'cards' | 'map';
-}
-
-interface AtlasTrip {
-    count: number;
-    id: string;
-    name: string;
-    order: number;
-    ordered: boolean;
-    year: number;
 }
 
 interface ImportMetaEnv {

@@ -3,11 +3,11 @@ import { getCollection } from 'astro:content';
 let cachedAtlasData: Promise<AtlasData> | null = null;
 
 async function buildAtlasData() {
-    const activeEntries = await getCollection('active');
+    const activeRegionEntries = await getCollection('activeRegions');
     const categoryEntries = await getCollection('categories');
-    const exploredEntries = await getCollection('explored');
-    const starredEntries = await getCollection('starred');
-    const tripEntries = await getCollection('trips');
+    const exploredRegionEntries = await getCollection('exploredRegions');
+    const journeyEntries = await getCollection('journeys');
+    const starredMarkerEntries = await getCollection('starredMarkers');
 
     const categories: AtlasCategory[] = categoryEntries
         .map(entry => ({
@@ -17,105 +17,113 @@ async function buildAtlasData() {
         }))
         .sort((first, second) => first.id.localeCompare(second.id));
 
-    const keptCounts = new Map<string, number>();
-    const places: AtlasPlace[] = [];
-    const placesByKey = new Map<string, AtlasPlace>();
+    const markerCounts = new Map<string, number>();
+    const markers: AtlasMarker[] = [];
+    const markersByKey = new Map<string, AtlasMarker>();
 
-    const newestFirstTrips = [...tripEntries].sort((first, second) => (
-        yearOf(second.id) - yearOf(first.id) || orderOf(second.id) - orderOf(first.id)
+    const newestFirstJourneys = [...journeyEntries].sort((first, second) => (
+        parseJourneyYear(second.id) - parseJourneyYear(first.id) || parseJourneyOrder(second.id) - parseJourneyOrder(first.id)
     ));
 
-    for (const entry of newestFirstTrips) {
-        let kept = 0;
+    for (const entry of newestFirstJourneys) {
+        let markerCount = 0;
 
         for (const marker of entry.data.markers) {
-            const survivor = placesByKey.get(placeKeyOf(marker));
+            const existingMarker = markersByKey.get(getDedupeKey(marker));
 
-            if (survivor) {
-                if (marker.starred === true) survivor.starred = true;
+            if (existingMarker) {
+                if (marker.starred === true) existingMarker.isStarred = true;
 
                 continue;
             }
 
-            kept += 1;
+            markerCount++;
 
-            const place: AtlasPlace = {
-                category: marker.category,
+            const atlasMarker: AtlasMarker = {
+                categoryId: marker.category,
                 description: marker.description,
-                id: places.length,
+                id: markers.length,
+                isStarred: marker.starred === true,
+                journeyId: entry.id,
                 lat: marker.lat,
                 lng: marker.lng,
                 name: marker.name,
-                order: entry.data.ordered ? kept : 0,
-                starred: marker.starred,
-                trip: entry.id,
+                stopNumber: entry.data.ordered ? markerCount : 0,
             };
 
-            places.push(place);
-            placesByKey.set(placeKeyOf(place), place);
+            markers.push(atlasMarker);
+            markersByKey.set(getDedupeKey(atlasMarker), atlasMarker);
         }
 
-        keptCounts.set(entry.id, kept);
+        markerCounts.set(entry.id, markerCount);
     }
 
-    for (const entry of starredEntries) {
-        const survivor = placesByKey.get(placeKeyOf(entry.data));
+    for (const entry of starredMarkerEntries) {
+        const existingMarker = markersByKey.get(getDedupeKey(entry.data));
 
-        if (survivor) {
-            survivor.starred = true;
+        if (existingMarker) {
+            existingMarker.isStarred = true;
 
             continue;
         }
 
-        const place: AtlasPlace = {
-            category: entry.data.category,
+        const atlasMarker: AtlasMarker = {
+            categoryId: entry.data.category,
             description: entry.data.description,
-            id: places.length,
+            id: markers.length,
+            isStarred: true,
+            journeyId: null,
             lat: entry.data.lat,
             lng: entry.data.lng,
             name: entry.data.name,
-            order: 0,
-            starred: true,
-            trip: null,
+            stopNumber: 0,
         };
 
-        places.push(place);
-        placesByKey.set(placeKeyOf(place), place);
+        markers.push(atlasMarker);
+        markersByKey.set(getDedupeKey(atlasMarker), atlasMarker);
     }
 
-    const trips: AtlasTrip[] = [...tripEntries]
-        .sort((first, second) => yearOf(second.id) - yearOf(first.id) || orderOf(first.id) - orderOf(second.id))
+    const journeys: AtlasJourney[] = [...journeyEntries]
+        .sort((first, second) => (
+            parseJourneyYear(second.id) - parseJourneyYear(first.id) || parseJourneyOrder(first.id) - parseJourneyOrder(second.id)
+        ))
         .map(entry => ({
-            count: keptCounts.get(entry.id) ?? 0,
             id: entry.id,
+            isOrdered: entry.data.ordered,
+            markerCount: markerCounts.get(entry.id) ?? 0,
             name: entry.data.name,
-            order: orderOf(entry.id),
-            ordered: entry.data.ordered,
-            year: yearOf(entry.id),
+            order: parseJourneyOrder(entry.id),
+            year: parseJourneyYear(entry.id),
         }));
 
     const regions: AtlasRegions = {
         features: [
-            ...activeEntries.map(entry => regionFeatureOf(entry.data, 'active')),
-            ...exploredEntries.map(entry => regionFeatureOf(entry.data, 'explored')),
+            ...activeRegionEntries.map(entry => toRegionFeature(entry.data, 'active')),
+            ...exploredRegionEntries.map(entry => toRegionFeature(entry.data, 'explored')),
         ],
         type: 'FeatureCollection',
     };
 
-    return { categories, places, regions, trips };
+    return { categories, journeys, markers, regions };
 }
 
-function orderOf(tripId: string) {
-    const [, order] = tripId.split('_');
+function getDedupeKey(marker: { lat: number; lng: number; name: string }) {
+    return `${marker.name}|${marker.lat}|${marker.lng}`;
+}
+
+function parseJourneyOrder(journeyId: string) {
+    const [, order] = journeyId.split('_');
 
     return Number(order);
 }
 
-function placeKeyOf(place: { lat: number; lng: number; name: string }) {
-    return `${place.name}|${place.lat}|${place.lng}`;
+function parseJourneyYear(journeyId: string) {
+    const [year] = journeyId.split('_');
+
+    return Number(year);
 }
 
-function regionFeatureOf(region: { boundary: unknown }, status: 'active' | 'explored'): AtlasRegionFeature {
+function toRegionFeature(region: { boundary: unknown }, status: AtlasRegionStatus): AtlasRegionFeature {
     return {
         geometry: { coordinates: region.boundary, type: 'MultiPolygon' },
         properties: { status },
@@ -123,20 +131,8 @@ function regionFeatureOf(region: { boundary: unknown }, status: 'active' | 'expl
     };
 }
 
-function yearOf(tripId: string) {
-    const [year] = tripId.split('_');
-
-    return Number(year);
-}
-
-export function atlasData(): Promise<AtlasData> {
+export function getAtlasData(): Promise<AtlasData> {
     cachedAtlasData ??= buildAtlasData();
 
     return cachedAtlasData;
-}
-
-export async function atlasDescription(): Promise<string> {
-    const { places, trips } = await atlasData();
-
-    return `Travel atlas of ${places.length} places across ${trips.length} journeys, plotted on an interactive map and listed as cards, with category filters, starred favorites, and search.`;
 }

@@ -8,7 +8,7 @@
             "name": "Hartsfield-Jackson Atlanta International Airport"
         },
         {
-            "category": "urban",
+            "category": "misc",
             "description": "Hertz Car Rental operates from the rental car center at Hartsfield-Jackson Atlanta International Airport, providing vehicle pickup for arriving travelers.",
             "lat": 33.639826,
             "lng": -84.464172,
@@ -37,7 +37,7 @@
         },
         {
             "category": "misc",
-            "description": "Kroger is a major American supermarket chain, and this Chamblee-area store serves as a practical grocery stop during the journey.",
+            "description": "Kroger is a major American supermarket chain, and this Dunwoody-area store serves as a practical grocery stop during the journey.",
             "lat": 33.9227419,
             "lng": -84.3156105,
             "name": "Kroger"
@@ -86,7 +86,7 @@
         },
         {
             "category": "dining",
-            "description": "Il Bottegone is an Italian market and deli at Halcyon in Alpharetta, serving paninis, fresh pastas, pastries, and Italian coffee.",
+            "description": "Il Bottegone is an Italian market and deli at Halcyon near Alpharetta, serving paninis, fresh pastas, pastries, and Italian coffee.",
             "lat": 34.1106636,
             "lng": -84.2242308,
             "name": "Il Bottegone"
@@ -114,7 +114,7 @@
         },
         {
             "category": "urban",
-            "description": "Embry Downs Ct is a private residence in the Tucker area of metro Atlanta, serving as the journey's home base.",
+            "description": "This address served as a private home-base stay on Embry Downs Ct in the Tucker area of metro Atlanta.",
             "lat": 33.89,
             "lng": -84.24,
             "name": "Embry Downs Ct"
@@ -184,7 +184,7 @@
         },
         {
             "category": "urban",
-            "description": "699 Milton St is a private home-base stay in the Decatur area east of Atlanta, Georgia.",
+            "description": "This address served as a private home-base stay in the Decatur area east of Atlanta.",
             "lat": 33.7975922,
             "lng": -84.2614215,
             "name": "699 Milton St"
@@ -296,7 +296,7 @@
         },
         {
             "category": "landmarks",
-            "description": "Historic Fire Station 6 is an 1894 firehouse in Atlanta's Sweet Auburn district, now a museum within the Martin Luther King, Jr. historical park.",
+            "description": "Historic Fire Station 6 is an 1894 firehouse in Atlanta's Sweet Auburn district, now a museum within Martin Luther King, Jr. National Historical Park.",
             "lat": 33.7553472,
             "lng": -84.3718779,
             "name": "Historic Fire Station 6"

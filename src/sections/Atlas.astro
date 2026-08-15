@@ -1,14 +1,14 @@
 ---
 import Atlas from '@components/Atlas';
-import { TITLE_ID } from '@lib/constants';
-import { atlasData } from '@lib/atlas';
+import { ATLAS_TITLE } from '@lib/constants';
+import { getAtlasData } from '@lib/atlas';
 
-const data = await atlasData();
+const data = await getAtlasData();
 ---
 
 <section
     class="flex flex-1 flex-col"
-    aria-labelledby={TITLE_ID}
+    aria-label={ATLAS_TITLE}
 >
     <Atlas client:load data={data} />
 </section>

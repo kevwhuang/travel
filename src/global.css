@@ -7,11 +7,11 @@
     --color-gold: #d9a441;
     --color-haze: #d8dfde;
     --color-ink: #212b2e;
+    --color-ink-05: #212b2e0d;
     --color-ink-10: #212b2e1a;
     --color-ink-20: #212b2e33;
     --color-ink-30: #212b2e4d;
     --color-ink-40: #212b2e66;
-    --color-ink-5: #212b2e0d;
     --color-linen: #e4eae8;
     --color-moss: #6ba368;
     --color-paper: #f3f5f4;
@@ -42,11 +42,12 @@
     --duration-base: 0.3s;
     --duration-fast: 0.2s;
     --duration-slow: 0.6s;
+    --shell-pad: clamp(20px, calc(5.34px + 4.584vw), var(--shell-pad-max));
+    --shell-pad-max: 64px;
     --width-medium: calc(var(--width-wide) / 2);
-    --width-narrow: calc(var(--width-wide) / 4);
-    --width-shell: 1560px;
-    --width-shell-pad: 64px;
-    --width-wide: calc(var(--width-shell) - var(--width-shell-pad) * 2);
+    --width-shell: 1280px;
+    --width-third: calc((var(--width-shell) - var(--shell-pad-max) * 2) / 3);
+    --width-wide: calc(var(--width-shell) - var(--shell-pad) * 2);
 }
 
 a,
@@ -57,6 +58,10 @@ button {
 html {
     scroll-behavior: smooth;
     touch-action: manipulation;
+}
+
+html[data-astro-transition] {
+    scroll-behavior: auto;
 }
 
 :disabled {
@@ -97,19 +102,15 @@ html {
     background: var(--color-azure-30);
 }
 
-html[data-astro-transition] {
-    scroll-behavior: auto;
-}
-
 @media (prefers-reduced-motion: reduce) {
     *,
     *::after,
     *::before {
         animation-delay: 0s !important;
-        animation-duration: 0.01s !important;
+        animation-duration: 0.00001s !important;
         animation-iteration-count: 1 !important;
         scroll-behavior: auto !important;
         transition-delay: 0s !important;
-        transition-duration: 0.01s !important;
+        transition-duration: 0.00001s !important;
     }
 }

@@ -19,7 +19,7 @@
             "description": "Loews Arlington is a large resort-style hotel and convention center in Arlington's entertainment district, steps from Globe Life Field and AT&T Stadium.",
             "lat": 32.7504067,
             "lng": -97.084981,
-            "name": "Loews Arlington Hotel & Convention Center"
+            "name": "Loews Arlington Hotel and Convention Center"
         },
         {
             "category": "urban",
@@ -37,7 +37,7 @@
         },
         {
             "category": "dining",
-            "description": "The Social House is a lively Arlington, Texas, restaurant and bar with a scratch kitchen, roughly 100 beers on tap, and brunch.",
+            "description": "The Social House is a lively restaurant and bar in Arlington, Texas, with a scratch kitchen, roughly 100 beers on tap, and brunch.",
             "lat": 32.760786,
             "lng": -97.0959943,
             "name": "The Social House"
@@ -121,7 +121,7 @@
         },
         {
             "category": "dining",
-            "description": "Dave's Hot Chicken is a fast-casual chain outpost in Georgetown, Texas, serving Nashville-style hot chicken tenders and sliders as a quick road-trip stop.",
+            "description": "Dave's Hot Chicken is a fast-casual chain location in Georgetown, Texas, serving Nashville-style hot chicken tenders and sliders as a quick road-trip stop.",
             "lat": 30.6325134,
             "lng": -97.698484,
             "name": "Dave's Hot Chicken"
