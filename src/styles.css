@@ -86,7 +86,7 @@
 .atlas-control:hover,
 .atlas-control:not(:where(search)):focus-within {
     box-shadow: 0 8px 20px var(--color-ink-10);
-    max-width: 280px;
+    max-width: min(280px, calc(100dvw - 102px));
 }
 
 .atlas-control--active {
@@ -96,12 +96,12 @@
 }
 
 .atlas-control.atlas-control--open {
-    max-width: min(340px, calc(100dvw - 90px));
+    max-width: min(340px, calc(100dvw - 102px));
 }
 
 .atlas-control--wide:focus-within,
 .atlas-control--wide:hover {
-    max-width: min(360px, calc(100dvw - 90px));
+    max-width: min(360px, calc(100dvw - 102px));
 }
 
 search.atlas-control button:focus-visible {
@@ -205,6 +205,10 @@ search.atlas-control:has(input:focus) {
         repeating-linear-gradient(to bottom, var(--color-ink-5) 0 1px, transparent 1px 148px);
 }
 
+.atlas-plot:has(.atlas-control--wide:focus-within, .atlas-control--wide:hover) .atlas-scale {
+    opacity: 0;
+}
+
 .atlas-pulse {
     animation: atlas-fade__in var(--duration-slow) ease-in-out infinite alternate both;
 }
@@ -215,6 +219,10 @@ search.atlas-control:has(input:focus) {
 
 .atlas-rise--quick {
     animation-duration: var(--duration-base);
+}
+
+.atlas-scale {
+    transition: opacity var(--duration-fast) ease;
 }
 
 .atlas-veil {

@@ -13,10 +13,9 @@ const CONTROL_ICON_STROKE_WIDTH = 1.7;
 const COPYRIGHT_MARK = '\u00a9';
 const CREDIT_MAP = 'OpenStreetMap';
 const CREDIT_OWNER = 'Aephonics';
-const CREDIT_SUFFIX = '. All rights reserved.';
 const HOME_URL = 'https://aephonics.com';
 const SEARCH_LABEL = 'Search places by name';
-const SEARCH_PLACEHOLDER = 'Search the atlas\u2026';
+const SEARCH_PLACEHOLDER = 'Search\u2026';
 
 const creditYear = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Chicago', year: 'numeric' }).format(new Date());
 
@@ -95,7 +94,7 @@ export default function AtlasControls({ filterCount, filtersRef, isSearchOpen, o
                 <label className="flex flex-1 min-w-[220px] max-md:min-w-0">
                     <span className="sr-only">{SEARCH_LABEL}</span>
                     <input
-                        className="h-[48px] w-full pl-[16px] pr-0 border-none text-[13px] bg-transparent text-ink"
+                        className="h-[48px] w-full pl-[16px] pr-0 border-none text-[16px] bg-transparent text-ink"
                         autoComplete="off"
                         maxLength={SEARCH_LENGTH_LIMIT}
                         onBlur={onSearchBlur}
@@ -112,13 +111,13 @@ export default function AtlasControls({ filterCount, filtersRef, isSearchOpen, o
                 <span className="grid place-items-center shrink-0 h-[48px] w-[48px]">
                     <BrandMark />
                 </span>
-                <span className="pr-[16px] font-mono text-[10px] tracking-[0.1em] whitespace-nowrap text-storm max-md:whitespace-normal">
+                <span className="pr-[16px] font-mono leading-[15px] text-[10px] tracking-[0.1em] whitespace-nowrap text-storm">
                     <span className="block">
-                        <span className="relative top-[0.14em] text-[12px]">{COPYRIGHT_MARK}</span>
+                        <span className="relative top-[0.14em] leading-none text-[12px]">{COPYRIGHT_MARK}</span>
                         {` ${CREDIT_MAP}`}
                     </span>
                     <span className="block">
-                        <span className="relative top-[0.14em] text-[12px]">{COPYRIGHT_MARK}</span>
+                        <span className="relative top-[0.14em] leading-none text-[12px]">{COPYRIGHT_MARK}</span>
                         {' '}
                         <time dateTime={creditYear}>{creditYear}</time>
                         {' '}
@@ -130,7 +129,6 @@ export default function AtlasControls({ filterCount, filtersRef, isSearchOpen, o
                         >
                             {CREDIT_OWNER}
                         </a>
-                        {CREDIT_SUFFIX}
                     </span>
                 </span>
             </div>

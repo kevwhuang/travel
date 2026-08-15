@@ -73,6 +73,7 @@ const FETCH_IDLE_TIMEOUT = 30_000;
 const FETCH_WORKERS = 12;
 const FONTS_DIR = 'fonts';
 const FONT_STACKS = ['Noto Sans Italic', 'Noto Sans Medium', 'Noto Sans Regular'];
+const GLYPH_EXTENSION = '.pbf';
 const GLYPH_SPAN = 256;
 const GLYPH_TYPE = 'application/x-protobuf';
 const GLYPH_URL = 'https://raw.githubusercontent.com/protomaps/basemaps-assets/main/fonts';
@@ -86,6 +87,7 @@ const REQUEST_ORIGIN = 'http://localhost';
 const RETRY_ATTEMPTS = 3;
 const RETRY_BACKOFF = 500;
 const SHAPE_FILES = ['active.json', 'explored.json'];
+const STAGING_EXTENSION = '.part';
 const STARRED_FILE = 'starred.json';
 const TILES_DIR = 'tiles';
 const TILE_EXTENSION = '.pmtiles';
@@ -116,6 +118,7 @@ const cacheDir = join(rootDir, 'node_modules', '.cache', 'atlas');
 
 async function assertCoverage() {
     const contentDir = join(rootDir, CONTENT_DIR);
+
     const journeysDir = join(contentDir, JOURNEYS_DIR);
 
     const entries = await readdir(journeysDir, { recursive: true });
@@ -151,7 +154,7 @@ function assertPoint(label: string, lat: number, lng: number) {
 
 async function copyTree(source: string, destination: string) {
     await mkdir(destination, { recursive: true });
-    await cp(source, destination, { force: true, recursive: true });
+    await cp(source, destination, { filter: entry => !entry.endsWith(STAGING_EXTENSION), force: true, recursive: true });
 }
 
 function coverageGap(lat: number, lng: number) {
@@ -195,6 +198,16 @@ async function download(url: string, destination: string) {
     await rename(partial, destination);
 }
 
+async function ensureAssets() {
+    await assertCoverage();
+
+    if (await isComplete(assetsDir)) return;
+
+    await ensureCache();
+    await Promise.all(Object.values(ROUTES).map(directory => copyTree(join(cacheDir, directory), join(assetsDir, directory))));
+    await writeMarker(assetsDir, tileSpecs());
+}
+
 async function ensureCache() {
     const marker = await readMarker(cacheDir);
 
@@ -208,9 +221,7 @@ async function ensureCache() {
         await writeMarker(cacheDir, specs);
     }
 
-    for (const stack of FONT_STACKS) {
-        await fetchStack(stack);
-    }
+    for (const stack of FONT_STACKS) await fetchStack(stack);
 }
 
 async function ensureExtractor() {
@@ -262,13 +273,13 @@ async function fetchStack(stack: string) {
 
     const ranges = Array.from({ length: GLYPH_RANGE_COUNT }, (_, index) => `${index * GLYPH_SPAN}-${(index + 1) * GLYPH_SPAN - 1}`);
 
-    const pending = ranges[Symbol.iterator]();
+    const pending = ranges.values();
 
     async function worker() {
         for (const range of pending) {
-            const file = join(directory, `${range}.pbf`);
+            const file = join(directory, `${range}${GLYPH_EXTENSION}`);
 
-            if (!existsSync(file)) await download(`${GLYPH_URL}/${encodeURIComponent(stack)}/${range}.pbf`, file);
+            if (!existsSync(file)) await download(`${GLYPH_URL}/${encodeURIComponent(stack)}/${range}${GLYPH_EXTENSION}`, file);
         }
     }
 
@@ -279,7 +290,7 @@ async function fetchStack(stack: string) {
 async function glyphCount(directory: string) {
     const present = await readdir(directory).catch(() => []);
 
-    return present.filter(file => file.endsWith('.pbf')).length;
+    return present.filter(file => file.endsWith(GLYPH_EXTENSION)).length;
 }
 
 function idleMonitor() {
@@ -365,7 +376,13 @@ async function readMarker(root: string) {
 }
 
 function resolveAsset(url: string) {
-    const path = decodeURIComponent(new URL(url, REQUEST_ORIGIN).pathname);
+    let path: string;
+
+    try {
+        path = decodeURIComponent(new URL(url, REQUEST_ORIGIN).pathname);
+    } catch {
+        return '';
+    }
 
     const route = Object.keys(ROUTES).find(prefix => path.startsWith(prefix));
 
@@ -410,12 +427,58 @@ function run(command: string[]) {
     });
 }
 
+function serveAsset(request: IncomingMessage, response: ServerResponse, next: (error?: unknown) => void) {
+    const file = resolveAsset(request.url ?? '');
+
+    if (!file || !existsSync(file)) {
+        next();
+
+        return;
+    }
+
+    const stats = statSync(file);
+
+    if (!stats.isFile()) {
+        next();
+
+        return;
+    }
+
+    const { size } = stats;
+
+    const range = parseRange(request.headers.range ?? '', size);
+
+    response.setHeader('accept-ranges', 'bytes');
+    response.setHeader('content-type', file.endsWith(GLYPH_EXTENSION) ? GLYPH_TYPE : TILE_TYPE);
+
+    if (!range) {
+        response.setHeader('content-length', size);
+        response.writeHead(200);
+        createReadStream(file).pipe(response);
+
+        return;
+    }
+
+    if (range.start > range.end || range.start >= size) {
+        response.setHeader('content-range', `bytes */${size}`);
+        response.writeHead(416);
+        response.end();
+
+        return;
+    }
+
+    response.setHeader('content-length', range.end - range.start + 1);
+    response.setHeader('content-range', `bytes ${range.start}-${range.end}/${size}`);
+    response.writeHead(206);
+    createReadStream(file, { end: range.end, start: range.start }).pipe(response);
+}
+
 function specOf(set: TileSet) {
     return { bbox: set.bbox, maxZoom: set.maxZoom };
 }
 
 function staging(file: string) {
-    return `${file}.${process.pid}.part`;
+    return `${file}.${process.pid}${STAGING_EXTENSION}`;
 }
 
 function tileFile(root: string, name: string) {
@@ -459,52 +522,4 @@ export default function pmtiles(): AstroIntegration {
         },
         name: 'pmtiles',
     };
-}
-
-export async function ensureAssets(): Promise<void> {
-    await assertCoverage();
-
-    if (await isComplete(assetsDir)) return;
-
-    await ensureCache();
-    await Promise.all(Object.values(ROUTES).map(directory => copyTree(join(cacheDir, directory), join(assetsDir, directory))));
-    await writeMarker(assetsDir, tileSpecs());
-}
-
-export function serveAsset(request: IncomingMessage, response: ServerResponse, next: (error?: unknown) => void): void {
-    const file = resolveAsset(request.url ?? '');
-
-    if (!file || !existsSync(file)) {
-        next();
-
-        return;
-    }
-
-    const { size } = statSync(file);
-
-    const range = parseRange(request.headers.range ?? '', size);
-
-    response.setHeader('accept-ranges', 'bytes');
-    response.setHeader('content-type', file.endsWith('.pbf') ? GLYPH_TYPE : TILE_TYPE);
-
-    if (!range) {
-        response.setHeader('content-length', size);
-        response.writeHead(200);
-        createReadStream(file).pipe(response);
-
-        return;
-    }
-
-    if (range.start > range.end || range.start >= size) {
-        response.setHeader('content-range', `bytes */${size}`);
-        response.writeHead(416);
-        response.end();
-
-        return;
-    }
-
-    response.setHeader('content-length', range.end - range.start + 1);
-    response.setHeader('content-range', `bytes ${range.start}-${range.end}/${size}`);
-    response.writeHead(206);
-    createReadStream(file, { end: range.end, start: range.start }).pipe(response);
 }

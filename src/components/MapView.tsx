@@ -171,13 +171,15 @@ const PIN_STAR_CLASS = 'absolute right-[-9px] top-[-9px] leading-none pointer-ev
 const PLACE_KEY_PREFIX = 'place-';
 const POPUP_EASE_DURATION = 300;
 const POPUP_OFFSET = 28;
+const POPUP_SETTLE_FRAMES = 12;
+const POPUP_VIEW_MARGIN = 18;
 const POPUP_Z_INDEX = '25';
 const REGION_ACTIVE_FILL_OPACITY = 0.22;
 const REGION_ACTIVE_LINE_OPACITY = 0.5;
 
 const REGION_COLORS = {
-    active: '#e2725b',
-    explored: '#9b72cf',
+    active: '#9b72cf',
+    explored: '#e2725b',
 } as const;
 
 const REGION_EXPLORED_FILL_OPACITY = 0.14;
@@ -986,11 +988,52 @@ export default function MapView({ categories, flyTarget, onSelectPlace, onShowIn
         return null;
     }
 
+    function panPopupIntoView() {
+        const element = popupRef.current?.getElement();
+        const map = mapRef.current;
+
+        if (!element || !map || map.isMoving()) return;
+
+        const containerRect = map.getContainer().getBoundingClientRect();
+        const popupRect = element.getBoundingClientRect();
+
+        const overflowBottom = Math.max(0, popupRect.bottom - (containerRect.bottom - POPUP_VIEW_MARGIN));
+        const overflowLeft = Math.min(0, popupRect.left - (containerRect.left + POPUP_VIEW_MARGIN));
+        const overflowRight = Math.max(0, popupRect.right - (containerRect.right - POPUP_VIEW_MARGIN));
+        const overflowTop = Math.min(0, popupRect.top - (containerRect.top + POPUP_VIEW_MARGIN));
+
+        const deltaX = overflowLeft || overflowRight;
+        const deltaY = overflowBottom || overflowTop;
+
+        if (!deltaX && !deltaY) return;
+
+        map.panBy([deltaX, deltaY], withMotion({}));
+    }
+
     function reanchorPopup(popup: Popup, place: AtlasPlace) {
+        let attempts = 0;
+        let previousBox = '';
+
         function handleFrame() {
             if (popupRef.current !== popup || popupPlaceRef.current !== place.id) return;
 
             popup.setLngLat([place.lng, place.lat]);
+            attempts += 1;
+
+            const element = popup.getElement();
+            const rect = element?.getBoundingClientRect();
+
+            const box = rect && element?.querySelector('article') ? `${rect.left},${rect.top},${rect.width},${rect.height}` : '';
+
+            if (box && box === previousBox) {
+                panPopupIntoView();
+
+                return;
+            }
+
+            previousBox = box;
+
+            if (attempts < POPUP_SETTLE_FRAMES) requestAnimationFrame(handleFrame);
         }
 
         requestAnimationFrame(() => requestAnimationFrame(handleFrame));
@@ -1275,7 +1318,7 @@ export default function MapView({ categories, flyTarget, onSelectPlace, onShowIn
     return (
         <div className="atlas-fade atlas-fade--slow absolute inset-0 overflow-hidden">
             <div className="h-full w-full" ref={containerRef} />
-            <div className="absolute bottom-[18px] flex flex-col inset-x-0 items-center z-30 w-fit gap-[4px] mx-auto pointer-events-none">
+            <div className="atlas-scale absolute bottom-[18px] flex flex-col inset-x-0 items-center z-30 w-fit gap-[4px] mx-auto pointer-events-none">
                 <div style={{ width: scaleBar.width }}>
                     <div className="h-[5px] border-b border-l border-r border-storm" aria-hidden="true" />
                 </div>

@@ -7,11 +7,11 @@ import { STAR_COLOR } from '@lib/constants';
 import { categoryColor } from '@lib/utils';
 
 const CATEGORY_CHIP_CLASS = 'atlas-chip after:absolute after:content-[""] after:inset-x-0 after:inset-y-[-6px] hover:brightness-[0.97] relative max-w-full gap-[6px] px-[14px] py-[8px] font-medium text-[12px] wrap-anywhere';
-const DIALOG_CLASS = 'atlas-panel overflow-y-auto static max-h-[min(780px,calc(100dvh-40px))] w-[min(var(--width-medium),100%)] m-0 p-0 text-ink';
+const DIALOG_CLASS = 'atlas-panel flex flex-col overflow-hidden static max-h-[min(780px,calc(100dvh-40px))] w-[min(var(--width-medium),100%)] m-0 p-0 text-ink';
 const FOCUSABLE_SELECTOR = 'a[href], button:not(:disabled), input:not(:disabled), select:not(:disabled), textarea:not(:disabled), [tabindex]:not([tabindex="-1"])';
 const GROUP_LABEL_CLASS = 'font-mono text-[10px] tracking-[0.22em] uppercase text-storm';
+const SCROLLER_CLASS = 'grow overflow-y-auto overscroll-contain min-h-0 [scrollbar-color:var(--color-flint)_transparent] [scrollbar-width:thin]';
 const TRIP_CLASS = 'after:absolute after:content-[""] after:inset-x-0 after:inset-y-[-6px] relative max-w-full gap-[8px] px-[14px] py-[8px] wrap-anywhere';
-const TRIP_SCROLLER_CLASS = 'overflow-y-auto overscroll-contain max-h-[40dvh] pr-[8px] [scrollbar-color:var(--color-flint)_transparent] [scrollbar-width:thin]';
 
 function getCategoryChipStyle(categoryId: string, isSelected: boolean) {
     if (!isSelected) return undefined;
@@ -110,12 +110,13 @@ export default function ModalFilter({ canClear, categories, isStarredOnly, onCle
     function handleMouseDown(event: MouseEvent) {
         const dialog = dialogRef.current;
 
-        if (dialog && event.target instanceof Node && !dialog.contains(event.target)) onClose();
+        if (!dialog || !(event.target instanceof Node) || dialog.contains(event.target)) return;
+
+        event.preventDefault();
+        onClose();
     }
 
     useEffect(() => {
-        const previousElement = document.activeElement instanceof HTMLElement ? document.activeElement : null;
-
         dialogRef.current?.querySelector<HTMLButtonElement>('button')?.focus();
         document.addEventListener('keydown', handleKeyDown);
         document.addEventListener('mousedown', handleMouseDown);
@@ -123,7 +124,6 @@ export default function ModalFilter({ canClear, categories, isStarredOnly, onCle
         return () => {
             document.removeEventListener('keydown', handleKeyDown);
             document.removeEventListener('mousedown', handleMouseDown);
-            previousElement?.focus();
         };
     }, []);
 
@@ -136,7 +136,7 @@ export default function ModalFilter({ canClear, categories, isStarredOnly, onCle
                 open
                 ref={dialogRef}
             >
-                <header className="relative pb-[20px] pt-[24px] px-[28px] border-b border-linen">
+                <header className="flex items-center justify-between shrink-0 pb-[20px] pt-[24px] px-[28px] border-b border-linen">
                     <h2
                         id="filter-modal-title"
                         className="font-serif text-[26px]"
@@ -144,7 +144,7 @@ export default function ModalFilter({ canClear, categories, isStarredOnly, onCle
                         Filter
                     </h2>
                     <button
-                        className="atlas-pill after:absolute after:content-[''] after:inset-[-9px] absolute right-[20px] top-[20px] h-[32px] w-[32px] p-0 text-storm"
+                        className="atlas-pill after:absolute after:content-[''] after:inset-[-9px] relative shrink-0 h-[32px] w-[32px] p-0 text-storm"
                         aria-label="Close filter"
                         onClick={onClose}
                         type="button"
@@ -152,93 +152,95 @@ export default function ModalFilter({ canClear, categories, isStarredOnly, onCle
                         <IconClose size={11} strokeWidth={2} />
                     </button>
                 </header>
-                <div className="pb-[8px] pt-[20px] px-[28px]">
-                    <h3 className={`${GROUP_LABEL_CLASS} mb-[12px]`}>Categories</h3>
-                    <ul className="flex flex-wrap gap-[8px]">
-                        <li>
-                            <button
-                                className={CATEGORY_CHIP_CLASS}
-                                aria-pressed={isStarredOnly}
-                                onClick={onToggleStarred}
-                                style={getStarredChipStyle(isStarredOnly)}
-                                title="Show starred places only"
-                                type="button"
-                            >
-                                <span className="inline-flex shrink-0">
-                                    <IconStar
-                                        color={isStarredOnly ? getStarredForeground() : 'var(--color-storm)'}
-                                        size={13}
-                                    />
-                                </span>
-                                Starred
-                            </button>
-                        </li>
-                        {categories.map((category) => {
-                            const isSelected = selectedCategories.includes(category.id);
-
-                            return (
-                                <li key={category.id}>
-                                    <button
-                                        className={CATEGORY_CHIP_CLASS}
-                                        aria-pressed={isSelected}
-                                        onClick={() => onToggleCategory(category.id)}
-                                        style={getCategoryChipStyle(category.id, isSelected)}
-                                        title={category.description}
-                                        type="button"
-                                    >
-                                        <IconCategory
-                                            category={category.id}
-                                            color={isSelected ? getCategoryForeground(category.id) : 'var(--color-storm)'}
+                <div className={SCROLLER_CLASS}>
+                    <div className="pb-[8px] pt-[20px] px-[28px]">
+                        <h3 className={`${GROUP_LABEL_CLASS} mb-[12px]`}>Categories</h3>
+                        <ul className="flex flex-wrap gap-[8px]">
+                            <li>
+                                <button
+                                    className={CATEGORY_CHIP_CLASS}
+                                    aria-pressed={isStarredOnly}
+                                    onClick={onToggleStarred}
+                                    style={getStarredChipStyle(isStarredOnly)}
+                                    title="Show starred places only"
+                                    type="button"
+                                >
+                                    <span className="inline-flex shrink-0">
+                                        <IconStar
+                                            color={isStarredOnly ? getStarredForeground() : 'var(--color-storm)'}
                                             size={13}
                                         />
-                                        {category.name}
-                                    </button>
-                                </li>
-                            );
-                        })}
-                    </ul>
-                </div>
-                <div className="pb-[8px] pt-[20px] px-[28px]">
-                    <h3 className={`${GROUP_LABEL_CLASS} mb-[4px]`}>Journeys</h3>
-                    <ul className={TRIP_SCROLLER_CLASS}>
-                        {years.map(year => (
-                            <li
-                                className="flex gap-[16px] py-[16px] max-md:flex-col max-md:gap-[12px]"
-                                key={year}
-                            >
-                                <h4 className="flex-none w-[82px] font-serif leading-none text-[26px]">
-                                    <time dateTime={String(year)}>{year}</time>
-                                </h4>
-                                <ul className="content-start flex flex-wrap gap-[8px]">
-                                    {trips.filter(trip => trip.year === year).sort((first, second) => first.order - second.order).map((trip) => {
-                                        const isSelected = selectedTrips.includes(trip.id);
-
-                                        return (
-                                            <li key={trip.id}>
-                                                <button
-                                                    className={getTripClassName(trip.ordered, isSelected)}
-                                                    aria-pressed={isSelected}
-                                                    onClick={() => onToggleTrip(trip.id)}
-                                                    title={trip.ordered ? `${trip.count} places, ordered itinerary` : `${trip.count} places, unordered`}
-                                                    type="button"
-                                                >
-                                                    <span className="self-baseline font-serif text-[13px]">{trip.name}</span>
-                                                    <span
-                                                        className="self-baseline font-mono text-[10px] opacity-[0.85]"
-                                                        aria-hidden="true"
-                                                    >
-                                                        {trip.count}
-                                                    </span>
-                                                </button>
-                                            </li>
-                                        );
-                                    })}
-                                </ul>
+                                    </span>
+                                    Starred
+                                </button>
                             </li>
-                        ))}
-                    </ul>
+                            {categories.map((category) => {
+                                const isSelected = selectedCategories.includes(category.id);
+
+                                return (
+                                    <li key={category.id}>
+                                        <button
+                                            className={CATEGORY_CHIP_CLASS}
+                                            aria-pressed={isSelected}
+                                            onClick={() => onToggleCategory(category.id)}
+                                            style={getCategoryChipStyle(category.id, isSelected)}
+                                            title={category.description}
+                                            type="button"
+                                        >
+                                            <IconCategory
+                                                category={category.id}
+                                                color={isSelected ? getCategoryForeground(category.id) : 'var(--color-storm)'}
+                                                size={13}
+                                            />
+                                            {category.name}
+                                        </button>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </div>
+                    <div className="pb-[8px] pt-[20px] px-[28px]">
+                        <h3 className={`${GROUP_LABEL_CLASS} mb-[4px]`}>Journeys</h3>
+                        <ul>
+                            {years.map(year => (
+                                <li
+                                    className="flex gap-[16px] py-[16px] max-md:flex-col max-md:gap-[12px]"
+                                    key={year}
+                                >
+                                    <h4 className="flex-none w-[82px] font-serif leading-none text-[26px]">
+                                        <time dateTime={String(year)}>{year}</time>
+                                    </h4>
+                                    <ul className="content-start flex flex-wrap gap-[8px]">
+                                        {trips.filter(trip => trip.year === year).sort((first, second) => first.order - second.order).map((trip) => {
+                                            const isSelected = selectedTrips.includes(trip.id);
+
+                                            return (
+                                                <li key={trip.id}>
+                                                    <button
+                                                        className={getTripClassName(trip.ordered, isSelected)}
+                                                        aria-pressed={isSelected}
+                                                        onClick={() => onToggleTrip(trip.id)}
+                                                        title={trip.ordered ? `${trip.count} places, ordered itinerary` : `${trip.count} places, unordered`}
+                                                        type="button"
+                                                    >
+                                                        <span className="self-baseline font-serif text-[13px]">{trip.name}</span>
+                                                        <span
+                                                            className="self-baseline font-mono text-[10px] opacity-[0.85]"
+                                                            aria-hidden="true"
+                                                        >
+                                                            {trip.count}
+                                                        </span>
+                                                    </button>
+                                                </li>
+                                            );
+                                        })}
+                                    </ul>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
-                <footer className="flex flex-wrap items-center justify-between gap-[12px] pb-[24px] pt-[16px] px-[28px]">
+                <footer className="flex flex-wrap items-center justify-between shrink-0 gap-[12px] pb-[24px] pt-[16px] px-[28px] border-t border-linen">
                     <span className="font-mono text-[10px] tracking-[0.16em] uppercase text-storm">{`Showing ${shownCount} of ${totalCount}`}</span>
                     <span className="inline-flex gap-[8px]">
                         <button

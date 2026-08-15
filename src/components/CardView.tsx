@@ -21,7 +21,7 @@ const PAGE_SLOTS = 7;
 const PAGE_STEPS: Record<string, number> = { ArrowLeft: -1, ArrowRight: 1, PageDown: 1, PageUp: -1 };
 const PAGE_WINDOW_SIZE = PAGE_SLOTS - PAGE_EDGE_SLOTS * 2;
 const PAGE_WINDOW_START_OFFSET = Math.floor(PAGE_WINDOW_SIZE / 2);
-const PANE_CLASS = 'absolute inset-0 overflow-x-hidden overflow-y-auto pb-[clamp(112px,calc(104px+2.5vw),136px)] [scrollbar-gutter:stable]';
+const PANE_CLASS = 'absolute inset-0 overflow-x-hidden overflow-y-auto pb-[clamp(112px,calc(104px+2.5vw),136px)] [scrollbar-gutter:stable_both-edges]';
 const SECTION_GAP_CLASS = 'mb-[clamp(28px,calc(21.34px+2.084vw),48px)]';
 const SHELL_PAD_CLASS = 'px-[clamp(20px,calc(5.34px+4.584vw),64px)]';
 

@@ -200,6 +200,7 @@ function AtlasInner({ data }: { data: AtlasData }) {
     const isKeyboardPagingRef = useRef(false);
     const searchButtonRef = useRef<HTMLButtonElement>(null);
     const searchRef = useRef<HTMLInputElement>(null);
+    const wasModalOpenRef = useRef(false);
 
     const statusMessage = atlas.filteredPlaces.length === 0 ? EMPTY_STATUS : `${atlas.filteredPlaces.length} of ${atlas.totalCount} places shown`;
 
@@ -217,7 +218,6 @@ function AtlasInner({ data }: { data: AtlasData }) {
 
     function handleCloseModal() {
         atlas.setIsModalOpen(false);
-        filtersRef.current?.focus();
     }
 
     function handleEscape() {
@@ -370,6 +370,12 @@ function AtlasInner({ data }: { data: AtlasData }) {
         atlas.setPage(0);
         atlas.setSelectedPlaceId(null);
     }
+
+    useEffect(() => {
+        if (!atlas.isModalOpen && wasModalOpenRef.current) filtersRef.current?.focus();
+
+        wasModalOpenRef.current = atlas.isModalOpen;
+    }, [atlas.isModalOpen]);
 
     useEffect(() => {
         window.addEventListener('keydown', handleKeyDown);
