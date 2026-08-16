@@ -20,10 +20,7 @@ async function buildAtlasData() {
     const markerCounts = new Map<string, number>();
     const markers: AtlasMarker[] = [];
     const markersByKey = new Map<string, AtlasMarker>();
-
-    const newestFirstJourneys = [...journeyEntries].sort((first, second) => (
-        parseJourneyYear(second.id) - parseJourneyYear(first.id) || parseJourneyOrder(second.id) - parseJourneyOrder(first.id)
-    ));
+    const newestFirstJourneys = [...journeyEntries].sort(compareJourneyEntries);
 
     for (const entry of newestFirstJourneys) {
         let markerCount = 0;
@@ -84,9 +81,7 @@ async function buildAtlasData() {
     }
 
     const journeys: AtlasJourney[] = [...journeyEntries]
-        .sort((first, second) => (
-            parseJourneyYear(second.id) - parseJourneyYear(first.id) || parseJourneyOrder(first.id) - parseJourneyOrder(second.id)
-        ))
+        .sort(compareJourneyEntries)
         .map(entry => ({
             id: entry.id,
             isOrdered: entry.data.ordered,
@@ -105,6 +100,10 @@ async function buildAtlasData() {
     };
 
     return { categories, journeys, markers, regions };
+}
+
+function compareJourneyEntries(first: { id: string }, second: { id: string }) {
+    return parseJourneyYear(second.id) - parseJourneyYear(first.id) || parseJourneyOrder(second.id) - parseJourneyOrder(first.id);
 }
 
 function getDedupeKey(marker: { lat: number; lng: number; name: string }) {

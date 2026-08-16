@@ -2,12 +2,16 @@ import { CARDS_PER_PAGE, CATEGORY_COLORS, SEARCH_LENGTH_LIMIT, SEARCH_SHORTCUT }
 
 const FALLBACK_COLOR = 'var(--color-storm)';
 
+export function findJourney(marker: AtlasMarker, journeysById: Record<string, AtlasJourney>): AtlasJourney | null {
+    return marker.journeyId === null ? null : journeysById[marker.journeyId] ?? null;
+}
+
 export function getAccentBorder(color: string): string {
     return `color-mix(in oklab, ${color} 28%, var(--color-snow))`;
 }
 
 export function getAccentForeground(color: string): string {
-    return `color-mix(in oklab, ${color} 56%, var(--color-ink))`;
+    return `color-mix(in oklab, ${color} 54%, var(--color-ink))`;
 }
 
 export function getAccentSurface(color: string): string {

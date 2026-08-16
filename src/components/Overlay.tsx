@@ -64,7 +64,12 @@ export default function Overlay({ filterButtonRef, filterCount, isSearchExpanded
     return (
         <>
             <button
-                className={['atlas-control', hasFilters && 'atlas-control--active', 'fixed left-[18px] top-[18px] z-40 p-0 border', !hasFilters && 'border-flint'].filter(Boolean).join(' ')}
+                className={[
+                    'atlas-control',
+                    hasFilters && 'atlas-control--active',
+                    'fixed left-[18px] top-[18px] z-40 p-0 border',
+                    !hasFilters && 'border-flint',
+                ].filter(Boolean).join(' ')}
                 aria-haspopup="dialog"
                 aria-label={hasFilters ? `Open filters, ${filterCount} active` : 'Open filters'}
                 onClick={onOpenFilters}
@@ -74,11 +79,11 @@ export default function Overlay({ filterButtonRef, filterCount, isSearchExpanded
                 <span className="grid place-items-center shrink-0 h-[48px] w-[48px]">
                     <IconFilters size={CONTROL_ICON_SIZE} strokeWidth={CONTROL_ICON_STROKE_WIDTH} />
                 </span>
-                <span className="flex items-center gap-[8px] pr-[16px]">
+                <span className="flex items-center gap-[16px] pr-[16px]">
+                    <span className="font-medium text-[14px] whitespace-nowrap">Filters</span>
                     {hasFilters && (
                         <span className="px-[8px] py-[2px] rounded-full font-mono text-[10px] bg-paper text-ink">{filterCount}</span>
                     )}
-                    <span className="font-medium text-[14px] whitespace-nowrap">Filters</span>
                 </span>
             </button>
             <search className={`atlas-control ${isSearchExpanded ? 'atlas-control--open' : ''} fixed flex-row-reverse right-[18px] top-[18px] z-[41] gap-[8px] border ${hasSearch ? 'border-ink' : 'border-flint'}`}>
@@ -113,7 +118,7 @@ export default function Overlay({ filterButtonRef, filterCount, isSearchExpanded
                 <span className="grid place-items-center shrink-0 h-[48px] w-[48px]">
                     <IconLogo />
                 </span>
-                <span className="pr-[16px] font-mono leading-[16px] text-[10px] tracking-[0.1em] whitespace-nowrap text-storm">
+                <span className="pr-[16px] font-mono leading-[1.6] text-[10px] tracking-[0.1em] whitespace-nowrap text-storm">
                     <span className="block">
                         <span className="relative top-[0.14em] leading-none text-[12px]">{COPYRIGHT_MARK}</span>
                         {` ${CREDIT_MAP}`}

@@ -19,6 +19,10 @@ interface AtlasStoredState {
 
 const ATLAS_KEY = 'travel_atlas';
 
+function getStrings(value: unknown) {
+    return Array.isArray(value) ? value.filter((item): item is string => typeof item === 'string') : null;
+}
+
 function isCamera(value: unknown): value is AtlasCamera {
     if (!value || typeof value !== 'object') return false;
     if (!('lat' in value && 'lng' in value && 'zoom' in value)) return false;
@@ -28,10 +32,6 @@ function isCamera(value: unknown): value is AtlasCamera {
     if (typeof lat !== 'number' || typeof lng !== 'number' || typeof zoom !== 'number') return false;
 
     return Math.abs(lat) <= LATITUDE_LIMIT && Math.abs(lng) <= LONGITUDE_LIMIT && zoom >= MAP_MIN_ZOOM && zoom <= MAP_MAX_ZOOM;
-}
-
-function stringsOf(value: unknown) {
-    return Array.isArray(value) ? value.filter((item): item is string => typeof item === 'string') : null;
 }
 
 export function loadAtlasState(): Partial<AtlasStoredState> | null {
@@ -45,8 +45,8 @@ export function loadAtlasState(): Partial<AtlasStoredState> | null {
         if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) return null;
 
         const { camera } = parsed;
-        const selectedCategoryIds = stringsOf(parsed.selectedCategoryIds);
-        const selectedJourneyIds = stringsOf(parsed.selectedJourneyIds);
+        const selectedCategoryIds = getStrings(parsed.selectedCategoryIds);
+        const selectedJourneyIds = getStrings(parsed.selectedJourneyIds);
         const state: Partial<AtlasStoredState> = {};
 
         if (isCamera(camera)) state.camera = { lat: camera.lat, lng: camera.lng, zoom: camera.zoom };

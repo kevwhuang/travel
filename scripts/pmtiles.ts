@@ -53,23 +53,23 @@ interface TileSpec {
 
 const ASSETS_VERSION = 1;
 const BASEMAP_BUILD = '20260812';
-const BASEMAP_URL = `https://build.protomaps.com/${BASEMAP_BUILD}.pmtiles`;
+const BASEMAP_URL = 'https://build.protomaps.com/20260812.pmtiles';
 const BINARY_MODE = 0o755;
 const COVERAGE_DECIMALS = 1;
 const COVERAGE_MARGIN = 1;
 const COVERAGE_STEP = 0.1;
 const COVERAGE_TILE_MAX_ZOOM = 12;
-const EXTRACTOR_VERSION = '1.31.2';
 
 const EXTRACTOR_ARCHIVES: Record<string, string> = {
-    'darwin-arm64': `go-pmtiles-${EXTRACTOR_VERSION}_Darwin_arm64.zip`,
-    'darwin-x64': `go-pmtiles-${EXTRACTOR_VERSION}_Darwin_x86_64.zip`,
-    'linux-arm64': `go-pmtiles_${EXTRACTOR_VERSION}_Linux_arm64.tar.gz`,
-    'linux-x64': `go-pmtiles_${EXTRACTOR_VERSION}_Linux_x86_64.tar.gz`,
+    'darwin-arm64': 'go-pmtiles-1.31.2_Darwin_arm64.zip',
+    'darwin-x64': 'go-pmtiles-1.31.2_Darwin_x86_64.zip',
+    'linux-arm64': 'go-pmtiles_1.31.2_Linux_arm64.tar.gz',
+    'linux-x64': 'go-pmtiles_1.31.2_Linux_x86_64.tar.gz',
 };
 
 const EXTRACTOR_FILE = 'pmtiles';
-const EXTRACTOR_URL = `https://github.com/protomaps/go-pmtiles/releases/download/v${EXTRACTOR_VERSION}`;
+const EXTRACTOR_URL = 'https://github.com/protomaps/go-pmtiles/releases/download/v1.31.2';
+const EXTRACTOR_VERSION = '1.31.2';
 const FETCH_IDLE_TIMEOUT = 30_000;
 const FETCH_WORKERS = 12;
 const FONTS_DIR = 'fonts';
@@ -94,7 +94,7 @@ const TILE_CONTENT_TYPE = 'application/octet-stream';
 const UNICODE_PLANE_SIZE = 65_536;
 const WORLD_TILE_MAX_ZOOM = 7;
 
-const GLYPH_RANGE_COUNT = UNICODE_PLANE_SIZE / GLYPH_SPAN;
+const GLYPH_RANGES_PER_STACK = UNICODE_PLANE_SIZE / GLYPH_SPAN;
 
 const ROUTE_DIRECTORIES: Record<string, string> = {
     '/fonts/map/': FONTS_DIR,
@@ -250,6 +250,7 @@ async function extractTiles(set: TileSet, spec: TileSpec | undefined) {
     if (existsSync(file) && isSpecMatched(set, spec)) return;
 
     const extractor = await ensureExtractor();
+
     const flags = [`--maxzoom=${set.maxZoom}`];
     const stagingFile = getStagingPath(file);
 
@@ -270,9 +271,9 @@ async function extractTiles(set: TileSet, spec: TileSpec | undefined) {
 async function fetchStack(stack: string) {
     const directory = join(cacheDir, FONTS_DIR, stack);
 
-    if (await getGlyphRangeCount(directory) >= GLYPH_RANGE_COUNT) return;
+    if (await getGlyphRangeCount(directory) >= GLYPH_RANGES_PER_STACK) return;
 
-    const glyphRanges = Array.from({ length: GLYPH_RANGE_COUNT }, (_, index) => `${index * GLYPH_SPAN}-${(index + 1) * GLYPH_SPAN - 1}`);
+    const glyphRanges = Array.from({ length: GLYPH_RANGES_PER_STACK }, (_, index) => `${index * GLYPH_SPAN}-${(index + 1) * GLYPH_SPAN - 1}`);
 
     const pendingRanges = glyphRanges.values();
 
@@ -343,7 +344,7 @@ async function isComplete(root: string) {
     }
 
     for (const stack of FONT_STACKS) {
-        if (await getGlyphRangeCount(join(root, FONTS_DIR, stack)) < GLYPH_RANGE_COUNT) return false;
+        if (await getGlyphRangeCount(join(root, FONTS_DIR, stack)) < GLYPH_RANGES_PER_STACK) return false;
     }
 
     return true;

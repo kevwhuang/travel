@@ -6,7 +6,7 @@ import ModalFilters from '@components/ModalFilters';
 import Overlay from '@components/Overlay';
 import ViewCards from '@components/ViewCards';
 import { ARROW_PAGE_STEPS, ATLAS_TITLE, CARDS_PER_PAGE, SEARCH_SHORTCUT } from '@lib/constants';
-import { getJourneysById, getPageCount } from '@lib/utils';
+import { findJourney, getJourneysById, getPageCount } from '@lib/utils';
 import { loadAtlasState, saveAtlasState } from '@lib/store';
 
 import type { Dispatch, SetStateAction } from 'react';
@@ -66,10 +66,6 @@ function compareCardMarkers(first: AtlasMarker, second: AtlasMarker, journeysByI
     return first.id - second.id;
 }
 
-function findJourney(marker: AtlasMarker, journeysById: Record<string, AtlasJourney>) {
-    return marker.journeyId === null ? null : journeysById[marker.journeyId] ?? null;
-}
-
 function foldText(value: string) {
     return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 }
@@ -104,7 +100,7 @@ function useAtlasState(data: AtlasData): AtlasState {
             if (selectedCategoryIds.length > 0 && !selectedCategoryIds.includes(marker.categoryId)) return false;
             if (selectedJourneyIds.length > 0 && (marker.journeyId === null || !selectedJourneyIds.includes(marker.journeyId))) return false;
             if (isStarredOnly && !marker.isStarred) return false;
-            if (!foldText(marker.name).includes(query) && query.length > 0) return false;
+            if (query.length > 0 && !foldText(marker.name).includes(query)) return false;
 
             return true;
         });
@@ -113,13 +109,13 @@ function useAtlasState(data: AtlasData): AtlasState {
     const cardMarkers = useMemo(() => [...filteredMarkers]
         .sort((first, second) => compareCardMarkers(first, second, journeysById)), [filteredMarkers, journeysById]);
 
+    const filterCount = selectedCategoryIds.length + selectedJourneyIds.length + (isStarredOnly ? 1 : 0);
     const hasSearch = searchValue.trim().length > 0;
     const pageCount = getPageCount(cardMarkers.length);
+    const totalCount = data.markers.length;
 
     const currentPage = Math.min(page, pageCount - 1);
-    const filterCount = selectedCategoryIds.length + selectedJourneyIds.length + (isStarredOnly ? 1 : 0);
     const isSearchExpanded = hasSearch || isSearchOpen;
-    const totalCount = data.markers.length;
 
     useEffect(() => {
         const storedState = loadAtlasState();
@@ -327,6 +323,37 @@ function AtlasInner({ data }: { data: AtlasData }) {
         atlas.setView(current => (current === 'cards' ? 'map' : 'cards'));
     }
 
+    function renderView() {
+        if (atlas.view === 'map') {
+            return (
+                <Suspense fallback={<Skeleton />}>
+                    <ViewMap
+                        categories={data.categories}
+                        flyTarget={atlas.flyTarget}
+                        journeys={data.journeys}
+                        markers={atlas.filteredMarkers}
+                        onSelectMarker={atlas.setSelectedMarkerId}
+                        onShowInCards={handleShowInCards}
+                        regions={data.regions}
+                        selectedMarkerId={atlas.selectedMarkerId}
+                    />
+                </Suspense>
+            );
+        }
+
+        return (
+            <ViewCards
+                data={data}
+                highlightedMarkerId={atlas.highlightedMarkerId}
+                isKeyboardPagingRef={isKeyboardPagingRef}
+                markers={atlas.cardMarkers}
+                onPageChange={atlas.setPage}
+                onShowOnMap={handleShowOnMap}
+                page={atlas.currentPage}
+            />
+        );
+    }
+
     function resetAfterFilterChange() {
         atlas.setFlyTarget(null);
         atlas.setPage(0);
@@ -347,36 +374,14 @@ function AtlasInner({ data }: { data: AtlasData }) {
 
     return (
         <div className="atlas-plot fixed inset-0 overflow-hidden bg-paper text-ink">
-            <div className="contents" inert={atlas.isModalOpen || undefined}>
+            <div
+                className="contents"
+                inert={atlas.isModalOpen || undefined}
+            >
                 {atlas.view !== 'cards' && (
                     <h1 className="sr-only">{ATLAS_TITLE}</h1>
                 )}
-                {atlas.view === 'map'
-                    ? (
-                            <Suspense fallback={<Skeleton />}>
-                                <ViewMap
-                                    categories={data.categories}
-                                    flyTarget={atlas.flyTarget}
-                                    journeys={data.journeys}
-                                    markers={atlas.filteredMarkers}
-                                    onSelectMarker={atlas.setSelectedMarkerId}
-                                    onShowInCards={handleShowInCards}
-                                    regions={data.regions}
-                                    selectedMarkerId={atlas.selectedMarkerId}
-                                />
-                            </Suspense>
-                        )
-                    : (
-                            <ViewCards
-                                data={data}
-                                highlightedMarkerId={atlas.highlightedMarkerId}
-                                isKeyboardPagingRef={isKeyboardPagingRef}
-                                markers={atlas.cardMarkers}
-                                onPageChange={atlas.setPage}
-                                onShowOnMap={handleShowOnMap}
-                                page={atlas.currentPage}
-                            />
-                        )}
+                {renderView()}
                 <Overlay
                     filterButtonRef={filterButtonRef}
                     filterCount={atlas.filterCount}
@@ -392,7 +397,7 @@ function AtlasInner({ data }: { data: AtlasData }) {
                     searchValue={atlas.searchValue}
                     view={atlas.view}
                 />
-                <div className="atlas-grain z-[90]" aria-hidden="true" />
+                <div className="atlas-grain fixed inset-0 z-[90] opacity-[0.05] pointer-events-none" aria-hidden="true" />
             </div>
             <p
                 className="sr-only"

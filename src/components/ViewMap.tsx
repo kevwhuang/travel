@@ -39,10 +39,10 @@ const CAMERA_COORDINATE_DECIMALS = 5;
 const CAMERA_ZOOM_DECIMALS = 2;
 const CATEGORY_PIN_MAX_Z_INDEX = 16;
 const CATEGORY_PIN_MIN_Z_INDEX = 11;
-const CLASS_CLUSTER = 'atlas-fade atlas-marker active:scale-[0.96] before:absolute before:content-[""] before:inset-[-8px] hover:scale-[1.09] relative p-0 border-none duration-[var(--duration-fast)] ease-[ease] shadow-[0_0_0_1px_var(--color-storm),0_4px_10px_var(--color-ink-20)] transition-[scale]';
-const CLASS_PIN_DOT = 'atlas-fade atlas-marker active:scale-[0.96] before:absolute before:content-[""] before:inset-[-8px] hover:scale-[1.3] pointer-coarse:before:inset-[-14px] block relative h-[24px] w-[24px] p-0 border-2 border-snow duration-[var(--duration-fast)] ease-[ease] transition-[background-color,border-color,box-shadow,scale]';
-const CLASS_PIN_ICON = 'atlas-fade atlas-marker active:scale-[0.96] before:absolute before:content-[""] before:inset-[-8px] hover:scale-[1.3] pointer-coarse:before:inset-[-14px] grid place-items-center relative h-[24px] w-[24px] p-0 border-2 duration-[var(--duration-fast)] ease-[ease] transition-[background-color,box-shadow,color,scale]';
-const CLASS_SCALE_BAR = 'atlas-scale-bar absolute bottom-[18px] flex flex-col inset-x-0 items-center z-30 w-fit gap-[4px] mx-auto pointer-events-none';
+const CLASS_CLUSTER = 'atlas-fade atlas-marker active:scale-[0.96] before:absolute before:content-[""] before:inset-[-8px] hover:scale-[1.09] relative p-0 border-none rounded-full duration-[var(--duration-fast)] ease-[ease] shadow-[0_0_0_1px_var(--color-storm),0_4px_10px_var(--color-ink-20)] transition-[scale]';
+const CLASS_PIN_DOT = 'atlas-fade atlas-marker active:scale-[0.96] before:absolute before:content-[""] before:inset-[-14px] hover:scale-[1.3] block relative h-[24px] w-[24px] p-0 border-2 border-snow rounded-full duration-[var(--duration-fast)] ease-[ease] transition-[background-color,border-color,box-shadow,scale]';
+const CLASS_PIN_ICON = 'atlas-fade atlas-marker active:scale-[0.96] before:absolute before:content-[""] before:inset-[-14px] hover:scale-[1.3] grid place-items-center relative h-[24px] w-[24px] p-0 border-2 rounded-full duration-[var(--duration-fast)] ease-[ease] transition-[background-color,box-shadow,color,scale]';
+const CLASS_SCALE_BAR = 'atlas-scale-bar absolute bottom-[18px] flex flex-col inset-x-0 items-center z-30 w-fit gap-[4px] mx-auto duration-[var(--duration-fast)] ease-[ease] transition-[opacity] pointer-events-none select-none';
 const CLASS_SCALE_LABEL = 'px-[4px] py-[2px] rounded-[4px] font-mono leading-none text-[10px] tracking-[0.12em] uppercase bg-snow-90 text-storm backdrop-blur-[8px]';
 const CLUSTER_BASE_SIZE = 34;
 const CLUSTER_GROWTH_FACTOR = 3;
@@ -65,7 +65,6 @@ const FLY_ZOOM = 13;
 const FOCUSED_MARKER_Z_INDEX = '22';
 const HIDDEN_LAYER_IDS = ['roads_oneway', 'roads_shields'] as const;
 const MAGNITUDE_BASE = 10;
-const MAP_ATTRIBUTION = `${COPYRIGHT_MARK} ${CREDIT_MAP}`;
 
 const MAP_FLAVOR: Flavor = {
     address_label: '#6f7d80',
@@ -164,6 +163,7 @@ const MARKER_SELECTOR = 'button.atlas-marker';
 const MARKER_SOURCE_ID = 'atlas-markers';
 const METERS_PER_MILE = 1_609.344;
 const MILE_MINIMUM = 0.5;
+const OVERLAY_BAND = 66;
 const PIN_HALO_WIDTH = 6;
 const PIN_ICON_SIZE = 12;
 const PIN_OUTLINE_COLOR = 'var(--color-storm)';
@@ -171,6 +171,7 @@ const PIN_OUTLINE_WIDTH = 1;
 const POPUP_CONTAINER_ID = 'atlas-popup';
 const POPUP_EASE_DURATION = 300;
 const POPUP_OFFSET = 28;
+const POPUP_PAN_ATTEMPTS = 3;
 const POPUP_SETTLE_FRAMES = 12;
 const POPUP_VIEW_MARGIN = 18;
 const POPUP_Z_INDEX = '45';
@@ -205,8 +206,6 @@ const ZOOM_EPSILON = 0.01;
 const CATEGORY_PIN_Z_INDEXES = new Map(Object.keys(CATEGORY_COLORS)
     .sort((first, second) => first.localeCompare(second))
     .map((id, rank) => [id, String(Math.max(CATEGORY_PIN_MIN_Z_INDEX, CATEGORY_PIN_MAX_Z_INDEX - rank))] as const));
-
-const LABEL_TEXT_FIELD: ExpressionSpecification = ['coalesce', ['get', `name:${MAP_LANGUAGE}`], ['get', 'name']];
 
 const mapStyle: StyleSpecification = {
     glyphs: MAP_GLYPHS_URL,
@@ -324,9 +323,9 @@ function createClusterAnchor(properties: GeoJSONFeature['properties'], categorie
     if (filledCategories.length > 1) {
         for (const category of filledCategories) {
             const categoryMarkerCount = Number(properties[category.id]);
+            const start = (offset / markerCount) * DEGREES_PER_FULL_TURN;
 
             const end = ((offset + categoryMarkerCount) / markerCount) * DEGREES_PER_FULL_TURN;
-            const start = (offset / markerCount) * DEGREES_PER_FULL_TURN;
 
             offset += categoryMarkerCount;
 
@@ -336,7 +335,6 @@ function createClusterAnchor(properties: GeoJSONFeature['properties'], categorie
 
             stops.push(`var(--color-ink) ${cursorDegrees.toFixed(1)}deg ${inkEnd.toFixed(1)}deg`);
             stops.push(`${getCategoryColor(category.id)} ${inkEnd.toFixed(1)}deg ${colorEnd.toFixed(1)}deg`);
-
             cursorDegrees = colorEnd;
         }
 
@@ -436,10 +434,8 @@ function getMaxZoomAt(lngLat: { lat: number; lng: number }) {
 
 function getRovingIndex(key: string, index: number, count: number) {
     if (count < 1) return -1;
-    if (key === 'ArrowDown') return (index + 1) % count;
-    if (key === 'ArrowLeft') return (index - 1 + count) % count;
-    if (key === 'ArrowRight') return (index + 1) % count;
-    if (key === 'ArrowUp') return (index - 1 + count) % count;
+    if (key === 'ArrowDown' || key === 'ArrowRight') return (index + 1) % count;
+    if (key === 'ArrowLeft' || key === 'ArrowUp') return (index - 1 + count) % count;
     if (key === 'End') return count - 1;
     if (key === 'Home') return 0;
 
@@ -471,7 +467,7 @@ function getScaleBar(zoom: number, latitude: number) {
 
 function getTileSource(name: string): VectorSourceSpecification {
     return {
-        attribution: MAP_ATTRIBUTION,
+        attribution: `${COPYRIGHT_MARK} ${CREDIT_MAP}`,
         type: 'vector',
         url: `${MAP_TILES_URL}/${name}${TILE_EXTENSION}`,
     };
@@ -535,7 +531,9 @@ function withEnglishLabels(layer: LayerSpecification) {
 
     if (!JSON.stringify(textField ?? null).includes(`name:${MAP_LANGUAGE}`)) return layer;
 
-    return { ...layer, layout: { ...layer.layout, 'text-field': LABEL_TEXT_FIELD } };
+    const labelField: ExpressionSpecification = ['coalesce', ['get', `name:${MAP_LANGUAGE}`], ['get', 'name']];
+
+    return { ...layer, layout: { ...layer.layout, 'text-field': labelField } };
 }
 
 function withMotionPreference<Options extends FlyToOptions>(options: Options) {
@@ -603,6 +601,7 @@ export default function ViewMap({ categories, flyTarget, journeys, markers, onSe
     const popupContainerRef = useRef<HTMLDivElement | null>(null);
     const [popupMarkerId, setPopupMarkerId] = useState<number | null>(null);
     const popupMarkerIdRef = useRef<number | null>(null);
+    const popupPanAttemptsRef = useRef(0);
     const popupRef = useRef<Popup | null>(null);
     const popupRootRef = useRef<Root | null>(null);
     const propsRef = useRef({ categories, journeys, markers, onSelectMarker, onShowInCards, regions, selectedMarkerId });
@@ -661,6 +660,10 @@ export default function ViewMap({ categories, flyTarget, journeys, markers, onSe
         map.easeTo(withMotionPreference({ zoom: maxZoom }));
     }
 
+    function findAnchorKey(button: HTMLButtonElement) {
+        return [...anchorsRef.current].find(([, anchor]) => getMarkerButton(anchor) === button)?.[0] ?? null;
+    }
+
     function findMarker(markerId: number | null) {
         if (markerId === null) return null;
 
@@ -695,11 +698,7 @@ export default function ViewMap({ categories, flyTarget, journeys, markers, onSe
             return;
         }
 
-        const key = getRovingKey();
-
-        const anchor = key === null ? undefined : anchorsRef.current.get(key);
-
-        const button = anchor === undefined ? null : getMarkerButton(anchor);
+        const button = getRovingButton();
 
         if (!button) return;
 
@@ -751,6 +750,14 @@ export default function ViewMap({ categories, flyTarget, journeys, markers, onSe
         if (!pointer) return centerMaxZoom;
 
         return Math.max(centerMaxZoom, getMaxZoomAt(map.unproject([pointer.x, pointer.y]).wrap()));
+    }
+
+    function getRovingButton() {
+        const key = getRovingKey();
+
+        const anchor = key === null ? undefined : anchorsRef.current.get(key);
+
+        return anchor === undefined ? null : getMarkerButton(anchor);
     }
 
     function getRovingKey() {
@@ -844,7 +851,7 @@ export default function ViewMap({ categories, flyTarget, journeys, markers, onSe
 
         if (!button) return;
 
-        const key = [...anchorsRef.current].find(([, anchor]) => getMarkerButton(anchor) === button)?.[0] ?? null;
+        const key = findAnchorKey(button);
 
         if (key === null) return;
 
@@ -868,7 +875,7 @@ export default function ViewMap({ categories, flyTarget, journeys, markers, onSe
 
         if (!button) return;
 
-        const key = [...anchorsRef.current].find(([, anchor]) => getMarkerButton(anchor) === button)?.[0] ?? null;
+        const key = findAnchorKey(button);
 
         if (key === null) return;
 
@@ -948,6 +955,11 @@ export default function ViewMap({ categories, flyTarget, journeys, markers, onSe
         });
     }
 
+    function handleResize() {
+        popupPanAttemptsRef.current = 0;
+        requestAnimationFrame(() => requestAnimationFrame(panPopupIntoView));
+    }
+
     function handleWheel(event: MapWheelEvent) {
         const map = mapRef.current;
 
@@ -960,30 +972,52 @@ export default function ViewMap({ categories, flyTarget, journeys, markers, onSe
     }
 
     function panPopupIntoView() {
-        const element = popupRef.current?.getElement();
         const map = mapRef.current;
+        const markerId = popupMarkerIdRef.current;
+        const popup = popupRef.current;
+
+        const element = popup?.getElement();
+
+        function handleFrame() {
+            if (popupRef.current !== popup || popupMarkerIdRef.current !== markerId) return;
+
+            panPopupIntoView();
+        }
+
+        function handlePanEnd() {
+            requestAnimationFrame(() => requestAnimationFrame(handleFrame));
+        }
 
         if (!element || !map) return;
 
         if (map.isMoving()) {
-            map.once('moveend', panPopupIntoView);
+            map.once('moveend', handlePanEnd);
 
             return;
         }
 
         const containerRect = map.getContainer().getBoundingClientRect();
+        const marginBlock = POPUP_VIEW_MARGIN + OVERLAY_BAND;
         const popupRect = element.getBoundingClientRect();
 
-        const overflowBottom = Math.max(0, popupRect.bottom - (containerRect.bottom - POPUP_VIEW_MARGIN));
+        const overflowBottom = Math.max(0, popupRect.bottom - (containerRect.bottom - marginBlock));
         const overflowLeft = Math.min(0, popupRect.left - (containerRect.left + POPUP_VIEW_MARGIN));
         const overflowRight = Math.max(0, popupRect.right - (containerRect.right - POPUP_VIEW_MARGIN));
-        const overflowTop = Math.min(0, popupRect.top - (containerRect.top + POPUP_VIEW_MARGIN));
+        const overflowTop = Math.min(0, popupRect.top - (containerRect.top + marginBlock));
 
         const deltaX = overflowLeft || overflowRight;
         const deltaY = overflowBottom || overflowTop;
 
-        if (!deltaX && !deltaY) return;
+        if (!deltaX && !deltaY) {
+            popupPanAttemptsRef.current = 0;
 
+            return;
+        }
+
+        if (popupPanAttemptsRef.current >= POPUP_PAN_ATTEMPTS) return;
+
+        popupPanAttemptsRef.current++;
+        map.once('moveend', handlePanEnd);
         map.panBy([deltaX, deltaY], withMotionPreference({}));
     }
 
@@ -1004,6 +1038,7 @@ export default function ViewMap({ categories, flyTarget, journeys, markers, onSe
             popup.setLngLat([marker.lng, marker.lat]);
 
             const element = popup.getElement();
+
             const rect = element?.getBoundingClientRect();
 
             const box = rect && element?.querySelector('article') ? `${rect.left},${rect.top},${rect.width},${rect.height}` : '';
@@ -1019,6 +1054,7 @@ export default function ViewMap({ categories, flyTarget, journeys, markers, onSe
             if (attempts < POPUP_SETTLE_FRAMES) requestAnimationFrame(handleFrame);
         }
 
+        popupPanAttemptsRef.current = 0;
         requestAnimationFrame(() => requestAnimationFrame(handleFrame));
     }
 
@@ -1108,7 +1144,7 @@ export default function ViewMap({ categories, flyTarget, journeys, markers, onSe
         for (const [key, anchor] of anchorsRef.current) {
             if (visibleKeys.has(key)) continue;
 
-            if (getMarkerButton(anchor)?.contains(document.activeElement) ?? false) hadFocusedRemoval = true;
+            if (getMarkerButton(anchor)?.contains(document.activeElement)) hadFocusedRemoval = true;
 
             hasChanges = true;
             anchor.remove();
@@ -1125,11 +1161,7 @@ export default function ViewMap({ categories, flyTarget, journeys, markers, onSe
         if (hasChanges) applyRoving();
 
         if (hadFocusedRemoval) {
-            const rovingKey = getRovingKey();
-
-            const rovingAnchor = rovingKey === null ? undefined : anchorsRef.current.get(rovingKey);
-
-            const rovingButton = rovingAnchor === undefined ? null : getMarkerButton(rovingAnchor);
+            const rovingButton = getRovingButton();
 
             if (rovingButton) rovingButton.focus();
             else mapRef.current?.getCanvas().focus();
@@ -1178,6 +1210,15 @@ export default function ViewMap({ categories, flyTarget, journeys, markers, onSe
 
         if (!container) return;
 
+        const popup = new Popup({
+            closeButton: false,
+            closeOnClick: false,
+            focusAfterOpen: false,
+            maxWidth: 'none',
+            offset: POPUP_OFFSET,
+        });
+
+        const popupContainer = document.createElement('div');
         const storedCamera = loadAtlasState()?.camera ?? null;
 
         const map = new MapLibreMap({
@@ -1194,16 +1235,6 @@ export default function ViewMap({ categories, flyTarget, journeys, markers, onSe
         });
 
         const canvasContainer = map.getCanvasContainer();
-
-        const popup = new Popup({
-            closeButton: false,
-            closeOnClick: false,
-            focusAfterOpen: false,
-            maxWidth: 'none',
-            offset: POPUP_OFFSET,
-        });
-
-        const popupContainer = document.createElement('div');
 
         map.getCanvas().tabIndex = -1;
         mapRef.current = map;
@@ -1223,7 +1254,7 @@ export default function ViewMap({ categories, flyTarget, journeys, markers, onSe
         map.on('move', handleMove);
         map.on('moveend', handleMoveEnd);
         map.on('render', syncMarkers);
-        map.on('resize', panPopupIntoView);
+        map.on('resize', handleResize);
         map.on('sourcedata', syncMarkers);
         map.on('wheel', handleWheel);
         map.touchZoomRotate.disableRotation();
@@ -1398,9 +1429,12 @@ export default function ViewMap({ categories, flyTarget, journeys, markers, onSe
     return (
         <div className="atlas-fade atlas-fade--slow absolute inset-0 overflow-hidden">
             <div className="h-full w-full" ref={containerRef} />
-            <div className={CLASS_SCALE_BAR} aria-hidden="true">
+            <div
+                className={CLASS_SCALE_BAR}
+                aria-hidden="true"
+            >
                 <div style={{ width: scaleBar.width }}>
-                    <div className="h-[4px] border-b border-l border-r border-ink" />
+                    <div className="h-[4px] border-b border-ink border-l border-r" />
                 </div>
                 <p className={CLASS_SCALE_LABEL}>{scaleBar.label}</p>
             </div>

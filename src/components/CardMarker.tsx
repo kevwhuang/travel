@@ -6,18 +6,20 @@ import IconStar from '@components/IconStar';
 import { STAR_COLOR, STAR_LABEL } from '@lib/constants';
 import { getAccentBorder, getAccentForeground, getAccentSurface, getCategoryColor } from '@lib/utils';
 
-const CLASS_CARD_ACTION = 'pill after:absolute after:content-[\'\'] after:inset-[-12px] relative shrink-0 h-[26px] w-[26px] p-0 text-slate';
-const CLASS_CARD_ACTION_ADJACENT = 'pill after:absolute after:content-[\'\'] after:inset-y-[-12px] after:left-[-12px] after:right-[-6px] relative shrink-0 h-[26px] w-[26px] p-0 text-slate';
-const CLASS_CARD_CLOSE = 'pill after:absolute after:content-[\'\'] after:inset-y-[-12px] after:left-[-6px] after:right-[-12px] relative shrink-0 h-[26px] w-[26px] p-0 text-storm';
+const CLASS_CARD_ACTION = 'pill after:absolute after:content-[""] after:inset-[-12px] relative shrink-0 h-[26px] w-[26px] p-0 text-slate';
+const CLASS_CARD_ACTION_ADJACENT = 'pill after:absolute after:content-[""] after:inset-y-[-12px] after:left-[-16px] after:right-[-8px] relative shrink-0 h-[26px] w-[26px] p-0 text-slate';
+const CLASS_CARD_CLOSE = 'pill after:absolute after:content-[""] after:inset-y-[-12px] after:left-[-8px] after:right-[-16px] relative shrink-0 h-[26px] w-[26px] p-0 text-storm';
 const CLASS_CARD_DESCRIPTION = 'leading-[1.55] text-[14px] text-pretty wrap-anywhere text-storm';
+const CLASS_CARD_DESCRIPTION_SCROLL = 'overflow-y-auto max-h-[5lh] mb-auto pr-[4px] leading-[1.55] text-[14px] text-pretty wrap-anywhere text-storm [scrollbar-color:var(--color-flint)_transparent] [scrollbar-width:thin]';
 const CLASS_CARD_FRAME = 'atlas-card atlas-card--lift flex flex-col relative h-full gap-[8px] pb-[12px] pt-[16px] px-[16px]';
-const CLASS_CARD_FRAME_POPUP = 'atlas-card flex flex-col overflow-y-auto relative max-h-[calc(100dvh-72px)] max-w-[calc(100dvw-36px)] w-[clamp(288px,calc(256px+10vw),var(--width-third))] gap-[8px] pb-[12px] pt-[16px] px-[16px] shadow-[0_18px_44px_var(--color-ink-20)]';
+const CLASS_CARD_FRAME_POPUP = 'atlas-card flex flex-col overflow-y-auto relative max-h-[calc(100dvh-168px)] max-w-[calc(100dvw-36px)] w-[clamp(288px,calc(256px+10vw),calc((var(--width-shell)-var(--shell-pad-max)*2)/3))] gap-[8px] pb-[12px] pt-[16px] px-[16px] shadow-[0_18px_44px_var(--color-ink-20)]';
 const CLASS_STOP_BADGE = 'grid place-items-center shrink-0 h-[24px] w-[24px] pt-[2px] border border-flint rounded-[6px] font-serif text-[12px] bg-paper text-ink';
+const DEGREE_DECIMALS = 2;
 const HIGHLIGHT_RING_NONE = '0 0 0 0 transparent';
 const UNORDERED_LABEL = 'Unordered journey \u2014 no itinerary position';
 
 function formatDegrees(value: number, negativeLabel: string, positiveLabel: string) {
-    return `${Math.abs(value).toFixed(2)}\u00b0${value < 0 ? negativeLabel : positiveLabel}`;
+    return `${Math.abs(value).toFixed(DEGREE_DECIMALS)}\u00b0${value < 0 ? negativeLabel : positiveLabel}`;
 }
 
 function OrderBadge({ isOrdered, stopCount, stopNumber }: {
@@ -63,6 +65,11 @@ export default function CardMarker({ categoryLabel, isHighlighted = false, isPop
     onShowOnMap?: (marker: AtlasMarker) => void;
 }) {
     const coordinates = `${formatDegrees(marker.lat, 'S', 'N')} \u00b7 ${formatDegrees(marker.lng, 'W', 'E')}`;
+
+    const highlightRing = isHighlighted
+        ? `0 0 0 4px color-mix(in oklab, ${getCategoryColor(marker.categoryId)} 45%, transparent)`
+        : HIGHLIGHT_RING_NONE;
+
     const isOrdered = journey?.isOrdered === true;
     const journeyName = journey?.name ?? '';
     const journeyYear = journey?.year;
@@ -72,13 +79,13 @@ export default function CardMarker({ categoryLabel, isHighlighted = false, isPop
         <div
             className={isPopup ? 'atlas-rise' : 'h-full min-w-0 rounded-[12px] duration-[var(--duration-slow)] ease-[ease] transition-[box-shadow]'}
             data-marker-id={marker.id}
-            style={{ boxShadow: isHighlighted ? `0 0 0 4px color-mix(in oklab, ${getCategoryColor(marker.categoryId)} 45%, transparent)` : HIGHLIGHT_RING_NONE }}
+            style={{ boxShadow: highlightRing }}
         >
             <article
                 className={isPopup ? CLASS_CARD_FRAME_POPUP : CLASS_CARD_FRAME}
                 style={starredStyle}
             >
-                <div className="flex items-center gap-[8px]">
+                <div className="flex items-center gap-[16px]">
                     <span className="min-w-0 mr-auto">
                         <Badge categoryId={marker.categoryId} label={categoryLabel} />
                     </span>
@@ -124,8 +131,8 @@ export default function CardMarker({ categoryLabel, isHighlighted = false, isPop
                         </span>
                     )}
                 </h2>
-                <p className={isPopup ? CLASS_CARD_DESCRIPTION : `overflow-y-auto max-h-[108px] pr-[4px] ${CLASS_CARD_DESCRIPTION} [scrollbar-color:var(--color-flint)_transparent] [scrollbar-width:thin]`}>{marker.description}</p>
-                <p className="mt-auto font-mono text-[10px] tracking-[0.12em] uppercase wrap-anywhere text-storm">{coordinates}</p>
+                <p className={isPopup ? CLASS_CARD_DESCRIPTION : CLASS_CARD_DESCRIPTION_SCROLL}>{marker.description}</p>
+                <p className="font-mono text-[10px] tracking-[0.12em] uppercase wrap-anywhere text-storm">{coordinates}</p>
                 {journey && (
                     <div className="flex items-center justify-between gap-[8px] pt-[12px] border-linen border-t">
                         <span className="inline-flex items-baseline min-w-0 gap-[8px]">

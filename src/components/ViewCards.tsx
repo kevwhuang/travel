@@ -2,13 +2,13 @@ import { useEffect, useMemo, useRef } from 'react';
 
 import CardMarker from '@components/CardMarker';
 import { ARROW_PAGE_STEPS, ATLAS_TITLE, CARDS_PER_PAGE } from '@lib/constants';
-import { getJourneysById, getPageCount, isModifiedEvent } from '@lib/utils';
+import { findJourney, getJourneysById, getPageCount, isModifiedEvent } from '@lib/utils';
 import { prefersReducedMotion } from '@lib/motion';
 
 import type { KeyboardEvent, RefObject } from 'react';
 
-const CLASS_GRID = 'grid grid-cols-[repeat(auto-fill,minmax(min(276px,100%),1fr))] max-w-[var(--width-shell)] gap-[20px] mx-auto';
-const CLASS_PAGE_BUTTON = 'after:absolute after:content-[""] after:inset-x-[-4px] after:inset-y-[-8px] relative shrink-0 h-[34px] min-w-[34px] px-[8px] font-medium text-[14px]';
+const CLASS_GRID = 'grid grid-cols-[repeat(auto-fill,minmax(min(276px,100%),1fr))] max-w-[var(--width-shell)] gap-[20px]';
+const CLASS_PAGE_BUTTON = 'after:absolute after:content-[""] after:inset-[-8px] relative shrink-0 h-[34px] min-w-[34px] px-[8px] font-medium text-[14px]';
 const CLASS_SECTION_GAP = 'mb-[clamp(28px,calc(21.34px+2.084vw),48px)]';
 const CLASS_SHELL_PAD = 'px-[var(--shell-pad)]';
 const CLASS_TITLE = 'mb-[16px] font-normal font-serif leading-[1.05] text-[clamp(44px,calc(34.67px+2.917vw),72px)] uppercase bg-clip-text bg-linear-to-b from-ink text-transparent to-storm';
@@ -16,7 +16,9 @@ const HIGHLIGHT_SCROLL_OFFSET = 130;
 const PAGE_EDGE_SLOTS = 2;
 const PAGE_SLOTS = 7;
 const PAGE_STEPS: Record<string, number> = { ...ARROW_PAGE_STEPS, PageDown: 1, PageUp: -1 };
+
 const PAGE_WINDOW_SIZE = PAGE_SLOTS - PAGE_EDGE_SLOTS * 2;
+
 const PAGE_WINDOW_START_OFFSET = Math.floor(PAGE_WINDOW_SIZE / 2);
 
 function getPageSlots(currentPage: number, pageCount: number): (number | null)[] {
@@ -52,10 +54,14 @@ export default function ViewCards({ data, highlightedMarkerId, isKeyboardPagingR
     const journeysById = useMemo(() => getJourneysById(data.journeys), [data.journeys]);
     const navRef = useRef<HTMLElement>(null);
     const pageCount = getPageCount(markers.length);
+    const pageMarkers = markers.slice(page * CARDS_PER_PAGE, page * CARDS_PER_PAGE + CARDS_PER_PAGE);
     const paneRef = useRef<HTMLDivElement>(null);
 
     const hasMultiplePages = pageCount > 1;
-    const pageMarkers = markers.slice(page * CARDS_PER_PAGE, page * CARDS_PER_PAGE + CARDS_PER_PAGE);
+
+    const gridClassName = hasMultiplePages
+        ? `${CLASS_GRID} ${CLASS_SECTION_GAP} mx-auto ${CLASS_SHELL_PAD}`
+        : `${CLASS_GRID} mx-auto ${CLASS_SHELL_PAD}`;
 
     const subline = useMemo(() => {
         const journeyCount = new Set(markers
@@ -101,7 +107,12 @@ export default function ViewCards({ data, highlightedMarkerId, isKeyboardPagingR
         return (
             <li key={`slot-${index}`}>
                 <button
-                    className={['pill', slot === page && 'pill--solid', CLASS_PAGE_BUTTON, slot !== page && 'bg-snow text-ink'].filter(Boolean).join(' ')}
+                    className={[
+                        'pill',
+                        slot === page && 'pill--solid',
+                        CLASS_PAGE_BUTTON,
+                        slot !== page && 'bg-snow text-ink',
+                    ].filter(Boolean).join(' ')}
                     aria-current={slot === page ? 'page' : undefined}
                     aria-label={`Page ${slot + 1}`}
                     onClick={() => onPageChange(slot)}
@@ -163,7 +174,7 @@ export default function ViewCards({ data, highlightedMarkerId, isKeyboardPagingR
                 <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-storm">{subline}</p>
             </header>
             {markers.length > 0 && (
-                <ul className={hasMultiplePages ? `${CLASS_GRID} ${CLASS_SECTION_GAP} ${CLASS_SHELL_PAD}` : `${CLASS_GRID} ${CLASS_SHELL_PAD}`}>
+                <ul className={gridClassName}>
                     {pageMarkers.map(marker => (
                         <li
                             className="grid"
@@ -172,7 +183,7 @@ export default function ViewCards({ data, highlightedMarkerId, isKeyboardPagingR
                             <CardMarker
                                 categoryLabel={categoryLabels[marker.categoryId] ?? marker.categoryId}
                                 isHighlighted={marker.id === highlightedMarkerId}
-                                journey={marker.journeyId === null ? null : journeysById[marker.journeyId] ?? null}
+                                journey={findJourney(marker, journeysById)}
                                 marker={marker}
                                 onShowOnMap={onShowOnMap}
                             />
@@ -186,7 +197,7 @@ export default function ViewCards({ data, highlightedMarkerId, isKeyboardPagingR
                     aria-label="Pagination"
                     ref={navRef}
                 >
-                    <ul className="flex flex-wrap items-center justify-center gap-[8px]">
+                    <ul className="flex flex-wrap items-center justify-center gap-[16px]">
                         {getPageSlots(page, pageCount).map(renderPageSlot)}
                     </ul>
                 </nav>

@@ -6,8 +6,8 @@ import { STAR_COLOR } from '@lib/constants';
 import { getAccentForeground, getCategoryColor } from '@lib/utils';
 
 const CLASS_CATEGORY_CHIP = 'atlas-chip after:absolute after:content-[""] after:inset-x-0 after:inset-y-[-6px] hover:brightness-[0.97] relative max-w-full gap-[6px] px-[14px] py-[8px] font-medium text-[12px] wrap-anywhere';
-const CLASS_CLEAR_BUTTON = 'pill after:absolute after:content-[\'\'] after:inset-x-0 after:inset-y-[-6px] relative px-[16px] py-[8px] font-medium text-[12px] text-slate';
-const CLASS_DONE_BUTTON = 'pill pill--solid after:absolute after:content-[\'\'] after:inset-x-0 after:inset-y-[-6px] relative px-[20px] py-[8px] font-medium text-[12px]';
+const CLASS_CLEAR_BUTTON = 'pill after:absolute after:content-[""] after:inset-x-0 after:inset-y-[-6px] relative px-[16px] py-[8px] font-medium text-[12px] text-slate';
+const CLASS_DONE_BUTTON = 'pill pill--solid after:absolute after:content-[""] after:inset-x-0 after:inset-y-[-6px] relative px-[20px] py-[8px] font-medium text-[12px]';
 const CLASS_FOOTER = 'flex flex-wrap items-center justify-between shrink-0 gap-[12px] pb-[24px] pt-[16px] px-[clamp(20px,calc(17.34px+0.833vw),28px)] border-linen border-t';
 const CLASS_GROUP_LABEL = 'font-mono text-[10px] tracking-[0.22em] uppercase text-storm';
 const FOCUSABLE_SELECTOR = 'a[href], button:not(:disabled), input:not(:disabled), select:not(:disabled), textarea:not(:disabled), [tabindex]:not([tabindex="-1"])';
@@ -70,9 +70,9 @@ export default function ModalFilters({ categories, filterCount, isStarredOnly, j
 }) {
     const dialogRef = useRef<HTMLDialogElement>(null);
     const hasFilters = filterCount > 0;
+    const visibleJourneys = journeys.filter(journey => journey.markerCount > 0);
 
-    const years = [...new Set(journeys.map(journey => journey.year))]
-        .sort((first, second) => second - first);
+    const years = [...new Set(visibleJourneys.map(journey => journey.year))].sort((first, second) => second - first);
 
     function handleKeyDown(event: KeyboardEvent) {
         if (!dialogRef.current || event.key !== 'Tab') return;
@@ -101,9 +101,9 @@ export default function ModalFilters({ categories, filterCount, isStarredOnly, j
     }, []);
 
     return (
-        <div className="atlas-backdrop grid place-items-center z-[70] p-[20px]">
+        <div className="atlas-fade fixed grid inset-0 place-items-center z-[70] p-[20px] bg-ink-40 backdrop-blur-[4px] cursor-pointer">
             <dialog
-                className="atlas-modal flex flex-col overflow-hidden static max-h-[min(780px,calc(100dvh-40px))] w-[min(var(--width-medium),100%)] m-0 p-0 text-ink"
+                className="atlas-modal flex flex-col overflow-hidden static max-h-[min(780px,calc(100dvh-40px))] w-[min(calc((var(--width-shell)-var(--shell-pad)*2)/2),100%)] m-0 p-0 border border-haze rounded-[14px] bg-paper text-ink shadow-[0_30px_80px_var(--color-ink-30)] cursor-auto"
                 aria-labelledby="modal-filters-title"
                 aria-modal="true"
                 open
@@ -174,19 +174,25 @@ export default function ModalFilters({ categories, filterCount, isStarredOnly, j
                                         <time dateTime={String(year)}>{year}</time>
                                     </h4>
                                     <ul className="content-start flex flex-wrap gap-[8px]">
-                                        {journeys
+                                        {visibleJourneys
                                             .filter(journey => journey.year === year)
-                                            .sort((first, second) => first.order - second.order)
+                                            .sort((first, second) => second.order - first.order)
                                             .map((journey) => {
                                                 const isSelected = selectedJourneyIds.includes(journey.id);
+                                                const orderLabel = journey.isOrdered ? 'ordered itinerary' : 'unordered';
 
                                                 return (
                                                     <li key={journey.id}>
                                                         <button
-                                                            className={['atlas-chip', !journey.isOrdered && 'atlas-chip--dashed', isSelected && 'atlas-chip--selected', 'after:absolute after:content-[""] after:inset-x-0 after:inset-y-[-6px] relative max-w-full gap-[8px] px-[14px] py-[8px] wrap-anywhere'].filter(Boolean).join(' ')}
+                                                            className={[
+                                                                'atlas-chip',
+                                                                !journey.isOrdered && 'atlas-chip--dashed',
+                                                                isSelected && 'atlas-chip--selected',
+                                                                'after:absolute after:content-[""] after:inset-x-0 after:inset-y-[-6px] relative max-w-full gap-[8px] px-[14px] py-[8px] wrap-anywhere',
+                                                            ].filter(Boolean).join(' ')}
                                                             aria-pressed={isSelected}
                                                             onClick={() => onToggleJourney(journey.id)}
-                                                            title={journey.isOrdered ? `${journey.markerCount} markers, ordered itinerary` : `${journey.markerCount} markers, unordered`}
+                                                            title={`${journey.markerCount} markers, ${orderLabel}`}
                                                             type="button"
                                                         >
                                                             <span className="self-baseline font-serif text-[14px]">{journey.name}</span>

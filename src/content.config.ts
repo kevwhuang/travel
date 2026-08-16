@@ -4,7 +4,18 @@ import { z } from 'zod';
 
 import { CATEGORY_COLORS, CONTENT_DIR, LATITUDE_LIMIT, LONGITUDE_LIMIT } from '@lib/constants';
 
+const categories = defineCollection({
+    loader: file(`./${CONTENT_DIR}/categories.json`, {
+        parser: text => parseRecords(text, (category: { name: string }) => category.name.toLowerCase()),
+    }),
+    schema: z.object({
+        description: z.string().min(1),
+        name: z.string().min(1),
+    }),
+});
+
 const categoryIds = Object.keys(CATEGORY_COLORS) as (keyof typeof CATEGORY_COLORS)[];
+const positionSchema = z.tuple([z.number().min(-LONGITUDE_LIMIT).max(LONGITUDE_LIMIT), z.number().min(-LATITUDE_LIMIT).max(LATITUDE_LIMIT)]);
 
 const markerSchema = z.object({
     category: z.enum(categoryIds),
@@ -15,8 +26,6 @@ const markerSchema = z.object({
     starred: z.boolean().optional(),
 });
 
-const positionSchema = z.tuple([z.number().min(-LONGITUDE_LIMIT).max(LONGITUDE_LIMIT), z.number().min(-LATITUDE_LIMIT).max(LATITUDE_LIMIT)]);
-
 const regionSchema = z.object({
     boundary: z.array(z.array(z.array(positionSchema))),
     country: z.string().min(1),
@@ -26,16 +35,6 @@ const regionSchema = z.object({
 const activeRegions = defineCollection({
     loader: file(`./${CONTENT_DIR}/active.json`, { parser: parseRegionRecords }),
     schema: regionSchema,
-});
-
-const categories = defineCollection({
-    loader: file(`./${CONTENT_DIR}/categories.json`, {
-        parser: text => parseRecords(text, (category: { name: string }) => category.name.toLowerCase()),
-    }),
-    schema: z.object({
-        description: z.string().min(1),
-        name: z.string().min(1),
-    }),
 });
 
 const exploredRegions = defineCollection({
