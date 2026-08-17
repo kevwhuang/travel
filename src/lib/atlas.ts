@@ -17,7 +17,7 @@ async function buildAtlasData() {
         }))
         .sort((first, second) => first.id.localeCompare(second.id));
 
-    const markerCounts = new Map<string, number>();
+    const journeys: AtlasJourney[] = [];
     const markers: AtlasMarker[] = [];
     const markersByKey = new Map<string, AtlasMarker>();
     const newestFirstJourneys = [...journeyEntries].sort(compareJourneyEntries);
@@ -52,7 +52,14 @@ async function buildAtlasData() {
             markersByKey.set(getDedupeKey(atlasMarker), atlasMarker);
         }
 
-        markerCounts.set(entry.id, markerCount);
+        journeys.push({
+            id: entry.id,
+            isOrdered: entry.data.ordered,
+            markerCount,
+            name: entry.data.name,
+            order: parseJourneyOrder(entry.id),
+            year: parseJourneyYear(entry.id),
+        });
     }
 
     for (const entry of starredMarkerEntries) {
@@ -79,17 +86,6 @@ async function buildAtlasData() {
         markers.push(atlasMarker);
         markersByKey.set(getDedupeKey(atlasMarker), atlasMarker);
     }
-
-    const journeys: AtlasJourney[] = [...journeyEntries]
-        .sort(compareJourneyEntries)
-        .map(entry => ({
-            id: entry.id,
-            isOrdered: entry.data.ordered,
-            markerCount: markerCounts.get(entry.id) ?? 0,
-            name: entry.data.name,
-            order: parseJourneyOrder(entry.id),
-            year: parseJourneyYear(entry.id),
-        }));
 
     const regions: AtlasRegions = {
         features: [

@@ -1,6 +1,6 @@
 import { defineCollection } from 'astro:content';
 import { file, glob } from 'astro/loaders';
-import { z } from 'zod';
+import { z } from 'astro/zod';
 
 import { CATEGORY_COLORS, CONTENT_DIR, LATITUDE_LIMIT, LONGITUDE_LIMIT } from '@lib/constants';
 

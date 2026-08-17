@@ -9,12 +9,39 @@ import { useEffect, useRef, useState } from 'react';
 import CardMarker from '@components/CardMarker';
 import IconCategory from '@components/IconCategory';
 import IconStar from '@components/IconStar';
-import { CATEGORY_COLORS, COPYRIGHT_MARK, COVERAGE_REGIONS, CREDIT_MAP, MAP_FONT_STACKS, MAP_MAX_ZOOM, MAP_MIN_ZOOM, STAR_COLOR, STAR_LABEL, TILE_EXTENSION, WORLD_SOURCE_ID } from '@lib/constants';
+
+import {
+    CATEGORY_COLORS,
+    COPYRIGHT_MARK,
+    COVERAGE_REGIONS,
+    CREDIT_MAP,
+    MAP_FONT_STACKS,
+    MAP_MAX_ZOOM,
+    MAP_MIN_ZOOM,
+    STAR_COLOR,
+    STAR_LABEL,
+    TILE_EXTENSION,
+    WORLD_SOURCE_ID,
+} from '@lib/constants';
+
 import { getCategoryColor, isModifiedEvent } from '@lib/utils';
 import { loadAtlasState, saveAtlasState } from '@lib/store';
 import { prefersReducedMotion } from '@lib/motion';
 
-import type { ExpressionSpecification, FitBoundsOptions, FlyToOptions, GeoJSONFeature, GeoJSONSource, LayerSpecification, MapMouseEvent, MapWheelEvent, RequestParameters, StyleSpecification, VectorSourceSpecification } from 'maplibre-gl';
+import type {
+    ExpressionSpecification,
+    FitBoundsOptions,
+    FlyToOptions,
+    GeoJSONFeature,
+    GeoJSONSource,
+    LayerSpecification,
+    MapMouseEvent,
+    MapWheelEvent,
+    RequestParameters,
+    StyleSpecification,
+    VectorSourceSpecification,
+} from 'maplibre-gl';
+
 import type { Flavor } from '@protomaps/basemaps';
 import type { Root } from 'react-dom/client';
 
