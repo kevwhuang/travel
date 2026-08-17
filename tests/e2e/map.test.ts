@@ -421,6 +421,7 @@ test.describe('cross-view navigation', () => {
         await expect(popup).toBeVisible();
 
         const markerId = await popup.locator('[data-marker-id]').getAttribute('data-marker-id');
+
         const card = page.locator(`[data-marker-id="${markerId}"]`);
 
         await popup.getByRole('button', { name: 'Show in cards' }).click();
@@ -458,6 +459,7 @@ test.describe('cross-view navigation', () => {
         await expect(popup).toBeVisible();
 
         const markerId = await popup.locator('[data-marker-id]').getAttribute('data-marker-id');
+
         const card = page.locator(`[data-marker-id="${markerId}"]`);
 
         await popup.getByRole('button', { name: 'Show in cards' }).click();

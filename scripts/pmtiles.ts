@@ -12,13 +12,6 @@ import type { IncomingMessage, ServerResponse } from 'node:http';
 
 type Position = [number, number];
 
-interface AssetManifest {
-    build?: string;
-    fonts?: string[];
-    specs?: Record<string, TileSpec>;
-    version?: number;
-}
-
 interface ContentJourney {
     markers: ContentMarker[];
 }
@@ -42,17 +35,12 @@ interface CoverageGap {
     target: string;
 }
 
-interface TileSet extends TileSpec {
+interface TileSet {
+    bbox?: string;
+    maxZoom: number;
     name: string;
 }
 
-interface TileSpec {
-    bbox?: string;
-    maxZoom: number;
-}
-
-const ASSETS_VERSION = 1;
-const BASEMAP_BUILD = '20260812';
 const BASEMAP_URL = 'https://build.protomaps.com/20260812.pmtiles';
 const BINARY_MODE = 0o755;
 const COVERAGE_DECIMALS = 1;
@@ -80,10 +68,9 @@ const GLYPH_SPAN = 256;
 const GLYPH_URL = 'https://raw.githubusercontent.com/protomaps/basemaps-assets/main/fonts';
 const JOURNEYS_DIR = 'journeys';
 const JSON_EXTENSION = '.json';
-const MANIFEST_FILE = '.local.json';
 const POLYGON_DEPTH = 2;
 const RANGE_PATTERN = /^bytes=(\d*)-(\d*)$/;
-const REGION_FILES = ['active.json', 'explored.json'];
+const REGION_FILES = ['active.json', 'explored.json'] as const;
 const REQUEST_ORIGIN = 'http://localhost';
 const RETRY_ATTEMPTS = 3;
 const RETRY_BACKOFF = 500;
@@ -113,12 +100,11 @@ const TILE_SETS: TileSet[] = [
 const rootDir = fileURLToPath(new URL('..', import.meta.url));
 
 const assetsDir = join(rootDir, '.local');
-const cacheDir = join(rootDir, 'node_modules', '.cache', 'atlas');
 
 async function assertCoverage() {
-    const contentDir = join(rootDir, CONTENT_DIR);
+    const contentRoot = join(rootDir, CONTENT_DIR);
 
-    const journeysDir = join(contentDir, JOURNEYS_DIR);
+    const journeysDir = join(contentRoot, JOURNEYS_DIR);
 
     const entries = await readdir(journeysDir, { recursive: true });
 
@@ -130,14 +116,14 @@ async function assertCoverage() {
         }
     }
 
-    const starred = await readJson<ContentMarker[]>(join(contentDir, STARRED_FILE));
+    const starred = await readJson<ContentMarker[]>(join(contentRoot, STARRED_FILE));
 
     for (const marker of starred) {
         assertPoint(marker.lat, marker.lng, `marker '${marker.name}'`);
     }
 
     for (const file of REGION_FILES) {
-        const regions = await readJson<ContentRegion[]>(join(contentDir, file));
+        const regions = await readJson<ContentRegion[]>(join(contentRoot, file));
 
         for (const region of regions) {
             const label = `border vertex '${region.country} / ${region.state}'`;
@@ -157,13 +143,8 @@ function assertPoint(lat: number, lng: number, label: string) {
     throw new Error(`atlas: ${label} (${lat}, ${lng}) outside coverage margin \u2014 extend region '${gap.region}' ${gap.edge} to ${gap.target} or add a region`);
 }
 
-async function copyTree(source: string, destination: string) {
-    await mkdir(destination, { recursive: true });
-    await cp(source, destination, { filter: entry => !entry.endsWith(STAGING_EXTENSION), force: true, recursive: true });
-}
-
 async function download(url: string, destination: string) {
-    const stagingFile = getStagingPath(destination);
+    const stagingFile = getStagingFile(destination);
 
     await retry(async () => {
         const controller = new AbortController();
@@ -192,7 +173,7 @@ async function download(url: string, destination: string) {
         } finally {
             clearTimeout(timer);
         }
-    }, () => rm(stagingFile, { force: true }), `atlas: download failed ${url}`);
+    }, `atlas: ${url} download failed`, () => rm(stagingFile, { force: true }));
 
     await rename(stagingFile, destination);
 }
@@ -200,24 +181,8 @@ async function download(url: string, destination: string) {
 async function ensureAssets() {
     await assertCoverage();
 
-    if (await isComplete(assetsDir)) return;
-
-    await ensureCache();
-    await Promise.all(Object.values(ROUTE_DIRECTORIES).map(directory => copyTree(join(cacheDir, directory), join(assetsDir, directory))));
-    await writeManifest(assetsDir, Object.fromEntries(TILE_SETS.map(set => [set.name, toTileSpec(set)] as const)));
-}
-
-async function ensureCache() {
-    const manifest = await readManifest(cacheDir);
-
-    const specs: Record<string, TileSpec> = manifest?.build === BASEMAP_BUILD && manifest.version === ASSETS_VERSION ? { ...manifest.specs } : {};
-
     for (const set of TILE_SETS) {
-        await extractTiles(set, specs[set.name]);
-
-        specs[set.name] = toTileSpec(set);
-
-        await writeManifest(cacheDir, specs);
+        await extractTiles(set);
     }
 
     for (const stack of FONT_STACKS) {
@@ -226,7 +191,7 @@ async function ensureCache() {
 }
 
 async function ensureExtractor() {
-    const extractor = join(cacheDir, `${EXTRACTOR_FILE}-${EXTRACTOR_VERSION}`);
+    const extractor = join(assetsDir, `${EXTRACTOR_FILE}-${EXTRACTOR_VERSION}`);
 
     if (existsSync(extractor)) return extractor;
 
@@ -234,45 +199,46 @@ async function ensureExtractor() {
 
     if (!archiveName) throw new Error(`atlas: no go-pmtiles ${EXTRACTOR_VERSION} build for ${process.platform}-${process.arch}`);
 
-    const archive = join(cacheDir, archiveName);
+    const archive = join(assetsDir, archiveName);
+    const isZipped = archiveName.endsWith('.zip');
 
-    await mkdir(cacheDir, { recursive: true });
+    const command = isZipped ? ['unzip', '-qo', archive, EXTRACTOR_FILE, '-d', assetsDir] : ['tar', '-xzf', archive, '-C', assetsDir, EXTRACTOR_FILE];
+
+    await mkdir(assetsDir, { recursive: true });
     await download(`${EXTRACTOR_URL}/${archiveName}`, archive);
-    await unpack(archive, extractor);
+    await run(command);
+    await rename(join(assetsDir, EXTRACTOR_FILE), extractor);
+    await chmod(extractor, BINARY_MODE);
     await rm(archive, { force: true });
 
     return extractor;
 }
 
-async function extractTiles(set: TileSet, spec: TileSpec | undefined) {
-    const file = getTileFile(cacheDir, set.name);
+async function extractTiles(set: TileSet) {
+    const file = join(assetsDir, TILES_DIR, `${set.name}${TILE_EXTENSION}`);
 
-    if (existsSync(file) && isSpecMatched(set, spec)) return;
+    if (existsSync(file)) return;
 
     const extractor = await ensureExtractor();
 
     const flags = [`--maxzoom=${set.maxZoom}`];
-    const stagingFile = getStagingPath(file);
+    const stagingFile = getStagingFile(file);
 
     if (set.bbox) flags.push(`--bbox=${set.bbox}`);
 
-    await mkdir(join(cacheDir, TILES_DIR), { recursive: true });
-    await rm(file, { force: true });
+    await mkdir(join(assetsDir, TILES_DIR), { recursive: true });
 
     await retry(
         () => run([extractor, 'extract', BASEMAP_URL, stagingFile, ...flags]),
+        `atlas: ${set.name} extract failed`,
         () => rm(stagingFile, { force: true }),
-        `atlas: extract failed ${set.name}`,
     );
 
     await rename(stagingFile, file);
 }
 
 async function fetchStack(stack: string) {
-    const directory = join(cacheDir, FONTS_DIR, stack);
-
-    if (await getGlyphRangeCount(directory) >= GLYPH_RANGES_PER_STACK) return;
-
+    const directory = join(assetsDir, FONTS_DIR, stack);
     const glyphRanges = Array.from({ length: GLYPH_RANGES_PER_STACK }, (_, index) => `${index * GLYPH_SPAN}-${(index + 1) * GLYPH_SPAN - 1}`);
 
     const pendingRanges = glyphRanges.values();
@@ -300,7 +266,7 @@ function findCoverageGap(lat: number, lng: number) {
             { edge: 'west', region: region.name, shortfall: region.west + COVERAGE_MARGIN - lng, target: getMarginEdge(lng, false) },
         ];
 
-        const widest = gaps.reduce((first, second) => (second.shortfall > first.shortfall ? second : first));
+        const widest = gaps.reduce((widestGap, gap) => (gap.shortfall > widestGap.shortfall ? gap : widestGap));
 
         if (widest.shortfall <= 0) return null;
 
@@ -308,12 +274,6 @@ function findCoverageGap(lat: number, lng: number) {
     }
 
     return nearest;
-}
-
-async function getGlyphRangeCount(directory: string) {
-    const entries = await readdir(directory).catch(() => []);
-
-    return entries.filter(file => file.endsWith(GLYPH_EXTENSION)).length;
 }
 
 function getMarginEdge(value: number, isUpper: boolean) {
@@ -324,34 +284,8 @@ function getMarginEdge(value: number, isUpper: boolean) {
     return (steps * COVERAGE_STEP).toFixed(COVERAGE_DECIMALS);
 }
 
-function getStagingPath(file: string) {
+function getStagingFile(file: string) {
     return `${file}.${process.pid}${STAGING_EXTENSION}`;
-}
-
-function getTileFile(root: string, name: string) {
-    return join(root, TILES_DIR, `${name}${TILE_EXTENSION}`);
-}
-
-async function isComplete(root: string) {
-    const manifest = await readManifest(root);
-
-    if (!manifest || manifest.build !== BASEMAP_BUILD || manifest.version !== ASSETS_VERSION) return false;
-    if (manifest.fonts?.length !== FONT_STACKS.length) return false;
-    if (!FONT_STACKS.every(stack => manifest.fonts?.includes(stack))) return false;
-
-    for (const set of TILE_SETS) {
-        if (!existsSync(getTileFile(root, set.name)) || !isSpecMatched(set, manifest.specs?.[set.name])) return false;
-    }
-
-    for (const stack of FONT_STACKS) {
-        if (await getGlyphRangeCount(join(root, FONTS_DIR, stack)) < GLYPH_RANGES_PER_STACK) return false;
-    }
-
-    return true;
-}
-
-function isSpecMatched(set: TileSet, spec: TileSpec | undefined) {
-    return spec?.bbox === set.bbox && spec?.maxZoom === set.maxZoom;
 }
 
 function parseRange(header: string, size: number) {
@@ -369,14 +303,6 @@ function parseRange(header: string, size: number) {
 
 async function readJson<Value>(file: string) {
     return JSON.parse(await readFile(file, 'utf-8')) as Value;
-}
-
-async function readManifest(root: string) {
-    try {
-        return await readJson<AssetManifest>(join(root, MANIFEST_FILE));
-    } catch {
-        return null;
-    }
 }
 
 function resolveAsset(url: string) {
@@ -399,7 +325,7 @@ function resolveAsset(url: string) {
     return file.startsWith(`${directory}${sep}`) ? file : '';
 }
 
-async function retry<Result>(operation: () => Promise<Result>, recover: () => Promise<unknown>, message: string) {
+async function retry<Result>(operation: () => Promise<Result>, message: string, recover: () => Promise<unknown>) {
     let failure: unknown;
 
     for (let attempt = 0; attempt < RETRY_ATTEMPTS; attempt++) {
@@ -478,27 +404,6 @@ function serveAsset(request: IncomingMessage, response: ServerResponse, next: (e
     createReadStream(file, { end: range.end, start: range.start }).pipe(response);
 }
 
-function toTileSpec(set: TileSet) {
-    return { bbox: set.bbox, maxZoom: set.maxZoom };
-}
-
-async function unpack(archive: string, extractor: string) {
-    const isZipped = archive.endsWith('.zip');
-
-    const command = isZipped ? ['unzip', '-qo', archive, EXTRACTOR_FILE, '-d', cacheDir] : ['tar', '-xzf', archive, '-C', cacheDir, EXTRACTOR_FILE];
-
-    await run(command);
-    await rename(join(cacheDir, EXTRACTOR_FILE), extractor);
-    await chmod(extractor, BINARY_MODE);
-}
-
-async function writeManifest(root: string, specs: Record<string, TileSpec>) {
-    const manifest = { build: BASEMAP_BUILD, fonts: FONT_STACKS, specs, version: ASSETS_VERSION };
-
-    await mkdir(root, { recursive: true });
-    await writeFile(join(root, MANIFEST_FILE), `${JSON.stringify(manifest, null, 4)}\n`);
-}
-
 if (import.meta.main) await ensureAssets();
 
 export default function pmtiles(): AstroIntegration {
@@ -507,8 +412,13 @@ export default function pmtiles(): AstroIntegration {
             'astro:build:done': async ({ dir }) => {
                 const output = fileURLToPath(dir);
 
-                await Promise.all(Object.entries(ROUTE_DIRECTORIES)
-                    .map(([route, directory]) => copyTree(join(assetsDir, directory), join(output, route))));
+                await Promise.all(Object.entries(ROUTE_DIRECTORIES).map(async ([route, directory]) => {
+                    const destination = join(output, route);
+                    const source = join(assetsDir, directory);
+
+                    await mkdir(destination, { recursive: true });
+                    await cp(source, destination, { filter: entry => !entry.endsWith(STAGING_EXTENSION), force: true, recursive: true });
+                }));
             },
             'astro:build:start': ensureAssets,
             'astro:server:setup': async ({ server }) => {

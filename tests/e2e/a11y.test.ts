@@ -47,6 +47,7 @@ test.describe('document structure', () => {
             await page.locator('main').waitFor();
 
             const structure = await getStructure(page);
+
             const skippedLevels = structure.headingLevels.filter((level, index) => level > (structure.headingLevels[index - 1] ?? 0) + 1);
 
             expect(structure.mainCount).toBe(1);
@@ -68,6 +69,7 @@ test.describe('document structure', () => {
         await expect(page.locator('h1')).toHaveText('Atlas');
 
         const structure = await getStructure(page);
+
         const skippedLevels = structure.headingLevels.filter((level, index) => level > (structure.headingLevels[index - 1] ?? 0) + 1);
 
         expect(structure.h1Count).toBe(1);

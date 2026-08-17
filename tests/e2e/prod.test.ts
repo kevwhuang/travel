@@ -40,6 +40,7 @@ test.describe('production pages', () => {
 
         expect(response.status()).toBe(200);
         expect(response.headers()['content-type']).toContain('text/html');
+
         expect(await response.text()).toContain('<title>Travel</title>');
     });
 
@@ -48,6 +49,7 @@ test.describe('production pages', () => {
 
         expect(response.status()).toBe(404);
         expect(response.headers()['content-type']).toContain('text/html');
+
         expect(await response.text()).toContain('<title>Page Not Found \u2014 Travel</title>');
     });
 
@@ -87,6 +89,7 @@ test.describe('production api', () => {
 
         expect(response.status()).toBe(404);
         expect(response.headers()['content-type']).toContain('application/json');
+
         expect(await response.json()).toEqual({ error: 'Not found' });
     });
 });
@@ -96,6 +99,7 @@ test.describe('production assets', () => {
         const response = await request.get(`${BASE_URL}/robots.txt`);
 
         expect(response.status()).toBe(200);
+
         expect(await response.text()).toContain(`Sitemap: ${BASE_URL}/sitemap-index.xml`);
     });
 

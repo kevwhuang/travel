@@ -283,6 +283,7 @@ describe('buildAtlasData', () => {
         });
 
         const { journeys, markers } = await atlas.getAtlasData();
+
         const repeatStops = markers.filter(marker => marker.journeyId === '2025_1_repeat');
 
         expect(repeatStops.map(marker => [marker.name, marker.stopNumber])).toEqual([['First', 1], ['Last', 2]]);
@@ -328,6 +329,7 @@ describe('getAtlasData', () => {
         const second = getAtlasData();
 
         expect(second).toBe(first);
+
         expect(await second).toBe(await first);
     });
 });

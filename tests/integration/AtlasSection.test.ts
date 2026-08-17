@@ -13,6 +13,7 @@ describe('AtlasSection', () => {
         const container = await AstroContainer.create();
 
         container.addServerRenderer({ name: '@astrojs/react', renderer: (await import('@astrojs/react/server.js')).default });
+
         container.addClientRenderer({ entrypoint: '@astrojs/react/client.js', name: '@astrojs/react' });
 
         html = await container.renderToString(AtlasSection);

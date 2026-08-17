@@ -4,6 +4,14 @@ import { z } from 'astro/zod';
 
 import { CATEGORY_COLORS, CONTENT_DIR, LATITUDE_LIMIT, LONGITUDE_LIMIT } from '@lib/constants';
 
+function parseRecords<Entry>(text: string, getKey: (entry: Entry) => string) {
+    return Object.fromEntries((JSON.parse(text) as Entry[]).map(entry => [getKey(entry), entry]));
+}
+
+function parseRegionRecords(text: string) {
+    return parseRecords(text, (region: { country: string; state: string }) => `${region.country}-${region.state}`.toLowerCase());
+}
+
 const categories = defineCollection({
     loader: file(`./${CONTENT_DIR}/categories.json`, {
         parser: text => parseRecords(text, (category: { name: string }) => category.name.toLowerCase()),
@@ -55,13 +63,5 @@ const starredMarkers = defineCollection({
     loader: file(`./${CONTENT_DIR}/starred.json`, { parser: text => parseRecords(text, (marker: { name: string }) => marker.name.toLowerCase()) }),
     schema: markerSchema.omit({ starred: true }),
 });
-
-function parseRecords<Entry>(text: string, getKey: (entry: Entry) => string) {
-    return Object.fromEntries((JSON.parse(text) as Entry[]).map(entry => [getKey(entry), entry]));
-}
-
-function parseRegionRecords(text: string) {
-    return parseRecords(text, (region: { country: string; state: string }) => `${region.country}-${region.state}`.toLowerCase());
-}
 
 export const collections = { activeRegions, categories, exploredRegions, journeys, starredMarkers };

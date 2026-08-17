@@ -167,6 +167,7 @@ test.describe('storage hardening', () => {
         await expect(page.locator('.atlas-card').first()).toBeVisible();
 
         expect(await getStoredState(page)).toBeNull();
+
         expect(errors).toEqual([]);
     });
 });
