@@ -9,6 +9,9 @@ import pmtiles from './scripts/pmtiles';
 
 export default defineConfig({
     adapter: netlify(),
+    build: {
+        format: 'file',
+    },
     devToolbar: {
         enabled: false,
     },
@@ -19,6 +22,7 @@ export default defineConfig({
         sitemap({ lastmod: new Date() }),
     ],
     site: 'https://travel.aephonics.com',
+    trailingSlash: 'never',
     vite: {
         plugins: [tailwind()],
     },

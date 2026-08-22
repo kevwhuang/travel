@@ -41,7 +41,8 @@ interface TileSet {
     name: string;
 }
 
-const BASEMAP_URL = 'https://build.protomaps.com/20260812.pmtiles';
+const BASEMAP_LOOKBACK_DAYS = 14;
+const BASEMAP_URL = 'https://build.protomaps.com';
 const BINARY_MODE = 0o755;
 const COVERAGE_DECIMALS = 1;
 const COVERAGE_MARGIN = 1;
@@ -66,8 +67,10 @@ const GLYPH_CONTENT_TYPE = 'application/x-protobuf';
 const GLYPH_EXTENSION = '.pbf';
 const GLYPH_SPAN = 256;
 const GLYPH_URL = 'https://raw.githubusercontent.com/protomaps/basemaps-assets/main/fonts';
+const ISO_DATE_LENGTH = 10;
 const JOURNEYS_DIR = 'journeys';
 const JSON_EXTENSION = '.json';
+const MILLISECONDS_PER_DAY = 86_400_000;
 const POLYGON_DEPTH = 2;
 const RANGE_PATTERN = /^bytes=(\d*)-(\d*)$/;
 const REGION_FILES = ['active.json', 'explored.json'] as const;
@@ -100,6 +103,8 @@ const TILE_SETS: TileSet[] = [
 const rootDir = fileURLToPath(new URL('..', import.meta.url));
 
 const assetsDir = join(rootDir, '.local');
+
+let basemapUrl = '';
 
 async function assertCoverage() {
     const contentRoot = join(rootDir, CONTENT_DIR);
@@ -140,7 +145,7 @@ function assertPoint(lat: number, lng: number, label: string) {
 
     if (!gap) return;
 
-    throw new Error(`atlas: ${label} (${lat}, ${lng}) outside coverage margin \u2014 extend region '${gap.region}' ${gap.edge} to ${gap.target} or add a region`);
+    throw new Error(`${label} (${lat}, ${lng}) outside coverage margin \u2014 extend region '${gap.region}' ${gap.edge} to ${gap.target} or add a region`);
 }
 
 async function download(url: string, destination: string) {
@@ -153,7 +158,7 @@ async function download(url: string, destination: string) {
 
         function arm() {
             clearTimeout(timer);
-            timer = setTimeout(() => controller.abort(new Error(`atlas: transfer idle for ${FETCH_IDLE_TIMEOUT}ms`)), FETCH_IDLE_TIMEOUT);
+            timer = setTimeout(() => controller.abort(new Error(`transfer idle for ${FETCH_IDLE_TIMEOUT}ms`)), FETCH_IDLE_TIMEOUT);
         }
 
         arm();
@@ -161,8 +166,8 @@ async function download(url: string, destination: string) {
         try {
             const response = await fetch(url, { signal: controller.signal });
 
-            if (!response.ok) throw new Error(`atlas: ${url} answered ${response.status} ${response.statusText}`);
-            if (!response.body) throw new Error(`atlas: ${url} answered without a body`);
+            if (!response.ok) throw new Error(`${url} answered ${response.status} ${response.statusText}`);
+            if (!response.body) throw new Error(`${url} answered without a body`);
 
             await writeFile(stagingFile, response.body.pipeThrough(new TransformStream({
                 transform(chunk, target) {
@@ -173,7 +178,7 @@ async function download(url: string, destination: string) {
         } finally {
             clearTimeout(timer);
         }
-    }, `atlas: ${url} download failed`, () => rm(stagingFile, { force: true }));
+    }, `${url} download failed`, () => rm(stagingFile, { force: true }));
 
     await rename(stagingFile, destination);
 }
@@ -197,7 +202,7 @@ async function ensureExtractor() {
 
     const archiveName = EXTRACTOR_ARCHIVES[`${process.platform}-${process.arch}`];
 
-    if (!archiveName) throw new Error(`atlas: no go-pmtiles ${EXTRACTOR_VERSION} build for ${process.platform}-${process.arch}`);
+    if (!archiveName) throw new Error(`no go-pmtiles ${EXTRACTOR_VERSION} build for ${process.platform}-${process.arch}`);
 
     const archive = join(assetsDir, archiveName);
     const isZipped = archiveName.endsWith('.zip');
@@ -219,6 +224,7 @@ async function extractTiles(set: TileSet) {
 
     if (existsSync(file)) return;
 
+    const basemap = await resolveBasemap();
     const extractor = await ensureExtractor();
 
     const flags = [`--maxzoom=${set.maxZoom}`];
@@ -229,8 +235,8 @@ async function extractTiles(set: TileSet) {
     await mkdir(join(assetsDir, TILES_DIR), { recursive: true });
 
     await retry(
-        () => run([extractor, 'extract', BASEMAP_URL, stagingFile, ...flags]),
-        `atlas: ${set.name} extract failed`,
+        () => run([extractor, 'extract', basemap, stagingFile, ...flags]),
+        `${set.name} extract failed`,
         () => rm(stagingFile, { force: true }),
     );
 
@@ -325,6 +331,32 @@ function resolveAsset(url: string) {
     return file.startsWith(`${directory}${sep}`) ? file : '';
 }
 
+async function resolveBasemap() {
+    if (basemapUrl) return basemapUrl;
+
+    const now = Date.now();
+
+    for (let daysAgo = 0; daysAgo < BASEMAP_LOOKBACK_DAYS; daysAgo++) {
+        const stamp = new Date(now - daysAgo * MILLISECONDS_PER_DAY).toISOString().slice(0, ISO_DATE_LENGTH).replaceAll('-', '');
+
+        const candidate = `${BASEMAP_URL}/${stamp}${TILE_EXTENSION}`;
+
+        try {
+            const response = await fetch(candidate, { method: 'HEAD', signal: AbortSignal.timeout(FETCH_IDLE_TIMEOUT) });
+
+            if (response.ok) {
+                basemapUrl = candidate;
+
+                return basemapUrl;
+            }
+        } catch {
+            continue;
+        }
+    }
+
+    throw new Error(`no basemap build at ${BASEMAP_URL} within ${BASEMAP_LOOKBACK_DAYS} days`);
+}
+
 async function retry<Result>(operation: () => Promise<Result>, message: string, recover: () => Promise<unknown>) {
     let failure: unknown;
 
@@ -351,7 +383,7 @@ function run(command: string[]) {
 
         child.on('close', (status) => {
             if (status === 0) fulfill();
-            else reject(new Error(`atlas: ${command.join(' ')} exited with ${status}`));
+            else reject(new Error(`${command.join(' ')} exited with ${status}`));
         });
 
         child.on('error', reject);

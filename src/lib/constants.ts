@@ -45,6 +45,11 @@ export const MAP_FONT_STACKS = {
 
 export const MAP_MAX_ZOOM = 15;
 export const MAP_MIN_ZOOM = 2;
+
+export const ROUTES = [
+    { href: '/', label: 'Home' },
+] as const;
+
 export const SEARCH_LENGTH_LIMIT = 100;
 export const SEARCH_SHORTCUT = '/';
 export const STAR_COLOR = 'var(--color-gold)';

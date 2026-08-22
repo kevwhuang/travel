@@ -2,12 +2,22 @@ import { expect, test } from '@playwright/test';
 import { join } from 'node:path';
 import { readFileSync, readdirSync } from 'node:fs';
 
-import { CONTENT_DIR } from '../../src/lib/constants';
+import { CONTENT_DIR, ROUTES } from '../../src/lib/constants';
 
 interface ContentMarker {
     lat: number;
     lng: number;
     name: string;
+}
+
+interface StructuredData {
+    '@context': string;
+    '@graph': {
+        '@type': string;
+        'itemListElement'?: unknown[];
+        'name'?: string;
+        'url'?: string;
+    }[];
 }
 
 const DESCRIPTION_MAX = 160;
@@ -90,11 +100,15 @@ test.describe('index page', () => {
     test('embeds parseable json-ld website data', async ({ page }) => {
         const raw = await page.locator('script[type="application/ld+json"]').textContent();
 
-        const data = JSON.parse(String(raw)) as { '@type': string; 'name': string; 'url': string };
+        const data = JSON.parse(String(raw)) as StructuredData;
 
-        expect(data['@type']).toBe('WebSite');
-        expect(data.name).toBe('Travel');
-        expect(data.url).toContain('travel.aephonics.com');
+        const itemList = data['@graph'].find(node => node['@type'] === 'ItemList');
+        const website = data['@graph'].find(node => node['@type'] === 'WebSite');
+
+        expect(data['@context']).toBe('https://schema.org');
+        expect(itemList?.itemListElement).toHaveLength(ROUTES.length);
+        expect(website?.name).toBe('Travel');
+        expect(website?.url).toContain('travel.aephonics.com');
     });
 
     test('fits the default viewport without horizontal overflow', async ({ page }) => {
