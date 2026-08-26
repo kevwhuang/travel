@@ -77,7 +77,7 @@ function getJourneyCount(markers: AtlasMarker[]): number {
 function getJourneyMarker(): AtlasMarker {
     const marker = atlasData.markers.find(candidate => candidate.journeyId !== null);
 
-    if (!marker) throw new Error('Expected a journey-backed marker in content');
+    if (!marker) throw new Error('Expected a journey-backed marker in content.');
 
     return marker;
 }

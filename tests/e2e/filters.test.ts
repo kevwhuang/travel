@@ -27,7 +27,7 @@ interface JourneyFile {
 }
 
 const CANVAS_TIMEOUT = 15_000;
-const EMPTY_STATUS = 'No markers match';
+const EMPTY_STATUS = 'No markers match.';
 const STORAGE_KEY = 'travel_atlas';
 const STORAGE_POLL = { timeout: 5_000 } as const;
 
@@ -41,7 +41,7 @@ const starredCount = markers.filter(marker => marker.isStarred).length;
 const totalCount = markers.length;
 
 async function expectFooterCount(page: Page, shown: number) {
-    await expect(getDialog(page).getByText(`Showing ${shown} of ${totalCount}`)).toBeVisible();
+    await expect(getDialog(page).getByText(`Showing ${shown} of ${totalCount}.`)).toBeVisible();
 }
 
 function getCategoryCount(categoryId: string) {
@@ -67,7 +67,7 @@ function getFilterCategory() {
         return count > 0 && count < markers.length;
     });
 
-    if (!category) throw new Error('expected a category matching some but not all markers');
+    if (!category) throw new Error('Expected a category matching some but not all markers.');
 
     return category;
 }
@@ -88,7 +88,7 @@ function getFilterJourney() {
         return { id: journeyId, markerCount, name: journey.name };
     }
 
-    throw new Error('expected a journey with at least one marker');
+    throw new Error('Expected a journey with at least one marker.');
 }
 
 function getStatus(page: Page) {

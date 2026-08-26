@@ -25,17 +25,9 @@
     --color-teal: #54b8a5;
     --color-terracotta: #e2725b;
     --color-violet: #9b72cf;
-    --font-mono:
-        'Fragment Mono',
-        monospace;
-    --font-sans:
-        'Schibsted Grotesk',
-        system-ui,
-        sans-serif;
-    --font-serif:
-        'Gloock',
-        Georgia,
-        serif;
+    --font-mono: var(--font-fragment-mono);
+    --font-sans: var(--font-schibsted-grotesk);
+    --font-serif: var(--font-gloock);
 }
 
 :root {

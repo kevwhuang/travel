@@ -45,7 +45,7 @@ interface AtlasState {
 
 const DEFAULT_VIEW = 'map';
 const EDITABLE_TAGS = new Set(['INPUT', 'SELECT', 'TEXTAREA']);
-const EMPTY_STATUS = 'No markers match';
+const EMPTY_STATUS = 'No markers match.';
 const HIGHLIGHT_DURATION = 2_600;
 
 const ViewMap = lazy(() => import('@components/ViewMap'));
@@ -436,7 +436,7 @@ function Skeleton() {
                 <div className="atlas-pulse grid place-items-center h-[64px] w-[64px] border border-dashed border-storm rounded-full text-storm">
                     <IconNorth size={22} strokeWidth={1.6} />
                 </div>
-                <p className="font-serif text-[clamp(20px,calc(18px+0.625vw),26px)] text-storm select-none">Loading</p>
+                <p className="font-serif text-[clamp(20px,calc(18px+0.625vw),26px)] text-storm select-none">Loading.</p>
             </div>
         </div>
     );

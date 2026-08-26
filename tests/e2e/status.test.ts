@@ -51,7 +51,7 @@ test.describe('api', () => {
 
         const body: Record<string, unknown> = await response.json();
 
-        expect(body.error).toBe('Not found');
+        expect(body.error).toBe('Not found.');
     });
 
     test('returns a json 404 for an unknown api path on post', async ({ request }) => {
@@ -62,7 +62,7 @@ test.describe('api', () => {
 
         const body: Record<string, unknown> = await response.json();
 
-        expect(body.error).toBe('Not found');
+        expect(body.error).toBe('Not found.');
     });
 
     test('returns a json 404 for an unknown api path on delete', async ({ request }) => {
@@ -73,7 +73,7 @@ test.describe('api', () => {
 
         const body: Record<string, unknown> = await response.json();
 
-        expect(body.error).toBe('Not found');
+        expect(body.error).toBe('Not found.');
     });
 });
 

@@ -231,8 +231,8 @@ describe('ModalFilters', () => {
         const html = renderModal();
 
         expect(atlasData.markers.length).toBeGreaterThan(0);
-        expect(html).toContain(`>Showing ${atlasData.markers.length} of ${atlasData.markers.length}</span>`);
-        expect(filteredHtml).toContain(`>Showing 12 of ${atlasData.markers.length}</span>`);
+        expect(html).toContain(`>Showing ${atlasData.markers.length} of ${atlasData.markers.length}.</span>`);
+        expect(filteredHtml).toContain(`>Showing 12 of ${atlasData.markers.length}.</span>`);
     });
 
     test('disables clear until a filter is active', () => {

@@ -3,7 +3,7 @@ import react from '@astrojs/react';
 import robots from 'astro-robots-txt';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@tailwindcss/vite';
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
 
 import pmtiles from './scripts/pmtiles';
 
@@ -15,6 +15,37 @@ export default defineConfig({
     devToolbar: {
         enabled: false,
     },
+    fonts: [
+        {
+            cssVariable: '--font-fragment-mono',
+            display: 'block',
+            fallbacks: ['Courier New', 'monospace'],
+            name: 'Fragment Mono',
+            provider: fontProviders.fontsource(),
+            styles: ['normal'],
+            subsets: ['latin'],
+            weights: [400],
+        },
+        {
+            cssVariable: '--font-gloock',
+            display: 'block',
+            fallbacks: ['Georgia', 'serif'],
+            name: 'Gloock',
+            provider: fontProviders.fontsource(),
+            styles: ['normal'],
+            subsets: ['latin'],
+            weights: [400],
+        },
+        {
+            cssVariable: '--font-schibsted-grotesk',
+            display: 'block',
+            name: 'Schibsted Grotesk',
+            provider: fontProviders.fontsource(),
+            styles: ['normal'],
+            subsets: ['latin'],
+            weights: [400, 500, 600],
+        },
+    ],
     integrations: [
         pmtiles(),
         react(),

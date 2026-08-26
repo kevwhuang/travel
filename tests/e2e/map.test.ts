@@ -116,7 +116,7 @@ function getFilterJourney() {
         return { bounds, name: entry.name };
     }
 
-    throw new Error('expected a journey of unique markers away from the default camera');
+    throw new Error('Expected a journey of unique markers away from the default camera.');
 }
 
 function getPairMarkers(): [ContentMarker, ContentMarker] {
@@ -138,7 +138,7 @@ function getPairMarkers(): [ContentMarker, ContentMarker] {
         if (second) return [first, second];
     }
 
-    throw new Error('expected two solitary covered pins sharing a viewport');
+    throw new Error('Expected two solitary covered pins sharing a viewport.');
 }
 
 function getSearchInput(page: Page) {

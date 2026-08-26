@@ -86,7 +86,7 @@ describe('loadAtlasState', () => {
     test('returns null when reading storage throws', () => {
         vi.stubGlobal('localStorage', {
             getItem: vi.fn(() => {
-                throw new Error('denied');
+                throw new Error('Denied.');
             }),
         });
 
@@ -239,7 +239,7 @@ describe('saveAtlasState', () => {
         const storage = createLocalStorage();
 
         storage.setItem.mockImplementation(() => {
-            throw new Error('quota exceeded');
+            throw new Error('Quota exceeded.');
         });
 
         expect(() => saveAtlasState({ view: 'map' })).not.toThrow();

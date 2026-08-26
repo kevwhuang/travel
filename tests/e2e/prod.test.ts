@@ -90,7 +90,7 @@ test.describe('production api', () => {
         expect(response.status()).toBe(404);
         expect(response.headers()['content-type']).toContain('application/json');
 
-        expect(await response.json()).toEqual({ error: 'Not found' });
+        expect(await response.json()).toEqual({ error: 'Not found.' });
     });
 });
 

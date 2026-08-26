@@ -1,10 +1,6 @@
 ---
-import '@fontsource/fragment-mono/400.css';
-import '@fontsource/gloock/400.css';
-import '@fontsource/schibsted-grotesk/400.css';
-import '@fontsource/schibsted-grotesk/500.css';
-import '@fontsource/schibsted-grotesk/600.css';
 import { ClientRouter } from 'astro:transitions';
+import { Font } from 'astro:assets';
 
 import '@/global.css';
 import '@/styles.css';
@@ -85,9 +81,12 @@ const structuredData = {
         <meta content={ogImageUrl} name="twitter:image" />
         <meta content={title} name="twitter:title" />
         <script is:inline set:html={JSON.stringify(structuredData)} type="application/ld+json" />
+        <Font cssVariable="--font-fragment-mono" preload />
+        <Font cssVariable="--font-gloock" preload />
+        <Font cssVariable="--font-schibsted-grotesk" preload />
         <ClientRouter />
     </head>
-    <body class="flex flex-col min-h-svh antialiased font-sans bg-paper text-ink">
+    <body class="flex flex-col min-h-svh antialiased bg-paper text-ink">
         <main class="flex flex-1 flex-col">
             <slot />
         </main>

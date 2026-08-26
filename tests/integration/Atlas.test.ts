@@ -25,7 +25,7 @@ describe('Atlas', () => {
     test('renders the loading skeleton while the lazy map view is unresolved', () => {
         expect(html).toMatch(/<div class="atlas-fade[^"]*" role="status">/);
         expect(html).toContain('atlas-pulse');
-        expect(html).toContain('>Loading</p>');
+        expect(html).toContain('>Loading.</p>');
     });
 
     test('renders the filter, search, credit, and view toggle controls', () => {

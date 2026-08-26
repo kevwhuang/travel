@@ -21,7 +21,7 @@ interface JourneyFile {
 }
 
 const CANVAS_TIMEOUT = 15_000;
-const EMPTY_STATUS = 'No markers match';
+const EMPTY_STATUS = 'No markers match.';
 const PREFIX_LENGTH = 6;
 const STORAGE_KEY = 'travel_atlas';
 const STORAGE_POLL = { timeout: 5_000 } as const;
@@ -58,7 +58,7 @@ function getNarrowingPrefix() {
         if (matches > 0 && matches < markers.length) return prefix;
     }
 
-    throw new Error('expected a marker name prefix matching some but not all markers');
+    throw new Error('Expected a marker name prefix matching some but not all markers.');
 }
 
 function getSearchControl(page: Page) {
@@ -230,7 +230,7 @@ test.describe('search in the cards view', () => {
     test('folds diacritics so an ascii query matches an accented marker name', async ({ page }) => {
         expect(foldText('M\u00e9rida')).toBe('merida');
 
-        if (!accentedMarker) throw new Error('expected a marker name with a diacritic');
+        if (!accentedMarker) throw new Error('Expected a marker name with a diacritic.');
 
         const query = foldText(accentedMarker.name);
 

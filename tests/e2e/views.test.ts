@@ -143,7 +143,7 @@ test.describe('storage hardening', () => {
 
         await gotoReady(page);
         await expect(page.locator('search input')).toHaveValue(cappedSearch, POLL);
-        await expect(page.locator('p[role="status"]')).toHaveText('No markers match');
+        await expect(page.locator('p[role="status"]')).toHaveText('No markers match.');
 
         await expect.poll(() => getStoredState(page), POLL).toEqual({ ...SANITIZED_DEFAULTS, searchValue: cappedSearch });
 
@@ -154,7 +154,7 @@ test.describe('storage hardening', () => {
         await page.addInitScript(() => {
             Object.defineProperty(Storage.prototype, 'setItem', {
                 value: () => {
-                    throw new Error('storage denied');
+                    throw new Error('Storage denied.');
                 },
             });
         });

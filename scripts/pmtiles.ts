@@ -117,21 +117,21 @@ async function assertCoverage() {
         const journey = await readJson<ContentJourney>(join(journeysDir, file));
 
         for (const marker of journey.markers) {
-            assertPoint(marker.lat, marker.lng, `marker '${marker.name}'`);
+            assertPoint(marker.lat, marker.lng, `Marker '${marker.name}'`);
         }
     }
 
     const starred = await readJson<ContentMarker[]>(join(contentRoot, STARRED_FILE));
 
     for (const marker of starred) {
-        assertPoint(marker.lat, marker.lng, `marker '${marker.name}'`);
+        assertPoint(marker.lat, marker.lng, `Marker '${marker.name}'`);
     }
 
     for (const file of REGION_FILES) {
         const regions = await readJson<ContentRegion[]>(join(contentRoot, file));
 
         for (const region of regions) {
-            const label = `border vertex '${region.country} / ${region.state}'`;
+            const label = `Border vertex '${region.country} / ${region.state}'`;
 
             for (const [lng, lat] of region.boundary.flat(POLYGON_DEPTH)) {
                 assertPoint(lat, lng, label);
@@ -145,7 +145,7 @@ function assertPoint(lat: number, lng: number, label: string) {
 
     if (!gap) return;
 
-    throw new Error(`${label} (${lat}, ${lng}) outside coverage margin \u2014 extend region '${gap.region}' ${gap.edge} to ${gap.target} or add a region`);
+    throw new Error(`${label} (${lat}, ${lng}) is outside the coverage margin \u2014 extend region '${gap.region}' ${gap.edge} to ${gap.target} or add a region.`);
 }
 
 async function download(url: string, destination: string) {
@@ -158,7 +158,7 @@ async function download(url: string, destination: string) {
 
         function arm() {
             clearTimeout(timer);
-            timer = setTimeout(() => controller.abort(new Error(`transfer idle for ${FETCH_IDLE_TIMEOUT}ms`)), FETCH_IDLE_TIMEOUT);
+            timer = setTimeout(() => controller.abort(new Error(`The transfer went idle for ${FETCH_IDLE_TIMEOUT}ms.`)), FETCH_IDLE_TIMEOUT);
         }
 
         arm();
@@ -166,8 +166,8 @@ async function download(url: string, destination: string) {
         try {
             const response = await fetch(url, { signal: controller.signal });
 
-            if (!response.ok) throw new Error(`${url} answered ${response.status} ${response.statusText}`);
-            if (!response.body) throw new Error(`${url} answered without a body`);
+            if (!response.ok) throw new Error(`The request to ${url} answered ${response.status} ${response.statusText}.`);
+            if (!response.body) throw new Error(`The request to ${url} answered without a body.`);
 
             await writeFile(stagingFile, response.body.pipeThrough(new TransformStream({
                 transform(chunk, target) {
@@ -178,7 +178,7 @@ async function download(url: string, destination: string) {
         } finally {
             clearTimeout(timer);
         }
-    }, `${url} download failed`, () => rm(stagingFile, { force: true }));
+    }, `The download from ${url} failed.`, () => rm(stagingFile, { force: true }));
 
     await rename(stagingFile, destination);
 }
@@ -202,7 +202,7 @@ async function ensureExtractor() {
 
     const archiveName = EXTRACTOR_ARCHIVES[`${process.platform}-${process.arch}`];
 
-    if (!archiveName) throw new Error(`no go-pmtiles ${EXTRACTOR_VERSION} build for ${process.platform}-${process.arch}`);
+    if (!archiveName) throw new Error(`No go-pmtiles ${EXTRACTOR_VERSION} build exists for ${process.platform}-${process.arch}.`);
 
     const archive = join(assetsDir, archiveName);
     const isZipped = archiveName.endsWith('.zip');
@@ -236,7 +236,7 @@ async function extractTiles(set: TileSet) {
 
     await retry(
         () => run([extractor, 'extract', basemap, stagingFile, ...flags]),
-        `${set.name} extract failed`,
+        `The ${set.name} extract failed`,
         () => rm(stagingFile, { force: true }),
     );
 
@@ -354,7 +354,7 @@ async function resolveBasemap() {
         }
     }
 
-    throw new Error(`no basemap build at ${BASEMAP_URL} within ${BASEMAP_LOOKBACK_DAYS} days`);
+    throw new Error(`No basemap build exists at ${BASEMAP_URL} within ${BASEMAP_LOOKBACK_DAYS} days.`);
 }
 
 async function retry<Result>(operation: () => Promise<Result>, message: string, recover: () => Promise<unknown>) {
@@ -372,7 +372,7 @@ async function retry<Result>(operation: () => Promise<Result>, message: string, 
         }
     }
 
-    throw new Error(`${message} after ${RETRY_ATTEMPTS} attempts`, { cause: failure });
+    throw new Error(`${message} after ${RETRY_ATTEMPTS} attempts.`, { cause: failure });
 }
 
 function run(command: string[]) {
@@ -383,7 +383,7 @@ function run(command: string[]) {
 
         child.on('close', (status) => {
             if (status === 0) fulfill();
-            else reject(new Error(`${command.join(' ')} exited with ${status}`));
+            else reject(new Error(`The command ${command.join(' ')} exited with ${status}.`));
         });
 
         child.on('error', reject);

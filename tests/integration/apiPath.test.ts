@@ -23,7 +23,7 @@ describe('api path', () => {
 
         const result: Record<string, unknown> = await response.json();
 
-        expect(result).toEqual({ error: 'Not found' });
+        expect(result).toEqual({ error: 'Not found.' });
     });
 
     test('sets a json content type header', async () => {

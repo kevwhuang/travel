@@ -213,7 +213,7 @@ export default function ModalFilters({ categories, filterCount, isStarredOnly, j
                     </div>
                 </div>
                 <div className={CLASS_FOOTER}>
-                    <span className="font-mono text-[10px] tracking-[0.16em] uppercase text-storm">{`Showing ${shownCount} of ${totalCount}`}</span>
+                    <span className="font-mono text-[10px] tracking-[0.16em] uppercase text-storm">{`Showing ${shownCount} of ${totalCount}.`}</span>
                     <span className="inline-flex gap-[8px]">
                         <button
                             className={CLASS_CLEAR_BUTTON}
