@@ -3,10 +3,14 @@ export const ATLAS_TITLE = 'Atlas';
 export const CARDS_PER_PAGE = 30;
 
 export const CATEGORY_COLORS = {
+    cafes: 'var(--color-sienna)',
     dining: 'var(--color-terracotta)',
     landmarks: 'var(--color-azure)',
+    lodging: 'var(--color-plum)',
     misc: 'var(--color-taupe)',
     nature: 'var(--color-moss)',
+    shopping: 'var(--color-raspberry)',
+    transit: 'var(--color-cobalt)',
     urban: 'var(--color-violet)',
     wellness: 'var(--color-teal)',
 } as const;

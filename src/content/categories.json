@@ -1,11 +1,19 @@
 [
     {
-        "description": "Food and drink, from cafes to steakhouses",
+        "description": "Coffee and sweets, from espresso bars to gelato shops",
+        "name": "Cafes"
+    },
+    {
+        "description": "Restaurants and bars, from taquerias to steakhouses",
         "name": "Dining"
     },
     {
         "description": "Notable sites, from museums to ancient ruins",
         "name": "Landmarks"
+    },
+    {
+        "description": "Overnight bases, from casino resorts to rented homes",
+        "name": "Lodging"
     },
     {
         "description": "Practical stops, from grocery stores to gas stations",
@@ -16,7 +24,15 @@
         "name": "Nature"
     },
     {
-        "description": "City stops, from hotels to shopping malls",
+        "description": "Retail destinations, from outlet malls to brand boutiques",
+        "name": "Shopping"
+    },
+    {
+        "description": "Travel gateways, from airports to border crossings",
+        "name": "Transit"
+    },
+    {
+        "description": "City stops, from riverside promenades to megacities",
         "name": "Urban"
     },
     {

@@ -101,7 +101,7 @@ export default function ModalFilters({ categories, filterCount, isStarredOnly, j
     }, []);
 
     return (
-        <div className="atlas-fade fixed grid inset-0 place-items-center z-[70] p-[20px] bg-ink-40 backdrop-blur-[4px] cursor-pointer">
+        <div className="atlas-fade fixed grid inset-0 place-items-center z-[900] p-[20px] bg-ink-40 backdrop-blur-[4px] cursor-pointer">
             <dialog
                 className="atlas-modal flex flex-col overflow-hidden static max-h-[min(780px,calc(100dvh-40px))] w-[min(calc((var(--width-shell)-var(--shell-pad)*2)/2),100%)] m-0 p-0 border border-haze rounded-[14px] bg-paper text-ink shadow-[0_30px_80px_var(--color-ink-30)] cursor-auto"
                 aria-labelledby="modal-filters-title"
@@ -213,7 +213,7 @@ export default function ModalFilters({ categories, filterCount, isStarredOnly, j
                     </div>
                 </div>
                 <div className={CLASS_FOOTER}>
-                    <span className="font-mono text-[10px] tracking-[0.16em] uppercase text-storm">{`Showing ${shownCount} of ${totalCount}.`}</span>
+                    <span className="font-mono text-[10px] tracking-[0.16em] uppercase text-storm">{`Showing ${shownCount} of ${totalCount}`}</span>
                     <span className="inline-flex gap-[8px]">
                         <button
                             className={CLASS_CLEAR_BUTTON}

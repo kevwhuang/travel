@@ -33,6 +33,6 @@ describe('AtlasSection', () => {
 
     test('server-renders the island with the full marker count announced', () => {
         expect(markerTotal).toBeGreaterThan(0);
-        expect(html).toContain(`${markerTotal} of ${markerTotal} markers shown`);
+        expect(html).toContain(`${markerTotal} of ${markerTotal} markers shown.`);
     });
 });

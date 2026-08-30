@@ -3,6 +3,7 @@
 @theme {
     --color-azure: #4a90d9;
     --color-azure-30: #4a90d94d;
+    --color-cobalt: #0062ac;
     --color-flint: #7f8f8c;
     --color-gold: #d9a441;
     --color-haze: #d8dfde;
@@ -17,6 +18,9 @@
     --color-paper: #f3f5f4;
     --color-pearl: #c6d1cf;
     --color-pink: #ec4899;
+    --color-plum: #6d3b7a;
+    --color-raspberry: #b73f6f;
+    --color-sienna: #92500b;
     --color-slate: #3a4649;
     --color-snow: #fbfcfb;
     --color-snow-90: #fbfcfbe6;

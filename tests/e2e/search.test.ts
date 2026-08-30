@@ -80,7 +80,7 @@ function getStatusText(shown: number, view: 'cards' | 'map') {
 
     const pageSuffix = pageCount > 1 && view === 'cards' ? `, page 1 of ${pageCount}` : '';
 
-    return `${shown} of ${totalCount} markers shown${pageSuffix}`;
+    return `${shown} of ${totalCount} markers shown${pageSuffix}.`;
 }
 
 async function gotoCardsView(page: Page) {
@@ -313,7 +313,7 @@ test.describe('search in the cards view', () => {
         await getSearchInput(page).blur();
         await page.keyboard.press('ArrowRight');
 
-        await expect(getStatus(page)).toHaveText(`${totalCount} of ${totalCount} markers shown, page 2 of ${cardsPageCount}`);
+        await expect(getStatus(page)).toHaveText(`${totalCount} of ${totalCount} markers shown, page 2 of ${cardsPageCount}.`);
     });
 
     test('strips typed slashes from the search value', async ({ page }) => {

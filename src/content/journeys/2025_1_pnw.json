@@ -1,14 +1,14 @@
 {
     "markers": [
         {
-            "category": "urban",
+            "category": "transit",
             "description": "Seattle–Tacoma International Airport is the primary air hub of the Pacific Northwest, serving the Seattle metropolitan area from its location in SeaTac, Washington.",
             "lat": 47.4483652,
             "lng": -122.3085927,
             "name": "Seattle–Tacoma International Airport"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "Sonesta Select Seattle Renton Suites is an all-suite hotel in Renton, Washington, offering lodging near Lake Washington and Sea-Tac Airport.",
             "lat": 47.463262,
             "lng": -122.2210729,
@@ -43,7 +43,7 @@
             "name": "International Fountain"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "This address served as a private home-base stay in the Woodinville area east of Seattle.",
             "lat": 47.7097797,
             "lng": -122.0720274,
@@ -57,7 +57,7 @@
             "name": "Lake Union Park"
         },
         {
-            "category": "dining",
+            "category": "cafes",
             "description": "203° Fahrenheit Coffee Co. is an independent coffee roaster and cafe at the Village at Totem Lake in Kirkland, Washington, serving pour-overs and pastries.",
             "lat": 47.7126106,
             "lng": -122.1800557,
@@ -85,7 +85,7 @@
             "name": "Pike Place Market"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "This address served as a private home-base stay in Port Moody, British Columbia, during the Vancouver portion of the journey.",
             "lat": 49.2892044,
             "lng": -122.8766922,
@@ -127,7 +127,7 @@
             "name": "Granville Island Public Market"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "This address served as a private home-base stay in Richmond, British Columbia, during the Vancouver portion of the journey.",
             "lat": 49.162063,
             "lng": -123.1820668,
@@ -148,7 +148,7 @@
             "name": "Whole Foods Market"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "This address served as a private home-base stay in Seattle's Magnolia neighborhood.",
             "lat": 47.6560589,
             "lng": -122.3998811,
@@ -232,7 +232,7 @@
             "name": "The Home Depot"
         },
         {
-            "category": "dining",
+            "category": "cafes",
             "description": "Mee Sum Pastry is a Chinese bakery-cafe on University Way in Seattle, serving giant barbecue-pork hom bow buns.",
             "lat": 47.6610743,
             "lng": -122.3132751,

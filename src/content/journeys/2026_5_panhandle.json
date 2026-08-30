@@ -1,7 +1,7 @@
 {
     "markers": [
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "Rockwood Apartment Homes is an apartment community in north Austin, serving as a private home-base stay for the journey.",
             "lat": 30.3684651,
             "lng": -97.7296492,
@@ -15,7 +15,7 @@
             "name": "Cork & Pig Tavern"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "This address served as a private home-base stay in Amarillo, Texas, during the Panhandle portion of the journey.",
             "lat": 35.1582566,
             "lng": -101.8520152,

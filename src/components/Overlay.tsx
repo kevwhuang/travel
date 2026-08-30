@@ -67,7 +67,7 @@ export default function Overlay({ filterButtonRef, filterCount, isSearchExpanded
                 className={[
                     'atlas-control',
                     hasFilters && 'atlas-control--active',
-                    'fixed left-[18px] top-[18px] z-40 p-0 border',
+                    'fixed left-[18px] top-[18px] z-[700] p-0 border',
                     !hasFilters && 'border-flint',
                 ].filter(Boolean).join(' ')}
                 aria-haspopup="dialog"
@@ -86,7 +86,7 @@ export default function Overlay({ filterButtonRef, filterCount, isSearchExpanded
                     )}
                 </span>
             </button>
-            <search className={`atlas-control ${isSearchExpanded ? 'atlas-control--open' : ''} fixed flex-row-reverse right-[18px] top-[18px] z-[41] gap-[8px] border ${hasSearch ? 'border-ink' : 'border-flint'}`}>
+            <search className={`atlas-control ${isSearchExpanded ? 'atlas-control--open' : ''} fixed flex-row-reverse right-[18px] top-[18px] z-[701] gap-[8px] border ${hasSearch ? 'border-ink' : 'border-flint'}`}>
                 <button
                     className={CLASS_SEARCH_TOGGLE}
                     aria-label={hasSearch ? 'Clear search' : 'Search markers'}
@@ -114,7 +114,7 @@ export default function Overlay({ filterButtonRef, filterCount, isSearchExpanded
                     />
                 </label>
             </search>
-            <div className="atlas-control atlas-control--wide hover:border-storm bottom-[18px] fixed left-[18px] z-40 border border-dashed border-flint">
+            <div className="atlas-control atlas-control--wide hover:border-storm bottom-[18px] fixed left-[18px] z-[700] border border-dashed border-flint">
                 <span className="grid place-items-center shrink-0 h-[48px] w-[48px]">
                     <IconLogo />
                 </span>
@@ -140,7 +140,7 @@ export default function Overlay({ filterButtonRef, filterCount, isSearchExpanded
                 </span>
             </div>
             <button
-                className="atlas-control hover:border-storm bottom-[18px] fixed flex-row-reverse right-[18px] z-40 p-0 border border-flint"
+                className="atlas-control hover:border-storm bottom-[18px] fixed flex-row-reverse right-[18px] z-[700] p-0 border border-flint"
                 aria-label={isCardView ? 'Switch to map' : 'Switch to cards'}
                 onClick={onToggleView}
                 type="button"

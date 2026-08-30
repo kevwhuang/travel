@@ -64,12 +64,12 @@ interface ScaleBar {
 
 const CAMERA_COORDINATE_DECIMALS = 5;
 const CAMERA_ZOOM_DECIMALS = 2;
-const CATEGORY_PIN_MAX_Z_INDEX = 16;
-const CATEGORY_PIN_MIN_Z_INDEX = 11;
+const CATEGORY_PIN_MAX_Z_INDEX = 210;
+const CATEGORY_PIN_MIN_Z_INDEX = 201;
 const CLASS_CLUSTER = 'atlas-fade atlas-marker active:scale-[0.96] before:absolute before:content-[""] before:inset-[-8px] hover:scale-[1.09] relative p-0 border-none rounded-full duration-[var(--duration-fast)] ease-[ease] shadow-[0_0_0_1px_var(--color-storm),0_4px_10px_var(--color-ink-20)] transition-[scale]';
 const CLASS_PIN_DOT = 'atlas-fade atlas-marker active:scale-[0.96] before:absolute before:content-[""] before:inset-[-14px] hover:scale-[1.3] block relative h-[24px] w-[24px] p-0 border-2 border-snow rounded-full duration-[var(--duration-fast)] ease-[ease] transition-[background-color,border-color,box-shadow,scale]';
 const CLASS_PIN_ICON = 'atlas-fade atlas-marker active:scale-[0.96] before:absolute before:content-[""] before:inset-[-14px] hover:scale-[1.3] grid place-items-center relative h-[24px] w-[24px] p-0 border-2 rounded-full duration-[var(--duration-fast)] ease-[ease] transition-[background-color,box-shadow,color,scale]';
-const CLASS_SCALE_BAR = 'atlas-scale-bar absolute bottom-[18px] flex flex-col inset-x-0 items-center z-30 w-fit gap-[4px] mx-auto duration-[var(--duration-fast)] ease-[ease] transition-[opacity] pointer-events-none select-none';
+const CLASS_SCALE_BAR = 'atlas-scale-bar absolute bottom-[18px] flex flex-col inset-x-0 items-center z-[600] w-fit gap-[4px] mx-auto duration-[var(--duration-fast)] ease-[ease] transition-[opacity] pointer-events-none select-none';
 const CLASS_SCALE_LABEL = 'px-[4px] py-[2px] rounded-[4px] font-mono leading-none text-[10px] tracking-[0.12em] uppercase bg-snow-90 text-storm backdrop-blur-[8px]';
 const CLUSTER_BASE_SIZE = 34;
 const CLUSTER_GROWTH_FACTOR = 3;
@@ -78,7 +78,7 @@ const CLUSTER_MAX_GROWTH = 24;
 const CLUSTER_MAX_ZOOM = 12;
 const CLUSTER_RADIUS = 36;
 const CLUSTER_SEPARATOR_DEGREES = 1.5;
-const CLUSTER_Z_INDEX = '10';
+const CLUSTER_Z_INDEX = '100';
 const COVERAGE_MIN_ZOOM = 7.5;
 const DEFAULT_CENTER = { lat: 30.4, lng: -97.8 } as const;
 const DEFAULT_ZOOM = 3;
@@ -89,7 +89,7 @@ const FEET_PER_MILE = 5_280;
 const FIT_MAX_ZOOM = 13;
 const FIT_PADDING = 72;
 const FLY_ZOOM = 13;
-const FOCUSED_MARKER_Z_INDEX = '22';
+const FOCUSED_MARKER_Z_INDEX = '500';
 const HIDDEN_LAYER_IDS = ['roads_oneway', 'roads_shields'] as const;
 const MAGNITUDE_BASE = 10;
 
@@ -201,7 +201,7 @@ const POPUP_OFFSET = 28;
 const POPUP_PAN_ATTEMPTS = 3;
 const POPUP_SETTLE_FRAMES = 12;
 const POPUP_VIEW_MARGIN = 18;
-const POPUP_Z_INDEX = '45';
+const POPUP_Z_INDEX = '800';
 const REGION_ACTIVE_FILL_OPACITY = 0.22;
 const REGION_ACTIVE_LINE_OPACITY = 0.5;
 
@@ -219,8 +219,8 @@ const REGION_SOURCE_ID = 'atlas-regions';
 const SCALE_STEP_LARGE = 5;
 const SCALE_STEP_MEDIUM = 2;
 const SCALE_TARGET_WIDTH = 120;
-const SELECTED_PIN_Z_INDEX = '21';
-const STARRED_PIN_Z_INDEX = '20';
+const SELECTED_PIN_Z_INDEX = '400';
+const STARRED_PIN_Z_INDEX = '300';
 const STAR_RING_WIDTH = 2;
 const TILE_CACHE_LIMIT = 96;
 const TILE_ZOOM_OFFSET = 9;
@@ -232,7 +232,7 @@ const ZOOM_EPSILON = 0.01;
 
 const CATEGORY_PIN_Z_INDEXES = new Map(Object.keys(CATEGORY_COLORS)
     .sort((first, second) => first.localeCompare(second))
-    .map((id, rank) => [id, String(Math.max(CATEGORY_PIN_MIN_Z_INDEX, CATEGORY_PIN_MAX_Z_INDEX - rank))] as const));
+    .map((id, rank) => [id, String(Math.min(CATEGORY_PIN_MAX_Z_INDEX, CATEGORY_PIN_MIN_Z_INDEX + rank))] as const));
 
 const mapStyle: StyleSpecification = {
     glyphs: MAP_GLYPHS_URL,

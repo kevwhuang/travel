@@ -192,7 +192,7 @@ function AtlasInner({ data }: { data: AtlasData }) {
     const pageSuffix = atlas.pageCount > 1 && atlas.view === 'cards' ? `, page ${atlas.currentPage + 1} of ${atlas.pageCount}` : '';
     const shownCount = atlas.filteredMarkers.length;
 
-    const statusMessage = shownCount === 0 ? EMPTY_STATUS : `${shownCount} of ${atlas.totalCount} markers shown${pageSuffix}`;
+    const statusMessage = shownCount === 0 ? EMPTY_STATUS : `${shownCount} of ${atlas.totalCount} markers shown${pageSuffix}.`;
 
     function handleClearAll() {
         atlas.setIsStarredOnly(false);
@@ -397,7 +397,7 @@ function AtlasInner({ data }: { data: AtlasData }) {
                     searchValue={atlas.searchValue}
                     view={atlas.view}
                 />
-                <div className="atlas-grain fixed inset-0 z-[90] opacity-[0.05] pointer-events-none" aria-hidden="true" />
+                <div className="atlas-grain fixed inset-0 z-[1000] opacity-[0.05] pointer-events-none" aria-hidden="true" />
             </div>
             <p
                 className="sr-only"
@@ -436,7 +436,7 @@ function Skeleton() {
                 <div className="atlas-pulse grid place-items-center h-[64px] w-[64px] border border-dashed border-storm rounded-full text-storm">
                     <IconNorth size={22} strokeWidth={1.6} />
                 </div>
-                <p className="font-serif text-[clamp(20px,calc(18px+0.625vw),26px)] text-storm select-none">Loading.</p>
+                <p className="font-serif text-[clamp(20px,calc(18px+0.625vw),26px)] text-storm select-none">Loading</p>
             </div>
         </div>
     );

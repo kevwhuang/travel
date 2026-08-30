@@ -1,14 +1,14 @@
 {
     "markers": [
         {
-            "category": "urban",
+            "category": "transit",
             "description": "Monterrey International Airport in Apodaca is the main air gateway to Nuevo León and northeastern Mexico.",
             "lat": 25.7788305,
             "lng": -100.1094654,
             "name": "Monterrey International Airport"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "Hotel Galería Plaza Monterrey is a modern high-rise hotel near the Macroplaza, serving as a central base in downtown Monterrey.",
             "lat": 25.666102,
             "lng": -100.3228374,
@@ -58,7 +58,7 @@
             "name": "Cinépolis Galerías Monterrey"
         },
         {
-            "category": "dining",
+            "category": "cafes",
             "description": "Roland Coffee Bar is a vinyl-driven listening cafe in Monterrey's Barrio Antiguo, serving specialty coffee by day and cocktails at night.",
             "lat": 25.6665501,
             "lng": -100.3065729,
@@ -87,7 +87,7 @@
             "name": "UMAMI Ramen House Río Orinoco"
         },
         {
-            "category": "dining",
+            "category": "cafes",
             "description": "Bendito Café is a cozy coffee shop beside the Santa Lucía riverwalk in Monterrey, serving Mexican specialty coffee, crepes, and pastries.",
             "lat": 25.6730885,
             "lng": -100.2999004,
@@ -115,7 +115,7 @@
             "name": "Museo La Milarca"
         },
         {
-            "category": "urban",
+            "category": "shopping",
             "description": "Fashion Drive is an upscale shopping and dining complex in San Pedro Garza García, part of the Valle Oriente commercial corridor.",
             "lat": 25.6512503,
             "lng": -100.3349906,
@@ -193,7 +193,7 @@
             "name": "El Gran Pastor"
         },
         {
-            "category": "dining",
+            "category": "cafes",
             "description": "Lu'um Coffee Shop is an espresso bar in central Monterrey that doubles as a boutique flower and gift shop.",
             "lat": 25.6761223,
             "lng": -100.3248279,

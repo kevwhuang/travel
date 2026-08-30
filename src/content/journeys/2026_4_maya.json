@@ -1,7 +1,7 @@
 {
     "markers": [
         {
-            "category": "urban",
+            "category": "transit",
             "description": "Mérida International Airport is the main air gateway to Yucatán state, serving domestic and international flights just southwest of the city center.",
             "lat": 20.9241634,
             "lng": -89.6584306,
@@ -15,7 +15,7 @@
             "name": "Los Taquitos de PM Altabrisa"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "Fiesta Americana Mérida is an upscale hotel on Paseo de Montejo, notable for its grand belle-époque-style facade and central location.",
             "lat": 20.9862363,
             "lng": -89.6189696,
@@ -36,7 +36,7 @@
             "name": "Walmart"
         },
         {
-            "category": "dining",
+            "category": "cafes",
             "description": "The Italian Coffee Company G500 is a highway branch of the Mexican coffee chain near Umán, a convenient espresso stop south of Mérida.",
             "lat": 20.8942675,
             "lng": -89.6935012,
@@ -64,14 +64,14 @@
             "name": "Museo Choco-Story Uxmal"
         },
         {
-            "category": "urban",
+            "category": "transit",
             "description": "The ADO terminal in Mérida's historic center is the city's main intercity bus station, linking Mérida with the wider Yucatán Peninsula.",
             "lat": 20.9628806,
             "lng": -89.6302824,
             "name": "ADO Autobuses Centro Histórico"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "Hotel Casa Melissa is a small hotel on Avenida Benito Juárez in Playa del Carmen, steps from Quinta Avenida, the beach, and the Cozumel ferry.",
             "lat": 20.6222819,
             "lng": -87.0747399,
@@ -92,7 +92,7 @@
             "name": "Playa del Carmen"
         },
         {
-            "category": "dining",
+            "category": "cafes",
             "description": "Aldo's Gelato is an Italian-style gelateria on Playa del Carmen's Quinta Avenida, serving a wide range of house-made flavors.",
             "lat": 20.6235217,
             "lng": -87.0748409,
@@ -106,7 +106,7 @@
             "name": "Xplor Park"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "Pacha Tulum is a small boutique hotel in Tulum's town center, a short drive from the beach and the clifftop archaeological site.",
             "lat": 20.2146745,
             "lng": -87.4537069,
@@ -149,21 +149,21 @@
             "name": "Mezzanine"
         },
         {
-            "category": "dining",
+            "category": "cafes",
             "description": "Alfonsina Coffee Tulum is a bakery and coffee bar in Tulum's town center, serving croissants, pistachio pastries, and specialty espresso drinks.",
             "lat": 20.2149946,
             "lng": -87.4550757,
             "name": "Alfonsina Coffee Tulum"
         },
         {
-            "category": "urban",
+            "category": "transit",
             "description": "The ADO terminal in downtown Tulum is the town's main intercity bus station, linking the Riviera Maya with Cancún, Bacalar, and Chetumal.",
             "lat": 20.210613,
             "lng": -87.465025,
             "name": "Tulum ADO Bus Terminal"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "Asilé Hotel Boutique is a small 10-room hotel in central Bacalar with a rooftop bar, steps from the town square and the Fuerte de San Felipe.",
             "lat": 18.677659,
             "lng": -88.3896111,
@@ -191,7 +191,7 @@
             "name": "Hotel y Restaurante Diosa del Agua"
         },
         {
-            "category": "urban",
+            "category": "transit",
             "description": "The ADO station in Bacalar is the lagoon town's main bus stop, connecting travelers to Chetumal, Tulum, and the rest of Quintana Roo.",
             "lat": 18.6901343,
             "lng": -88.3903437,
@@ -212,14 +212,14 @@
             "name": "Taquería Beatriz"
         },
         {
-            "category": "urban",
+            "category": "transit",
             "description": "Chetumal's maritime terminal is the departure point for international water taxis crossing Chetumal Bay to San Pedro and Caye Caulker in Belize.",
             "lat": 18.493047,
             "lng": -88.2991174,
             "name": "Terminal Marítima de Chetumal"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "Tres Cocos Resort is a laid-back beachfront condo hotel just north of San Pedro on Ambergris Caye, Belize, with a pool and on-site bar.",
             "lat": 17.9345383,
             "lng": -87.9530436,
@@ -268,7 +268,7 @@
             "name": "The Sun Deck Restaurant and Bar"
         },
         {
-            "category": "urban",
+            "category": "misc",
             "description": "Searious Adventures is a beachfront tour operator in San Pedro, Belize, running snorkeling, fishing, and mainland excursions.",
             "lat": 17.9170972,
             "lng": -87.9632314,
@@ -318,7 +318,7 @@
             "name": "Shark Ray Alley"
         },
         {
-            "category": "dining",
+            "category": "cafes",
             "description": "Belize Chocolate Company is a bean-to-bar chocolate shop in San Pedro on Ambergris Caye, crafting truffles and treats from Belizean cacao.",
             "lat": 17.917689,
             "lng": -87.963166,
@@ -332,14 +332,14 @@
             "name": "Crocs Sunset Sports Bar"
         },
         {
-            "category": "urban",
+            "category": "transit",
             "description": "Caribbean Sprinter's San Pedro terminal is a water-taxi dock on Ambergris Caye serving fast ferries to Caye Caulker and Belize City.",
             "lat": 17.9198496,
             "lng": -87.960697,
             "name": "Caribbean Sprinter San Pedro"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "Midas Belize is a family-owned resort on a private riverside reserve in San Ignacio, offering cabanas, a large pool, and Macal River access.",
             "lat": 17.1642566,
             "lng": -89.0703042,
@@ -381,7 +381,7 @@
             "name": "Zar's Cafe and Resto"
         },
         {
-            "category": "urban",
+            "category": "transit",
             "description": "The Guatemala-Belize border crossing links Benque Viejo del Carmen with Melchor de Mencos and is the main overland gateway between western Belize and Petén.",
             "lat": 17.0577545,
             "lng": -89.1492027,
@@ -410,21 +410,21 @@
             "name": "The Gully Grill"
         },
         {
-            "category": "urban",
+            "category": "transit",
             "description": "The northern border crossing at Santa Elena, Belize, connects Corozal District with Subteniente López near Chetumal, Mexico, over the Río Hondo.",
             "lat": 18.4862247,
             "lng": -88.4003432,
             "name": "Northern Border"
         },
         {
-            "category": "urban",
+            "category": "transit",
             "description": "The ADO terminal in Chetumal, Mexico, is the city's main intercity bus station, linking the Yucatán Peninsula with routes toward Belize.",
             "lat": 18.5187906,
             "lng": -88.3134685,
             "name": "ADO Terminal Chetumal"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "Hotel Victoria is a Victorian-style hotel on Paseo de Montejo in Mérida, steps from the Monumento a la Patria.",
             "lat": 20.988585,
             "lng": -89.616811,
@@ -438,7 +438,7 @@
             "name": "Fuego Real"
         },
         {
-            "category": "dining",
+            "category": "cafes",
             "description": "JUSTO Bread Studio is an artisan bakery and cafe on Paseo de Montejo in Mérida, Mexico, specializing in daily sourdough and pastries.",
             "lat": 20.9888798,
             "lng": -89.617227,

@@ -33,10 +33,10 @@ describe('ARROW_PAGE_STEPS', () => {
 });
 
 describe('CATEGORY_COLORS', () => {
-    test('lists six categories in alphabetical order', () => {
+    test('lists ten categories in alphabetical order', () => {
         const ids = Object.keys(CATEGORY_COLORS);
 
-        expect(ids).toHaveLength(6);
+        expect(ids).toHaveLength(10);
         expect(ids).toEqual([...ids].sort());
     });
 

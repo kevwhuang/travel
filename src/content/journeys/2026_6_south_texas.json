@@ -15,7 +15,7 @@
             "name": "Firehouse Subs"
         },
         {
-            "category": "dining",
+            "category": "cafes",
             "description": "JuiceLand is an Austin-born juice and smoothie chain, with this Slaughter Lane location in south Austin serving fresh-pressed juices and vegan snacks.",
             "lat": 30.1717812,
             "lng": -97.7851616,
@@ -36,7 +36,7 @@
             "name": "Gruene Historic District"
         },
         {
-            "category": "urban",
+            "category": "shopping",
             "description": "H.D. Gruene Mercantile is a shop in a restored 1904 storefront in Gruene, Texas, selling apparel and goods from Texas makers.",
             "lat": 29.738715,
             "lng": -98.10423,
@@ -57,7 +57,7 @@
             "name": "Hanzo"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "Days Inn & Suites by Wyndham Laredo is a budget hotel off Interstate 35 in Laredo, Texas, serving as an overnight base near the border.",
             "lat": 27.5636628,
             "lng": -99.5041321,
@@ -85,7 +85,7 @@
             "name": "Target"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "Ramada by Wyndham & Suites South Padre Island is a mid-range hotel on Padre Boulevard, a short walk from the island's Gulf beaches.",
             "lat": 26.1321455,
             "lng": -97.170524,
@@ -219,7 +219,7 @@
             "name": "Indian Point Pier"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "Quality Inn Ingleside is a budget chain hotel in Ingleside, Texas, serving as a practical overnight base near Corpus Christi Bay.",
             "lat": 27.884342,
             "lng": -97.216779,

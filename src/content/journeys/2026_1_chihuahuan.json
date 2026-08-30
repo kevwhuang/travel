@@ -22,14 +22,14 @@
             "name": "Austin Central Library"
         },
         {
-            "category": "dining",
+            "category": "cafes",
             "description": "Mozart's Coffee Roasters is a coffeehouse on the shore of Lake Austin, with house-roasted coffee, desserts, and a waterfront deck.",
             "lat": 30.2954696,
             "lng": -97.7839512,
             "name": "Mozart's Coffee Roasters"
         },
         {
-            "category": "urban",
+            "category": "shopping",
             "description": "The Domain is a large open-air shopping, dining, and entertainment district in north Austin, often called the city's second downtown.",
             "lat": 30.4020649,
             "lng": -97.7258829,
@@ -37,14 +37,14 @@
             "starred": true
         },
         {
-            "category": "urban",
+            "category": "shopping",
             "description": "The North Face is an outdoor apparel and gear store at The Domain in north Austin, stocking jackets, packs, and hiking equipment.",
             "lat": 30.4029516,
             "lng": -97.7230822,
             "name": "The North Face"
         },
         {
-            "category": "urban",
+            "category": "shopping",
             "description": "REI is an outdoor recreation co-op store in north Austin, a practical stop for camping, hiking, and climbing gear before desert travel.",
             "lat": 30.389364,
             "lng": -97.740595,
@@ -79,7 +79,7 @@
             "name": "Hitchin' Post Steakhouse"
         },
         {
-            "category": "urban",
+            "category": "shopping",
             "description": "Fredericksburg General Store is a gift shop on historic Main Street in Fredericksburg, Texas, selling nostalgic candy, preserves, and souvenirs.",
             "lat": 30.274108,
             "lng": -98.871364,
@@ -100,7 +100,7 @@
             "name": "Garner State Park"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "Courtyard by Marriott San Angelo is a modern chain hotel in San Angelo, Texas, serving as an overnight base along the route west.",
             "lat": 31.4401388,
             "lng": -100.4956706,
@@ -142,14 +142,14 @@
             "name": "Stonehenge Replica"
         },
         {
-            "category": "dining",
+            "category": "cafes",
             "description": "Smoothie King is a national smoothie chain location in Odessa, Texas, a quick stop for blended fruit drinks on the road.",
             "lat": 31.8850747,
             "lng": -102.374304,
             "name": "Smoothie King"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "Comfort Suites Carlsbad is an all-suite hotel in Carlsbad, New Mexico, a convenient base for visiting Carlsbad Caverns National Park.",
             "lat": 32.4449226,
             "lng": -104.260809,
@@ -199,7 +199,7 @@
             "name": "Spaceport Roswell"
         },
         {
-            "category": "dining",
+            "category": "cafes",
             "description": "The Soft Pretzel and Ice Cream Shop is a downtown Roswell snack spot serving fresh-baked pretzels, hand-dipped ice cream, and homemade fudge.",
             "lat": 33.395519,
             "lng": -104.522504,
@@ -220,7 +220,7 @@
             "name": "Tunnel Vista Observation Site"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "The Radisson Hotel El Paso Airport is a full-service hotel near El Paso International Airport, serving as a convenient base for travelers in West Texas.",
             "lat": 31.7936244,
             "lng": -106.3950808,
@@ -263,7 +263,7 @@
             "name": "San Jacinto Plaza"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "This address served as a private home-base stay in east El Paso during the journey.",
             "lat": 31.7657458,
             "lng": -106.2758952,
@@ -335,7 +335,7 @@
             "starred": true
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "Hotel Parker at Quarter Circle 7 is a ranch-family-owned hotel in Alpine, Texas, set among Chihuahuan Desert foothills with views toward the Davis Mountains.",
             "lat": 30.3476867,
             "lng": -103.6963393,
@@ -370,7 +370,7 @@
             "name": "Big Bend Ranch State Park"
         },
         {
-            "category": "urban",
+            "category": "shopping",
             "description": "Terlingua Trading Company is a longtime general store and gift shop in Terlingua Ghost Town, adjacent to the famous Starlight Theatre porch.",
             "lat": 29.3210678,
             "lng": -103.6168976,
@@ -441,14 +441,14 @@
             "name": "V's Kitchen"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "Drury Inn & Suites North Stone Oak is a mid-scale hotel in northern San Antonio, serving as the journey's city base.",
             "lat": 29.6108078,
             "lng": -98.4820663,
             "name": "Drury Inn & Suites San Antonio North Stone Oak"
         },
         {
-            "category": "urban",
+            "category": "shopping",
             "description": "The Rim is a sprawling open-air shopping and entertainment center in northwest San Antonio with major retailers and restaurants.",
             "lat": 29.6093669,
             "lng": -98.5987734,
@@ -547,7 +547,7 @@
             "name": "Target"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "Goodnight Ranch is a master-planned residential community in southeast Austin, serving as a private home-base stay for the journey.",
             "lat": 30.1539346,
             "lng": -97.7574711,
@@ -582,7 +582,7 @@
             "name": "Texas State Capitol"
         },
         {
-            "category": "urban",
+            "category": "transit",
             "description": "Austin-Bergstrom International Airport is the main airport serving Austin, known for its live music stages and local food vendors.",
             "lat": 30.194085,
             "lng": -97.6710889,

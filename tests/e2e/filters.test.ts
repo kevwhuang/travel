@@ -41,7 +41,7 @@ const starredCount = markers.filter(marker => marker.isStarred).length;
 const totalCount = markers.length;
 
 async function expectFooterCount(page: Page, shown: number) {
-    await expect(getDialog(page).getByText(`Showing ${shown} of ${totalCount}.`)).toBeVisible();
+    await expect(getDialog(page).getByText(`Showing ${shown} of ${totalCount}`)).toBeVisible();
 }
 
 function getCategoryCount(categoryId: string) {
@@ -101,7 +101,7 @@ function getStatusText(shown: number) {
     const pageCount = Math.max(1, Math.ceil(shown / CARDS_PER_PAGE));
     const pageSuffix = pageCount > 1 ? `, page 1 of ${pageCount}` : '';
 
-    return `${shown} of ${totalCount} markers shown${pageSuffix}`;
+    return `${shown} of ${totalCount} markers shown${pageSuffix}.`;
 }
 
 async function gotoCardsView(page: Page, storedState: object = {}) {

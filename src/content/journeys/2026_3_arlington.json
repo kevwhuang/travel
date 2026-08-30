@@ -8,14 +8,14 @@
             "name": "Czech-American Restaurant"
         },
         {
-            "category": "dining",
+            "category": "cafes",
             "description": "Slovacek's is an Interstate 35 roadside bakery and sausage shop in West, Texas, known for kolaches, klobasneks, and homemade smoked meats.",
             "lat": 31.8017505,
             "lng": -97.1026055,
             "name": "Slovacek's West"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "Loews Arlington is a large resort-style hotel and convention center in Arlington's entertainment district, steps from Globe Life Field and AT&T Stadium.",
             "lat": 32.7504067,
             "lng": -97.084981,
@@ -57,21 +57,21 @@
             "name": "DFW Founders' Plaza"
         },
         {
-            "category": "urban",
+            "category": "shopping",
             "description": "Grapevine Mills is one of North Texas's largest outlet malls, located in Grapevine near DFW Airport with over 180 stores and attractions.",
             "lat": 32.965993,
             "lng": -97.0427604,
             "name": "Grapevine Mills"
         },
         {
-            "category": "urban",
+            "category": "shopping",
             "description": "Vineyard Vines Outlet is a discount store for the preppy American clothing brand at Tanger Outlets in far north Fort Worth, Texas.",
             "lat": 33.022207,
             "lng": -97.2819725,
             "name": "Vineyard Vines Outlet"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "This address served as a private home-base stay on Millstream Ct in Trophy Club, Texas, a quiet residential suburb northwest of DFW Airport.",
             "lat": 32.98,
             "lng": -97.18,
@@ -85,7 +85,7 @@
             "name": "The Original Roy Hutchins Barbeque"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "Courtyard by Marriott at Cityview is a modern chain hotel in southwest Fort Worth, Texas, serving as a convenient base near shopping and highways.",
             "lat": 32.6821929,
             "lng": -97.4186897,

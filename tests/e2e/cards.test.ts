@@ -242,11 +242,11 @@ test.describe('cards view', () => {
     test('announces the second page in the status message after paging', async ({ page }) => {
         test.skip(pageCount === 1, 'content fits on a single page');
 
-        await expect(page.getByRole('status')).toHaveText(`${cards.length} of ${cards.length} markers shown, page 1 of ${pageCount}`);
+        await expect(page.getByRole('status')).toHaveText(`${cards.length} of ${cards.length} markers shown, page 1 of ${pageCount}.`);
 
         await page.getByRole('button', { exact: true, name: 'Page 2' }).click();
 
-        await expect(page.getByRole('status')).toHaveText(`${cards.length} of ${cards.length} markers shown, page 2 of ${pageCount}`);
+        await expect(page.getByRole('status')).toHaveText(`${cards.length} of ${cards.length} markers shown, page 2 of ${pageCount}.`);
     });
 
     test('pages forward and back with the arrow keys from the body', async ({ page }) => {

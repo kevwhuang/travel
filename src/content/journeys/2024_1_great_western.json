@@ -1,7 +1,7 @@
 {
     "markers": [
         {
-            "category": "urban",
+            "category": "transit",
             "description": "Los Angeles International Airport is the primary airport serving Southern California and one of the busiest passenger hubs in the world.",
             "lat": 33.942153,
             "lng": -118.4036052,
@@ -15,7 +15,7 @@
             "name": "DTLA AYCE KBBQ"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "This address served as a private home-base stay near Los Angeles International Airport in the Inglewood area.",
             "lat": 33.9393158,
             "lng": -118.3459812,
@@ -43,7 +43,7 @@
             "name": "University of California, Irvine"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "This address served as a private home-base stay on Cruiser, a residential street in Irvine, California.",
             "lat": 33.69,
             "lng": -117.73,
@@ -78,7 +78,7 @@
             "name": "Rock N' Potato"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "Desert Rose Resort is an all-suite hotel just east of the Las Vegas Strip, offering apartment-style rooms without a casino.",
             "lat": 36.0980752,
             "lng": -115.1669116,
@@ -113,7 +113,7 @@
             "name": "Fremont Street Experience"
         },
         {
-            "category": "dining",
+            "category": "cafes",
             "description": "Lappert's Ice Cream is a Hawaii-founded ice cream shop serving tropical flavors inside the California Hotel & Casino in downtown Las Vegas.",
             "lat": 36.1732257,
             "lng": -115.145105,
@@ -141,14 +141,14 @@
             "name": "Earl of Sandwich"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "The Bellagio is a luxury resort and casino on the Las Vegas Strip, famous for its choreographed dancing fountains and conservatory.",
             "lat": 36.1129455,
             "lng": -115.1765067,
             "name": "Bellagio Hotel & Casino"
         },
         {
-            "category": "dining",
+            "category": "cafes",
             "description": "Einstein Bros. Bagels is a national bagel and coffee chain, with this Las Vegas location serving as a quick breakfast stop.",
             "lat": 36.1020839,
             "lng": -115.15683,
@@ -162,7 +162,7 @@
             "name": "Hoover Dam"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "The Holiday Inn Express & Suites Grand Canyon is a hotel in Tusayan, Arizona, minutes from the South Rim entrance of Grand Canyon National Park.",
             "lat": 35.9713171,
             "lng": -112.1283223,
@@ -211,7 +211,7 @@
             "name": "Desert View Watchtower"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "This address served as a private home-base stay in Page, Arizona, a convenient overnight base for the journey.",
             "lat": 36.914989,
             "lng": -111.4625924,
@@ -239,7 +239,7 @@
             "name": "Backroads Bistro"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "This address served as a private home-base stay in Orem, Utah, an overnight base along the journey route.",
             "lat": 40.3080582,
             "lng": -111.7057959,
@@ -253,14 +253,14 @@
             "name": "Outback Steakhouse"
         },
         {
-            "category": "urban",
+            "category": "shopping",
             "description": "Outlets at Traverse Mountain is an open-air outlet shopping center in Lehi, Utah, featuring brand-name stores along Interstate 15.",
             "lat": 40.4352734,
             "lng": -111.8843297,
             "name": "Outlets at Traverse Mountain"
         },
         {
-            "category": "urban",
+            "category": "shopping",
             "description": "The Shops at South Town is a large enclosed shopping mall in Sandy, Utah, anchoring retail in the southern Salt Lake Valley.",
             "lat": 40.5620647,
             "lng": -111.8937235,
@@ -274,7 +274,7 @@
             "name": "Angler's Lodge & Riverfront Restaurant"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "This address served as a private home-base stay in Island Park, Idaho, a base for exploring nearby Yellowstone.",
             "lat": 44.5720676,
             "lng": -111.3395621,
@@ -323,14 +323,14 @@
             "name": "Two Ribbons Trail"
         },
         {
-            "category": "urban",
+            "category": "transit",
             "description": "Bozeman Yellowstone International Airport is Montana's busiest airport, located in Belgrade and serving as a primary gateway to Yellowstone National Park.",
             "lat": 45.7784043,
             "lng": -111.1612273,
             "name": "Bozeman Yellowstone International Airport"
         },
         {
-            "category": "urban",
+            "category": "transit",
             "description": "Denver International Airport is the largest airport in the United States by land area and a major hub for travel across the Rocky Mountain West.",
             "lat": 39.8563497,
             "lng": -104.6763991,

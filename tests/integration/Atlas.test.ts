@@ -25,7 +25,7 @@ describe('Atlas', () => {
     test('renders the loading skeleton while the lazy map view is unresolved', () => {
         expect(html).toMatch(/<div class="atlas-fade[^"]*" role="status">/);
         expect(html).toContain('atlas-pulse');
-        expect(html).toContain('>Loading.</p>');
+        expect(html).toContain('>Loading</p>');
     });
 
     test('renders the filter, search, credit, and view toggle controls', () => {
@@ -50,7 +50,7 @@ describe('Atlas', () => {
 
     test('announces the full marker count in the status message', () => {
         expect(markerTotal).toBeGreaterThan(0);
-        expect(html).toContain(`<p class="sr-only" role="status">${markerTotal} of ${markerTotal} markers shown</p>`);
+        expect(html).toContain(`<p class="sr-only" role="status">${markerTotal} of ${markerTotal} markers shown.</p>`);
         expect(html).not.toContain(', page ');
     });
 

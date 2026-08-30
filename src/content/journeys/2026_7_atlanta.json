@@ -1,7 +1,7 @@
 {
     "markers": [
         {
-            "category": "urban",
+            "category": "transit",
             "description": "Hartsfield-Jackson Atlanta International Airport is Atlanta's primary airport and consistently ranks among the busiest passenger hubs in the world.",
             "lat": 33.6324187,
             "lng": -84.4333116,
@@ -15,7 +15,7 @@
             "name": "Hertz Car Rental"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "Hyatt House Atlanta / Perimeter Center is an extended-stay hotel in the Perimeter Center business district near Dunwoody, north of Atlanta.",
             "lat": 33.912112,
             "lng": -84.3526418,
@@ -64,7 +64,7 @@
             "name": "Publix Super Market at Lenox Marketplace"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "93East Apartments is a gated apartment community on Shallowford Road in northeast Atlanta, serving as a private home-base stay for the journey.",
             "lat": 33.864071,
             "lng": -84.286215,
@@ -78,7 +78,7 @@
             "name": "Gibbs Gardens"
         },
         {
-            "category": "urban",
+            "category": "shopping",
             "description": "Halcyon is a mixed-use development in Forsyth County near Alpharetta, combining shops, restaurants, and a village green along the Big Creek Greenway.",
             "lat": 34.110717,
             "lng": -84.2242954,
@@ -92,7 +92,7 @@
             "name": "Il Bottegone"
         },
         {
-            "category": "urban",
+            "category": "shopping",
             "description": "Avalon is an upscale mixed-use district in Alpharetta, Georgia, featuring luxury shopping, restaurants, and a walkable boulevard of entertainment.",
             "lat": 34.0707877,
             "lng": -84.27717,
@@ -113,14 +113,14 @@
             "name": "Harmony Massage & Spa"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "This address served as a private home-base stay on Embry Downs Ct in the Tucker area of metro Atlanta.",
             "lat": 33.89,
             "lng": -84.24,
             "name": "Embry Downs Ct"
         },
         {
-            "category": "dining",
+            "category": "cafes",
             "description": "Douceur de France is a French bakery and brunch cafe in Marietta, Georgia, serving authentic pastries, croissants, and crepes.",
             "lat": 33.9481686,
             "lng": -84.5499404,
@@ -169,7 +169,7 @@
             "name": "LA Fitness"
         },
         {
-            "category": "urban",
+            "category": "shopping",
             "description": "Mall of Georgia in Buford is the largest shopping mall in the state, anchoring a major retail district northeast of Atlanta.",
             "lat": 34.0651406,
             "lng": -83.9844837,
@@ -183,14 +183,14 @@
             "name": "Okiboru Ramen & Tsukemen"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "This address served as a private home-base stay in the Decatur area east of Atlanta.",
             "lat": 33.7975922,
             "lng": -84.2614215,
             "name": "699 Milton St"
         },
         {
-            "category": "urban",
+            "category": "shopping",
             "description": "Ponce City Market is a mixed-use development in a historic Sears building on the Atlanta BeltLine, known for its food hall and shops.",
             "lat": 33.7727683,
             "lng": -84.3655967,

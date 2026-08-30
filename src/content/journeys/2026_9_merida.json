@@ -1,7 +1,7 @@
 {
     "markers": [
         {
-            "category": "urban",
+            "category": "transit",
             "description": "Mérida International Airport is the main air gateway to Yucatán state, serving domestic and international flights just southwest of the city center.",
             "lat": 20.9241634,
             "lng": -89.6584306,
@@ -22,7 +22,7 @@
             "name": "La Chaya Maya"
         },
         {
-            "category": "urban",
+            "category": "lodging",
             "description": "Erudita is a modern apartment complex with pool and coworking amenities in Temozón Norte, north Mérida, serving as the journey's home base.",
             "lat": 21.0471216,
             "lng": -89.6136922,
@@ -36,14 +36,14 @@
             "name": "Te Extraño, Extraño"
         },
         {
-            "category": "urban",
+            "category": "shopping",
             "description": "Plaza Altabrisa is a large shopping mall in northeast Mérida with department stores, international brands, a cinema, and restaurants.",
             "lat": 21.0181879,
             "lng": -89.5845506,
             "name": "Plaza Altabrisa"
         },
         {
-            "category": "urban",
+            "category": "shopping",
             "description": "Women'secret is a Spanish lingerie and loungewear chain with a boutique inside Plaza Altabrisa in Mérida.",
             "lat": 21.0190702,
             "lng": -89.5846492,
@@ -57,7 +57,7 @@
             "name": "Soriana"
         },
         {
-            "category": "urban",
+            "category": "shopping",
             "description": "Calvin Klein is an American fashion brand with a boutique at Plaza Altabrisa in Mérida selling apparel and accessories.",
             "lat": 21.0167814,
             "lng": -89.5843522,
@@ -71,7 +71,7 @@
             "name": "Altabrisa Bowling"
         },
         {
-            "category": "urban",
+            "category": "shopping",
             "description": "Puma Store is the German sportswear brand's retail outlet at Plaza Altabrisa in Mérida, selling athletic shoes and apparel.",
             "lat": 21.0178267,
             "lng": -89.5844591,
@@ -107,7 +107,7 @@
             "name": "Catedral de San Ildefonso"
         },
         {
-            "category": "dining",
+            "category": "cafes",
             "description": "Menta & Rosa is a pink-and-mint cafe near Paseo de Montejo in Mérida, serving breakfast, brunch, and pastries.",
             "lat": 20.975825,
             "lng": -89.6186423,
@@ -149,7 +149,7 @@
             "name": "Smart Fit City Center"
         },
         {
-            "category": "dining",
+            "category": "cafes",
             "description": "Lattejus is a cafe in north Mérida serving iced lattes, chai, thick cookies, and health-focused bowls and sandwiches.",
             "lat": 21.0371031,
             "lng": -89.609518,
@@ -177,7 +177,7 @@
             "name": "Kōfuku"
         },
         {
-            "category": "urban",
+            "category": "shopping",
             "description": "City 32 is a modern mixed-use development in north Mérida combining a lifestyle shopping plaza, offices, and a Camino Real hotel.",
             "lat": 21.0372882,
             "lng": -89.6021479,
@@ -198,7 +198,7 @@
             "name": "OXXO Cocoyoles"
         },
         {
-            "category": "dining",
+            "category": "cafes",
             "description": "Clandestino Café is a specialty coffee shop near Paseo de Montejo in Mérida serving pour-over brews and all-day breakfast.",
             "lat": 20.9808004,
             "lng": -89.6182123,
@@ -240,7 +240,7 @@
             "name": "Railroad Museum of Yucatán"
         },
         {
-            "category": "dining",
+            "category": "cafes",
             "description": "Alma Piedra is a cafe on Calle 50 in Mérida's historic center serving breakfast, brunch, and specialty coffee.",
             "lat": 20.9761647,
             "lng": -89.6140176,
@@ -261,7 +261,7 @@
             "name": "Parque Zoológico del Centenario"
         },
         {
-            "category": "dining",
+            "category": "cafes",
             "description": "Santagloria is a Spanish bakery and coffee chain whose first Latin American branch serves pastries and breads at Mérida's La Isla mall.",
             "lat": 21.0581865,
             "lng": -89.5967369,
@@ -289,14 +289,14 @@
             "name": "Korea Chicken Town"
         },
         {
-            "category": "urban",
+            "category": "shopping",
             "description": "Galerías Mérida is a large enclosed shopping mall in northwest Mérida anchored by Liverpool, with fashion retailers, dining, and a cinema.",
             "lat": 21.0391303,
             "lng": -89.6309493,
             "name": "Galerías Mérida"
         },
         {
-            "category": "urban",
+            "category": "shopping",
             "description": "Zara is the Spanish fast-fashion chain's clothing store inside the Galerías Mérida shopping mall, a practical shopping stop.",
             "lat": 21.0394208,
             "lng": -89.6322313,
@@ -331,14 +331,14 @@
             "name": "Thai Thai"
         },
         {
-            "category": "urban",
+            "category": "transit",
             "description": "Teya station is the Tren Maya railway stop serving Mérida, connecting the city to destinations across the Yucatán Peninsula.",
             "lat": 20.9294023,
             "lng": -89.5150073,
             "name": "Tren Maya Estación Teya"
         },
         {
-            "category": "urban",
+            "category": "transit",
             "description": "Izamal station is the Tren Maya railway stop outside Izamal, providing rail access to the yellow colonial town.",
             "lat": 20.9363,
             "lng": -89.08512,
@@ -380,7 +380,7 @@
             "name": "Bryan's Modern Grill"
         },
         {
-            "category": "dining",
+            "category": "cafes",
             "description": "Voltacafé is a Mérida specialty coffee shop whose Altabrisa branch serves pour-over brews, espresso drinks, and pastries.",
             "lat": 21.0217416,
             "lng": -89.5822204,

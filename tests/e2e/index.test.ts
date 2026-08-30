@@ -85,7 +85,7 @@ test.describe('index page', () => {
     test('announces the full marker count in the status message', async ({ page }) => {
         expect(getDedupeKey({ lat: 1, lng: 2, name: 'Alpha' })).toBe('Alpha|1|2');
 
-        await expect(page.locator('p[role="status"]')).toHaveText(`${markerCount} of ${markerCount} markers shown`);
+        await expect(page.locator('p[role="status"]')).toHaveText(`${markerCount} of ${markerCount} markers shown.`);
     });
 
     test('exposes a meta description of the expected length naming the marker count', async ({ page }) => {
