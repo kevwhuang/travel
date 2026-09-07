@@ -1,5 +1,631 @@
 {
-    "markers": [],
+    "markers": [
+        {
+            "category": "landmarks",
+            "description": "Waco Mammoth National Monument is a fossil site in Waco, Texas, preserving the bone bed of a nursery herd of ice-age Columbian mammoths.",
+            "lat": 31.6067336,
+            "lng": -97.1758392,
+            "name": "Waco Mammoth National Monument"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Texas Ranger Hall of Fame & Museum is the Texas Ranger Division's state historical center at Fort Fisher Park in Waco, Texas, a museum since 1968.",
+            "lat": 31.5555471,
+            "lng": -97.1187182,
+            "name": "Texas Ranger Hall of Fame & Museum"
+        },
+        {
+            "category": "dining",
+            "description": "Papa Jack's BBQ is a locally owned barbecue restaurant on East Waco Drive, just across the Brazos River from downtown Waco, Texas.",
+            "lat": 31.5709752,
+            "lng": -97.1289114,
+            "name": "Papa Jack's BBQ"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Waco Suspension Bridge is a pedestrian span over the Brazos River in downtown Waco, Texas, built with Roebling cables and opened in 1870.",
+            "lat": 31.5612041,
+            "lng": -97.1271447,
+            "name": "Waco Suspension Bridge"
+        },
+        {
+            "category": "nature",
+            "description": "Cameron Park is a 416-acre city park in Waco, Texas, known for over 20 miles of trails and bluffs above the Brazos and Bosque rivers.",
+            "lat": 31.5836578,
+            "lng": -97.1562575,
+            "name": "Cameron Park"
+        },
+        {
+            "category": "cafes",
+            "description": "Smoothie King is a national smoothie chain, with this South 4th Street store in Waco, Texas, serving as a quick stop for blended fruit drinks.",
+            "lat": 31.551705,
+            "lng": -97.124694,
+            "name": "Smoothie King"
+        },
+        {
+            "category": "lodging",
+            "description": "Kozy Hotel Dallas is a former Holiday Inn on Airport Freeway in Bedford, Texas, serving as an overnight base with an outdoor pool and 24-hour gym.",
+            "lat": 32.8390727,
+            "lng": -97.1183833,
+            "name": "Kozy Hotel Dallas DFW Airport Area West"
+        },
+        {
+            "category": "dining",
+            "description": "Raising Cane's is a Louisiana-born chicken-finger chain, with this South Industrial Boulevard location in Euless, Texas, serving as a quick meal stop.",
+            "lat": 32.830548,
+            "lng": -97.098921,
+            "name": "Raising Cane's Chicken Fingers"
+        },
+        {
+            "category": "misc",
+            "description": "QuikTrip is a Tulsa-based convenience store chain, and this Westpark Way store in Euless, Texas, serves as a quick stop for fuel and snacks.",
+            "lat": 32.8365929,
+            "lng": -97.1189721,
+            "name": "QuikTrip"
+        },
+        {
+            "category": "dining",
+            "description": "Mister O1 Extraordinary Pizza is a Miami-born pizzeria chain, with this South Main Street location in Grapevine, Texas, known for star-shaped pies.",
+            "lat": 32.9401152,
+            "lng": -97.0781592,
+            "name": "Mister O1 Extraordinary Pizza Grapevine"
+        },
+        {
+            "category": "urban",
+            "description": "The Mandalay Canal Walk at Las Colinas is a Venice-inspired canal promenade in Irving, Texas, with cobblestone paths, waterfalls, and gondola rides.",
+            "lat": 32.8673248,
+            "lng": -96.9406598,
+            "name": "Mandalay Canal Walk at Las Colinas"
+        },
+        {
+            "category": "dining",
+            "description": "Waffle House is a Georgia-founded 24-hour diner chain, with this Brown Trail location in Bedford, Texas, serving as a quick breakfast stop.",
+            "lat": 32.8381345,
+            "lng": -97.1607396,
+            "name": "Waffle House"
+        },
+        {
+            "category": "dining",
+            "description": "Hutchins BBQ is a family-owned smokehouse in McKinney, Texas, known for hickory-smoked brisket and the bacon-wrapped Texas Twinkie it invented.",
+            "lat": 33.2112483,
+            "lng": -96.6154684,
+            "name": "Hutchins BBQ"
+        },
+        {
+            "category": "shopping",
+            "description": "Legacy West is an upscale mixed-use district in Plano, combining luxury boutiques like Louis Vuitton and Gucci, a food hall, and a Renaissance hotel.",
+            "lat": 33.0810576,
+            "lng": -96.8263461,
+            "name": "Legacy West"
+        },
+        {
+            "category": "cafes",
+            "description": "Amorino Gelato is a Paris-founded Italian gelateria chain, with this Legacy West store in Plano serving flower-shaped scoops, sorbet, and crepes.",
+            "lat": 33.08161,
+            "lng": -96.8259519,
+            "name": "Amorino Gelato Plano"
+        },
+        {
+            "category": "dining",
+            "description": "Sikhay Thai Lao Restaurant is a family-owned eatery on Northeast 28th Street in Fort Worth, serving red curry, drunken noodles, and Lao sausage.",
+            "lat": 32.795413,
+            "lng": -97.299395,
+            "name": "Sikhay Thai Lao Restaurant & Boba Tea & Pho"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Fort Worth Stockyards is a historic livestock-market district along East Exchange Avenue, known for twice-daily longhorn cattle drives and rodeos.",
+            "lat": 32.7892754,
+            "lng": -97.3470204,
+            "name": "Fort Worth Stockyards"
+        },
+        {
+            "category": "shopping",
+            "description": "Stockyards Station is a shopping and dining hub on East Exchange Avenue in Fort Worth, with more than 20 shops and restaurants selling cowboy gear.",
+            "lat": 32.7886906,
+            "lng": -97.3452484,
+            "name": "Fort Worth Stockyards Station"
+        },
+        {
+            "category": "shopping",
+            "description": "Texas Jake's Trading Company is a gift shop inside Stockyards Station in Fort Worth, selling clothing, Texas keepsakes, and antique signs.",
+            "lat": 32.7887371,
+            "lng": -97.3449695,
+            "name": "Texas Jake's Trading Company"
+        },
+        {
+            "category": "dining",
+            "description": "Waffle House is a Georgia-founded 24-hour diner chain, and this Huffman Drive location in Euless, Texas, serves as a quick Southern breakfast stop.",
+            "lat": 32.8374301,
+            "lng": -97.0852734,
+            "name": "Waffle House"
+        },
+        {
+            "category": "misc",
+            "description": "QuikTrip is a Tulsa-based convenience store chain, and this North Main Street store in Euless, Texas, serves as a quick stop for fuel and snacks.",
+            "lat": 32.83817,
+            "lng": -97.08179,
+            "name": "QuikTrip"
+        },
+        {
+            "category": "dining",
+            "description": "Mighty Chick Sando is a fast-food restaurant on Cheek-Sparger Road in Bedford, Texas, known for Korean fried and Nashville hot chicken sandwiches.",
+            "lat": 32.8650982,
+            "lng": -97.1078534,
+            "name": "Mighty Chick Sando"
+        },
+        {
+            "category": "shopping",
+            "description": "Galleria Dallas is a large enclosed shopping mall off Interstate 635 in north Dallas, home to an ice rink and over 210 stores and restaurants.",
+            "lat": 32.929809,
+            "lng": -96.8198806,
+            "name": "Galleria Dallas"
+        },
+        {
+            "category": "wellness",
+            "description": "Jins Foot Spa is a massage studio on Belt Line Road in Addison, Texas, offering foot reflexology, hot stone, and essential oil treatments.",
+            "lat": 32.9536811,
+            "lng": -96.8535897,
+            "name": "Jins Foot Spa"
+        },
+        {
+            "category": "misc",
+            "description": "Kroger is a major American supermarket chain, with this Addison, Texas, store off Belt Line Road serving as a grocery and pharmacy stop.",
+            "lat": 32.9505367,
+            "lng": -96.8528509,
+            "name": "Kroger"
+        },
+        {
+            "category": "dining",
+            "description": "Cheba Hut is a cannabis-themed toasted-sub chain, with this Denton shop by the University of North Texas serving as a quick meal stop.",
+            "lat": 33.2065536,
+            "lng": -97.1497347,
+            "name": "Cheba Hut Toasted Subs"
+        },
+        {
+            "category": "nature",
+            "description": "Ray Roberts Lake State Park is a nine-unit park on a 29,000-acre lake near Pilot Point, Texas, with campsites and trails at Isle du Bois.",
+            "lat": 33.380758,
+            "lng": -97.0134772,
+            "name": "Ray Roberts Lake State Park"
+        },
+        {
+            "category": "cafes",
+            "description": "Smoothie King is a national smoothie chain, with this Aubrey, Texas, store on University Drive serving as a quick stop for blended drinks.",
+            "lat": 33.2212799,
+            "lng": -96.9320793,
+            "name": "Smoothie King"
+        },
+        {
+            "category": "wellness",
+            "description": "LA Fitness is a national gym chain of nearly 700 locations, and this Carrollton, Texas, club on Midway Road serves as a workout stop.",
+            "lat": 33.0249539,
+            "lng": -96.841735,
+            "name": "LA Fitness"
+        },
+        {
+            "category": "dining",
+            "description": "Five Guys is a national fast-casual chain, with this Carrollton, Texas, location on Hebron Parkway serving fresh-ground burgers and peanut-oil fries.",
+            "lat": 33.0254087,
+            "lng": -96.8427721,
+            "name": "Five Guys"
+        },
+        {
+            "category": "cafes",
+            "description": "Native Coffee Co. is a roastery cafe in Farmers Branch, Texas, serving as a showroom for Colombian producer Diego Bermudez's coffees.",
+            "lat": 32.9334027,
+            "lng": -96.8353891,
+            "name": "Native Coffee Co."
+        },
+        {
+            "category": "nature",
+            "description": "Arbor Hills Nature Preserve is a 200-acre park on West Parker Road in Plano, with paved trails, unpaved walkways, and a 2.8-mile off-road bike trail.",
+            "lat": 33.0504108,
+            "lng": -96.8529578,
+            "name": "Arbor Hills Nature Preserve"
+        },
+        {
+            "category": "shopping",
+            "description": "Grandscape is a shopping, dining, and entertainment district on over 400 acres in The Colony, Texas, anchored by Nebraska Furniture Mart and Scheels.",
+            "lat": 33.0719197,
+            "lng": -96.8625763,
+            "name": "Grandscape"
+        },
+        {
+            "category": "dining",
+            "description": "Bulla Gastrobar is a Florida-based Spanish tapas chain whose first Texas location serves paella and sangria in Plano's Legacy West district.",
+            "lat": 33.0785756,
+            "lng": -96.8269267,
+            "name": "Bulla Gastrobar Plano"
+        },
+        {
+            "category": "shopping",
+            "description": "The Shops at Legacy East is the eastern section of a walkable shopping and dining district in Plano, home to Truluck's and Del Frisco's Grille.",
+            "lat": 33.0786195,
+            "lng": -96.8211311,
+            "name": "The Shops at Legacy East"
+        },
+        {
+            "category": "nature",
+            "description": "Cedar Ridge Preserve is a 600-acre natural sanctuary on Mountain Creek Parkway in southwest Dallas, with roughly 9 miles of hiking trails.",
+            "lat": 32.6381819,
+            "lng": -96.9574724,
+            "name": "Cedar Ridge Preserve"
+        },
+        {
+            "category": "cafes",
+            "description": "Smoothie King is an international smoothie chain, and this North Cedar Ridge Drive store in Duncanville, Texas, serves as a quick blended-drink stop.",
+            "lat": 32.6520112,
+            "lng": -96.9261204,
+            "name": "Smoothie King"
+        },
+        {
+            "category": "dining",
+            "description": "IHOP is a national pancake chain, with this 24-hour location on Precinct Line Road in Hurst, Texas, serving as a quick breakfast stop.",
+            "lat": 32.8609319,
+            "lng": -97.1854664,
+            "name": "IHOP"
+        },
+        {
+            "category": "dining",
+            "description": "Nina's Brunch is a family-run breakfast and lunch spot in Forney, Texas, serving omelets, eggs Benedict, and stuffed French toast.",
+            "lat": 32.746808,
+            "lng": -96.449577,
+            "name": "Nina's Brunch"
+        },
+        {
+            "category": "nature",
+            "description": "Oak Point Park is Plano's largest park, covering 800 acres along Rowlett Creek with paved trails, soft-surface paths, and a lake open to kayaks.",
+            "lat": 33.0577257,
+            "lng": -96.6713347,
+            "name": "Oak Point Park and Nature Preserve"
+        },
+        {
+            "category": "wellness",
+            "description": "LA Fitness is a national gym chain, and this Plano club along the President George Bush Turnpike offers weights, cardio, and an indoor pool.",
+            "lat": 33.0004675,
+            "lng": -96.7632905,
+            "name": "LA Fitness"
+        },
+        {
+            "category": "wellness",
+            "description": "WorldSprings is an outdoor mineral springs destination at Grandscape in The Colony, Texas, with 46 soaking pools, cold plunges, and Finnish saunas.",
+            "lat": 33.0664932,
+            "lng": -96.8607891,
+            "name": "WorldSprings"
+        },
+        {
+            "category": "dining",
+            "description": "P.F. Chang's is an Asian-inspired restaurant chain, with this Grandscape location in The Colony, Texas, serving lettuce wraps and Mongolian beef.",
+            "lat": 33.0741201,
+            "lng": -96.8616425,
+            "name": "P.F. Chang's"
+        },
+        {
+            "category": "misc",
+            "description": "WaveMAX Laundry is a laundromat chain, and this Central Drive store in Bedford, Texas, offers Electrolux washers and wash-dry-fold service.",
+            "lat": 32.845197,
+            "lng": -97.134153,
+            "name": "WaveMAX Laundry Bedford"
+        },
+        {
+            "category": "dining",
+            "description": "Coco Shrimp is a Hawaiian-style shrimp chain that began as a food truck, and this South Main Village location in Fort Worth is its first restaurant.",
+            "lat": 32.7410587,
+            "lng": -97.3252087,
+            "name": "Coco Shrimp"
+        },
+        {
+            "category": "dining",
+            "description": "Lina Street Food is a Thai and Asian-fusion restaurant on Central Drive in Bedford, Texas, serving pho, curries, pad thai, and chicken satay.",
+            "lat": 32.8422714,
+            "lng": -97.1329947,
+            "name": "Lina Street Food"
+        },
+        {
+            "category": "nature",
+            "description": "The Fort Worth Water Gardens is a downtown park designed by Philip Johnson and opened in 1974, known for its Quiet, Aerated, and Active pools.",
+            "lat": 32.747749,
+            "lng": -97.32663,
+            "name": "Fort Worth Water Gardens"
+        },
+        {
+            "category": "urban",
+            "description": "Sundance Square is downtown Fort Worth's 35-block entertainment and commercial district, named for the Sundance Kid and home to Bass Performance Hall.",
+            "lat": 32.7545105,
+            "lng": -97.3318083,
+            "name": "Sundance Square"
+        },
+        {
+            "category": "misc",
+            "description": "QuikTrip is a Tulsa-based convenience store chain, with this Weatherford, Texas, location serving as a quick stop for fuel and snacks.",
+            "lat": 32.7296019,
+            "lng": -97.8199625,
+            "name": "QuikTrip"
+        },
+        {
+            "category": "nature",
+            "description": "Chandor Gardens is a historic garden in Weatherford, Texas, founded in 1936 by portrait painter Douglas Chandor and known for its 30-foot waterfall.",
+            "lat": 32.7534642,
+            "lng": -97.8085148,
+            "name": "Chandor Gardens"
+        },
+        {
+            "category": "landmarks",
+            "description": "Fossil Rim Wildlife Center is a 1,800-acre conservation center near Glen Rose, Texas, with self-guided drives past giraffes, rhinos, and cheetahs.",
+            "lat": 32.1794583,
+            "lng": -97.7972017,
+            "name": "Fossil Rim Wildlife Center"
+        },
+        {
+            "category": "nature",
+            "description": "Dinosaur Valley State Park is a 1,525-acre park near Glen Rose, Texas, known for 113-million-year-old dinosaur tracks in the bed of the Paluxy River.",
+            "lat": 32.2532572,
+            "lng": -97.8097244,
+            "name": "Dinosaur Valley State Park"
+        },
+        {
+            "category": "dining",
+            "description": "Wingstop is a Dallas-based chicken-wing chain, with this Bryant Irvin Road location in southwest Fort Worth serving as a quick meal stop.",
+            "lat": 32.6814717,
+            "lng": -97.4149861,
+            "name": "Wingstop"
+        },
+        {
+            "category": "misc",
+            "description": "QuikTrip is a Tulsa-based convenience store chain, with this Hurst, Texas, location serving as a practical stop for fuel and snacks.",
+            "lat": 32.8095585,
+            "lng": -97.2069343,
+            "name": "QuikTrip"
+        },
+        {
+            "category": "lodging",
+            "description": "La Quinta Inn & Suites by Wyndham Dallas Las Colinas is a mid-scale hotel in Irving with free breakfast and a weekday-daytime DFW Airport shuttle.",
+            "lat": 32.8655667,
+            "lng": -96.9603485,
+            "name": "La Quinta Inn & Suites by Wyndham Dallas Las Colinas"
+        },
+        {
+            "category": "shopping",
+            "description": "Highland Park Village is a 1931 Spanish-style shopping center and National Historic Landmark in Highland Park, Texas, with Hermès, Chanel, and Dior.",
+            "lat": 32.8356649,
+            "lng": -96.8056735,
+            "name": "Highland Park Village"
+        },
+        {
+            "category": "shopping",
+            "description": "NorthPark Center is a 2-million-square-foot mall on North Central Expressway in Dallas, opened in 1965 and anchored by Neiman Marcus and Nordstrom.",
+            "lat": 32.868639,
+            "lng": -96.7739298,
+            "name": "NorthPark Center"
+        },
+        {
+            "category": "dining",
+            "description": "Eataly is a Turin-born marketplace chain founded in 2007, and this Dallas location inside NorthPark Center pairs Italian groceries with restaurants.",
+            "lat": 32.8682073,
+            "lng": -96.7756402,
+            "name": "Eataly Dallas"
+        },
+        {
+            "category": "landmarks",
+            "description": "Fair Park is a 277-acre exposition complex east of downtown Dallas, home to the State Fair of Texas and Art Deco halls from the 1936 Texas Centennial.",
+            "lat": 32.7782181,
+            "lng": -96.7592709,
+            "name": "Fair Park"
+        },
+        {
+            "category": "dining",
+            "description": "Hinodeya is a Hasuda-born Japanese ramen chain, with this Lowest Greenville location in Dallas known for a dashi broth of kombu, bonito, and scallops.",
+            "lat": 32.8153155,
+            "lng": -96.7706636,
+            "name": "Hinodeya Ramen & Bar Greenville"
+        },
+        {
+            "category": "misc",
+            "description": "Target is a national retail chain, with this Irving, Texas, store on Airport Freeway serving as a practical stop for supplies.",
+            "lat": 32.8396709,
+            "lng": -96.9905518,
+            "name": "Target"
+        },
+        {
+            "category": "nature",
+            "description": "The Fort Worth Botanic Garden is a 120-acre garden in the city's Cultural District, founded in 1934 and known for its 7.5-acre Japanese Garden.",
+            "lat": 32.7403425,
+            "lng": -97.3638144,
+            "name": "Fort Worth Botanic Garden"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Fort Worth Zoo is a 64-acre zoological park on Colonial Parkway, opened in 1909 and home to some 7,000 animals representing 542 species.",
+            "lat": 32.7231585,
+            "lng": -97.3564467,
+            "name": "Fort Worth Zoo"
+        },
+        {
+            "category": "dining",
+            "description": "HG Sply Co. is a health-focused North Texas restaurant chain founded in 2013, with this Fort Worth location at WestBend overlooking the Trinity River.",
+            "lat": 32.7273918,
+            "lng": -97.3594283,
+            "name": "HG Sply Co. Fort Worth"
+        },
+        {
+            "category": "nature",
+            "description": "Trinity Park is a 252-acre park along the Trinity River in Fort Worth's Cultural District, known for its duck pond and miniature railroad stop.",
+            "lat": 32.7435092,
+            "lng": -97.3555857,
+            "name": "Trinity Park"
+        },
+        {
+            "category": "dining",
+            "description": "Shake Shack is a New York-born fast-casual chain, with this Southlake, Texas, location on Central Avenue serving ShackBurgers and milkshakes.",
+            "lat": 32.9417089,
+            "lng": -97.1287474,
+            "name": "Shake Shack Southlake"
+        },
+        {
+            "category": "dining",
+            "description": "Triple A Cafe is a breakfast and brunch spot on Trinity Boulevard in Fort Worth, serving skillets, chicken and waffles, and eggs Benedict.",
+            "lat": 32.8231557,
+            "lng": -97.0599316,
+            "name": "Triple A Cafe"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Kimbell Art Museum is a Louis Kahn-designed museum in Fort Worth's Cultural District, with the only Michelangelo painting on view in the Americas.",
+            "lat": 32.7485687,
+            "lng": -97.3649208,
+            "name": "Kimbell Art Museum"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Modern Art Museum of Fort Worth is a postwar art museum in the Cultural District, housed in five Tadao Ando pavilions set on a reflecting pond.",
+            "lat": 32.7491803,
+            "lng": -97.3633072,
+            "name": "Modern Art Museum of Fort Worth"
+        },
+        {
+            "category": "misc",
+            "description": "QuikTrip is a Tulsa-based convenience store chain, and this East Division Street store in Arlington, Texas, serves as a stop for fuel and snacks.",
+            "lat": 32.7397227,
+            "lng": -97.0966824,
+            "name": "QuikTrip"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Dallas Farmers Market is a downtown public market dating to 1941, with The Shed's weekend produce stalls and a 26,000-square-foot food hall.",
+            "lat": 32.7775406,
+            "lng": -96.7900636,
+            "name": "Dallas Farmers Market"
+        },
+        {
+            "category": "dining",
+            "description": "Dock Local is a small seafood chain that began as a food truck in 2016, with this Dallas Farmers Market counter known for Maine lobster rolls.",
+            "lat": 32.77747,
+            "lng": -96.7900856,
+            "name": "Dock Local"
+        },
+        {
+            "category": "dining",
+            "description": "Zong Po Sai is a Taiwanese restaurant on Coit Road in Plano, known for authentic dishes like braised pork rice and night market steak.",
+            "lat": 33.029338,
+            "lng": -96.7716796,
+            "name": "Zong Po Sai / Imperial Feast Asian Fusion-Social Dining"
+        },
+        {
+            "category": "lodging",
+            "description": "Sonesta Select Dallas Richardson is a chain hotel on North Greenville Avenue in Richardson, Texas, with an outdoor pool and 24-hour fitness center.",
+            "lat": 32.9795325,
+            "lng": -96.7080557,
+            "name": "Sonesta Select Dallas Richardson"
+        },
+        {
+            "category": "misc",
+            "description": "RaceTrac is an Atlanta-based gas station chain, and this store on East Arapaho Road in Richardson, Texas, is a 24-hour stop for fuel and snacks.",
+            "lat": 32.9603395,
+            "lng": -96.7143939,
+            "name": "RaceTrac"
+        },
+        {
+            "category": "nature",
+            "description": "The Dallas Arboretum and Botanical Garden covers 66 acres on the shore of White Rock Lake in East Dallas, home to the 1940 DeGolyer Gardens.",
+            "lat": 32.8236184,
+            "lng": -96.7166236,
+            "name": "The Dallas Arboretum and Botanical Garden",
+            "starred": true
+        },
+        {
+            "category": "dining",
+            "description": "Mei Asian Cuisine is a fusion restaurant in Dallas's Lakewood neighborhood, serving sushi alongside Chinese and Thai dishes like crispy beef.",
+            "lat": 32.8119016,
+            "lng": -96.7301866,
+            "name": "Mei Asian Cuisine"
+        },
+        {
+            "category": "nature",
+            "description": "White Rock Lake is a 1,015-acre city lake about 5 miles northeast of downtown Dallas, ringed by over 9 miles of hike-and-bike trail.",
+            "lat": 32.828066,
+            "lng": -96.7253164,
+            "name": "White Rock Lake"
+        },
+        {
+            "category": "misc",
+            "description": "QuikTrip is a Tulsa-based convenience store chain, with this Garland Road store in Dallas serving as a quick stop for fuel and snacks.",
+            "lat": 32.8116408,
+            "lng": -96.7272617,
+            "name": "QuikTrip"
+        },
+        {
+            "category": "dining",
+            "description": "Velvet Taco is a Dallas-born fast-casual chain, with this West Campbell Road location in Richardson, Texas, serving over 20 globally inspired tacos.",
+            "lat": 32.9758689,
+            "lng": -96.7173871,
+            "name": "Velvet Taco"
+        },
+        {
+            "category": "dining",
+            "description": "Gang Ho Yeon Pa is a Korean shabu shabu restaurant on Old Denton Road in Carrollton, Texas, serving individual hot pots with a choice of broths.",
+            "lat": 32.976845,
+            "lng": -96.910795,
+            "name": "Gang Ho Yeon Pa"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Dallas Museum of Art is a major museum in the downtown Arts District, founded in 1903 and holding over 24,000 works from antiquity to the present.",
+            "lat": 32.7876959,
+            "lng": -96.8010444,
+            "name": "Dallas Museum of Art",
+            "starred": true
+        },
+        {
+            "category": "nature",
+            "description": "Klyde Warren Park is a 5.4-acre deck park over the Woodall Rodgers Freeway in downtown Dallas, opened in 2012 to link the Arts District with Uptown.",
+            "lat": 32.7893644,
+            "lng": -96.8016184,
+            "name": "Klyde Warren Park"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Perot Museum of Nature and Science is a science museum in Dallas's Victory Park, housed in a Thom Mayne-designed cube with 11 exhibit halls.",
+            "lat": 32.7869429,
+            "lng": -96.8065844,
+            "name": "Perot Museum of Nature and Science"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Sixth Floor Museum at Dealey Plaza is a Dallas museum inside the former Texas School Book Depository, chronicling the 1963 Kennedy assassination.",
+            "lat": 32.7798188,
+            "lng": -96.8084842,
+            "name": "The Sixth Floor Museum at Dealey Plaza"
+        },
+        {
+            "category": "landmarks",
+            "description": "Reunion Tower is a 561-foot observation tower in downtown Dallas, opened in 1978 and crowned by a geodesic dome that holds the GeO-Deck.",
+            "lat": 32.7755975,
+            "lng": -96.8089687,
+            "name": "Reunion Tower"
+        },
+        {
+            "category": "landmarks",
+            "description": "Pioneer Plaza is a 4.2-acre downtown Dallas park where 49 of a planned 70 bronze steers and three mounted riders recall 19th-century cattle drives.",
+            "lat": 32.7766323,
+            "lng": -96.8011986,
+            "name": "Pioneer Plaza"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Giant Eyeball is a 30-foot fiberglass eye sculpture by Tony Tasset, standing on the grounds of The Joule hotel in downtown Dallas since 2013.",
+            "lat": 32.781406,
+            "lng": -96.7983119,
+            "name": "Giant Eyeball"
+        },
+        {
+            "category": "dining",
+            "description": "Cheddar's Scratch Kitchen is a casual-dining chain founded in Arlington, Texas, with this southwest Dallas location serving as a familiar dinner stop.",
+            "lat": 32.64489,
+            "lng": -96.85843,
+            "name": "Cheddar's Scratch Kitchen"
+        }
+    ],
     "name": "DFW",
     "ordered": true
 }

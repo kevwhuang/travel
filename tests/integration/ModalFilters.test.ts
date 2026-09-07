@@ -183,15 +183,12 @@ describe('ModalFilters', () => {
     });
 
     test('hides journeys without markers', () => {
-        const hiddenJourneys = atlasData.journeys.filter(journey => journey.markerCount === 0);
-        const html = renderModal();
+        const emptyJourney: AtlasJourney = { id: '2026_99_empty', isOrdered: true, markerCount: 0, name: 'Empty Crafted Journey', order: 99, year: 2026 };
 
-        expect(hiddenJourneys.length).toBeGreaterThan(0);
+        const html = renderModal({ journeys: [...atlasData.journeys, emptyJourney] });
+
         expect(html.split('self-baseline font-serif').length - 1).toBe(getJourneyChipOrder().length);
-
-        for (const journey of hiddenJourneys) {
-            expect(html, journey.id).not.toContain(journey.name);
-        }
+        expect(html).not.toContain(emptyJourney.name);
     });
 
     test('pairs a journey chip name with its hidden marker count', () => {

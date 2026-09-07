@@ -289,6 +289,19 @@ describe('buildAtlasData', () => {
         expect(repeatStops.map(marker => [marker.name, marker.stopNumber])).toEqual([['First', 1], ['Last', 2]]);
         expect(journeys.find(journey => journey.id === '2025_1_repeat')?.markerCount).toBe(2);
     });
+
+    test('counts zero markers for a journey without any', async () => {
+        const atlas = await importAtlasWith({
+            journeys: [
+                buildJourneyEntry('2026_1_claim', [buildMarker()]),
+                buildJourneyEntry('2026_2_empty', []),
+            ],
+        });
+
+        const { journeys } = await atlas.getAtlasData();
+
+        expect(journeys.map(journey => [journey.id, journey.markerCount])).toEqual([['2026_2_empty', 0], ['2026_1_claim', 1]]);
+    });
 });
 
 describe('categories', () => {
@@ -376,13 +389,6 @@ describe('journeys', () => {
 
             expect(journey.markerCount, journey.id).toBe(readJourneyFile(journey.id).markers.length - shadowedCount);
         }
-    });
-
-    test('a journey without markers counts zero', () => {
-        const empty = atlasData.journeys.find(journey => readJourneyFile(journey.id).markers.length === 0);
-
-        expect(empty).toBeDefined();
-        expect(empty?.markerCount).toBe(0);
     });
 });
 
