@@ -1,0 +1,344 @@
+{
+    "markers": [
+        {
+            "category": "transit",
+            "description": "Seattle-Tacoma International Airport is the primary air hub of the Pacific Northwest, serving the Seattle metropolitan area from its location in SeaTac, Washington.",
+            "lat": 47.4483652,
+            "lng": -122.3085927,
+            "name": "Seattle-Tacoma International Airport"
+        },
+        {
+            "category": "dining",
+            "description": "Trapper's Sushi Co. is a Bonney Lake-born sushi chain, with this Westfield Southcenter location in Tukwila, Washington, serving all-you-can-eat sushi.",
+            "lat": 47.4576907,
+            "lng": -122.2594398,
+            "name": "Trapper's Sushi Co."
+        },
+        {
+            "category": "misc",
+            "description": "Safeway is an Albertsons-owned supermarket chain, with this Fairwood Shopping Center store near Renton, Washington, serving as a grocery stop.",
+            "lat": 47.4474284,
+            "lng": -122.1524522,
+            "name": "Safeway"
+        },
+        {
+            "category": "lodging",
+            "description": "This address served as a private home-base stay in the Kent area southeast of Seattle.",
+            "lat": 47.4231622,
+            "lng": -122.1487334,
+            "name": "14411 SE 200th St"
+        },
+        {
+            "category": "dining",
+            "description": "Burger Seoul is a Korean-inspired burger restaurant on Division Avenue in Tacoma, opened in 2024 as the storefront of owner Young La's food truck.",
+            "lat": 47.2567154,
+            "lng": -122.4622734,
+            "name": "Burger Seoul"
+        },
+        {
+            "category": "cafes",
+            "description": "Curran Coffee is a coffee shop in Tacoma's Old Town neighborhood, opened in 2022 by sisters Jordyn and Emily Curran beside The Spar tavern.",
+            "lat": 47.274894,
+            "lng": -122.4650694,
+            "name": "Curran Coffee"
+        },
+        {
+            "category": "urban",
+            "description": "Point Ruston is a 97-acre mixed-use waterfront development straddling Tacoma and Ruston, Washington, on the former ASARCO copper smelter site.",
+            "lat": 47.2981764,
+            "lng": -122.5032191,
+            "name": "Point Ruston"
+        },
+        {
+            "category": "nature",
+            "description": "Point Defiance Park is a 760-acre park on a peninsula in north Tacoma, home to old-growth forest, Point Defiance Zoo & Aquarium, and Fort Nisqually.",
+            "lat": 47.306988,
+            "lng": -122.5263212,
+            "name": "Point Defiance Park"
+        },
+        {
+            "category": "nature",
+            "description": "Owen Beach is a Puget Sound beach in Tacoma's Point Defiance Park, reopened in 2022 with a pavilion, kayak rentals, and a climbable whale sculpture.",
+            "lat": 47.3133552,
+            "lng": -122.5287473,
+            "name": "Owen Beach"
+        },
+        {
+            "category": "shopping",
+            "description": "REI is a Seattle-founded outdoor gear co-op, and this South Steele Street store in Tacoma has stocked camping, hiking, and climbing gear since 2002.",
+            "lat": 47.222274,
+            "lng": -122.466328,
+            "name": "REI"
+        },
+        {
+            "category": "shopping",
+            "description": "Bass Pro Shops is a Missouri-based sporting goods chain, and this Tacoma store off Interstate 5 opened in 2014 as its first in the Pacific Northwest.",
+            "lat": 47.1854799,
+            "lng": -122.4603188,
+            "name": "Bass Pro Shops"
+        },
+        {
+            "category": "dining",
+            "description": "Dave's Hot Chicken is a Los Angeles-born fast-casual chain, and this location at The Commons in Federal Way, Washington, serves as a quick meal stop.",
+            "lat": 47.3127578,
+            "lng": -122.3117761,
+            "name": "Dave's Hot Chicken"
+        },
+        {
+            "category": "nature",
+            "description": "Kubota Garden is a 20-acre Japanese garden in Seattle's Rainier Beach neighborhood, begun in 1927 by Fujitaro Kubota and a city park since 1987.",
+            "lat": 47.5134676,
+            "lng": -122.2658737,
+            "name": "Kubota Garden"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Museum of Flight is a nonprofit air and space museum at Boeing Field in Tukwila, Washington, home to the 1909 Red Barn, Boeing's original factory.",
+            "lat": 47.5185379,
+            "lng": -122.2968545,
+            "name": "The Museum of Flight",
+            "starred": true
+        },
+        {
+            "category": "nature",
+            "description": "Snoqualmie Falls is a 268-foot waterfall in Snoqualmie, Washington, sacred to the Snoqualmie Tribe and drawing over 1.5 million visitors a year.",
+            "lat": 47.5417209,
+            "lng": -121.8377019,
+            "name": "Snoqualmie Falls"
+        },
+        {
+            "category": "dining",
+            "description": "Sansonina Ristorante Italiano is an Italian restaurant on Rainier Avenue South in Renton, Washington, opened in 2019 in a former Pizza Hut building.",
+            "lat": 47.4810161,
+            "lng": -122.2175595,
+            "name": "Sansonina Ristorante Italiano"
+        },
+        {
+            "category": "misc",
+            "description": "Safeway is an Albertsons-owned supermarket chain, and this South 3rd Street store near downtown Renton, Washington, serves as a grocery stop.",
+            "lat": 47.4802301,
+            "lng": -122.2144917,
+            "name": "Safeway"
+        },
+        {
+            "category": "nature",
+            "description": "Tiger Mountain State Forest is a 13,745-acre working forest in the Issaquah Alps near Issaquah, Washington, with hiking and mountain biking trails.",
+            "lat": 47.4881608,
+            "lng": -121.9613689,
+            "name": "Tiger Mountain State Forest"
+        },
+        {
+            "category": "dining",
+            "description": "Cascadia Pizza Co. is a wood-fired pizza chain that began as a food truck, with this location near Maple Valley, Washington, overlooking the Cedar River.",
+            "lat": 47.4061848,
+            "lng": -122.0383632,
+            "name": "Cascadia Pizza Co."
+        },
+        {
+            "category": "nature",
+            "description": "Rattlesnake Lake Recreation Area is a Seattle Public Utilities day-use area near North Bend, Washington, with a 111-acre lake and the Rattlesnake Ledge Trail.",
+            "lat": 47.4272972,
+            "lng": -121.7740382,
+            "name": "Rattlesnake Lake Recreation Area"
+        },
+        {
+            "category": "dining",
+            "description": "South Fork is a counter-service restaurant, bar, and beer garden in a former golf-course clubhouse off Interstate 90 near North Bend, Washington.",
+            "lat": 47.4710317,
+            "lng": -121.7588587,
+            "name": "South Fork North Bend"
+        },
+        {
+            "category": "dining",
+            "description": "Pasifika Grill & Bar is a Pacific Island fusion restaurant inside Hotel 116 in Bellevue, Washington, serving Chamorro, Hawaiian, and Samoan dishes.",
+            "lat": 47.6161959,
+            "lng": -122.1866242,
+            "name": "Pasifika Grill & Bar"
+        },
+        {
+            "category": "cafes",
+            "description": "Woods Coffee is a Lynden-based coffee chain, with this drive-through location at Hotel 116 in Bellevue, Washington, serving as a quick coffee stop.",
+            "lat": 47.6163629,
+            "lng": -122.186449,
+            "name": "Woods Coffee"
+        },
+        {
+            "category": "nature",
+            "description": "The Bellevue Botanical Garden is a 53-acre garden on Wilburton Hill in Bellevue, Washington, home to a 150-foot ravine suspension bridge.",
+            "lat": 47.6091944,
+            "lng": -122.1787564,
+            "name": "Bellevue Botanical Garden"
+        },
+        {
+            "category": "shopping",
+            "description": "Bellevue Square is a 1.3-million-square-foot mall in downtown Bellevue, Washington, opened in 1946 and anchored by Macy's and Nordstrom.",
+            "lat": 47.6157647,
+            "lng": -122.203721,
+            "name": "Bellevue Square"
+        },
+        {
+            "category": "misc",
+            "description": "LensCrafters is an Ohio-based eyewear chain, with this store inside Macy's at Bellevue Square in Bellevue, Washington, offering eye exams and glasses.",
+            "lat": 47.6161073,
+            "lng": -122.2025158,
+            "name": "LensCrafters at Macy's"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Fremont Troll is an 18-foot concrete sculpture under the Aurora Bridge in Seattle's Fremont neighborhood, clutching a real Volkswagen Beetle.",
+            "lat": 47.6510628,
+            "lng": -122.3474988,
+            "name": "Fremont Troll"
+        },
+        {
+            "category": "urban",
+            "description": "Argosy Cruises is a Seattle cruise operator founded in 1949, running one-hour guided tours of Elliott Bay from Pier 55 on the downtown waterfront.",
+            "lat": 47.604884,
+            "lng": -122.3399759,
+            "name": "Argosy Cruises Seattle Waterfront"
+        },
+        {
+            "category": "dining",
+            "description": "Wally's Chowder House is a seafood restaurant overlooking Puget Sound in Des Moines, Washington, serving New England clam chowder and fish and chips.",
+            "lat": 47.3994894,
+            "lng": -122.3247531,
+            "name": "Wally's Chowder House"
+        },
+        {
+            "category": "misc",
+            "description": "7-Eleven is a Dallas-founded convenience store chain, and this Central Avenue South store in Kent, Washington, is a 24-hour stop for fuel and snacks.",
+            "lat": 47.3775003,
+            "lng": -122.2312624,
+            "name": "7-Eleven"
+        },
+        {
+            "category": "dining",
+            "description": "Pho Saigon Garden is a Vietnamese restaurant on Pacific Highway South in Kent, Washington, serving beef pho, vermicelli bowls, and banh mi.",
+            "lat": 47.371631,
+            "lng": -122.300924,
+            "name": "Pho Saigon Garden"
+        },
+        {
+            "category": "nature",
+            "description": "Mount Rainier National Park is a Washington park protecting Mount Rainier, an active volcano and the most glaciated peak in the contiguous United States.",
+            "lat": 46.8671484,
+            "lng": -121.6998559,
+            "name": "Mount Rainier National Park",
+            "starred": true
+        },
+        {
+            "category": "dining",
+            "description": "El Rinconsito is a taqueria chain founded in Kent in 1997, and this 39th Avenue Southwest location in Puyallup, Washington, is a quick taco stop.",
+            "lat": 47.1552125,
+            "lng": -122.2959505,
+            "name": "El Rinconsito Puyallup"
+        },
+        {
+            "category": "dining",
+            "description": "Nana Thai Street Food is a Thai restaurant on South 38th Street in Tacoma's Lincoln District, serving pad thai, khao soi, curries, and papaya salad.",
+            "lat": 47.2232427,
+            "lng": -122.4429018,
+            "name": "Nana Thai Street Food"
+        },
+        {
+            "category": "landmarks",
+            "description": "LeMay - America's Car Museum is a 165,000-square-foot automotive museum beside the Tacoma Dome, displaying over 250 vehicles on four floors.",
+            "lat": 47.2357021,
+            "lng": -122.4303289,
+            "name": "LeMay - America's Car Museum"
+        },
+        {
+            "category": "nature",
+            "description": "Browns Point Lighthouse Park is a waterfront park on Browns Point near Tacoma, home to a 1933 Art Deco lighthouse at the entrance to Commencement Bay.",
+            "lat": 47.3056448,
+            "lng": -122.4433792,
+            "name": "Browns Point Lighthouse Park"
+        },
+        {
+            "category": "dining",
+            "description": "Grazie Ristorante Italiano is an Italian restaurant on Southcenter Parkway in Tukwila, Washington, serving classic pastas and veal dishes since 1988.",
+            "lat": 47.4508745,
+            "lng": -122.26328,
+            "name": "Grazie Ristorante Italiano Southcenter"
+        },
+        {
+            "category": "misc",
+            "description": "Clara Apartments is a five-story student apartment building on 19th Avenue Northeast in Seattle's University District, built in 2022 with 78 units.",
+            "lat": 47.6640031,
+            "lng": -122.3069744,
+            "name": "Clara Apartments"
+        },
+        {
+            "category": "misc",
+            "description": "Trinity 43rd Apartments is a six-story mixed-use apartment building at Northeast 43rd Street and Roosevelt Way Northeast in Seattle's University District.",
+            "lat": 47.6597505,
+            "lng": -122.3185122,
+            "name": "Trinity 43rd Apartments"
+        },
+        {
+            "category": "dining",
+            "description": "Ramen Danbo is a Fukuoka-born tonkotsu ramen chain, and this East Pine Street shop on Seattle's Capitol Hill is its first in the United States.",
+            "lat": 47.6153842,
+            "lng": -122.316078,
+            "name": "Ramen Danbo Capitol Hill"
+        },
+        {
+            "category": "cafes",
+            "description": "Green Lake Boathouse and Coffee Shop is a cafe and boat rental on Green Lake's east shore in Seattle, established in 1974, with the cafe added in 2009.",
+            "lat": 47.681453,
+            "lng": -122.328785,
+            "name": "Green Lake Boathouse and Coffee Shop"
+        },
+        {
+            "category": "misc",
+            "description": "This address marks a private residential visit on 21st Pl NE in Seattle's Wedgwood neighborhood.",
+            "lat": 47.690916,
+            "lng": -122.306085,
+            "name": "21st Pl NE"
+        },
+        {
+            "category": "dining",
+            "description": "The Original Pancake House is a Portland-born breakfast chain, with this Maple Valley, Washington, location serving Dutch Baby and apple pancakes.",
+            "lat": 47.3610917,
+            "lng": -122.0187167,
+            "name": "The Original Pancake House"
+        },
+        {
+            "category": "misc",
+            "description": "Safeway is an Albertsons-owned supermarket chain, and this Four Corners store in Maple Valley, Washington, serves as a grocery and pharmacy stop.",
+            "lat": 47.3602762,
+            "lng": -122.0183189,
+            "name": "Safeway"
+        },
+        {
+            "category": "nature",
+            "description": "Tipsoo Lake is a subalpine lake at 5,298 feet near Chinook Pass on the east edge of Mount Rainier National Park, ringed by wildflower meadows.",
+            "lat": 46.8691088,
+            "lng": -121.5174709,
+            "name": "Tipsoo Lake"
+        },
+        {
+            "category": "cafes",
+            "description": "Hey Bagel is a sourdough bagel shop at Seattle's University Village, opened in 2025 by Rubinstein Bagels founder Andrew Rubinstein.",
+            "lat": 47.6620213,
+            "lng": -122.2990678,
+            "name": "Hey Bagel"
+        },
+        {
+            "category": "misc",
+            "description": "Twelve at U District is a student apartment community on 12th Avenue Northeast in Seattle's University District, run by American Campus Communities.",
+            "lat": 47.6626324,
+            "lng": -122.3158817,
+            "name": "Twelve at U District"
+        },
+        {
+            "category": "dining",
+            "description": "Jack's BBQ is a Central Texas-style barbecue chain, with this original SoDo location in Seattle opened in 2014 by pitmaster Jack Timmons.",
+            "lat": 47.5682792,
+            "lng": -122.3223369,
+            "name": "Jack's BBQ SoDo"
+        }
+    ],
+    "name": "Seattle",
+    "ordered": true
+}

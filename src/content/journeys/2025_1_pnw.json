@@ -2,10 +2,10 @@
     "markers": [
         {
             "category": "transit",
-            "description": "Seattle–Tacoma International Airport is the primary air hub of the Pacific Northwest, serving the Seattle metropolitan area from its location in SeaTac, Washington.",
+            "description": "Seattle-Tacoma International Airport is the primary air hub of the Pacific Northwest, serving the Seattle metropolitan area from its location in SeaTac, Washington.",
             "lat": 47.4483652,
             "lng": -122.3085927,
-            "name": "Seattle–Tacoma International Airport"
+            "name": "Seattle-Tacoma International Airport"
         },
         {
             "category": "lodging",
@@ -68,7 +68,8 @@
             "description": "Waterfront Park is a public park on Seattle's central waterfront along Elliott Bay, offering piers, viewpoints, and access to the rebuilt downtown shoreline.",
             "lat": 47.60704,
             "lng": -122.3418276,
-            "name": "Waterfront Park"
+            "name": "Waterfront Park",
+            "starred": true
         },
         {
             "category": "dining",
