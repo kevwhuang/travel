@@ -184,6 +184,7 @@ function useAtlasState(data: AtlasData): AtlasState {
 function AtlasInner({ data }: { data: AtlasData }) {
     const atlas = useAtlasState(data);
     const filterButtonRef = useRef<HTMLButtonElement>(null);
+    const isClearingRef = useRef(false);
     const isKeyboardPagingRef = useRef(false);
     const searchButtonRef = useRef<HTMLButtonElement>(null);
     const searchInputRef = useRef<HTMLInputElement>(null);
@@ -198,7 +199,7 @@ function AtlasInner({ data }: { data: AtlasData }) {
         atlas.setIsStarredOnly(false);
         atlas.setSelectedCategoryIds([]);
         atlas.setSelectedJourneyIds([]);
-        resetAfterFilterChange();
+        resetAfterFilterChange(true);
     }
 
     function handleClearSearch() {
@@ -330,6 +331,7 @@ function AtlasInner({ data }: { data: AtlasData }) {
                     <ViewMap
                         categories={data.categories}
                         flyTarget={atlas.flyTarget}
+                        isClearingRef={isClearingRef}
                         journeys={data.journeys}
                         markers={atlas.filteredMarkers}
                         onSelectMarker={atlas.setSelectedMarkerId}
@@ -354,10 +356,11 @@ function AtlasInner({ data }: { data: AtlasData }) {
         );
     }
 
-    function resetAfterFilterChange() {
+    function resetAfterFilterChange(isClearing = false) {
         atlas.setFlyTarget(null);
         atlas.setPage(0);
         atlas.setSelectedMarkerId(null);
+        isClearingRef.current = isClearing;
     }
 
     useEffect(() => {

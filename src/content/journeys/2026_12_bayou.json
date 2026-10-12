@@ -1,0 +1,328 @@
+{
+    "markers": [
+        {
+            "category": "dining",
+            "description": "Danny's is a bistro on the courthouse square in downtown Brenham, Texas, named for co-owner Danny Holle of the Country Sunshine food truck.",
+            "lat": 30.1669903,
+            "lng": -96.3982111,
+            "name": "Danny's"
+        },
+        {
+            "category": "landmarks",
+            "description": "Blue Bell Creameries is an ice cream company founded in Brenham, Texas, in 1907, with a visitor center, observation deck, and parlor at its home plant.",
+            "lat": 30.1642539,
+            "lng": -96.3777693,
+            "name": "Blue Bell Creameries"
+        },
+        {
+            "category": "landmarks",
+            "description": "The George H.W. Bush Presidential Library and Museum is a National Archives site in College Station, Texas, where George and Barbara Bush are buried.",
+            "lat": 30.5965117,
+            "lng": -96.3532726,
+            "name": "George H.W. Bush Presidential Library and Museum"
+        },
+        {
+            "category": "landmarks",
+            "description": "Texas A&M University is a public land-grant university in College Station, Texas, opened in 1876 and known for its Corps of Cadets and Kyle Field.",
+            "lat": 30.6186625,
+            "lng": -96.3364251,
+            "name": "Texas A&M University"
+        },
+        {
+            "category": "dining",
+            "description": "Joe's Italian Grill is an Italian restaurant on West Church Street in Livingston, Texas, serving pizza, calzones, and lobster ravioli in Alfredo sauce.",
+            "lat": 30.7139659,
+            "lng": -94.9572191,
+            "name": "Joe's Italian Grill & Pizza"
+        },
+        {
+            "category": "lodging",
+            "description": "avid hotel Beaumont by IHG is a mid-scale hotel on Rexora Drive off Interstate 10 in Beaumont, Texas, built in 2020 with 95 rooms and a 24-hour gym.",
+            "lat": 30.0428195,
+            "lng": -94.1553278,
+            "name": "avid hotel Beaumont by IHG"
+        },
+        {
+            "category": "dining",
+            "description": "Cicis Pizza is a Plano-born buffet chain founded in 1985, and this Eastex Freeway location in Beaumont, Texas, serves as a quick all-you-can-eat stop.",
+            "lat": 30.1273523,
+            "lng": -94.1547861,
+            "name": "Cicis Pizza"
+        },
+        {
+            "category": "nature",
+            "description": "Big Thicket National Preserve is a 15-unit preserve of over 113,000 acres in Southeast Texas, established in 1974 as one of the first national preserves.",
+            "lat": 30.4583071,
+            "lng": -94.3872437,
+            "name": "Big Thicket National Preserve"
+        },
+        {
+            "category": "landmarks",
+            "description": "The McFaddin-Ward House is a 1906 Beaux-Arts Colonial Revival mansion in Beaumont, Texas, a museum since 1986 with its original furnishings intact.",
+            "lat": 30.0866814,
+            "lng": -94.1149169,
+            "name": "The McFaddin-Ward House Historic Museum"
+        },
+        {
+            "category": "landmarks",
+            "description": "St. Anthony Cathedral Basilica is a 1907 Italian Renaissance Revival church in Beaumont, Texas, named a cathedral in 1966 and a minor basilica in 2006.",
+            "lat": 30.0778906,
+            "lng": -94.1010643,
+            "name": "St. Anthony Cathedral Basilica"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Spindletop Boomtown Museum is a Lamar University museum in Beaumont, Texas, recreating the Gladys City boomtown that grew after the 1901 Lucas Gusher.",
+            "lat": 30.0326274,
+            "lng": -94.0790742,
+            "name": "Spindletop Boomtown Museum"
+        },
+        {
+            "category": "nature",
+            "description": "Shangri La Botanical Gardens is a 252-acre garden and nature preserve on Adams Bayou in Orange, Texas, opened to the public in 1946 by H.J. Lutcher Stark.",
+            "lat": 30.1026639,
+            "lng": -93.7516839,
+            "name": "Shangri La Botanical Gardens and Nature Center"
+        },
+        {
+            "category": "misc",
+            "description": "Walgreens is a Chicago-founded pharmacy chain, and this North 16th Street store in Orange, Texas, serves as a quick stop for medicine and essentials.",
+            "lat": 30.1043775,
+            "lng": -93.7465981,
+            "name": "Walgreens"
+        },
+        {
+            "category": "nature",
+            "description": "Port Neches Riverfront Park is a 27-acre park on the Neches River in Port Neches, Texas, home to RiverFest and a restored Cajun house built around 1810.",
+            "lat": 29.9951671,
+            "lng": -93.9515009,
+            "name": "Port Neches Riverfront Park"
+        },
+        {
+            "category": "dining",
+            "description": "Darrell's is a po-boy shop on West College Street in Lake Charles, Louisiana, in business since 1985 and known for its gravy-drenched Darrell's Special.",
+            "lat": 30.1959399,
+            "lng": -93.2202676,
+            "name": "Darrell's"
+        },
+        {
+            "category": "lodging",
+            "description": "The Mulberry Hotel is an extended-stay hotel with full-kitchen suites in Westlake, Louisiana, across the Calcasieu River from Lake Charles.",
+            "lat": 30.252655,
+            "lng": -93.2594833,
+            "name": "The Mulberry Extended Stay Hotel"
+        },
+        {
+            "category": "misc",
+            "description": "Walmart is an Arkansas-based retail chain, with this Nelson Road Supercenter in Lake Charles, Louisiana, serving as a practical stop for supplies.",
+            "lat": 30.1950351,
+            "lng": -93.2461061,
+            "name": "Walmart Supercenter"
+        },
+        {
+            "category": "wellness",
+            "description": "Davi Nails is a Utah-based nail salon chain, and this salon inside the Nelson Road Walmart in Lake Charles, Louisiana, offers manicures and pedicures.",
+            "lat": 30.195093,
+            "lng": -93.246455,
+            "name": "Davi Nails"
+        },
+        {
+            "category": "landmarks",
+            "description": "Gator Chateau is a free alligator exhibit and parish visitor center off Interstate 10 in Jennings, Louisiana, where guests can hold baby alligators.",
+            "lat": 30.2474841,
+            "lng": -92.66698,
+            "name": "Gator Chateau"
+        },
+        {
+            "category": "landmarks",
+            "description": "Vermilionville is a 23-acre living-history museum on Bayou Vermilion in Lafayette, Louisiana, opened in 1990 with restored homes from across Acadiana.",
+            "lat": 30.2143755,
+            "lng": -91.9963731,
+            "name": "Vermilionville Historic Village"
+        },
+        {
+            "category": "dining",
+            "description": "La Cuisine de Maman is a Cajun and Creole restaurant inside Vermilionville in Lafayette, Louisiana, known for gumbo, plate lunches, and a Sunday buffet.",
+            "lat": 30.214666,
+            "lng": -91.9962799,
+            "name": "Vermilionville Restaurant - La Cuisine de Maman"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Tabasco Factory Tour is a self-guided museum and factory visit on Avery Island, Louisiana, where the McIlhenny family has made pepper sauce since 1868.",
+            "lat": 29.9089646,
+            "lng": -91.9023553,
+            "name": "Tabasco Factory Tours"
+        },
+        {
+            "category": "nature",
+            "description": "Jungle Gardens is a 170-acre garden on Avery Island, Louisiana, created by E.A. McIlhenny and home to Bird City, a snowy egret rookery he founded in 1895.",
+            "lat": 29.912901,
+            "lng": -91.906309,
+            "name": "Jungle Gardens"
+        },
+        {
+            "category": "nature",
+            "description": "Prien Lake Park is a 29-acre parish park on Prien Lake in Lake Charles, Louisiana, with boat and kayak launches, a splash pad, and an amphitheater.",
+            "lat": 30.1878041,
+            "lng": -93.268258,
+            "name": "Prien Lake Park"
+        },
+        {
+            "category": "lodging",
+            "description": "Golden Nugget Lake Charles is a waterfront casino resort in Lake Charles, Louisiana, opened in 2014 and home to a beach, marina, and 18-hole golf course.",
+            "lat": 30.2048862,
+            "lng": -93.2634412,
+            "name": "Golden Nugget Lake Charles Hotel & Casino"
+        },
+        {
+            "category": "dining",
+            "description": "Steamboat Bill's is a Cajun seafood chain founded in Lake Charles, Louisiana, with this North Lakeshore Drive location serving crawfish and pistolettes.",
+            "lat": 30.2377137,
+            "lng": -93.2286054,
+            "name": "Steamboat Bill's on the Lake"
+        },
+        {
+            "category": "misc",
+            "description": "Hixson Toyota is a Toyota dealership on US 171 near DeRidder, Louisiana, with a factory-authorized service center and a parts department.",
+            "lat": 30.8349054,
+            "lng": -93.2496025,
+            "name": "Hixson Toyota"
+        },
+        {
+            "category": "misc",
+            "description": "AutoZone is a Memphis-based auto-parts chain, and this Mahlon Street store in DeRidder, Louisiana, serves as a practical stop for vehicle supplies.",
+            "lat": 30.8482115,
+            "lng": -93.2723505,
+            "name": "AutoZone Auto Parts"
+        },
+        {
+            "category": "misc",
+            "description": "Lex's Auto Care is a tire and oil-change shop on US 171 in Longville, Louisiana, a Beauregard Parish community between Lake Charles and DeRidder.",
+            "lat": 30.602845,
+            "lng": -93.232965,
+            "name": "Lex's Auto Care"
+        },
+        {
+            "category": "dining",
+            "description": "Blazin' Hot Chicken is a Louisiana-born Nashville hot chicken chain, and this Ryan Street location in Lake Charles, Louisiana, serves tenders and sliders.",
+            "lat": 30.2105071,
+            "lng": -93.2184402,
+            "name": "Blazin' Hot Chicken"
+        },
+        {
+            "category": "lodging",
+            "description": "Best Western Plus Prien Lake Hotel & Suites is a chain hotel on East Prien Lake Road in Lake Charles, Louisiana, with an indoor pool and free breakfast.",
+            "lat": 30.1987527,
+            "lng": -93.203441,
+            "name": "Best Western Plus Prien Lake Hotel & Suites"
+        },
+        {
+            "category": "dining",
+            "description": "Umami is a Japanese restaurant and sushi bar on East Prien Lake Road in Lake Charles, Louisiana, serving sashimi, hibachi, and specialty rolls.",
+            "lat": 30.1985225,
+            "lng": -93.2073845,
+            "name": "Umami Japanese Restaurant & Sushi Bar"
+        },
+        {
+            "category": "landmarks",
+            "description": "McNeese State University is a public university on a 122-acre main campus in Lake Charles, Louisiana, opened in 1939 and named for educator John McNeese.",
+            "lat": 30.1776851,
+            "lng": -93.2152198,
+            "name": "McNeese State University"
+        },
+        {
+            "category": "cafes",
+            "description": "Starbucks is a Seattle-based coffee chain, and this Ryan Street store near McNeese State University in Lake Charles, Louisiana, is a quick coffee stop.",
+            "lat": 30.1844693,
+            "lng": -93.2182042,
+            "name": "Starbucks Coffee Company"
+        },
+        {
+            "category": "dining",
+            "description": "Lillie's Asian Cuisine is a pan-Asian restaurant inside the Golden Nugget in Lake Charles, Louisiana, blending Chinese, Japanese, and Vietnamese flavors.",
+            "lat": 30.2042576,
+            "lng": -93.2644358,
+            "name": "Lillie's Asian Cuisine"
+        },
+        {
+            "category": "dining",
+            "description": "Bill's Bar & Burger is a New York-born restaurant chain, with this beach shack at the Golden Nugget in Lake Charles, Louisiana, serving its Fat Cat burger.",
+            "lat": 30.2049479,
+            "lng": -93.2652135,
+            "name": "Bill's Bar & Burger"
+        },
+        {
+            "category": "dining",
+            "description": "SushiBoxx is a locally owned Japanese and Vietnamese restaurant on Nelson Road in Lake Charles, Louisiana, serving sushi rolls, poke bowls, and banh mi.",
+            "lat": 30.1721441,
+            "lng": -93.2502753,
+            "name": "SushiBoxx"
+        },
+        {
+            "category": "urban",
+            "description": "L'Auberge Casino Resort is a casino hotel in Lake Charles, Louisiana, opened in 2005 as L'Auberge du Lac and home to a Tom Fazio-designed golf course.",
+            "lat": 30.2071335,
+            "lng": -93.2592125,
+            "name": "L'Auberge Casino Resort Lake Charles"
+        },
+        {
+            "category": "dining",
+            "description": "Asia is an Asian-fusion restaurant inside L'Auberge Casino Resort in Lake Charles, Louisiana, serving pho, sushi rolls, and lo mein since 2005.",
+            "lat": 30.2064297,
+            "lng": -93.2595828,
+            "name": "Asia"
+        },
+        {
+            "category": "transit",
+            "description": "Sunoco is a Dallas-based fuel brand, and this Enterprise Boulevard station in Lake Charles, Louisiana, doubles as the city's FlixBus and Greyhound stop.",
+            "lat": 30.2278649,
+            "lng": -93.2045993,
+            "name": "Sunoco"
+        },
+        {
+            "category": "transit",
+            "description": "The Downtown Houston stop is a FlixBus and Greyhound boarding point at Gray and Smith streets in Midtown, just across Interstate 45 from downtown Houston.",
+            "lat": 29.75093,
+            "lng": -95.37448,
+            "name": "Downtown Houston"
+        },
+        {
+            "category": "lodging",
+            "description": "This address served as a private home-base stay on Prairie Plains Ln in Long Meadow Farms, a master-planned community in Richmond, Texas.",
+            "lat": 29.65,
+            "lng": -95.75,
+            "name": "Prairie Plains Ln"
+        },
+        {
+            "category": "wellness",
+            "description": "Long Meadow Farms Gym & Pool is the residents' fitness center and main pool of its namesake community in Richmond, Texas, home to the STARS swim team.",
+            "lat": 29.6585756,
+            "lng": -95.7469623,
+            "name": "Long Meadow Farms Gym & Pool"
+        },
+        {
+            "category": "misc",
+            "description": "Fort Bend Hope is a faith-based education nonprofit in downtown Rosenberg, Texas, founded in 2016 and offering adult ESL, GED, and citizenship classes.",
+            "lat": 29.558696,
+            "lng": -95.806425,
+            "name": "Fort Bend Hope"
+        },
+        {
+            "category": "dining",
+            "description": "Kati Thai Eatery is a Thai restaurant off the Grand Parkway near Mason Road in Richmond, Texas, serving pad thai, drunken noodles, and yellow curry.",
+            "lat": 29.6601284,
+            "lng": -95.7347129,
+            "name": "Kati Thai Eatery"
+        },
+        {
+            "category": "cafes",
+            "description": "Hruška's Store & Bakery is a family-owned roadside bakery on State Highway 71 in Ellinger, Texas, rooted in a 1912 general store and known for kolaches.",
+            "lat": 29.8354564,
+            "lng": -96.7087526,
+            "name": "Hruška's Store & Bakery"
+        }
+    ],
+    "name": "Bayou",
+    "ordered": true
+}

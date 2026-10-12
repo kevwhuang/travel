@@ -28,6 +28,7 @@ function buildProps(overrides: Partial<ViewMapProps> = {}): ViewMapProps {
     return {
         categories: [],
         flyTarget: null,
+        isClearingRef: { current: false },
         journeys: [],
         markers: [],
         onSelectMarker: vi.fn(),

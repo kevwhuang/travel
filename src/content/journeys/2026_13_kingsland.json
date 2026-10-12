@@ -1,0 +1,41 @@
+{
+    "markers": [
+        {
+            "category": "lodging",
+            "description": "This address served as a private home-base stay in Kingsland, Texas, on the Llano River arm of Lake LBJ in the Highland Lakes.",
+            "lat": 30.6416972,
+            "lng": -98.4568632,
+            "name": "2510 River Oaks Dr"
+        },
+        {
+            "category": "dining",
+            "description": "Hooper's is a restaurant in Kingsland, Texas, named for director Tobe Hooper and set in the farmhouse from his 1974 film The Texas Chain Saw Massacre.",
+            "lat": 30.6601755,
+            "lng": -98.437151,
+            "name": "Hooper's"
+        },
+        {
+            "category": "misc",
+            "description": "H-E-B is a San Antonio-based supermarket chain founded in 1905, and this Ranch Road 2900 store in Kingsland, Texas, serves as a grocery stop.",
+            "lat": 30.658345,
+            "lng": -98.446175,
+            "name": "H-E-B"
+        },
+        {
+            "category": "dining",
+            "description": "The Spot is the covered patio bar serving burgers, pizzas, and margaritas at Wakepoint, a convenience store and fuel stop on Lake LBJ in Kingsland, Texas.",
+            "lat": 30.6574137,
+            "lng": -98.427886,
+            "name": "The Spot at Wakepoint"
+        },
+        {
+            "category": "dining",
+            "description": "Stack City BBQ is a hip-hop-themed barbecue joint in north Austin, renamed from SLAB BBQ in 2026 and known for its Notorious P.I.G. smoked pork sandwich.",
+            "lat": 30.3713792,
+            "lng": -97.7246673,
+            "name": "Stack City BBQ"
+        }
+    ],
+    "name": "Kingsland",
+    "ordered": true
+}

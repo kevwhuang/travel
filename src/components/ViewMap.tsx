@@ -29,11 +29,13 @@ import { loadAtlasState, saveAtlasState } from '@lib/store';
 import { prefersReducedMotion } from '@lib/motion';
 
 import type {
+    AddProtocolResponseData,
     ExpressionSpecification,
     FitBoundsOptions,
     FlyToOptions,
     GeoJSONFeature,
     GeoJSONSource,
+    GetResourceResponse,
     LayerSpecification,
     MapMouseEvent,
     MapWheelEvent,
@@ -43,6 +45,7 @@ import type {
 } from 'maplibre-gl';
 
 import type { Flavor } from '@protomaps/basemaps';
+import type { RefObject } from 'react';
 import type { Root } from 'react-dom/client';
 
 type SourceData = Parameters<GeoJSONSource['setData']>[0];
@@ -523,7 +526,7 @@ async function loadTile(request: RequestParameters, abortController: AbortContro
         }
     }
 
-    return response;
+    return response as GetResourceResponse<AddProtocolResponseData>;
 }
 
 function toFeatureCollection(markers: AtlasMarker[]) {
@@ -602,9 +605,10 @@ function PinMark({ categoryId, isOrdered, isStarred }: {
 addProtocol('pmtiles', loadTile);
 setWorkerUrl(mapWorkerUrl);
 
-export default function ViewMap({ categories, flyTarget, journeys, markers, onSelectMarker, onShowInCards, regions, selectedMarkerId }: {
+export default function ViewMap({ categories, flyTarget, isClearingRef, journeys, markers, onSelectMarker, onShowInCards, regions, selectedMarkerId }: {
     categories: AtlasCategory[];
     flyTarget: AtlasFlyTarget | null;
+    isClearingRef: RefObject<boolean>;
     journeys: AtlasJourney[];
     markers: AtlasMarker[];
     onSelectMarker: (markerId: number | null) => void;
@@ -1348,6 +1352,8 @@ export default function ViewMap({ categories, flyTarget, journeys, markers, onSe
 
             return;
         }
+
+        if (isClearingRef.current) return;
 
         fitToMarkers();
     }, [boundsKey, isMapReady]);
