@@ -1,0 +1,294 @@
+{
+    "markers": [
+        {
+            "category": "transit",
+            "description": "Mexico City International Airport is Mexico's busiest passenger hub, with two terminals in the Venustiano Carranza borough east of the city center.",
+            "lat": 19.4360762,
+            "lng": -99.0719083,
+            "name": "Mexico City International Airport"
+        },
+        {
+            "category": "lodging",
+            "description": "This address served as a private home-base stay in Mexico City's Roma Norte neighborhood, southwest of the historic center.",
+            "lat": 19.4109231,
+            "lng": -99.1651722,
+            "name": "Coahuila 193"
+        },
+        {
+            "category": "dining",
+            "description": "DoppioZero is a Roman-style pizzeria on Calle Coahuila in Mexico City's Roma Norte neighborhood, opened in 2018 by chef Davide Saggio and Gabriela Torres.",
+            "lat": 19.4109486,
+            "lng": -99.164954,
+            "name": "DoppioZero Pizza Romana"
+        },
+        {
+            "category": "cafes",
+            "description": "Sixto Café is a coffee shop on Calle Manzanillo in Mexico City's Roma Norte neighborhood, serving Coatepec espresso, matcha lattes, and chilaquiles.",
+            "lat": 19.4107405,
+            "lng": -99.1661564,
+            "name": "Sixto Café"
+        },
+        {
+            "category": "landmarks",
+            "description": "The Museo Nacional de Antropología in Mexico City's Chapultepec Park is the country's most visited museum, opened in 1964 and home to the Aztec Sun Stone.",
+            "lat": 19.4260032,
+            "lng": -99.1862786,
+            "name": "Museo Nacional de Antropología",
+            "starred": true
+        },
+        {
+            "category": "dining",
+            "description": "Sala Gastronómica is a Mexican restaurant inside Mexico City's Museo Nacional de Antropología, serving regional dishes like cochinita pibil and mole negro.",
+            "lat": 19.4254456,
+            "lng": -99.1861216,
+            "name": "Sala Gastronómica"
+        },
+        {
+            "category": "urban",
+            "description": "Arena México is CMLL's main wrestling arena in Mexico City's Doctores neighborhood, opened in 1956 and known as the Cathedral of Lucha Libre.",
+            "lat": 19.4247054,
+            "lng": -99.1516884,
+            "name": "Arena México"
+        },
+        {
+            "category": "dining",
+            "description": "Tacos La Chula is a taqueria chain, and this 24-hour Calle Liverpool branch in Mexico City's Juárez neighborhood serves al pastor tacos and margachelas.",
+            "lat": 19.4252868,
+            "lng": -99.1616373,
+            "name": "Tacos La Chula"
+        },
+        {
+            "category": "landmarks",
+            "description": "Chapultepec Castle is a former imperial palace in Mexico City's Chapultepec Park, begun in 1785 and housing the National Museum of History since 1944.",
+            "lat": 19.4204397,
+            "lng": -99.181935,
+            "name": "Chapultepec Castle"
+        },
+        {
+            "category": "dining",
+            "description": "Macelleria is an Italian restaurant on Calle Orizaba in Mexico City's Roma Norte neighborhood, known for pasta alla ruota prepared in a Grana Padano wheel.",
+            "lat": 19.4172776,
+            "lng": -99.1597066,
+            "name": "Macelleria Roma"
+        },
+        {
+            "category": "dining",
+            "description": "Delicias Mexicanas is a food counter inside Mercado Roma, a gourmet market that opened in 2014 in Mexico City's Roma Norte neighborhood.",
+            "lat": 19.414091,
+            "lng": -99.164571,
+            "name": "Delicias Mexicanas"
+        },
+        {
+            "category": "transit",
+            "description": "Mérida International Airport is the main air gateway to Yucatán state, serving domestic and international flights just southwest of the city center.",
+            "lat": 20.9241634,
+            "lng": -89.6584306,
+            "name": "Mérida International Airport"
+        },
+        {
+            "category": "dining",
+            "description": "Carl's Jr. is a California-born burger chain, and this Avenida García Lavín location in north Mérida serves as a quick meal stop.",
+            "lat": 21.0194191,
+            "lng": -89.6063738,
+            "name": "Carl's Jr."
+        },
+        {
+            "category": "lodging",
+            "description": "This address served as a private home-base stay in San Ramón Norte, a residential neighborhood in north Mérida.",
+            "lat": 21.0330045,
+            "lng": -89.6076456,
+            "name": "C. 29 324"
+        },
+        {
+            "category": "urban",
+            "description": "Cinépolis Altabrisa is a 10-screen multiplex of Mexico's largest cinema chain at Plaza Altabrisa in northeast Mérida, alongside a four-screen VIP complex.",
+            "lat": 21.0186148,
+            "lng": -89.5850239,
+            "name": "Cinépolis Mérida Altabrisa"
+        },
+        {
+            "category": "dining",
+            "description": "P.F. Chang's is an Asian-inspired restaurant chain, and this location inside Plaza Altabrisa in northeast Mérida serves lettuce wraps and Mongolian beef.",
+            "lat": 21.0192848,
+            "lng": -89.5841539,
+            "name": "P.F. Chang's"
+        },
+        {
+            "category": "misc",
+            "description": "Soriana is a major Mexican supermarket chain, with this Altabrisa-area store serving as a convenient grocery stop in Mérida.",
+            "lat": 21.0192252,
+            "lng": -89.5841276,
+            "name": "Soriana"
+        },
+        {
+            "category": "dining",
+            "description": "Once22 is an Italian-Argentine fusion restaurant at Plaza Town Square in north Mérida, serving wood-fired empanadas, grilled cuts, and pastas.",
+            "lat": 21.035935,
+            "lng": -89.6063536,
+            "name": "Once22 Fusión Italo-Argentino"
+        },
+        {
+            "category": "cafes",
+            "description": "Mykoz is a self-serve Greek frozen yogurt chain founded in Mérida in 2021 by Ivana Rodríguez, with a branch at Plaza Town Square in north Mérida.",
+            "lat": 21.0360463,
+            "lng": -89.606056,
+            "name": "Mykoz Town Square"
+        },
+        {
+            "category": "wellness",
+            "description": "Mãos Nail Bar is a nail salon near the City Center complex in north Mérida, specializing in acrylic, softgel, and dip powder manicures.",
+            "lat": 21.0363206,
+            "lng": -89.6062787,
+            "name": "Mãos Nail Bar"
+        },
+        {
+            "category": "urban",
+            "description": "Bowl Península is a bowling alley that opened in 2026 inside the Península Montejo complex in north Mérida, with a bar and billiards.",
+            "lat": 21.0199113,
+            "lng": -89.6207931,
+            "name": "Bowl Península"
+        },
+        {
+            "category": "dining",
+            "description": "Mítica is a Mérida-born burger chain founded in 2020, and this Avenida García Lavín branch in San Antonio Cucul serves Black Angus beef on brioche buns.",
+            "lat": 21.0254133,
+            "lng": -89.6049716,
+            "name": "Mítica"
+        },
+        {
+            "category": "dining",
+            "description": "La Mia Porta is an Italian restaurant on Calle 63 in Mérida's Montes de Amé neighborhood, serving stone-oven pizzas, pastas, and wine.",
+            "lat": 21.0367291,
+            "lng": -89.6152226,
+            "name": "La Mia Porta"
+        },
+        {
+            "category": "dining",
+            "description": "Popeyes is a Louisiana-born fried chicken chain whose first Mérida branch, opened in 2026 near Galerías Mérida, serves sandwiches and Cajun fries.",
+            "lat": 21.0399753,
+            "lng": -89.6367434,
+            "name": "Popeyes Louisiana Kitchen"
+        },
+        {
+            "category": "dining",
+            "description": "Wah Bao is an Asian-fusion restaurant on Calle 36 in Mérida's Montes de Amé neighborhood, founded in 2021 and serving pork belly baos and shoyu ramen.",
+            "lat": 21.0313646,
+            "lng": -89.6198177,
+            "name": "Wah Bao"
+        },
+        {
+            "category": "cafes",
+            "description": "Casa Roma is a bakery and coffee shop on Calle 29 in Mérida's San Ramón Norte neighborhood, serving Nutella croissants, banana bread, and cold brew.",
+            "lat": 21.0324499,
+            "lng": -89.6043312,
+            "name": "Casa Roma Pan y Café"
+        },
+        {
+            "category": "dining",
+            "description": "3 Ahhjussi is a Korean barbecue restaurant on Prolongación Paseo de Montejo in north Mérida, serving samgyeopsal, sundubu, and kimchi jjigae.",
+            "lat": 20.9982239,
+            "lng": -89.6156773,
+            "name": "3 Ahhjussi Parrilla Korea"
+        },
+        {
+            "category": "dining",
+            "description": "Las Tortas del Tío Rafa is a late-night torta shop on Avenida Correa Rachó in northeast Mérida, known for its lechón and cochinita fillings.",
+            "lat": 21.0068298,
+            "lng": -89.5895096,
+            "name": "Las Tortas del Tío Rafa"
+        },
+        {
+            "category": "dining",
+            "description": "La Escandón is a breakfast and brunch bistro at Plaza Santander Boreal in north Mérida, serving chilaquiles and enchiladas.",
+            "lat": 21.0229863,
+            "lng": -89.6064312,
+            "name": "La Escandón Bistro Café"
+        },
+        {
+            "category": "landmarks",
+            "description": "Parque de San Juan is a plaza in Mérida's historic center, facing the 1770 Iglesia de San Juan and home to the La Negrita fountain from Paris.",
+            "lat": 20.9627133,
+            "lng": -89.6261767,
+            "name": "Parque de San Juan"
+        },
+        {
+            "category": "dining",
+            "description": "Micaela Mar & Leña is a wood-fired seafood restaurant on Calle 47 in Mérida's historic center, serving grilled octopus and oysters since 2018.",
+            "lat": 20.9744735,
+            "lng": -89.6161519,
+            "name": "Micaela Mar & Leña"
+        },
+        {
+            "category": "dining",
+            "description": "Cafetería Impala is a diner at the Remate de Paseo de Montejo in Mérida, opened in 1958 and known for club sandwiches and platillos voladores.",
+            "lat": 20.9753395,
+            "lng": -89.6193215,
+            "name": "Cafetería Impala"
+        },
+        {
+            "category": "dining",
+            "description": "Pedinche is a taco bar on Calle 47 in Mérida's historic center, serving al pastor, sirloin, and chuleta tacos alongside volcán tostadas.",
+            "lat": 20.974644,
+            "lng": -89.616864,
+            "name": "Pedinche"
+        },
+        {
+            "category": "shopping",
+            "description": "Zara is a Spanish fast-fashion chain, and this store inside the La Isla shopping center in north Mérida serves as a practical shopping stop.",
+            "lat": 21.0565467,
+            "lng": -89.5963581,
+            "name": "Zara"
+        },
+        {
+            "category": "shopping",
+            "description": "H&M is a Stockholm-based fashion retailer whose store at Mérida's La Isla mall opened in 2019 as its second in the city.",
+            "lat": 21.0563928,
+            "lng": -89.5966884,
+            "name": "H&M"
+        },
+        {
+            "category": "dining",
+            "description": "Mía Mamma is an Italian restaurant on the malecón at La Isla Mérida, serving burrata, calamari fritti, and fettuccine Alfredo.",
+            "lat": 21.0564444,
+            "lng": -89.59543,
+            "name": "Mía Mamma"
+        },
+        {
+            "category": "shopping",
+            "description": "Stradivarius is a Barcelona-founded women's fashion chain owned by Inditex, with a boutique at Mérida's La Isla mall.",
+            "lat": 21.05693,
+            "lng": -89.596257,
+            "name": "Stradivarius"
+        },
+        {
+            "category": "shopping",
+            "description": "Liverpool is a Mexico City-based department store chain dating to 1847, and this La Isla store in north Mérida opened in 2018.",
+            "lat": 21.0582566,
+            "lng": -89.595959,
+            "name": "Liverpool"
+        },
+        {
+            "category": "shopping",
+            "description": "Paseo 60 is a mixed-use shopping plaza on Calle 60 in Mérida, with restaurants, two hotels, and the Casa de Máquinas gourmet market.",
+            "lat": 20.9836151,
+            "lng": -89.619851,
+            "name": "Paseo 60"
+        },
+        {
+            "category": "dining",
+            "description": "Teya Viva is a branch of Hacienda Teya's Yucatecan restaurant, serving cochinita pibil and poc chuc at Mérida's Paseo 60 complex.",
+            "lat": 20.9837794,
+            "lng": -89.6197944,
+            "name": "Teya Viva"
+        },
+        {
+            "category": "cafes",
+            "description": "Santagloria is a Spanish bakery and coffee chain, and this Paseo de Montejo branch in Mérida serves artisan breads and pastries.",
+            "lat": 20.9786058,
+            "lng": -89.6186543,
+            "name": "Santagloria Coffee & Bakery Paseo de Montejo"
+        }
+    ],
+    "name": "Poco Poco",
+    "ordered": true
+}
